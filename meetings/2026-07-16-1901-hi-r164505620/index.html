@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Ergo Meet · 16 July 2026 · Hi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    :root,
+    [data-theme="dark"] {
+      --ink: #0a0f1a;
+      --ink-soft: #121a2e;
+      --surface: rgba(255, 252, 247, 0.04);
+      --surface-hover: rgba(255, 252, 247, 0.07);
+      --gold: #c9a962;
+      --gold-light: #e8d5a3;
+      --gold-dim: rgba(201, 169, 98, 0.35);
+      --cream: #f7f3eb;
+      --muted: #8b93a8;
+      --line: rgba(201, 169, 98, 0.22);
+      --radius: 16px;
+      --topbar-bg: rgba(10, 15, 26, 0.92);
+      --text-body: rgba(247, 243, 235, 0.9);
+      --text-soft: rgba(247, 243, 235, 0.88);
+      --row-border: rgba(255, 255, 255, 0.06);
+      --grid-line: rgba(255, 255, 255, 0.05);
+      --bg-glow-a: rgba(201, 169, 98, 0.12);
+      --bg-glow-b: rgba(90, 120, 180, 0.08);
+      --btn-fathom-text: #0a0f1a;
+    }
+    [data-theme="light"] {
+      --ink: #f0ebe3;
+      --ink-soft: #ffffff;
+      --surface: rgba(255, 255, 255, 0.72);
+      --surface-hover: rgba(255, 255, 255, 0.95);
+      --cream: #1c2438;
+      --muted: #5a6275;
+      --line: rgba(160, 130, 70, 0.28);
+      --topbar-bg: rgba(240, 235, 227, 0.94);
+      --text-body: rgba(28, 36, 56, 0.92);
+      --text-soft: rgba(28, 36, 56, 0.85);
+      --row-border: rgba(28, 36, 56, 0.08);
+      --grid-line: rgba(28, 36, 56, 0.08);
+      --bg-glow-a: rgba(201, 169, 98, 0.08);
+      --bg-glow-b: rgba(90, 120, 180, 0.05);
+      --btn-fathom-text: #1c2438;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Outfit', system-ui, sans-serif;
+      font-weight: 400;
+      background: var(--ink);
+      color: var(--cream);
+      line-height: 1.55;
+      min-height: 100vh;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -10%, var(--bg-glow-a), transparent),
+        radial-gradient(ellipse 60% 40% at 100% 100%, var(--bg-glow-b), transparent);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .shell { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 0 24px 64px; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--topbar-bg);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .topbar-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 16px;
+    }
+    .topbar-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .lang-select {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--cream);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+    }
+    .lang-select:hover { background: var(--surface-hover); }
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--cream);
+      padding: 8px 14px 8px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .theme-toggle:hover { background: var(--surface-hover); }
+    .theme-toggle .icon-sun,
+    .theme-toggle .icon-moon { font-size: 1rem; line-height: 1; }
+    [data-theme="dark"] .theme-toggle .icon-sun { display: inline; }
+    [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+    [data-theme="light"] .theme-toggle .icon-sun { display: none; }
+    [data-theme="light"] .theme-toggle .icon-moon { display: inline; }
+    .hero {
+      padding: 48px 0 40px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 32px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+    .hero-grid.hero-grid--portrait {
+      grid-template-columns: minmax(0, 1fr) 220px;
+      gap: 40px;
+    }
+    @media (max-width: 820px) {
+      .hero-grid.hero-grid--portrait {
+        grid-template-columns: 1fr;
+      }
+      .hero-speaker { justify-self: center; }
+    }
+    .hero-copy { min-width: 0; }
+    .hero-grid.hero-grid--portrait .hero-speaker {
+      justify-self: end;
+      width: 220px;
+      max-width: 100%;
+    }
+    .speaker-portrait-frame {
+      margin: 0;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 3px;
+      border-radius: 22px;
+      background: linear-gradient(145deg, var(--gold-light), var(--gold) 45%, rgba(139, 115, 85, 0.9));
+      box-shadow:
+        0 24px 48px rgba(0, 0, 0, 0.28),
+        0 0 0 1px var(--line);
+    }
+    [data-theme="light"] .speaker-portrait-frame {
+      box-shadow:
+        0 20px 40px rgba(28, 36, 56, 0.12),
+        0 0 0 1px var(--line);
+    }
+    .speaker-portrait-inner {
+      border-radius: 19px;
+      overflow: hidden;
+      background: #161d30;
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1;
+    }
+    .speaker-portrait {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 44% 14%;
+      display: block;
+    }
+    .speaker-portrait-meta {
+      text-align: center;
+      padding: 14px 8px 4px;
+      background: transparent;
+    }
+    .speaker-portrait-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--cream);
+      margin: 0 0 4px;
+      letter-spacing: 0.03em;
+    }
+    .speaker-portrait-role {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0;
+    }
+    .brand {
+      font-size: 0.7rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.75rem, 4vw, 2.65rem);
+      font-weight: 500;
+      line-height: 1.2;
+      margin: 0;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+    .hero-sub {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      align-items: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--gold-light);
+      font-size: 0.8rem;
+    }
+    .btn-fathom {
+      color: var(--btn-fathom-text);
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .btn-fathom:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(201, 169, 98, 0.25); }
+    .btn-fathom-secondary {
+      color: var(--gold-light);
+      background: transparent;
+      border: 1px solid var(--line);
+      box-shadow: none;
+    }
+    .btn-fathom-secondary:hover {
+      background: var(--surface-hover);
+      box-shadow: none;
+    }
+    .part-block { margin-bottom: 28px; }
+    .part-block:last-child { margin-bottom: 0; }
+    .part-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      margin: 0 0 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+      letter-spacing: 0.04em;
+    }
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .kpi {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px 16px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+    .kpi-v {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      line-height: 1.1;
+    }
+    .kpi-l {
+      margin-top: 6px;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px 26px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(6px);
+    }
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+    .section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      margin: 0 0 16px;
+      color: var(--cream);
+    }
+    .exec {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      line-height: 1.65;
+    }
+    .exec-h {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      margin: 22px 0 10px;
+      letter-spacing: 0.02em;
+    }
+    .exec-h:first-child { margin-top: 0; }
+    .exec-p {
+      margin: 0 0 12px;
+      color: var(--text-soft);
+    }
+    .exec-ul {
+      margin: 0 0 16px;
+      padding-left: 1.25rem;
+    }
+    .exec-ul li {
+      margin-bottom: 10px;
+      padding-left: 4px;
+    }
+    .exec-ul li::marker { color: var(--gold); }
+    .exec strong { color: var(--cream); font-weight: 600; }
+    .muted { color: var(--muted); }
+    .insights ul { margin: 0; padding-left: 1.1rem; }
+    .insights li { margin-bottom: 10px; color: var(--text-body); }
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 768px) { .grid2 { grid-template-columns: 1fr; } }
+    .chart-box { min-height: 240px; }
+    canvas { max-height: 220px !important; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    thead th {
+      text-align: left;
+      padding: 12px 10px;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 1px solid var(--line);
+      font-weight: 600;
+    }
+    tbody td {
+      padding: 14px 10px;
+      border-bottom: 1px solid var(--row-border);
+      vertical-align: top;
+    }
+    tbody tr:hover { background: var(--surface-hover); }
+    .pbar {
+      height: 4px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 4px;
+      overflow: hidden;
+      max-width: 100px;
+    }
+    .pbar span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    }
+    .tl {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 12px 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--row-border);
+    }
+    .tl:last-child { border-bottom: none; }
+    .tl-t { font-size: 0.75rem; color: var(--gold); font-weight: 500; font-variant-numeric: tabular-nums; }
+    .tl-body p { margin: 0; font-size: 0.9rem; }
+    .tl-body .who { font-size: 0.75rem; color: var(--muted); margin-bottom: 4px; }
+    details.section { cursor: pointer; }
+    details summary {
+      list-style: none;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--gold-light);
+    }
+    details summary::-webkit-details-marker { display: none; }
+    pre {
+      margin-top: 16px;
+      white-space: pre-wrap;
+      font-size: 0.78rem;
+      color: var(--muted);
+      max-height: 280px;
+      overflow: auto;
+      line-height: 1.45;
+    }
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-controls">
+        <select id="langSelect" class="lang-select" aria-label="Language">
+          <option value="de">DE</option>
+          <option value="en">EN</option>
+          <option value="tr">TR</option>
+        </select>
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="icon-sun" aria-hidden="true">☀</span>
+          <span class="icon-moon" aria-hidden="true">☾</span>
+          <span id="themeToggleLabel" data-i18n="theme_light">Light</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="shell">
+    <header class="hero">
+      <div class="hero-grid ">
+        <div class="hero-copy">
+          <div class="brand" data-i18n="brand">ERGO · Meeting Intelligence</div>
+          <h1>Ergo Meet · 16 July 2026 · Hi</h1>
+          <div class="hero-sub">
+            <span class="pill">16.07.2026 19:01 CEST</span>
+            
+            
+          </div>
+        </div>
+        
+      </div>
+    </header>
+
+    <div class="kpi-row"><div class="kpi"><div class="kpi-v">10.000</div><div class="kpi-l">Betrag</div></div><div class="kpi"><div class="kpi-v">1.000</div><div class="kpi-l">Betrag</div></div><div class="kpi"><div class="kpi-v">€200</div><div class="kpi-l">Summe</div></div><div class="kpi"><div class="kpi-v">€10</div><div class="kpi-l">Summe</div></div></div>
+
+    <section class="section">
+      <div class="section-label" data-i18n="lbl_overview">Overview</div>
+      <h2 data-i18n="summary">Summary</h2>
+      <div class="exec exec-rich"><h3 class="exec-h">Meeting Purpose</h3>
+<p class="exec-p">To introduce Ergo Pro agents to real estate as a tool for client acquisition.</p>
+<h3 class="exec-h">Key Takeaways</h3>
+<ul class="exec-ul">
+<li><strong>Real estate is a powerful client acquisition tool.</strong> It&#x27;s a more tangible and exciting entry point than insurance, enabling agents to build trust and cross-sell financial products.</li>
+<li><strong>The strategy is to turn tax into wealth.</strong> By legally deducting property costs (like interest), clients can reduce taxable income, receive significant tax refunds, and use that money to pay down the property.</li>
+<li><strong>Leverage (Fremdkapitalhebel) is the key advantage.</strong> Using a bank&#x27;s capital (e.g., 90%) multiplies returns. A 3% return on a €200k property (financed with €10k equity) yields €6k/year, a 60% return on equity.</li>
+<li><strong>Agents earn significant referral fees (€3.8k–€6k) with minimal effort.</strong> The process is fully managed, requiring only a client introduction. This creates a powerful referral loop as satisfied clients share their positive experience.</li>
+</ul>
+<h3 class="exec-h">Topics</h3>
+<h3 class="exec-h">The German Financial Landscape: Problems &amp; Opportunities</h3>
+<ul class="exec-ul">
+<li><strong>High Taxes:</strong> Germany&#x27;s high tax burden (up to 47% income tax) is a primary client pain point.</li>
+<li><strong>Pension Crisis (Rentenproblem):</strong> The state pension system is unsustainable due to demographic shifts (fewer workers supporting more retirees).</li>
+<li><strong>Inflation:</strong> Rising costs of living erode purchasing power.</li>
+<li><strong>Financial Illiteracy:</strong> Most people lack financial education, creating a significant opportunity for knowledgeable advisors.</li>
+</ul>
+<h3 class="exec-h">The Real Estate Solution: Tax-Efficient Wealth Building</h3>
+<ul class="exec-ul">
+<li><strong>Core Principle:</strong> Use real estate to legally reduce taxable income and convert tax payments into personal wealth.</li>
+<li><strong>How It Works:</strong></li>
+</ul>
+<p class="exec-p">1.  <strong>Deduct Costs:</strong> Property expenses (e.g., loan interest, management fees) are deducted from personal income.</p>
+<p class="exec-p">2.  <strong>Lower Taxable Income:</strong> This reduces the client&#x27;s official taxable income.</p>
+<p class="exec-p">3.  <strong>Receive Refund:</strong> Because taxes are paid upfront, the client receives a significant refund.</p>
+<p class="exec-p">4.  <strong>Fund Property:</strong> This refund, combined with rental income, covers most or all of the monthly mortgage payment.</p>
+<ul class="exec-ul">
+<li><strong>The 10-Year Tax-Free Rule:</strong> Profits from a rented property sold after 10 years are completely tax-free.</li>
+</ul>
+<h3 class="exec-h">The Power of Leverage (Fremdkapitalhebel)</h3>
+<ul class="exec-ul">
+<li><strong>Definition:</strong> Using borrowed money (e.g., a bank loan) to finance an investment.</li>
+<li><strong>Mechanism:</strong></li>
+<li><strong>Low Equity:</strong> Clients typically invest only 10–20% of the property&#x27;s value.</li>
+<li><strong>High Return on Equity:</strong> A 3% return on a €200k property yields €6k/year. If the client&#x27;s equity was only €10k, this is a 60% annual return on their personal investment.</li>
+</ul>
+<h3 class="exec-h">Market Dynamics: Why Real Estate Is Secure</h3>
+<ul class="exec-ul">
+<li><strong>Housing Shortage (Wohnraummangel):</strong> A massive structural deficit exists, with \~400k new units needed annually vs. only \~26k built. This ensures high rental demand.</li>
+<li><strong>Reliable Rent Growth:</strong> Rents have consistently risen over decades, providing a stable income stream that is not tied to property price fluctuations.</li>
+<li><strong>Inflation Hedge:</strong> Inflation erodes the real value of debt while property values (and rents) tend to rise, making the investment more valuable over time.</li>
+</ul>
+<h3 class="exec-h">Agent Collaboration &amp; Compensation</h3>
+<ul class="exec-ul">
+<li><strong>Process:</strong> Agents introduce a client → Yash manages the full process (property selection, financing, management) → Agent earns a referral fee.</li>
+<li><strong>Compensation:</strong> Agents receive a direct referral commission of 20–30% of the total commission, typically €3,800–€6,000 per deal.</li>
+<li><strong>Client Profile:</strong> Ideal clients have a net income of €2,500–€3,000+ and at least €10,000 in equity for closing costs.</li>
+</ul>
+<h3 class="exec-h">Next Steps</h3>
+<ul class="exec-ul">
+<li><strong>Yash:</strong> Host weekly deep-dive sessions on real estate (Wednesdays, 18:00) to build agent knowledge and confidence.</li>
+<li><strong>Agents:</strong></li>
+<li>Identify potential clients meeting the profile (€2.5k+ net income, €10k+ equity).</li>
+<li>Use real estate as an entry point to build trust and cross-sell insurance products.</li>
+<li>Attend the weekly sessions to learn how to pitch the concept effectively.</li>
+</ul></div>
+    </section>
+
+    <section class="section insights">
+      <div class="section-label" data-i18n="lbl_focus">Focus</div>
+      <h2 data-i18n="key_takeaways">Key takeaways</h2>
+      <ul><li><strong>Real estate is a powerful client acquisition tool.</strong> It&#x27;s a more tangible and exciting entry point than insurance, enabling agents to build trust and cross-sell financial products.</li><li><strong>The strategy is to turn tax into wealth.</strong> By legally deducting property costs (like interest), clients can reduce taxable income, receive significant tax refunds, and use that money to pay down the property.</li><li><strong>Leverage (Fremdkapitalhebel) is the key advantage.</strong> Using a bank&#x27;s capital (e.g., 90%) multiplies returns. A 3% return on a €200k property (financed with €10k equity) yields €6k/year, a 60% return on equity.</li><li><strong>Agents earn significant referral fees (€3.8k–€6k) with minimal effort.</strong> The process is fully managed, requiring only a client introduction. This creates a powerful referral loop as satisfied clients share their positive experience.</li></ul>
+    </section>
+
+    <div class="grid2">
+      <section class="section chart-box">
+        <div class="section-label" data-i18n="lbl_distribution">Distribution</div>
+        <h2 data-i18n="topics">Topics</h2>
+        <canvas id="topics"></canvas>
+      </section>
+      <section class="section chart-box">
+        <div class="section-label" data-i18n="lbl_conversation">Conversation</div>
+        <h2 data-i18n="speaking_time">Speaking time</h2>
+        <canvas id="speakers"></canvas>
+      </section>
+    </div>
+
+    <section class="section">
+      <div class="section-label" data-i18n="lbl_followup">Follow-up</div>
+      <h2 data-i18n="action_items">Action items</h2>
+      <table>
+        <thead><tr>
+          <th data-i18n="th_owner">Owner</th>
+          <th data-i18n="th_task">Task</th>
+          <th data-i18n="th_due">Due</th>
+          <th data-i18n="th_priority">Priority</th>
+        </tr></thead>
+        <tbody><tr>
+          <td>Yash Bora</td>
+          <td>Email slides to Ergo Pro trainees</td>
+          <td>—</td>
+          <td><div class="pbar"><span style="width:55%"></span></div></td>
+        </tr><tr>
+          <td>Yash Bora</td>
+          <td>Get trainer/structure contact numbers; save in CRM</td>
+          <td>—</td>
+          <td><div class="pbar"><span style="width:55%"></span></div></td>
+        </tr></tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <div class="section-label" data-i18n="lbl_moments">Moments</div>
+      <h2 data-i18n="timeline">Timeline</h2>
+      <div class="tl"><div class="tl-t">00:10:21</div><div class="tl-body"><div class="who">Yash Bora</div><p>Bis ich mit 21 bei einer 55-jährigen Rechtsanwälte, die auf dem Fensil bekannt war, saß,</p></div></div><div class="tl"><div class="tl-t">00:13:08</div><div class="tl-body"><div class="who">Yash Bora</div><p>Wichtig, Immobilien ist ein großes Thema, die Folie könnt ihr da haben, wir müssen nicht alles aufschreiben.</p></div></div><div class="tl"><div class="tl-t">00:13:13</div><div class="tl-body"><div class="who">Yash Bora</div><p>es ist wichtig, mir ist wichtig, wenn ihr hier sitzt, scheiß drauf, was hier dran steht.</p></div></div><div class="tl"><div class="tl-t">00:17:03</div><div class="tl-body"><div class="who">Yash Bora</div><p>Ihr bekommt Gehalt, das ist brutto, darauf müsst ihr Steuern zahlen, bis zu 42% vom Finanzamt.</p></div></div><div class="tl"><div class="tl-t">00:18:06</div><div class="tl-body"><div class="who">Yash Bora</div><p>Das heißt, zwei- bis dreimal immer versteuert, bis das Geld durch ist.</p></div></div><div class="tl"><div class="tl-t">00:22:35</div><div class="tl-body"><div class="who">Yash Bora</div><p>So, wichtig, Inflation, ihr müsst eine Sache, das ist jetzt ein kleines Knowledge, extra, wenn ihr 2025 10% Inflation ha…</p></div></div><div class="tl"><div class="tl-t">00:32:47</div><div class="tl-body"><div class="who">Yash Bora</div><p>Wir steigen jedes Jahr 2 bis 4%, ich nehme einfach nur ganz bescheinend 3%.</p></div></div><div class="tl"><div class="tl-t">00:49:21</div><div class="tl-body"><div class="who">Yash Bora</div><p>Leer 250.000 bis 300.000, mit Steckdosen 300.000.</p></div></div>
+    </section>
+
+    <details class="section">
+      <summary data-i18n="transcript_excerpt">Transcript excerpt</summary>
+      <pre>[00:00:09] Yash Bora: Also, mein Name ist Hay, ich mache Immobilien seit fast 6 Jahren, ich habe davor Finanzfabrik gemacht, ich war auch schon mal bei der Ergo mit dabei gewesen, habe davor auch eine Ausbildung bei der DV
+[00:00:48] Yash Bora: Ich frage mal kurz in den Raum, wie alt seid ihr so, einfach mal reinrufen, so den Durchschnitt.
+[00:00:52] Yash Bora: Aufzählen.
+[00:00:54] Yash Bora: 30.
+[00:00:55] Yash Bora: 30.
+[00:00:55] Yash Bora: 30.
+[00:00:56] Yash Bora: der 11.
+[00:00:58] Yash Bora: Okay, aber so, ich glaub, Durchschnitt werden im Raum gefühlt 19, sehr jung, okay.
+[00:01:04] Yash Bora: Kurz mal Arm hoch, wer von euch wohnt schon alleine?
+[00:01:09] Yash Bora: Okay, so, wer geht nebenbei schon arbeiten?
+[00:01:14] Yash Bora: Okay.
+[00:01:15] Yash Bora: Und die anderen noch nie gearbeitet und das ist das erste Mal, dass ihr beruflich tätig seid?
+[00:01:20] Yash Bora: Ja.
+[00:01:22] Yash Bora: Was soll das sein?
+[00:01:26] Yash Bora: Okay, aber du hast schon mal gearbeitet, da geht&#x27;s, okay.
+[00:01:29] Yash Bora: so, also warum bin ich heute hier?
+[00:01:31] Yash Bora: Immobilien per se ist ja nicht von der Ergo, wir sind eine ganz andere Firma, wie gesagt, das heißt VHS.
+[00:01:37] Yash Bora: Das ist die Immobilienfirma, mit der ich arbeite, da mache ich die Vertriebsleitung.
+[00:01:42] Yash Bora: Was hat das mit Ergo zu tun?
+[00:01:43] Yash Bora: Ihr seid jetzt alle roundabout fast einen Monat hier dabei, korrekt?
+[00:01:47] Yash Bora: Nein.
+[00:01:47] Yash Bora: Korrekt?
+[00:01:48] Yash Bora: Das ist mein erster Tag hier.
+[00:01:50] Yash Bora: Okay, du bist der Quereinsteiger komplett, okay.
+[00:01:54] Yash Bora: Aber der Rest sonst schon einen Monat hier in der Schulung gewesen.
+[00:01:59] Yash Bora: Okay, crazy.
+[00:02:01] Yash Bora: Gut, da muss ich noch vorne anfangen.
+[00:02:02] Yash Bora: Also, Finanz ist ein sehr großes Thema.
+[00:02:05] Yash Bora: Das was Ergo hier, oder die Ergo Pro an sich macht, ist ja der Rat der World Investment für die Altersvorsorge.
+[00:02:10] Yash Bora: Das ist das Hauptgeschäft.
+[00:02:12] Yash Bora: Es gibt natürlich noch ganz viele andere Versicherungen, aber das ist das Hauptgeschäft.
+[00:02:16] Yash Bora: Warum ich heute hier bin, ist ganz einfach, Investment und Immobilien hängen sehr eng miteinander an.
+[00:02:22] Yash Bora: Das heißt, wenn wir über Investment reden, Geld anlegen, dann kommt schnell der Begriff, wenn man einmal ETFs und Fonds und Gold fertig habe, dann kommt man schnell zu Immobilien.
+[00:02:32] Yash Bora: Und der Grund, warum ich heute im Zertim mit euch hier drin bin, Killing mich hier quasi rein platziert habe, ist um euch zu helfen, breiter zu beraten, mehr den Kunden anbieten zu können und mehr mit
+[00:02:44] Yash Bora: Weil in dem Geschäft geht es darum, dass ihr so gut wie möglich die Leute beraten könnt auf das Thema.
+[00:02:54] Yash Bora: Wenn ihr in Gespräche reingeht und sagt, ich mache Versicherung, ich mache Rentenversicherung, okay, cool, das machen viele, aber wenn ihr Versicherung macht und zusätzlich noch auf Immobilienberater 
+[00:03:23] Yash Bora: Bei euch, alles gleiche, oder?
+[00:03:25] Yash Bora: Manche keine Vorfahren, aber durch Internet heutzutage, Scam oder was auch immer.
+[00:03:31] Yash Bora: Wenn es die falschen Leute machen, habt ihr recht, Scam, aber wenn man es richtig macht, dann ist es natürlich irgendwo auch sinnvoll.
+[00:03:37] Yash Bora: Ihr müsst euch eine Sache merken, in dem Bereich der Finanzkienstleisterung spricht sich vieles Schlechtes sehr schnell rum, und gutes eher langsam.</pre>
+    </details>
+
+    <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
+  </div>
+  <script>
+    const ERGOMEET_I18N = {
+      de: {
+        brand: 'ERGO · Meeting Intelligence',
+        theme_light: 'Hell', theme_dark: 'Dunkel',
+        lbl_overview: 'Überblick', summary: 'Zusammenfassung',
+        lbl_focus: 'Fokus', key_takeaways: 'Kernaussagen',
+        lbl_distribution: 'Verteilung', topics: 'Themen',
+        lbl_conversation: 'Gespräch', speaking_time: 'Sprechzeit',
+        lbl_followup: 'Nachverfolgung', action_items: 'Aufgaben',
+        th_owner: 'Verantwortlich', th_task: 'Aufgabe', th_due: 'Fällig', th_priority: 'Priorität',
+        lbl_moments: 'Momente', timeline: 'Zeitstrahl',
+        transcript_excerpt: 'Transkript (Auszug)',
+        footer: 'Ergo Meet · Vertrauliches Arbeitsdokument',
+        kpi_ergo_since: 'ERGO seit',
+      },
+      en: {
+        brand: 'ERGO · Meeting Intelligence',
+        theme_light: 'Light', theme_dark: 'Dark',
+        lbl_overview: 'Overview', summary: 'Summary',
+        lbl_focus: 'Focus', key_takeaways: 'Key takeaways',
+        lbl_distribution: 'Distribution', topics: 'Topics',
+        lbl_conversation: 'Conversation', speaking_time: 'Speaking time',
+        lbl_followup: 'Follow-up', action_items: 'Action items',
+        th_owner: 'Owner', th_task: 'Task', th_due: 'Due', th_priority: 'Priority',
+        lbl_moments: 'Moments', timeline: 'Timeline',
+        transcript_excerpt: 'Transcript excerpt',
+        footer: 'Ergo Meet · Confidential working document',
+        kpi_ergo_since: 'ERGO since',
+      },
+      tr: {
+        brand: 'ERGO · Toplantı özeti',
+        theme_light: 'Açık', theme_dark: 'Koyu',
+        lbl_overview: 'Genel bakış', summary: 'Özet',
+        lbl_focus: 'Odak', key_takeaways: 'Önemli çıkarımlar',
+        lbl_distribution: 'Dağılım', topics: 'Konular',
+        lbl_conversation: 'Konuşma', speaking_time: 'Konuşma süresi',
+        lbl_followup: 'Takip', action_items: 'Aksiyonlar',
+        th_owner: 'Sorumlu', th_task: 'Görev', th_due: 'Son tarih', th_priority: 'Öncelik',
+        lbl_moments: 'Anlar', timeline: 'Zaman çizelgesi',
+        transcript_excerpt: 'Transkript özeti',
+        footer: 'Ergo Meet · Gizli çalışma belgesi',
+        kpi_ergo_since: 'ERGO başlangıç',
+      },
+    };
+
+    function ergomeetApplyLang(lang) {
+      const pack = ERGOMEET_I18N[lang] || ERGOMEET_I18N.en;
+      document.documentElement.lang = lang;
+      localStorage.setItem('ergomeet-lang', lang);
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const k = el.getAttribute('data-i18n');
+        if (pack[k]) el.textContent = pack[k];
+      });
+      document.querySelectorAll('[data-i18n-kpi]').forEach((el) => {
+        const k = el.getAttribute('data-i18n-kpi');
+        if (pack[k]) el.textContent = pack[k];
+      });
+      document.querySelectorAll('[data-i18n-open]').forEach((el) => {
+        if (pack.open_recording) el.textContent = pack.open_recording;
+      });
+      const sel = document.getElementById('langSelect');
+      if (sel && sel.value !== lang) sel.value = lang;
+      if (window.ergomeetUpdateThemeLabel) window.ergomeetUpdateThemeLabel();
+    }
+
+    (function langSetup() {
+      const sel = document.getElementById('langSelect');
+      const saved = localStorage.getItem('ergomeet-lang');
+      const browser = (navigator.language || 'en').slice(0, 2);
+      const initial = (saved && ERGOMEET_I18N[saved]) ? saved : (ERGOMEET_I18N[browser] ? browser : 'de');
+      ergomeetApplyLang(initial);
+      sel?.addEventListener('change', () => ergomeetApplyLang(sel.value));
+    })();
+
+    (function themeSetup() {
+      const KEY = 'ergomeet-theme';
+      const root = document.documentElement;
+      const btn = document.getElementById('themeToggle');
+      const label = document.getElementById('themeToggleLabel');
+      function themeLabelKey() {
+        return root.getAttribute('data-theme') === 'dark' ? 'theme_light' : 'theme_dark';
+      }
+      window.ergomeetUpdateThemeLabel = function () {
+        if (!label) return;
+        const lang = localStorage.getItem('ergomeet-lang') || 'de';
+        const pack = ERGOMEET_I18N[lang] || ERGOMEET_I18N.en;
+        label.setAttribute('data-i18n', themeLabelKey());
+        label.textContent = pack[themeLabelKey()] || label.textContent;
+      };
+      function chartTheme() {
+        const light = root.getAttribute('data-theme') === 'light';
+        Chart.defaults.color = light ? '#5a6275' : '#8b93a8';
+        Chart.defaults.borderColor = light ? 'rgba(28,36,56,0.1)' : 'rgba(201,169,98,0.15)';
+        return light;
+      }
+      function applyTheme(t) {
+        root.setAttribute('data-theme', t);
+        localStorage.setItem(KEY, t);
+        window.ergomeetUpdateThemeLabel();
+        chartTheme();
+        (window.__ergoCharts || []).forEach((c) => {
+          const light = root.getAttribute('data-theme') === 'light';
+          if (c.options.scales?.x?.grid) c.options.scales.x.grid.color = light ? 'rgba(28,36,56,0.08)' : 'rgba(255,255,255,0.05)';
+          c.update();
+        });
+      }
+      const saved = localStorage.getItem(KEY);
+      const prefers = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      applyTheme(saved || prefers);
+      btn?.addEventListener('click', () => {
+        applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+      });
+      window.ergomeetApplyChartTheme = chartTheme;
+    })();
+
+    function ergomeetChartDefaults() {
+      const light = document.documentElement.getAttribute('data-theme') === 'light';
+      Chart.defaults.color = light ? '#5a6275' : '#8b93a8';
+      Chart.defaults.borderColor = light ? 'rgba(28,36,56,0.1)' : 'rgba(201,169,98,0.15)';
+      return light;
+    }
+    ergomeetChartDefaults();
+
+    const topics = [{"label": "Zahlen / KPIs", "weight": 79.6}, {"label": "Kunden / Vertrieb", "weight": 12.4}, {"label": "Prozesse / Tools", "weight": 4.9}, {"label": "Rente / Vorsorge", "weight": 2.2}, {"label": "Team / F\u00fchrung", "weight": 0.9}, {"label": "Karriere", "weight": 0.1}];
+    const speakers = [{"name": "Yash Bora", "words": 16186, "pct": 100.0}, {"name": "Speaker 2", "words": 2, "pct": 0.0}];
+    const goldPalette = ['#c9a962','#e8d5a3','#8b7355','#d4bc7a','#6b7c9e','#a89878'];
+    window.__ergoCharts = window.__ergoCharts || [];
+    window.__ergoCharts.push(new Chart(document.getElementById('topics'), {
+      type: 'doughnut',
+      data: {
+        labels: topics.map(t => t.label),
+        datasets: [{ data: topics.map(t => t.weight), backgroundColor: goldPalette, borderWidth: 0 }]
+      },
+      options: {
+        cutout: '62%',
+        plugins: { legend: { position: 'bottom', labels: { padding: 14, usePointStyle: true } } }
+      }
+    }));
+    if (speakers.length) {
+      const light = document.documentElement.getAttribute('data-theme') === 'light';
+      window.__ergoCharts.push(new Chart(document.getElementById('speakers'), {
+        type: 'bar',
+        data: {
+          labels: speakers.map(s => s.name),
+          datasets: [{ data: speakers.map(s => s.pct), backgroundColor: 'rgba(201,169,98,0.75)', borderRadius: 6 }]
+        },
+        options: {
+          indexAxis: 'y',
+          scales: {
+            x: { max: 100, grid: { color: light ? 'rgba(28,36,56,0.08)' : 'rgba(255,255,255,0.05)' } },
+            y: { grid: { display: false } }
+          },
+          plugins: { legend: { display: false } }
+        }
+      }));
+    }
+  </script>
+</body>
+</html>
