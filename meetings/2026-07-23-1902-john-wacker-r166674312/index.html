@@ -397,6 +397,13 @@
       letter-spacing: 0.02em;
     }
     .exec-h:first-child { margin-top: 0; }
+    .exec-h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin: 16px 0 8px;
+    }
     .exec-p {
       margin: 0 0 12px;
       color: var(--text-soft);
@@ -410,6 +417,31 @@
       padding-left: 4px;
     }
     .exec-ul li::marker { color: var(--gold); }
+    .exec-ul-nested {
+      margin: 8px 0 4px;
+      padding-left: 1.1rem;
+    }
+    .exec-ul-nested li { margin-bottom: 6px; font-size: 0.92em; }
+    .enhanced-summary { max-width: 52rem; }
+    .end-lists .end-ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+    .end-lists .end-ul li {
+      margin-bottom: 12px;
+      color: var(--text-body);
+      line-height: 1.55;
+    }
+    .end-lists .end-ul li::marker { color: var(--gold); }
+    .todos-ul .todo-task { display: inline; }
+    .todos-ul .todo-meta {
+      display: block;
+      margin-top: 4px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .ideas-ul li { color: var(--text-soft); }
     .exec strong { color: var(--cream); font-weight: 600; }
     .muted { color: var(--muted); }
     .insights ul { margin: 0; padding-left: 1.1rem; }
@@ -530,31 +562,46 @@
     <nav class="toc" id="sectionToc" aria-label="Sections"></nav>
     <div class="stack" id="reportStack">
       <div class="kpi-row block" id="kpiRow" data-block="kpis"><div class="kpi"><div class="kpi-v">5.000</div><div class="kpi-l">Betrag</div></div><div class="kpi"><div class="kpi-v">4.500</div><div class="kpi-l">Betrag</div></div><div class="kpi"><div class="kpi-v">200.000</div><div class="kpi-l">Betrag</div></div><div class="kpi"><div class="kpi-v">270.000</div><div class="kpi-l">Betrag</div></div></div>
-      <section class="section block" id="summary" data-block="summary"><div class="section-label" data-i18n="lbl_overview">Overview</div><h2 data-i18n="summary">Summary</h2><div class="exec exec-rich"><h3 class="exec-h">Zweck des Meetings</h3>
+      <section class="section block" id="summary" data-block="summary"><div class="section-label" data-i18n="lbl_overview">Overview</div><h2 data-i18n="summary_enhanced">Enhanced summary</h2><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Zweck des Meetings</h3>
 <p class="exec-p">Motivation und Strategien für den Erfolg in der Finanzberatung.</p>
 <h3 class="exec-h">Wichtigste Erkenntnisse</h3>
 <ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
 <li><strong>Definiere dein „Warum“:</strong> Dein persönliches „Warum“ ist dein Anker in schwierigen Zeiten. Es muss spezifisch, messbar und emotional überzeugend sein, um dich durchzuhalten.</li>
 <li><strong>Verstehe die drei Motive:</strong> Erkenne die drei Kernmotive (Leistung, Macht, Anschluss), um dich selbst zu verstehen, Kunden anzusprechen und ein ausgewogenes Team aufzubauen.</li>
 <li><strong>Setze die Grundlagen um:</strong> Erfolg erfordert Bildung, Erfahrung und Disziplin. Wende das Gelernte konsequent an, um Kompetenz aufzubauen und die Ergebnisse zu erzielen.</li>
 <li><strong>Wähle dein Umfeld bewusst:</strong> Dein Umfeld prägt dich. Umgib dich mit unterstützenden Menschen, die deine Ziele teilen, und meide negative Einflüsse.</li>
 </ul>
+</ul>
 <h3 class="exec-h">Themen</h3>
-<h3 class="exec-h">Dein „Warum“ definieren</h3>
+<h4 class="exec-h2">Dein „Warum“ definieren</h4>
 <ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
 <li>Dein „Warum“ ist der zentrale Motivator, der dich durch die unvermeidlichen Herausforderungen und Zweifel trägt.</li>
 <li><strong>John Wackers „Warum“:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
 <li>Keine Genehmigung für Urlaub beantragen müssen.</li>
 <li>Ein messbares monatliches Einkommen von 5.000 €.</li>
 <li>Freiheit über den Tagesablauf.</li>
 <li>Den täglichen Pendelverkehr vermeiden.</li>
+</ul>
+</ul>
 <li><strong>Beispiele für Kundenimpact:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
 <li>Ein Paar, das 169 €/Monat investiert, erzielte 4.500 € Gewinn in einem Jahr und projizierte 200.000 € für den Ruhestand.</li>
 <li>Ein Paar im Ruhestand investierte 60 €/Monat über Jahrzehnte und erhielt 270.000 €, was einen Bungalow, eine Weltreise und finanzielle Sicherheit ermöglichte.</li>
 </ul>
-<h3 class="exec-h">Dein Traumleben visualisieren</h3>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">Dein Traumleben visualisieren</h4>
 <ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
 <li>Bewerte deine aktuelle Situation (1–10) und visualisiere dein Traumleben in sechs Bereichen:</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
 <li><strong>Finanzen:</strong> Definiere spezifische, messbare Ziele.</li>
 <li><strong>Persönlichkeit:</strong> Werde ein Vorbild für Resilienz und Dankbarkeit.</li>
 <li><strong>Hobbys &amp; Freizeit:</strong> Entwickle Leidenschaften außerhalb der Arbeit.</li>
@@ -562,51 +609,58 @@
 <li><strong>Karriere:</strong> Definiere deine berufliche Vision.</li>
 <li><strong>Gesundheit:</strong> Erkenne den direkten Zusammenhang zwischen Finanzen und Gesundheit (z. B. Zugang zu Privatärzten).</li>
 </ul>
-<h3 class="exec-h">Die drei Kernmotive verstehen</h3>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">Die drei Kernmotive verstehen</h4>
 <ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
 <li>Motive sind tief verwurzelte, aus der Kindheit stammende Antreiber. Das Erkennen deines eigenen Motivs und des deiner Kunden ist entscheidend für die Kommunikation und den Erfolg.</li>
 <li><strong>1. Leistung (Leistungsmotiv):</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
 <li><strong>Antreiber:</strong> Struktur, Organisation, Fakten, Zahlen, Beherrschung.</li>
 <li><strong>Kundenansprache:</strong> Biete detaillierte Analysen und Excel-Tabellen.</li>
+</ul>
+</ul>
 <li><strong>2. Macht (Machtmotiv):</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
 <li><strong>Antreiber:</strong> Status, Einfluss, Anerkennung, Wettbewerb.</li>
 <li><strong>Kundenansprache:</strong> Positioniere dich auf Augenhöhe und erkenne ihren Erfolg an.</li>
+</ul>
+</ul>
 <li><strong>3. Anschluss (Anschlussmotiv):</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
 <li><strong>Antreiber:</strong> Beziehungen, Teamarbeit, Harmonie, anderen helfen.</li>
 <li><strong>Kundenansprache:</strong> Baue persönliche Beziehungen auf und betone den Mehrwert.</li>
 </ul>
-<h3 class="exec-h">Die Grundlagen des Erfolgs</h3>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">Die Grundlagen des Erfolgs</h4>
 <ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
 <li><strong>1. Bildung:</strong> Kunden kaufen *dich*, nicht das Unternehmen. Investiere in deine Kompetenz, um zum vertrauenswürdigen Berater zu werden.</li>
 <li><strong>2. Erfahrung:</strong> Erfolg ist das Ergebnis von Wiederholung.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
 <li><strong>Eisberg-Modell:</strong> Sichtbarer Erfolg ist nur die Spitze; die Basis sind Tausende von Stunden Training und Wiederholung.</li>
 <li><strong>100-Termine-Regel:</strong> Erwarte erst nach etwa 100 Terminen, dass du dich sicher fühlst.</li>
+</ul>
+</ul>
 <li><strong>3. Disziplin:</strong> Setze das Gelernte konsequent um.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
 <li><strong>Meeting-Teilnahme:</strong> Nimm aktiv teil, mache dir Notizen und wende das Gelernte an.</li>
 <li><strong>„Meeting-Touristen“:</strong> Vermeide es, passiver Teilnehmer zu sein; das ist eine Verschwendung deiner Zeit.</li>
 </ul>
-<h3 class="exec-h">Nächste Schritte</h3>
-<ul class="exec-ul">
-<li><strong>Alle Teilnehmer:</strong></li>
-<li>Definiere dein spezifisches, messbares „Warum“.</li>
-<li>Bewerte deine aktuelle Situation (1–10) und visualisiere dein Traumleben in den sechs Bereichen.</li>
-<li>Beginne mit der „Erfolgs-Tabelle“: Schreibe jeden Abend 3 Dinge auf, für die du dankbar bist, 3 Erfolge und 3 Dinge, die du verbessern kannst.</li>
-<li>Analysiere dein Umfeld und entferne negative Einflüsse.</li>
+</ul>
+</ul>
 </ul></div></section>
       
-      <section class="section insights block" id="takeaways" data-block="takeaways"><div class="section-label" data-i18n="lbl_focus">Focus</div><h2 data-i18n="key_takeaways">Key takeaways</h2><ul><li><strong>Definiere dein „Warum“:</strong> Dein persönliches „Warum“ ist dein Anker in schwierigen Zeiten. Es muss spezifisch, messbar und emotional überzeugend sein, um dich durchzuhalten.</li><li><strong>Verstehe die drei Motive:</strong> Erkenne die drei Kernmotive (Leistung, Macht, Anschluss), um dich selbst zu verstehen, Kunden anzusprechen und ein ausgewogenes Team aufzubauen.</li><li><strong>Setze die Grundlagen um:</strong> Erfolg erfordert Bildung, Erfahrung und Disziplin. Wende das Gelernte konsequent an, um Kompetenz aufzubauen und die Ergebnisse zu erzielen.</li><li><strong>Wähle dein Umfeld bewusst:</strong> Dein Umfeld prägt dich. Umgib dich mit unterstützenden Menschen, die deine Ziele teilen, und meide negative Einflüsse.</li><li>Dein „Warum“ ist der zentrale Motivator, der dich durch die unvermeidlichen Herausforderungen und Zweifel trägt.</li></ul></section>
       <div class="grid2 block" id="chartsGrid" data-block="charts"><section class="section chart-box" id="topicsWrap" data-block="topics"><div class="section-label" data-i18n="lbl_distribution">Distribution</div><h2 data-i18n="topics">Topics</h2><canvas id="topics"></canvas></section><section class="section chart-box" id="speakersWrap" data-block="speakers"><div class="section-label" data-i18n="lbl_conversation">Conversation</div><h2 data-i18n="speaking_time">Speaking time</h2><canvas id="speakers"></canvas></section></div>
-      <section class="section block" id="actions" data-block="actions"><div class="section-label" data-i18n="lbl_followup">Follow-up</div><h2 data-i18n="action_items">Action items</h2><table><thead><tr><th data-i18n="th_owner">Owner</th><th data-i18n="th_task">Task</th><th data-i18n="th_due">Due</th><th data-i18n="th_priority">Priority</th></tr></thead><tbody><tr>
-          <td>John Wacker</td>
-          <td>Write SMART financial freedom target; include monthly amount</td>
-          <td>—</td>
-          <td><div class="pbar"><span style="width:55%"></span></div></td>
-        </tr><tr>
-          <td>John Wacker</td>
-          <td>Write 3 gratitude, 3 wins, 3 improvements nightly</td>
-          <td>—</td>
-          <td><div class="pbar"><span style="width:55%"></span></div></td>
-        </tr></tbody></table></section>
       <section class="section block" id="timeline" data-block="timeline"><div class="section-label" data-i18n="lbl_moments">Moments</div><h2 data-i18n="timeline">Timeline</h2><div class="tl"><div class="tl-t">00:03:37</div><div class="tl-body"><div class="who">John Wacker</div><p>An dich spezieller als Tipp setzt dir ein smartes Ziel an, also es muss messbar sein.</p></div></div><div class="tl"><div class="tl-t">00:05:25</div><div class="tl-body"><div class="who">John Wacker</div><p>Und genau in dem Moment ist es wichtig, zu wissen, warum sind wir heute hier.</p></div></div><div class="tl"><div class="tl-t">00:05:52</div><div class="tl-body"><div class="who">John Wacker</div><p>Und ich saß auch in meinem Meeting damals in der Stufe 1 und habe überlegt, warum bin ich hier?</p></div></div><div class="tl"><div class="tl-t">00:07:37</div><div class="tl-body"><div class="who">John Wacker</div><p>Und das ist mir extrem wichtig für euch, weil jeder hier in diesem Raum hat die Möglichkeit, was richtig, richtig groß a…</p></div></div><div class="tl"><div class="tl-t">00:08:10</div><div class="tl-body"><div class="who">John Wacker</div><p>Und man muss halt sagen, gerade am Anfang, in der Stufe 1, ist Zweifeln oder vor Herausforderungen stehen wahrscheinlich…</p></div></div><div class="tl"><div class="tl-t">00:10:50</div><div class="tl-body"><div class="who">John Wacker</div><p>Wenn ihr mich fragt, warum ich unseren Job so wichtig finde, ganz ehrlich, ich muss nur an das von gestern denken.</p></div></div><div class="tl"><div class="tl-t">00:14:22</div><div class="tl-body"><div class="who">John Wacker</div><p>Das ist immer wieder amüsam, der lehrt es bis auf die Knochen bei mir.</p></div></div><div class="tl"><div class="tl-t">00:19:13</div><div class="tl-body"><div class="who">John Wacker</div><p>Und mich hat es voll lange noch beschäftigt, wenn wir ehrlich sind, jeder hier in diesem Raum hat ein Problem, innerhalb…</p></div></div></section>
       <details class="section block" id="transcript" data-block="transcript"><summary data-i18n="transcript_excerpt">Transcript excerpt</summary><pre>[00:00:00] John Wacker: Ein schönes Meeting finde ich, dass ich euch heute mitnehme und euch so ein bisschen zeigen möchte, warum ich nicht eigentlich, oder warum eigentlich, warum seid ihr gerade genau im richtigen Moment, 
 [00:00:29] John Wacker: Bevor ich das mache, ich gerne mal eine Aufgabe an euch geben, das dauert in zwei Minuten, das war das Thema, kurz drei, vier Minuten aufschreiben, warum ihr gerade euch nicht geht.
@@ -648,6 +702,8 @@
 [00:03:48] John Wacker: Also, heißt Eine wo jetzt sage, wenn man ein schreibt, hat man eine Zahl, mit der euch finanziell frei fühlt, dann ihr wahrscheinlich alle nach der Zahl zu stehen.
 [00:03:56] John Wacker: Das heißt, finanziell frei ist etwas, was, ich glaube, ich 100 Leute im Raum sitzen und fragen, wer von euch finanziell frei sein kann, wo ihr dann meldet.
 [00:04:02] John Wacker: Die Frage ist aber, was bedeutet das im Summe?</pre></details>
+      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Write SMART financial freedom target; include monthly amount</span><span class="todo-meta">John Wacker</span></li><li><span class="todo-task">Write 3 gratitude, 3 wins, 3 improvements nightly</span><span class="todo-meta">John Wacker</span></li><li><span class="todo-task">Definiere dein spezifisches, messbares „Warum“.</span></li><li><span class="todo-task">Bewerte deine aktuelle Situation (1–10) und visualisiere dein Traumleben in den sechs Bereichen.</span></li><li><span class="todo-task">Beginne mit der „Erfolgs-Tabelle“: Schreibe jeden Abend 3 Dinge auf, für die du dankbar bist, 3 Erfolge und 3 Dinge, die du verbessern kannst.</span></li><li><span class="todo-task">Analysiere dein Umfeld und entferne negative Einflüsse.</span></li></ul></section>
+      <section class="section block end-lists" id="ideas" data-block="ideas"><div class="section-label" data-i18n="lbl_ideas">Capture</div><h2 data-i18n="new_ideas">New ideas</h2><ul class="end-ul ideas-ul"><li><strong>Definiere dein „Warum“:</strong> Dein persönliches „Warum“ ist dein Anker in schwierigen Zeiten. Es muss spezifisch, messbar und emotional überzeugend sein, um dich durchzuhalten.</li><li><strong>Verstehe die drei Motive:</strong> Erkenne die drei Kernmotive (Leistung, Macht, Anschluss), um dich selbst zu verstehen, Kunden anzusprechen und ein ausgewogenes Team aufzubauen.</li><li><strong>Setze die Grundlagen um:</strong> Erfolg erfordert Bildung, Erfahrung und Disziplin. Wende das Gelernte konsequent an, um Kompetenz aufzubauen und die Ergebnisse zu erzielen.</li><li><strong>Wähle dein Umfeld bewusst:</strong> Dein Umfeld prägt dich. Umgib dich mit unterstützenden Menschen, die deine Ziele teilen, und meide negative Einflüsse.</li></ul></section>
     </div>
 
     <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
@@ -657,12 +713,14 @@
       de: {
         brand: 'ERGO · Meeting Intelligence',
         theme_light: 'Hell', theme_dark: 'Dunkel',
-        lbl_overview: 'Überblick', summary: 'Zusammenfassung',
+        lbl_overview: 'Überblick', summary: 'Zusammenfassung', summary_enhanced: 'Enhanced Summary',
         lbl_notes: 'Notizen', meeting_notes: 'Meeting-Notizen',
         lbl_focus: 'Fokus', key_takeaways: 'Kernaussagen',
         lbl_distribution: 'Verteilung', topics: 'Themen',
         lbl_conversation: 'Gespräch', speaking_time: 'Sprechzeit',
         lbl_followup: 'Nachverfolgung', action_items: 'Aufgaben',
+        lbl_todos: 'Abschluss', todos: 'Todos',
+        lbl_ideas: 'Festhalten', new_ideas: 'Neue Ideen',
         th_owner: 'Verantwortlich', th_task: 'Aufgabe', th_due: 'Fällig', th_priority: 'Priorität',
         lbl_moments: 'Momente', timeline: 'Zeitstrahl',
         transcript_excerpt: 'Transkript (Auszug)',
@@ -672,12 +730,14 @@
       en: {
         brand: 'ERGO · Meeting Intelligence',
         theme_light: 'Light', theme_dark: 'Dark',
-        lbl_overview: 'Overview', summary: 'Summary',
+        lbl_overview: 'Overview', summary: 'Summary', summary_enhanced: 'Enhanced summary',
         lbl_notes: 'Notes', meeting_notes: 'Meeting notes',
         lbl_focus: 'Focus', key_takeaways: 'Key takeaways',
         lbl_distribution: 'Distribution', topics: 'Topics',
         lbl_conversation: 'Conversation', speaking_time: 'Speaking time',
         lbl_followup: 'Follow-up', action_items: 'Action items',
+        lbl_todos: 'Close-out', todos: 'Todos',
+        lbl_ideas: 'Capture', new_ideas: 'New ideas',
         th_owner: 'Owner', th_task: 'Task', th_due: 'Due', th_priority: 'Priority',
         lbl_moments: 'Moments', timeline: 'Timeline',
         transcript_excerpt: 'Transcript excerpt',
@@ -687,12 +747,14 @@
       tr: {
         brand: 'ERGO · Toplantı özeti',
         theme_light: 'Açık', theme_dark: 'Koyu',
-        lbl_overview: 'Genel bakış', summary: 'Özet',
+        lbl_overview: 'Genel bakış', summary: 'Özet', summary_enhanced: 'Gelişmiş özet',
         lbl_notes: 'Notlar', meeting_notes: 'Toplantı notları',
         lbl_focus: 'Odak', key_takeaways: 'Önemli çıkarımlar',
         lbl_distribution: 'Dağılım', topics: 'Konular',
         lbl_conversation: 'Konuşma', speaking_time: 'Konuşma süresi',
         lbl_followup: 'Takip', action_items: 'Aksiyonlar',
+        lbl_todos: 'Kapanış', todos: 'Yapılacaklar',
+        lbl_ideas: 'Kaydet', new_ideas: 'Yeni fikirler',
         th_owner: 'Sorumlu', th_task: 'Görev', th_due: 'Son tarih', th_priority: 'Öncelik',
         lbl_moments: 'Anlar', timeline: 'Zaman çizelgesi',
         transcript_excerpt: 'Transkript özeti',
