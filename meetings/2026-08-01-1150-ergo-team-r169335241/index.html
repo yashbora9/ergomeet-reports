@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Ergo Meet · 1 August 2026 · ERGO Team</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    :root,
+    [data-theme="dark"] {
+      --ink: #0a0f1a;
+      --ink-soft: #121a2e;
+      --surface: rgba(255, 252, 247, 0.04);
+      --surface-hover: rgba(255, 252, 247, 0.07);
+      --gold: #c9a962;
+      --gold-light: #e8d5a3;
+      --gold-dim: rgba(201, 169, 98, 0.35);
+      --cream: #f7f3eb;
+      --muted: #8b93a8;
+      --line: rgba(201, 169, 98, 0.22);
+      --radius: 16px;
+      --topbar-bg: rgba(10, 15, 26, 0.92);
+      --text-body: rgba(247, 243, 235, 0.9);
+      --text-soft: rgba(247, 243, 235, 0.88);
+      --row-border: rgba(255, 255, 255, 0.06);
+      --grid-line: rgba(255, 255, 255, 0.05);
+      --bg-glow-a: rgba(201, 169, 98, 0.12);
+      --bg-glow-b: rgba(90, 120, 180, 0.08);
+      --btn-fathom-text: #0a0f1a;
+    }
+    [data-theme="light"] {
+      --ink: #f0ebe3;
+      --ink-soft: #ffffff;
+      --surface: rgba(255, 255, 255, 0.72);
+      --surface-hover: rgba(255, 255, 255, 0.95);
+      --cream: #1c2438;
+      --muted: #5a6275;
+      --line: rgba(160, 130, 70, 0.28);
+      --topbar-bg: rgba(240, 235, 227, 0.94);
+      --text-body: rgba(28, 36, 56, 0.92);
+      --text-soft: rgba(28, 36, 56, 0.85);
+      --row-border: rgba(28, 36, 56, 0.08);
+      --grid-line: rgba(28, 36, 56, 0.08);
+      --bg-glow-a: rgba(201, 169, 98, 0.08);
+      --bg-glow-b: rgba(90, 120, 180, 0.05);
+      --btn-fathom-text: #1c2438;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Outfit', system-ui, sans-serif;
+      font-weight: 400;
+      background: var(--ink);
+      color: var(--cream);
+      line-height: 1.55;
+      min-height: 100vh;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -10%, var(--bg-glow-a), transparent),
+        radial-gradient(ellipse 60% 40% at 100% 100%, var(--bg-glow-b), transparent);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .shell { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 0 24px 64px; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--topbar-bg);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .topbar-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 16px;
+    }
+    .topbar-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .lang-select {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--cream);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+    }
+    .lang-select:hover { background: var(--surface-hover); }
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--cream);
+      padding: 8px 14px 8px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .theme-toggle:hover { background: var(--surface-hover); }
+    .theme-toggle .icon-sun,
+    .theme-toggle .icon-moon { font-size: 1rem; line-height: 1; }
+    [data-theme="dark"] .theme-toggle .icon-sun { display: inline; }
+    [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+    [data-theme="light"] .theme-toggle .icon-sun { display: none; }
+    [data-theme="light"] .theme-toggle .icon-moon { display: inline; }
+    .hero {
+      padding: 48px 0 40px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 32px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+    .hero-grid.hero-grid--portrait {
+      grid-template-columns: minmax(0, 1fr) 220px;
+      gap: 40px;
+    }
+    @media (max-width: 820px) {
+      .hero-grid.hero-grid--portrait {
+        grid-template-columns: 1fr;
+      }
+      .hero-speaker { justify-self: center; }
+    }
+    .hero-copy { min-width: 0; }
+    .hero-grid.hero-grid--portrait .hero-speaker {
+      justify-self: end;
+      width: 220px;
+      max-width: 100%;
+    }
+    .speaker-portrait-frame {
+      margin: 0;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 3px;
+      border-radius: 22px;
+      background: linear-gradient(145deg, var(--gold-light), var(--gold) 45%, rgba(139, 115, 85, 0.9));
+      box-shadow:
+        0 24px 48px rgba(0, 0, 0, 0.28),
+        0 0 0 1px var(--line);
+    }
+    [data-theme="light"] .speaker-portrait-frame {
+      box-shadow:
+        0 20px 40px rgba(28, 36, 56, 0.12),
+        0 0 0 1px var(--line);
+    }
+    .speaker-portrait-inner {
+      border-radius: 19px;
+      overflow: hidden;
+      background: #161d30;
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1;
+    }
+    .speaker-portrait {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 44% 14%;
+      display: block;
+    }
+    .speaker-portrait-meta {
+      text-align: center;
+      padding: 14px 8px 4px;
+      background: transparent;
+    }
+    .speaker-portrait-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--cream);
+      margin: 0 0 4px;
+      letter-spacing: 0.03em;
+    }
+    .speaker-portrait-role {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0;
+    }
+    .brand {
+      font-size: 0.7rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.75rem, 4vw, 2.65rem);
+      font-weight: 500;
+      line-height: 1.2;
+      margin: 0;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+    .hero-sub {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      align-items: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--gold-light);
+      font-size: 0.8rem;
+    }
+    .btn-fathom {
+      color: var(--btn-fathom-text);
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .btn-fathom:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(201, 169, 98, 0.25); }
+    .btn-fathom-secondary {
+      color: var(--gold-light);
+      background: transparent;
+      border: 1px solid var(--line);
+      box-shadow: none;
+    }
+    .btn-fathom-secondary:hover {
+      background: var(--surface-hover);
+      box-shadow: none;
+    }
+    .part-block { margin-bottom: 28px; }
+    .part-block:last-child { margin-bottom: 0; }
+    .part-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      margin: 0 0 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+      letter-spacing: 0.04em;
+    }
+    /* KPI strip — only rendered when builder injects cards; never show empty shell */
+    .kpi-row {
+      display: none;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 14px;
+      margin: 0 0 28px;
+    }
+    .kpi-row:has(.kpi) {
+      display: grid;
+    }
+    .kpi-row:empty,
+    .kpi-row.is-empty {
+      display: none !important;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      min-height: 0;
+    }
+    .kpi {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px 16px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+    .kpi-v {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      line-height: 1.1;
+    }
+    .kpi-l {
+      margin-top: 6px;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+    /* Dynamic stack: sections hide when empty; no blank cards under hero */
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .stack > :empty,
+    .block.is-empty,
+    .block:has(.exec:empty):not(:has(.exec *:not(:empty))),
+    .block:has(ul:empty),
+    .block:has(tbody:empty) {
+      display: none !important;
+    }
+    .toc {
+      display: none;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 8px;
+      padding: 0;
+      list-style: none;
+    }
+    .toc:has(a) { display: flex; }
+    .toc a {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--gold-light);
+      text-decoration: none;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .toc a:hover { background: var(--surface-hover); }
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px 26px;
+      margin-bottom: 0;
+      backdrop-filter: blur(6px);
+    }
+    .section.is-empty { display: none !important; }
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+    .section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      margin: 0 0 16px;
+      color: var(--cream);
+    }
+    .exec {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      line-height: 1.65;
+    }
+    .exec-h {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      margin: 22px 0 10px;
+      letter-spacing: 0.02em;
+    }
+    .exec-h:first-child { margin-top: 0; }
+    .exec-h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin: 16px 0 8px;
+    }
+    .exec-p {
+      margin: 0 0 12px;
+      color: var(--text-soft);
+    }
+    .exec-ul {
+      margin: 0 0 16px;
+      padding-left: 1.25rem;
+    }
+    .exec-ul li {
+      margin-bottom: 10px;
+      padding-left: 4px;
+    }
+    .exec-ul li::marker { color: var(--gold); }
+    .exec-ul-nested {
+      margin: 8px 0 4px;
+      padding-left: 1.1rem;
+    }
+    .exec-ul-nested li { margin-bottom: 6px; font-size: 0.92em; }
+    .enhanced-summary { max-width: 52rem; }
+    .end-lists .end-ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+    .end-lists .end-ul li {
+      margin-bottom: 12px;
+      color: var(--text-body);
+      line-height: 1.55;
+    }
+    .end-lists .end-ul li::marker { color: var(--gold); }
+    .todos-ul .todo-task { display: inline; }
+    .todos-ul .todo-meta {
+      display: block;
+      margin-top: 4px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .ideas-ul li { color: var(--text-soft); }
+    .exec strong { color: var(--cream); font-weight: 600; }
+    .muted { color: var(--muted); }
+    .insights ul { margin: 0; padding-left: 1.1rem; }
+    .insights li { margin-bottom: 10px; color: var(--text-body); }
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 0;
+    }
+    .grid2.is-empty { display: none !important; }
+    .grid2.grid2--single { grid-template-columns: 1fr; }
+    @media (max-width: 768px) { .grid2 { grid-template-columns: 1fr; } }
+    .chart-box { min-height: 240px; }
+    .chart-box.is-empty { display: none !important; }
+    canvas { max-height: 220px !important; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    thead th {
+      text-align: left;
+      padding: 12px 10px;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 1px solid var(--line);
+      font-weight: 600;
+    }
+    tbody td {
+      padding: 14px 10px;
+      border-bottom: 1px solid var(--row-border);
+      vertical-align: top;
+    }
+    tbody tr:hover { background: var(--surface-hover); }
+    .pbar {
+      height: 4px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 4px;
+      overflow: hidden;
+      max-width: 100px;
+    }
+    .pbar span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    }
+    .tl {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 12px 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--row-border);
+    }
+    .tl:last-child { border-bottom: none; }
+    .tl-t { font-size: 0.75rem; color: var(--gold); font-weight: 500; font-variant-numeric: tabular-nums; }
+    .tl-body p { margin: 0; font-size: 0.9rem; }
+    .tl-body .who { font-size: 0.75rem; color: var(--muted); margin-bottom: 4px; }
+    details.section { cursor: pointer; }
+    details summary {
+      list-style: none;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--gold-light);
+    }
+    details summary::-webkit-details-marker { display: none; }
+    pre {
+      margin-top: 16px;
+      white-space: pre-wrap;
+      font-size: 0.78rem;
+      color: var(--muted);
+      max-height: 280px;
+      overflow: auto;
+      line-height: 1.45;
+    }
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-controls">
+        <select id="langSelect" class="lang-select" aria-label="Language">
+          <option value="de">DE</option>
+          <option value="en">EN</option>
+          <option value="tr">TR</option>
+        </select>
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="icon-sun" aria-hidden="true">☀</span>
+          <span class="icon-moon" aria-hidden="true">☾</span>
+          <span id="themeToggleLabel" data-i18n="theme_light">Light</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="shell">
+    <header class="hero">
+      <div class="hero-grid ">
+        <div class="hero-copy">
+          <div class="brand" data-i18n="brand">ERGO · Meeting Intelligence</div>
+          <h1>Ergo Meet · 1 August 2026 · ERGO Team</h1>
+          <div class="hero-sub">
+            <span class="pill">01.08.2026 11:50 CEST</span>
+            
+            
+          </div>
+        </div>
+        
+      </div>
+    </header>
+
+    <!-- No empty shell under the heading: blocks only appear when builder marks them present -->
+    <nav class="toc" id="sectionToc" aria-label="Sections"></nav>
+    <div class="stack" id="reportStack">
+      <div class="kpi-row block" id="kpiRow" data-block="kpis"><div class="kpi"><div class="kpi-v">2.000</div><div class="kpi-l">Betrag</div></div><div class="kpi"><div class="kpi-v">100</div><div class="kpi-l">Prozent</div></div><div class="kpi"><div class="kpi-v">01</div><div class="kpi-l">Prozent</div></div><div class="kpi"><div class="kpi-v">30</div><div class="kpi-l">Prozent</div></div></div>
+      <section class="section block" id="summary" data-block="summary"><div class="section-label" data-i18n="lbl_overview">Overview</div><h2 data-i18n="summary_enhanced">Enhanced summary</h2><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Zweck des Meetings</h3>
+<p class="exec-p">ERGO Team teilt seine Strategien für Vertrieb, Recruiting und den Aufstieg zur Stufe 4.</p>
+<h3 class="exec-h">Wichtigste Erkenntnisse</h3>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Strategische Neuausrichtung:</strong> ERGO Teams Aufstieg zur Stufe 4 wurde durch eine strategische Neuausrichtung ausgelöst, nachdem der Umsatz auf 11.000 Einheiten gesunken war. Er finanzierte eine 3.600-€-Reise, um die Energie zurückzugewinnen, die er für den Erfolg brauchte.</li>
+<li><strong>Zielgruppen-Fokus:</strong> Er konzentriert sich auf drei Zielgruppen – Mütter, Selbstständige und Steuerberater –, die er aufgrund ihrer hohen Affinität und ihres hohen Potenzials als „Crescendo“ bezeichnet.</li>
+<li><strong>Recruiting-Strategie:</strong> ERGO Team nutzt eine „Herunterschrauben“-Strategie, um den Selbstwert von Frauen zu stärken, indem er seine eigenen Herausforderungen hervorhebt und so ihre Überzeugung stärkt, dass sie es schaffen können.</li>
+<li><strong>Multichannel-Lead-Generierung:</strong> Er nutzt eine Multichannel-Strategie, die Social Media (TikTok), Messen, Networking und Empfehlungen kombiniert, um ein konstantes Lead-Volumen zu sichern.</li>
+</ul>
+</ul>
+<h3 class="exec-h">Themen</h3>
+<h4 class="exec-h2">Strategische Neuausrichtung</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>ERGO Teams Umsatz fiel auf 11.000 Einheiten, nachdem das Hamburger Büro geschlossen wurde und die Motivation sank.</li>
+<li>Er finanzierte eine 3.600-€-Reise, um die Energie zurückzugewinnen, die er für den Erfolg brauchte.</li>
+<li>Er nutzte die Reise strategisch, um Kundentermine zu bündeln und so die Kosten zu rechtfertigen und die Sichtbarkeit in den sozialen Medien zu erhöhen.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Zielgruppen-Fokus</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Mütter:</strong> Eine große, leicht zu erreichende Zielgruppe (1,7 Mio. Alleinerziehende in DE), die sich gut auf WhatsApp ansprechen lässt.</li>
+<li><strong>Selbstständige:</strong> Eine Zielgruppe von 2 Mio. Menschen, die Rückschläge und Hater verstehen, was eine hohe Affinität schafft.</li>
+<li><strong>Steuerberater:</strong> Eine „Crescendo“-Zielgruppe mit hohem Potenzial. Zwei Neueinstellungen aus dieser Gruppe schlossen schnell 800 bzw. 600 Einheiten ab.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Recruiting-Strategie</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>„Herunterschrauben“-Strategie:</strong> ERGO Team hebt seine eigenen Herausforderungen hervor (z. B. schlechte Sprachkenntnisse), um den Selbstwert von Frauen zu stärken und ihnen zu zeigen, dass sie es schaffen können.</li>
+<li><strong>Beweise schaffen:</strong> Er nutzt die Erfolge von Teammitgliedern als Social Proof, um andere zu rekrutieren.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Beispiel:</strong> Eine 60-jährige Mutter erreichte Stufe 3. ERGO Team nutzte dies, um eine alleinerziehende Mutter zu rekrutieren, die dann Stufe 2 erreichte.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">Vertriebsstrategie für Selbstständige</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Marktpotenzial:</strong> Die Zielgruppe der Selbstständigen ist riesig (2 Mio.). ERGO Teams Ziel für Stufe 4 – 100 neue Selbstständige in 6 Monaten – entspricht nur 0,005 % dieses Marktes.</li>
+<li><strong>Produkt-Pitch:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Basis:</strong> Gewerbehaftpflicht- und Inhaltsversicherungen.</li>
+<li><strong>Upsell:</strong> Private Versicherungen.</li>
+<li><strong>„No-Brainer“:</strong> BAV (betriebliche Altersvorsorge) und U-Kasse. Viele Selbstständige kennen die BAV nicht, was ein großes ungenutztes Potenzial darstellt.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">Multichannel-Lead-Generierung</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Social Media (TikTok):</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Ergebnis:</strong> 2.000 € zusätzliches Einkommen in 6 Monaten.</li>
+<li><strong>Strategie:</strong> Authentische Videos zu Business-Themen posten.</li>
+<li><strong>Erfolg:</strong> Ein Video zum Thema „Strukturvertrieb“ ging viral und führte zu 20 Makleranfragen.</li>
+</ul>
+</ul>
+<li><strong>Messen:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Ergebnis:</strong> 20 hochwertige Leads (Immobilien-/Unternehmensinhaber).</li>
+</ul>
+</ul>
+<li><strong>Networking:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Beispiel:</strong> Ein Barkeeper-Lead aus einem Networking-Gespräch führte zu einer Gewerbeversicherung über \~40 Einheiten.</li>
+</ul>
+</ul>
+<li><strong>Empfehlungen:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Strategie:</strong> Kunden um „Hilfe“ bitten und ein kleines Geschenk als Dankeschön anbieten.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">Mindset &amp; Energie</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Resilienz:</strong> Schlechte Tage sind normal. Ein einziger neuer Lead kann alles verändern.</li>
+<li><strong>Energie-Management:</strong> Musik und Visualisierung nutzen, um die Energie hochzuhalten.</li>
+<li><strong>Grundlegender Wandel:</strong> Vom Erfolg durch „Hass“ zum Erfolg durch „Liebe“ und Dankbarkeit übergehen.</li>
+<li><strong>Stufen-Unterscheidung:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Stufen 1–3:</strong> *Im* Unternehmen arbeiten (verkaufen, rekrutieren).</li>
+<li><strong>Stufen 4–6:</strong> *Am* Unternehmen arbeiten (organisieren, Events planen).</li>
+</ul>
+</ul>
+</ul>
+</ul></div></section>
+      
+      <div class="grid2 block" id="chartsGrid" data-block="charts"><section class="section chart-box" id="topicsWrap" data-block="topics"><div class="section-label" data-i18n="lbl_distribution">Distribution</div><h2 data-i18n="topics">Topics</h2><canvas id="topics"></canvas></section><section class="section chart-box" id="speakersWrap" data-block="speakers"><div class="section-label" data-i18n="lbl_conversation">Conversation</div><h2 data-i18n="speaking_time">Speaking time</h2><canvas id="speakers"></canvas></section></div>
+      <section class="section block" id="timeline" data-block="timeline"><div class="section-label" data-i18n="lbl_moments">Moments</div><h2 data-i18n="timeline">Timeline</h2><div class="tl"><div class="tl-t">00:09:31</div><div class="tl-body"><div class="who">ERGO Team</div><p>Ich habe gesagt, hey weißt du was, die sind ja frisch dabei, ich mache alles, von A bis Z.</p></div></div><div class="tl"><div class="tl-t">00:10:22</div><div class="tl-body"><div class="who">ERGO Team</div><p>Und da haben sie wirklich gesagt, Mamis, haben in zwei Monaten die Stufe zwei gemacht.</p></div></div><div class="tl"><div class="tl-t">00:11:31</div><div class="tl-body"><div class="who">ERGO Team</div><p>Und deswegen als Führungskraft ist es jetzt wichtig, dich, das ist jetzt das Geheimnis, runterzuschrauben.</p></div></div><div class="tl"><div class="tl-t">00:12:47</div><div class="tl-body"><div class="who">ERGO Team</div><p>Das heißt, glaub mir, nach wie rein, nach den 6 Monaten, hat sie eigentlich die Stufe freigestiegen und auch so gesagt, …</p></div></div><div class="tl"><div class="tl-t">00:13:15</div><div class="tl-body"><div class="who">ERGO Team</div><p>Sie haben die Stufe 3 geschafft und jetzt, ne, wir sind schlau, wir nutzen das hören.</p></div></div><div class="tl"><div class="tl-t">00:13:42</div><div class="tl-body"><div class="who">ERGO Team</div><p>Und sie hat dann die Stufe 2 in Zangnummern gemacht, und jetzt was machen wir jetzt weiter?</p></div></div><div class="tl"><div class="tl-t">00:15:29</div><div class="tl-body"><div class="who">ERGO Team</div><p>Du kannst wirklich, jeder hier in diesem Raum, kann die Stufe Z schaffen, wenn du dir diese Zahlen bewusst machst.</p></div></div><div class="tl"><div class="tl-t">00:15:35</div><div class="tl-body"><div class="who">ERGO Team</div><p>Und deswegen habe ich die Stufe 4 gemacht, weil ich die Sachen auch bewusst war.</p></div></div></section>
+      <details class="section block" id="transcript" data-block="transcript"><summary data-i18n="transcript_excerpt">Transcript excerpt</summary><pre>[00:00:00] ERGO Team: Das war dann mein Learning.
+[00:00:04] ERGO Team: Stufe 4.
+[00:00:05] ERGO Team: Jetzt, wie ich natürlich immer habe, ich habe da auch schon bei 11.000 Einheiten abgegeben, gemerkt, okay, ich bin für alles verantwortet, ich glaube, das ist jetzt auch klar geworden, ich habe zwei G
+[00:00:23] ERGO Team: 11.000 Einheiten.
+[00:00:25] ERGO Team: Weil ich habe gemerkt, seit 2025, wir hatten da kein Büro mehr.
+[00:00:29] ERGO Team: Hamburg war tot.
+[00:00:31] ERGO Team: Hamburg war wirklich tot.
+[00:00:33] ERGO Team: Also ich habe mir sehr laut angerufen, der hat, ich glaube, nicht am besten angefangen.
+[00:00:37] ERGO Team: Und das war als möglicherweise, als es eben war.
+[00:00:39] ERGO Team: Ich habe einen Angriff, wo ich jetzt in den Bockmhaus ging.
+[00:00:42] ERGO Team: Er war so, also, ne, wir reden auch oft mal ehrlich miteinander, wir waren einfach überhaupt in der Tee.
+[00:00:47] ERGO Team: Und ich habe einen Angriff, er hat mich einfach gesagt, wir wollten den nächsten Mal durchstarten.
+[00:00:53] ERGO Team: Wann, unsere Termine haben ausgemacht, per Zoom und ihr kennt das jetzt.
+[00:00:57] ERGO Team: Das ist nicht dasselbe, und dementsprechend, ja, habe ich mich innerlich zurückgeführt und gesagt, ich habe eine solche Tour, ich muss wieder raus, ich muss irgendwas machen in meinem Leben, weil du w
+[00:01:18] ERGO Team: Weil ich habe gesagt, ich habe keinen Spaß mehr, ich brauche aber Spaß, weil ich weiß, wenn ich Spaß habe, kommen richtig viele Einheiten.
+[00:01:25] ERGO Team: Gebt mir eine Bahn hat 100.
+[00:01:29] ERGO Team: Oh, eine Bahn hat 100.
+[00:01:31] ERGO Team: Und wisst ihr was?
+[00:01:32] ERGO Team: Ich habe gesagt, ich habe 3600 Euro gezahlt.
+[00:01:38] ERGO Team: Er hat sich gleich 3600 Euro und hat nicht gesagt.
+[00:01:42] ERGO Team: Ja, jetzt sind alle, die gehen zum High oder zum Cardi, die sind ja auch, eine Bahn hat 100, zahlen.
+[00:01:48] ERGO Team: Nee, natürlich nicht.
+[00:01:49] ERGO Team: Er kann auch eine Bahn für 50 Euro zahlen.
+[00:01:52] ERGO Team: Also es ist ein bisschen günstiger.
+[00:01:55] ERGO Team: Deswegen hab ich ja auch gesagt, wenn du so viel erlösen hast, über die Rede, das ist jetzt ein bisschen crazy.
+[00:02:03] ERGO Team: Ohne nachzudenken hat er gesagt, okay, ich glaub an dich, ich zahl diese Zeitungssicherung und irgendwie und dann hier you go.
+[00:02:11] ERGO Team: Leute, ich war da alleine, ich war alleine.
+[00:02:14] ERGO Team: Ich konnte nichts nachweisen.
+[00:02:17] ERGO Team: Ich konnte nichts nachweisen.
+[00:02:18] ERGO Team: hab ich gesagt, ey, das ist Grunde, das ist gar nichts.
+[00:02:20] ERGO Team: Aber John hat 12, meine Vision gewinnt und er sagt, ich glaub an das ist 24.
+[00:02:29] ERGO Team: Ich sag ehrlich, ich war sehr international und da wusste ich auch, ey, ich mach die 24, 500 Prozent, auch wenn ich 11.000 Einheiten abgeben muss.
+[00:02:38] ERGO Team: Wie sah sie aus?
+[00:02:39] ERGO Team: Und einige Leute kennen mich im Social Media, ich finde das sehr gerne, weil da hat es mir auch einfach viel Spaß gemacht.
+[00:02:45] ERGO Team: Das war ungefähr ab März, wo ich gedacht habe, okay, das macht Spaß und die Ergebnisse.
+[00:02:51] ERGO Team: Okay.
+[00:02:51] ERGO Team: I was next 6 months.
+[00:02:54] ERGO Team: look reflect on future.
+[00:03:01] ERGO Team: Yes, I was about to my personal I about the future.
+[00:03:07] ERGO Team: going reflect personal view?</pre></details>
+      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Die drei Zielgruppen ansprechen: Mütter, Selbstständige und Steuerberater.</span></li><li><span class="todo-task">Die „Herunterschrauben“-Strategie im Recruiting nutzen.</span></li><li><span class="todo-task">BAV und U-Kasse bei Selbstständigen pitchen.</span></li><li><span class="todo-task">Eine Multichannel-Lead-Generierungsstrategie umsetzen.</span></li></ul></section>
+      <section class="section block end-lists" id="ideas" data-block="ideas"><div class="section-label" data-i18n="lbl_ideas">Capture</div><h2 data-i18n="new_ideas">New ideas</h2><ul class="end-ul ideas-ul"><li><strong>Strategische Neuausrichtung:</strong> ERGO Teams Aufstieg zur Stufe 4 wurde durch eine strategische Neuausrichtung ausgelöst, nachdem der Umsatz auf 11.000 Einheiten gesunken war. Er finanzierte eine 3.600-€-Reise, um die Energie zurückzugewinnen, die er für den Erfolg brauchte.</li><li><strong>Zielgruppen-Fokus:</strong> Er konzentriert sich auf drei Zielgruppen – Mütter, Selbstständige und Steuerberater –, die er aufgrund ihrer hohen Affinität und ihres hohen Potenzials als „Crescendo“ bezeichnet.</li><li><strong>Recruiting-Strategie:</strong> ERGO Team nutzt eine „Herunterschrauben“-Strategie, um den Selbstwert von Frauen zu stärken, indem er seine eigenen Herausforderungen hervorhebt und so ihre Überzeugung stärkt, dass sie es schaffen können.</li><li><strong>Multichannel-Lead-Generierung:</strong> Er nutzt eine Multichannel-Strategie, die Social Media (TikTok), Messen, Networking und Empfehlungen kombiniert, um ein konstantes Lead-Volumen zu sichern.</li></ul></section>
+    </div>
+
+    <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
+  </div>
+  <script>
+    const ERGOMEET_I18N = {
+      de: {
+        brand: 'ERGO · Meeting Intelligence',
+        theme_light: 'Hell', theme_dark: 'Dunkel',
+        lbl_overview: 'Überblick', summary: 'Zusammenfassung', summary_enhanced: 'Enhanced Summary',
+        lbl_notes: 'Notizen', meeting_notes: 'Meeting-Notizen',
+        lbl_focus: 'Fokus', key_takeaways: 'Kernaussagen',
+        lbl_distribution: 'Verteilung', topics: 'Themen',
+        lbl_conversation: 'Gespräch', speaking_time: 'Sprechzeit',
+        lbl_followup: 'Nachverfolgung', action_items: 'Aufgaben',
+        lbl_todos: 'Abschluss', todos: 'Todos',
+        lbl_ideas: 'Festhalten', new_ideas: 'Neue Ideen',
+        th_owner: 'Verantwortlich', th_task: 'Aufgabe', th_due: 'Fällig', th_priority: 'Priorität',
+        lbl_moments: 'Momente', timeline: 'Zeitstrahl',
+        transcript_excerpt: 'Transkript (Auszug)',
+        footer: 'Ergo Meet · Vertrauliches Arbeitsdokument',
+        kpi_ergo_since: 'ERGO seit',
+      },
+      en: {
+        brand: 'ERGO · Meeting Intelligence',
+        theme_light: 'Light', theme_dark: 'Dark',
+        lbl_overview: 'Overview', summary: 'Summary', summary_enhanced: 'Enhanced summary',
+        lbl_notes: 'Notes', meeting_notes: 'Meeting notes',
+        lbl_focus: 'Focus', key_takeaways: 'Key takeaways',
+        lbl_distribution: 'Distribution', topics: 'Topics',
+        lbl_conversation: 'Conversation', speaking_time: 'Speaking time',
+        lbl_followup: 'Follow-up', action_items: 'Action items',
+        lbl_todos: 'Close-out', todos: 'Todos',
+        lbl_ideas: 'Capture', new_ideas: 'New ideas',
+        th_owner: 'Owner', th_task: 'Task', th_due: 'Due', th_priority: 'Priority',
+        lbl_moments: 'Moments', timeline: 'Timeline',
+        transcript_excerpt: 'Transcript excerpt',
+        footer: 'Ergo Meet · Confidential working document',
+        kpi_ergo_since: 'ERGO since',
+      },
+      tr: {
+        brand: 'ERGO · Toplantı özeti',
+        theme_light: 'Açık', theme_dark: 'Koyu',
+        lbl_overview: 'Genel bakış', summary: 'Özet', summary_enhanced: 'Gelişmiş özet',
+        lbl_notes: 'Notlar', meeting_notes: 'Toplantı notları',
+        lbl_focus: 'Odak', key_takeaways: 'Önemli çıkarımlar',
+        lbl_distribution: 'Dağılım', topics: 'Konular',
+        lbl_conversation: 'Konuşma', speaking_time: 'Konuşma süresi',
+        lbl_followup: 'Takip', action_items: 'Aksiyonlar',
+        lbl_todos: 'Kapanış', todos: 'Yapılacaklar',
+        lbl_ideas: 'Kaydet', new_ideas: 'Yeni fikirler',
+        th_owner: 'Sorumlu', th_task: 'Görev', th_due: 'Son tarih', th_priority: 'Öncelik',
+        lbl_moments: 'Anlar', timeline: 'Zaman çizelgesi',
+        transcript_excerpt: 'Transkript özeti',
+        footer: 'Ergo Meet · Gizli çalışma belgesi',
+        kpi_ergo_since: 'ERGO başlangıç',
+      },
+    };
+
+    function ergomeetApplyLang(lang) {
+      const pack = ERGOMEET_I18N[lang] || ERGOMEET_I18N.en;
+      document.documentElement.lang = lang;
+      localStorage.setItem('ergomeet-lang', lang);
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const k = el.getAttribute('data-i18n');
+        if (pack[k]) el.textContent = pack[k];
+      });
+      document.querySelectorAll('[data-i18n-kpi]').forEach((el) => {
+        const k = el.getAttribute('data-i18n-kpi');
+        if (pack[k]) el.textContent = pack[k];
+      });
+      document.querySelectorAll('[data-i18n-open]').forEach((el) => {
+        if (pack.open_recording) el.textContent = pack.open_recording;
+      });
+      const sel = document.getElementById('langSelect');
+      if (sel && sel.value !== lang) sel.value = lang;
+      if (window.ergomeetUpdateThemeLabel) window.ergomeetUpdateThemeLabel();
+    }
+
+    (function langSetup() {
+      const sel = document.getElementById('langSelect');
+      const saved = localStorage.getItem('ergomeet-lang');
+      const browser = (navigator.language || 'en').slice(0, 2);
+      const initial = (saved && ERGOMEET_I18N[saved]) ? saved : (ERGOMEET_I18N[browser] ? browser : 'de');
+      ergomeetApplyLang(initial);
+      sel?.addEventListener('change', () => ergomeetApplyLang(sel.value));
+    })();
+
+    (function themeSetup() {
+      const KEY = 'ergomeet-theme';
+      const root = document.documentElement;
+      const btn = document.getElementById('themeToggle');
+      const label = document.getElementById('themeToggleLabel');
+      function themeLabelKey() {
+        return root.getAttribute('data-theme') === 'dark' ? 'theme_light' : 'theme_dark';
+      }
+      window.ergomeetUpdateThemeLabel = function () {
+        if (!label) return;
+        const lang = localStorage.getItem('ergomeet-lang') || 'de';
+        const pack = ERGOMEET_I18N[lang] || ERGOMEET_I18N.en;
+        label.setAttribute('data-i18n', themeLabelKey());
+        label.textContent = pack[themeLabelKey()] || label.textContent;
+      };
+      function chartTheme() {
+        const light = root.getAttribute('data-theme') === 'light';
+        Chart.defaults.color = light ? '#5a6275' : '#8b93a8';
+        Chart.defaults.borderColor = light ? 'rgba(28,36,56,0.1)' : 'rgba(201,169,98,0.15)';
+        return light;
+      }
+      function applyTheme(t) {
+        root.setAttribute('data-theme', t);
+        localStorage.setItem(KEY, t);
+        window.ergomeetUpdateThemeLabel();
+        chartTheme();
+        (window.__ergoCharts || []).forEach((c) => {
+          const light = root.getAttribute('data-theme') === 'light';
+          if (c.options.scales?.x?.grid) c.options.scales.x.grid.color = light ? 'rgba(28,36,56,0.08)' : 'rgba(255,255,255,0.05)';
+          c.update();
+        });
+      }
+      const saved = localStorage.getItem(KEY);
+      const prefers = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      applyTheme(saved || prefers);
+      btn?.addEventListener('click', () => {
+        applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+      });
+      window.ergomeetApplyChartTheme = chartTheme;
+    })();
+
+    function ergomeetChartDefaults() {
+      const light = document.documentElement.getAttribute('data-theme') === 'light';
+      Chart.defaults.color = light ? '#5a6275' : '#8b93a8';
+      Chart.defaults.borderColor = light ? 'rgba(28,36,56,0.1)' : 'rgba(201,169,98,0.15)';
+      return light;
+    }
+    ergomeetChartDefaults();
+
+    const topics = [{"label": "Zahlen / KPIs", "weight": 55.4}, {"label": "Prozesse / Tools", "weight": 23.4}, {"label": "Karriere", "weight": 9.5}, {"label": "Kunden / Vertrieb", "weight": 6.9}, {"label": "Team / F\u00fchrung", "weight": 4.8}];
+    const speakers = [{"name": "ERGO Team", "words": 6846, "pct": 100.0}];
+    const goldPalette = ['#c9a962','#e8d5a3','#8b7355','#d4bc7a','#6b7c9e','#a89878'];
+    window.__ergoCharts = window.__ergoCharts || [];
+
+    (function hideEmptyBlocks() {
+      document.querySelectorAll('[data-block]').forEach((el) => {
+        const text = (el.textContent || '').replace(/\s+/g, ' ').trim();
+        const hasCanvas = !!el.querySelector('canvas');
+        const hasListContent = !!el.querySelector('li, tr, .tl, .exec-p, .exec-h, .exec-ul li, pre');
+        const topicsOk = !!(el.querySelector('#topics') && topics.length);
+        const speakersOk = !!(el.querySelector('#speakers') && speakers.length);
+        const hasMeaningful = hasListContent || (hasCanvas && (topicsOk || speakersOk));
+        const bareDash = text === '—' || text === '-' || /No action items/i.test(text);
+        if ((!hasMeaningful && (!text || bareDash)) || el.classList.contains('force-empty')) {
+          el.classList.add('is-empty');
+          el.hidden = true;
+        }
+      });
+      const kpi = document.getElementById('kpiRow');
+      if (kpi && !kpi.querySelector('.kpi')) {
+        kpi.classList.add('is-empty');
+        kpi.hidden = true;
+      }
+      const charts = document.getElementById('chartsGrid');
+      if (charts) {
+        const visible = [...charts.querySelectorAll('.chart-box')].filter((c) => !c.classList.contains('is-empty') && !c.hidden);
+        if (!visible.length) {
+          charts.classList.add('is-empty');
+          charts.hidden = true;
+        } else if (visible.length === 1) {
+          charts.classList.add('grid2--single');
+        }
+      }
+    })();
+
+    (function buildToc() {
+      const toc = document.getElementById('sectionToc');
+      if (!toc) return;
+      const blocks = document.querySelectorAll('#reportStack [data-block]:not(.is-empty):not([hidden])');
+      blocks.forEach((block) => {
+        const id = block.id || block.getAttribute('data-block');
+        if (!id) return;
+        if (!block.id) block.id = id;
+        const labelEl = block.querySelector('h2, summary, .section-label');
+        const label = (labelEl && labelEl.textContent.trim()) || id;
+        const a = document.createElement('a');
+        a.href = '#' + block.id;
+        a.textContent = label;
+        toc.appendChild(a);
+      });
+    })();
+
+    const topicsEl = document.getElementById('topics');
+    if (topicsEl && topics.length) {
+      window.__ergoCharts.push(new Chart(topicsEl, {
+        type: 'doughnut',
+        data: {
+          labels: topics.map(t => t.label),
+          datasets: [{ data: topics.map(t => t.weight), backgroundColor: goldPalette, borderWidth: 0 }]
+        },
+        options: {
+          cutout: '62%',
+          plugins: { legend: { position: 'bottom', labels: { padding: 14, usePointStyle: true } } }
+        }
+      }));
+    }
+    const speakersEl = document.getElementById('speakers');
+    if (speakersEl && speakers.length) {
+      const light = document.documentElement.getAttribute('data-theme') === 'light';
+      window.__ergoCharts.push(new Chart(speakersEl, {
+        type: 'bar',
+        data: {
+          labels: speakers.map(s => s.name),
+          datasets: [{ data: speakers.map(s => s.pct), backgroundColor: 'rgba(201,169,98,0.75)', borderRadius: 6 }]
+        },
+        options: {
+          indexAxis: 'y',
+          scales: {
+            x: { max: 100, grid: { color: light ? 'rgba(28,36,56,0.08)' : 'rgba(255,255,255,0.05)' } },
+            y: { grid: { display: false } }
+          },
+          plugins: { legend: { display: false } }
+        }
+      }));
+    }
+  </script>
+</body>
+</html>
