@@ -468,6 +468,36 @@
     .recap-ul li::marker { color: var(--gold); }
     .recap-col--do .recap-kicker { color: var(--gold-light); }
     .recap-col--watch .recap-kicker { color: #d4a0a0; }
+    /* Focus layout: collapsible Enhanced summary */
+    details.summary-details {
+      cursor: default;
+    }
+    details.summary-details > summary.summary-summary {
+      list-style: none;
+      cursor: pointer;
+      display: grid;
+      gap: 4px;
+      padding-bottom: 4px;
+    }
+    details.summary-details > summary.summary-summary::-webkit-details-marker { display: none; }
+    details.summary-details .summary-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--cream);
+    }
+    details.summary-details .summary-hint {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    details.summary-details[open] .summary-hint { display: none; }
+    details.summary-details .enhanced-summary {
+      margin-top: 16px;
+      padding-top: 8px;
+      border-top: 1px solid var(--line);
+    }
     .end-lists .end-ul {
       margin: 0;
       padding-left: 1.2rem;
@@ -615,8 +645,8 @@
 <div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li>Die drei Zielgruppen ansprechen: Mütter, Selbstständige und Steuerberater.</li><li>Die „Herunterschrauben“-Strategie im Recruiting nutzen.</li><li>BAV und U-Kasse bei Selbstständigen pitchen.</li></ul></div>
 <div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li>„No-Brainer“: BAV (betriebliche Altersvorsorge) und U-Kasse. Viele Selbstständige kennen die BAV nicht, was ein großes ungenutztes Potenzial darstellt.</li></ul></div>
 </div></section>
-      <div class="kpi-row block" id="kpiRow" data-block="kpis"><div class="kpi"><div class="kpi-v">2.000</div><div class="kpi-l">Betrag</div></div><div class="kpi"><div class="kpi-v">100</div><div class="kpi-l">Prozent</div></div><div class="kpi"><div class="kpi-v">01</div><div class="kpi-l">Prozent</div></div><div class="kpi"><div class="kpi-v">30</div><div class="kpi-l">Prozent</div></div></div>
-      <section class="section block" id="summary" data-block="summary"><div class="section-label" data-i18n="lbl_overview">Overview</div><h2 data-i18n="summary_enhanced">Enhanced summary</h2><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Zweck des Meetings</h3>
+      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Die drei Zielgruppen ansprechen: Mütter, Selbstständige und Steuerberater.</span></li><li><span class="todo-task">Die „Herunterschrauben“-Strategie im Recruiting nutzen.</span></li><li><span class="todo-task">BAV und U-Kasse bei Selbstständigen pitchen.</span></li><li><span class="todo-task">Eine Multichannel-Lead-Generierungsstrategie umsetzen.</span></li></ul></section>
+      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Zweck des Meetings</h3>
 <p class="exec-p">Van Anh teilt ihre Strategien für Vertrieb, Recruiting und den Aufstieg zur Stufe 4.</p>
 <h3 class="exec-h">Wichtigste Erkenntnisse</h3>
 <ul class="exec-ul">
@@ -715,51 +745,12 @@
 </ul>
 </ul>
 </ul>
-</ul></div></section>
+</ul></div></details>
       
-      <div class="grid2 block" id="chartsGrid" data-block="charts"><section class="section chart-box" id="topicsWrap" data-block="topics"><div class="section-label" data-i18n="lbl_distribution">Distribution</div><h2 data-i18n="topics">Topics</h2><canvas id="topics"></canvas></section><section class="section chart-box" id="speakersWrap" data-block="speakers"><div class="section-label" data-i18n="lbl_conversation">Conversation</div><h2 data-i18n="speaking_time">Speaking time</h2><canvas id="speakers"></canvas></section></div>
-      <section class="section block" id="timeline" data-block="timeline"><div class="section-label" data-i18n="lbl_moments">Moments</div><h2 data-i18n="timeline">Timeline</h2><div class="tl"><div class="tl-t">00:09:31</div><div class="tl-body"><div class="who">Van Anh</div><p>Ich habe gesagt, hey weißt du was, die sind ja frisch dabei, ich mache alles, von A bis Z.</p></div></div><div class="tl"><div class="tl-t">00:10:22</div><div class="tl-body"><div class="who">Van Anh</div><p>Und da haben sie wirklich gesagt, Mamis, haben in zwei Monaten die Stufe zwei gemacht.</p></div></div><div class="tl"><div class="tl-t">00:11:31</div><div class="tl-body"><div class="who">Van Anh</div><p>Und deswegen als Führungskraft ist es jetzt wichtig, dich, das ist jetzt das Geheimnis, runterzuschrauben.</p></div></div><div class="tl"><div class="tl-t">00:12:47</div><div class="tl-body"><div class="who">Van Anh</div><p>Das heißt, glaub mir, nach wie rein, nach den 6 Monaten, hat sie eigentlich die Stufe freigestiegen und auch so gesagt, …</p></div></div><div class="tl"><div class="tl-t">00:13:15</div><div class="tl-body"><div class="who">Van Anh</div><p>Sie haben die Stufe 3 geschafft und jetzt, ne, wir sind schlau, wir nutzen das hören.</p></div></div><div class="tl"><div class="tl-t">00:13:42</div><div class="tl-body"><div class="who">Van Anh</div><p>Und sie hat dann die Stufe 2 in Zangnummern gemacht, und jetzt was machen wir jetzt weiter?</p></div></div><div class="tl"><div class="tl-t">00:15:29</div><div class="tl-body"><div class="who">Van Anh</div><p>Du kannst wirklich, jeder hier in diesem Raum, kann die Stufe Z schaffen, wenn du dir diese Zahlen bewusst machst.</p></div></div><div class="tl"><div class="tl-t">00:15:35</div><div class="tl-body"><div class="who">Van Anh</div><p>Und deswegen habe ich die Stufe 4 gemacht, weil ich die Sachen auch bewusst war.</p></div></div></section>
-      <details class="section block" id="transcript" data-block="transcript"><summary data-i18n="transcript_excerpt">Transcript excerpt</summary><pre>[00:00:00] Van Anh: Das war dann mein Learning.
-[00:00:04] Van Anh: Stufe 4.
-[00:00:05] Van Anh: Jetzt, wie ich natürlich immer habe, ich habe da auch schon bei 11.000 Einheiten abgegeben, gemerkt, okay, ich bin für alles verantwortet, ich glaube, das ist jetzt auch klar geworden, ich habe zwei G
-[00:00:23] Van Anh: 11.000 Einheiten.
-[00:00:25] Van Anh: Weil ich habe gemerkt, seit 2025, wir hatten da kein Büro mehr.
-[00:00:29] Van Anh: Hamburg war tot.
-[00:00:31] Van Anh: Hamburg war wirklich tot.
-[00:00:33] Van Anh: Also ich habe mir sehr laut angerufen, der hat, ich glaube, nicht am besten angefangen.
-[00:00:37] Van Anh: Und das war als möglicherweise, als es eben war.
-[00:00:39] Van Anh: Ich habe einen Angriff, wo ich jetzt in den Bockmhaus ging.
-[00:00:42] Van Anh: Er war so, also, ne, wir reden auch oft mal ehrlich miteinander, wir waren einfach überhaupt in der Tee.
-[00:00:47] Van Anh: Und ich habe einen Angriff, er hat mich einfach gesagt, wir wollten den nächsten Mal durchstarten.
-[00:00:53] Van Anh: Wann, unsere Termine haben ausgemacht, per Zoom und ihr kennt das jetzt.
-[00:00:57] Van Anh: Das ist nicht dasselbe, und dementsprechend, ja, habe ich mich innerlich zurückgeführt und gesagt, ich habe eine solche Tour, ich muss wieder raus, ich muss irgendwas machen in meinem Leben, weil du w
-[00:01:18] Van Anh: Weil ich habe gesagt, ich habe keinen Spaß mehr, ich brauche aber Spaß, weil ich weiß, wenn ich Spaß habe, kommen richtig viele Einheiten.
-[00:01:25] Van Anh: Gebt mir eine Bahn hat 100.
-[00:01:29] Van Anh: Oh, eine Bahn hat 100.
-[00:01:31] Van Anh: Und wisst ihr was?
-[00:01:32] Van Anh: Ich habe gesagt, ich habe 3600 Euro gezahlt.
-[00:01:38] Van Anh: Er hat sich gleich 3600 Euro und hat nicht gesagt.
-[00:01:42] Van Anh: Ja, jetzt sind alle, die gehen zum High oder zum Cardi, die sind ja auch, eine Bahn hat 100, zahlen.
-[00:01:48] Van Anh: Nee, natürlich nicht.
-[00:01:49] Van Anh: Er kann auch eine Bahn für 50 Euro zahlen.
-[00:01:52] Van Anh: Also es ist ein bisschen günstiger.
-[00:01:55] Van Anh: Deswegen hab ich ja auch gesagt, wenn du so viel erlösen hast, über die Rede, das ist jetzt ein bisschen crazy.
-[00:02:03] Van Anh: Ohne nachzudenken hat er gesagt, okay, ich glaub an dich, ich zahl diese Zeitungssicherung und irgendwie und dann hier you go.
-[00:02:11] Van Anh: Leute, ich war da alleine, ich war alleine.
-[00:02:14] Van Anh: Ich konnte nichts nachweisen.
-[00:02:17] Van Anh: Ich konnte nichts nachweisen.
-[00:02:18] Van Anh: hab ich gesagt, ey, das ist Grunde, das ist gar nichts.
-[00:02:20] Van Anh: Aber John hat 12, meine Vision gewinnt und er sagt, ich glaub an das ist 24.
-[00:02:29] Van Anh: Ich sag ehrlich, ich war sehr international und da wusste ich auch, ey, ich mach die 24, 500 Prozent, auch wenn ich 11.000 Einheiten abgeben muss.
-[00:02:38] Van Anh: Wie sah sie aus?
-[00:02:39] Van Anh: Und einige Leute kennen mich im Social Media, ich finde das sehr gerne, weil da hat es mir auch einfach viel Spaß gemacht.
-[00:02:45] Van Anh: Das war ungefähr ab März, wo ich gedacht habe, okay, das macht Spaß und die Ergebnisse.
-[00:02:51] Van Anh: Okay.
-[00:02:51] Van Anh: I was next 6 months.
-[00:02:54] Van Anh: look reflect on future.
-[00:03:01] Van Anh: Yes, I was about to my personal I about the future.
-[00:03:07] Van Anh: going reflect personal view?</pre></details>
-      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Die drei Zielgruppen ansprechen: Mütter, Selbstständige und Steuerberater.</span></li><li><span class="todo-task">Die „Herunterschrauben“-Strategie im Recruiting nutzen.</span></li><li><span class="todo-task">BAV und U-Kasse bei Selbstständigen pitchen.</span></li><li><span class="todo-task">Eine Multichannel-Lead-Generierungsstrategie umsetzen.</span></li></ul></section>
+      
+      
+      
+      
       
     </div>
 
@@ -774,6 +765,7 @@
         recap_purpose: 'Zweck', recap_highlights: 'Was zählte',
         recap_do_next: 'Als Nächstes', recap_watch: 'Achtung',
         lbl_overview: 'Überblick', summary: 'Zusammenfassung', summary_enhanced: 'Enhanced Summary',
+        summary_expand: 'Antippen zum Öffnen',
         lbl_notes: 'Notizen', meeting_notes: 'Meeting-Notizen',
         lbl_focus: 'Fokus', key_takeaways: 'Kernaussagen',
         lbl_distribution: 'Verteilung', topics: 'Themen',
@@ -794,6 +786,7 @@
         recap_purpose: 'Purpose', recap_highlights: 'What mattered',
         recap_do_next: 'Do next', recap_watch: 'Watch-outs',
         lbl_overview: 'Overview', summary: 'Summary', summary_enhanced: 'Enhanced summary',
+        summary_expand: 'Tap to expand',
         lbl_notes: 'Notes', meeting_notes: 'Meeting notes',
         lbl_focus: 'Focus', key_takeaways: 'Key takeaways',
         lbl_distribution: 'Distribution', topics: 'Topics',
@@ -814,6 +807,7 @@
         recap_purpose: 'Amaç', recap_highlights: 'Ne önemliydi',
         recap_do_next: 'Sırada', recap_watch: 'Dikkat',
         lbl_overview: 'Genel bakış', summary: 'Özet', summary_enhanced: 'Gelişmiş özet',
+        summary_expand: 'Açmak için dokun',
         lbl_notes: 'Notlar', meeting_notes: 'Toplantı notları',
         lbl_focus: 'Odak', key_takeaways: 'Önemli çıkarımlar',
         lbl_distribution: 'Dağılım', topics: 'Konular',
@@ -907,8 +901,8 @@
     }
     ergomeetChartDefaults();
 
-    const topics = [{"label": "Zahlen / KPIs", "weight": 55.4}, {"label": "Prozesse / Tools", "weight": 23.4}, {"label": "Karriere", "weight": 9.5}, {"label": "Kunden / Vertrieb", "weight": 6.9}, {"label": "Team / F\u00fchrung", "weight": 4.8}];
-    const speakers = [{"name": "Van Anh", "words": 6846, "pct": 100.0}];
+    const topics = [];
+    const speakers = [];
     const goldPalette = ['#c9a962','#e8d5a3','#8b7355','#d4bc7a','#6b7c9e','#a89878'];
     window.__ergoCharts = window.__ergoCharts || [];
 
@@ -916,7 +910,7 @@
       document.querySelectorAll('[data-block]').forEach((el) => {
         const text = (el.textContent || '').replace(/\s+/g, ' ').trim();
         const hasCanvas = !!el.querySelector('canvas');
-        const hasListContent = !!el.querySelector('li, tr, .tl, .exec-p, .exec-h, .exec-ul li, pre');
+        const hasListContent = !!el.querySelector('li, tr, .tl, .exec-p, .exec-h, .exec-ul li, pre, .recap-one-text, .enhanced-summary');
         const topicsOk = !!(el.querySelector('#topics') && topics.length);
         const speakersOk = !!(el.querySelector('#speakers') && speakers.length);
         const hasMeaningful = hasListContent || (hasCanvas && (topicsOk || speakersOk));
@@ -926,21 +920,14 @@
           el.hidden = true;
         }
       });
-      const kpi = document.getElementById('kpiRow');
-      if (kpi && !kpi.querySelector('.kpi')) {
-        kpi.classList.add('is-empty');
-        kpi.hidden = true;
-      }
-      const charts = document.getElementById('chartsGrid');
-      if (charts) {
-        const visible = [...charts.querySelectorAll('.chart-box')].filter((c) => !c.classList.contains('is-empty') && !c.hidden);
-        if (!visible.length) {
-          charts.classList.add('is-empty');
-          charts.hidden = true;
-        } else if (visible.length === 1) {
-          charts.classList.add('grid2--single');
+      // Focus layout: never leave orphan empty shells
+      ['kpiRow', 'chartsGrid', 'timeline', 'transcript', 'ideas'].forEach((id) => {
+        const el = document.getElementById(id);
+        if (el && !el.querySelector('li, canvas, .tl, pre, .kpi')) {
+          el.classList.add('is-empty');
+          el.hidden = true;
         }
-      }
+      });
     })();
 
     (function buildToc() {
@@ -951,8 +938,13 @@
         const id = block.id || block.getAttribute('data-block');
         if (!id) return;
         if (!block.id) block.id = id;
-        const labelEl = block.querySelector('h2, summary, .section-label');
-        const label = (labelEl && labelEl.textContent.trim()) || id;
+        const labelEl = block.querySelector('.summary-title, h2, summary, .section-label');
+        let label = (labelEl && labelEl.textContent.trim()) || id;
+        // Prefer short TOC labels
+        if (block.id === 'recap') label = 'Recap';
+        if (block.id === 'todos') label = 'Todos';
+        if (block.id === 'summary') label = 'Summary';
+        if (block.id === 'notes') label = 'Notes';
         const a = document.createElement('a');
         a.href = '#' + block.id;
         a.textContent = label;
