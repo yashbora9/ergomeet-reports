@@ -438,7 +438,17 @@
       text-transform: uppercase;
       color: var(--muted);
     }
-  </style>
+  
+    .recap-card{border-color:rgba(201,169,98,.45);background:linear-gradient(145deg,rgba(201,169,98,.10),var(--surface));box-shadow:0 12px 40px rgba(0,0,0,.12);margin:20px 0}
+    .recap-grid{display:grid;grid-template-columns:1fr;gap:18px 22px}
+    @media(min-width:820px){.recap-grid{grid-template-columns:1.1fr 1fr}.recap-one{grid-column:1/-1}}
+    .recap-kicker{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:8px}
+    .recap-one-text{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.25rem;line-height:1.35;color:var(--cream);font-weight:500}
+    .recap-ul{margin:0;padding-left:1.15rem}
+    .recap-ul li{margin-bottom:8px;color:var(--text-body);line-height:1.5;font-size:.92rem}
+    .recap-ul li::marker{color:var(--gold)}
+
+</style>
 </head>
 <body>
   <header class="topbar">
@@ -457,7 +467,14 @@
       </div>
     </div>
   </header>
-  <div class="shell">
+  <section class="section block recap-card" id="recap" data-block="recap">
+<div class="section-label" data-i18n="lbl_recap">60 seconds</div>
+<h2 data-i18n="recap">Recap</h2>
+<div class="recap-grid">
+<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text">No external prospect present. This was a solo internal enablement/training session led by VU (seller) discussing Ergo retirement/investment products and sales approach for multicultural/foreign-language clients in Berlin.</p></div>
+<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li>No external prospect present. This was a solo internal enablement/training session led by VU (seller) discussing Ergo retirement/investment products and sales approach for multicultural/foreign-language clients in Berlin.</li><li>Internal coaching/knowledge share. VU walked through how to position Ergo Altersvorsorge/Investment products, especially for non-native German clients, and how to structure meetings, budgeting, and proposals.</li><li>Internal: New reps are ramping, doing first appointments (VW/LG), building networks, and improving discovery and closing skills.</li></ul></div>
+</div></section>
+<div class="shell">
     <header class="hero">
       <div class="hero-grid ">
         <div class="hero-copy">
@@ -474,16 +491,16 @@
       </div>
     </header>
 
-    <div class="kpi-row"><div class="kpi"><div class="kpi-v">—</div><div class="kpi-l">Insights</div></div></div>
+    </div>
 
     <section class="section">
       <div class="section-label" data-i18n="lbl_overview">Overview</div>
       <h2 data-i18n="summary">Summary</h2>
       <div class="exec exec-rich"><h3 class="exec-h">Deal Information</h3>
 <h3 class="exec-h">Prospect</h3>
-<p class="exec-p">No external prospect present. This was a solo internal enablement/training session led by Yash Bora (seller) discussing Ergo retirement/investment products and sales approach for multicultural/foreign-language clients in Berlin.</p>
+<p class="exec-p">No external prospect present. This was a solo internal enablement/training session led by VU (seller) discussing Ergo retirement/investment products and sales approach for multicultural/foreign-language clients in Berlin.</p>
 <h3 class="exec-h">Call Context</h3>
-<p class="exec-p">Internal coaching/knowledge share. Yash walked through how to position Ergo Altersvorsorge/Investment products, especially for non-native German clients, and how to structure meetings, budgeting, and proposals.</p>
+<p class="exec-p">Internal coaching/knowledge share. VU walked through how to position Ergo Altersvorsorge/Investment products, especially for non-native German clients, and how to structure meetings, budgeting, and proposals.</p>
 <h3 class="exec-h">Seats</h3>
 <p class="exec-p">Not applicable.</p>
 <h3 class="exec-h">Budget</h3>
@@ -535,51 +552,51 @@
     <section class="section">
       <div class="section-label" data-i18n="lbl_moments">Moments</div>
       <h2 data-i18n="timeline">Timeline</h2>
-      <div class="tl"><div class="tl-t">00:01:07</div><div class="tl-body"><div class="who">Yash Bora</div><p>Jeder Vertrag, der vor 2004 abgeschlossen wurde, wäre bis heute, wenn man im Rentenvertrag ist, bis heute steuerfrei.</p></div></div><div class="tl"><div class="tl-t">00:01:16</div><div class="tl-body"><div class="who">Yash Bora</div><p>Das heißt, egal ob ihr jetzt 20.000 Gewinn, 30 oder 1 Million Euro Gewinn macht, es wäre bis heute steuerfrei, wäre ein …</p></div></div><div class="tl"><div class="tl-t">00:21:31</div><div class="tl-body"><div class="who">Yash Bora</div><p>Und dadurch, dass Sie selbst bis uns vorlegen und sagen, okay, meine Erfahrungen haben mit dem, was wir bisher gelernt h…</p></div></div><div class="tl"><div class="tl-t">00:21:44</div><div class="tl-body"><div class="who">Yash Bora</div><p>Und am Ende ist das auch wichtig, der Kunde muss mit der Summe, die er investiert, auch mit sich selbst im Reinen sein.</p></div></div><div class="tl"><div class="tl-t">00:25:45</div><div class="tl-body"><div class="who">Yash Bora</div><p>Manche Kunden gehen mit nichts in Revolent zu haben, dann haben vielleicht Shirts von 30 bis 50%.</p></div></div><div class="tl"><div class="tl-t">00:25:51</div><div class="tl-body"><div class="who">Yash Bora</div><p>Manche gehen mit dem Immobilienvermögen rein, dass sie ein bisschen 30 bis 50% stehen haben.</p></div></div><div class="tl"><div class="tl-t">00:29:34</div><div class="tl-body"><div class="who">Yash Bora</div><p>Hier auch wichtig, gerade bei uns Ausländern.</p></div></div><div class="tl"><div class="tl-t">00:32:59</div><div class="tl-body"><div class="who">Yash Bora</div><p>Und wenn das Unternehmen gut performt, bekommt der Kunde ein bis zwei Prozent on top.</p></div></div>
+      <div class="tl"><div class="tl-t">00:01:07</div><div class="tl-body"><div class="who">VU</div><p>Jeder Vertrag, der vor 2004 abgeschlossen wurde, wäre bis heute, wenn man im Rentenvertrag ist, bis heute steuerfrei.</p></div></div><div class="tl"><div class="tl-t">00:01:16</div><div class="tl-body"><div class="who">VU</div><p>Das heißt, egal ob ihr jetzt 20.000 Gewinn, 30 oder 1 Million Euro Gewinn macht, es wäre bis heute steuerfrei, wäre ein …</p></div></div><div class="tl"><div class="tl-t">00:21:31</div><div class="tl-body"><div class="who">VU</div><p>Und dadurch, dass Sie selbst bis uns vorlegen und sagen, okay, meine Erfahrungen haben mit dem, was wir bisher gelernt h…</p></div></div><div class="tl"><div class="tl-t">00:21:44</div><div class="tl-body"><div class="who">VU</div><p>Und am Ende ist das auch wichtig, der Kunde muss mit der Summe, die er investiert, auch mit sich selbst im Reinen sein.</p></div></div><div class="tl"><div class="tl-t">00:25:45</div><div class="tl-body"><div class="who">VU</div><p>Manche Kunden gehen mit nichts in Revolent zu haben, dann haben vielleicht Shirts von 30 bis 50%.</p></div></div><div class="tl"><div class="tl-t">00:25:51</div><div class="tl-body"><div class="who">VU</div><p>Manche gehen mit dem Immobilienvermögen rein, dass sie ein bisschen 30 bis 50% stehen haben.</p></div></div><div class="tl"><div class="tl-t">00:29:34</div><div class="tl-body"><div class="who">VU</div><p>Hier auch wichtig, gerade bei uns Ausländern.</p></div></div><div class="tl"><div class="tl-t">00:32:59</div><div class="tl-body"><div class="who">VU</div><p>Und wenn das Unternehmen gut performt, bekommt der Kunde ein bis zwei Prozent on top.</p></div></div>
     </section>
 
     <details class="section">
       <summary data-i18n="transcript_excerpt">Transcript excerpt</summary>
-      <pre>[00:00:00] Yash Bora: Ich habe anfangs wenig Struktur aufgebaut und habe viel auf eigene Beratung gemacht, immer so diesen eigenen Weg, also als Versicherungen ein bisschen so hochgekommen sind, war das so gewesen, das The
-[00:00:31] Yash Bora: Ja, man hat nichts gerne gesagt, aber man hat so zumindest das so gezeigt, dass man nicht eigentlich das Wort hat, und für mich war es da so gewesen, selbst bei mir war es auch so gewesen, dass falsch
-[00:00:57] Yash Bora: Also schon seit über 20, 30 Jahren, würde ich behaupten, aber eben vielleicht mit anderen gewissen Bedingungen und Regeln.
-[00:01:07] Yash Bora: Jeder Vertrag, der vor 2004 abgeschlossen wurde, wäre bis heute, wenn man im Rentenvertrag ist, bis heute steuerfrei.
-[00:01:16] Yash Bora: Das heißt, egal ob ihr jetzt 20.000 Gewinn, 30 oder 1 Million Euro Gewinn macht, es wäre bis heute steuerfrei, wäre ein Vertrag gestehen.
-[00:01:24] Yash Bora: Meine Eltern hatten auch nicht einen Vertrag so gemacht, als er es geboren wurde, aber der Berater war schlecht gewesen.
-[00:01:32] Yash Bora: Das heißt, die Vertragslaufzeit war nur auf 25 Jahren.
-[00:01:36] Yash Bora: Das heißt, selbst wenn ich länger machen wollen würde, würde es nicht gehen.
-[00:01:41] Yash Bora: Zweitens ist, mein Name war nicht mein Grund gewesen im Vertrag.
-[00:01:44] Yash Bora: Das heißt, war alles auf den Namen der Eltern geschrieben.
-[00:01:47] Yash Bora: Das heißt, als ich dann 25 Jahre alt war, wollte ich den Vertrag übernehmen und weiter investieren.
-[00:01:53] Yash Bora: Das heißt, war alles.
-[00:01:53] Yash Bora: Vielen
-[00:01:54] Yash Bora: Aber ich durfte nicht und deshalb war das eher super optimal gewesen.
-[00:01:58] Yash Bora: Und das war so ein der Gründe, wo ich gesagt habe, hey, das Produkt ist eigentlich sehr, sehr gut, bloß eben, es hängt sehr viel ab von den Beratern.
-[00:02:06] Yash Bora: Das heißt, wie wurde beraten, wie wurde das Produkt eben hinbegeben zum Kunden, dass der Kunde es auch richtig versteht, nichts zu nutzen.
-[00:02:13] Yash Bora: Weil, das ist durch die Forschung, egal wie viel Geld ihr das Produkt packt, und das ist alles steuerfrei, das gibt es heute total nicht.
-[00:02:20] Yash Bora: Also das ist einfach so wichtiges Lohn gewesen damals.
-[00:02:25] Yash Bora: Und deshalb habe ich gesagt, okay, ich möchte die Branche umdrehen.
-[00:02:30] Yash Bora: Das heißt, dass man heute wissen, was für den Mehrwert die Branche hat, welche Vorteile es gibt, was man zu beachten hat.
-[00:02:36] Yash Bora: Aber auch generell, dass man einfach nur auf die Verordnung hat.
-[00:02:39] Yash Bora: Weil ich kam auch damals zwischenzeitlich ein bisschen aus der Unternehmensberatung, aber auch aus der Unternehmensberatung.
-[00:02:47] Yash Bora: Und das Ganze ist auch, wie hier die Verordnung.
-[00:02:50] Yash Bora: Sonsten habe ich da...
-[00:02:53] Yash Bora: Also von meinem Wissen her, mein Investmentwissens, weil wir voll bei der Ergung einfach haben, hatte ich auch private Investitionen, das heißt Aktien, Fonds, ETS.
-[00:03:02] Yash Bora: Das heißt, als ich dann meine Beratung gemacht habe, war das weniger für mich gearbeitet.
-[00:03:07] Yash Bora: Das war eher so, ich zeige meinen Kunden, was für ein Hobby ich habe und wie ich am besten selbst auch anfangen kann zu investieren in Deutschland.
-[00:03:14] Yash Bora: Das ist bis heute meine Beratung.
-[00:03:16] Yash Bora: So, und die Art, die ich auch mitgeben kann jetzt am Anfang, weil wir sind ja relativ kulturell gewünscht, hier ist keiner nativ deutsch, ich behaupten.
-[00:03:30] Yash Bora: Das ist eine der Sterben für uns ist, wir können auch im besten Falle eine andere Sprache außer Deutsch sprechen.
-[00:03:36] Yash Bora: Und das ist gerade in einer Stadt wie Berlin Gold wert.
-[00:03:40] Yash Bora: Weil es wird immer so als Nischengrund bezeichnet, wenn man eine andere Sprache dort spricht.
-[00:03:44] Yash Bora: Aber mittlerweile in den Städten wie Berlin ist es eher so, dass diese Nische halt nicht...
-[00:03:49] Yash Bora: Ich bin Syrisch-Kombo.
-[00:03:52] Yash Bora: Syrisch-Analyst-Kett ist auch sehr groß, sehr unterschätzt.
-[00:04:01] Yash Bora: Combo-Kriechenland.
-[00:04:04] Yash Bora: Combo-Kriechenland.
-[00:04:06] Yash Bora: Combo-Kriechenland.
-[00:04:07] Yash Bora: Mixed aus Griechenland und Combo-Kombo.
-[00:04:10] Yash Bora: So, ist schon ein Läufig.</pre>
+      <pre>[00:00:00] VU: Ich habe anfangs wenig Struktur aufgebaut und habe viel auf eigene Beratung gemacht, immer so diesen eigenen Weg, also als Versicherungen ein bisschen so hochgekommen sind, war das so gewesen, das The
+[00:00:31] VU: Ja, man hat nichts gerne gesagt, aber man hat so zumindest das so gezeigt, dass man nicht eigentlich das Wort hat, und für mich war es da so gewesen, selbst bei mir war es auch so gewesen, dass falsch
+[00:00:57] VU: Also schon seit über 20, 30 Jahren, würde ich behaupten, aber eben vielleicht mit anderen gewissen Bedingungen und Regeln.
+[00:01:07] VU: Jeder Vertrag, der vor 2004 abgeschlossen wurde, wäre bis heute, wenn man im Rentenvertrag ist, bis heute steuerfrei.
+[00:01:16] VU: Das heißt, egal ob ihr jetzt 20.000 Gewinn, 30 oder 1 Million Euro Gewinn macht, es wäre bis heute steuerfrei, wäre ein Vertrag gestehen.
+[00:01:24] VU: Meine Eltern hatten auch nicht einen Vertrag so gemacht, als er es geboren wurde, aber der Berater war schlecht gewesen.
+[00:01:32] VU: Das heißt, die Vertragslaufzeit war nur auf 25 Jahren.
+[00:01:36] VU: Das heißt, selbst wenn ich länger machen wollen würde, würde es nicht gehen.
+[00:01:41] VU: Zweitens ist, mein Name war nicht mein Grund gewesen im Vertrag.
+[00:01:44] VU: Das heißt, war alles auf den Namen der Eltern geschrieben.
+[00:01:47] VU: Das heißt, als ich dann 25 Jahre alt war, wollte ich den Vertrag übernehmen und weiter investieren.
+[00:01:53] VU: Das heißt, war alles.
+[00:01:53] VU: Vielen
+[00:01:54] VU: Aber ich durfte nicht und deshalb war das eher super optimal gewesen.
+[00:01:58] VU: Und das war so ein der Gründe, wo ich gesagt habe, hey, das Produkt ist eigentlich sehr, sehr gut, bloß eben, es hängt sehr viel ab von den Beratern.
+[00:02:06] VU: Das heißt, wie wurde beraten, wie wurde das Produkt eben hinbegeben zum Kunden, dass der Kunde es auch richtig versteht, nichts zu nutzen.
+[00:02:13] VU: Weil, das ist durch die Forschung, egal wie viel Geld ihr das Produkt packt, und das ist alles steuerfrei, das gibt es heute total nicht.
+[00:02:20] VU: Also das ist einfach so wichtiges Lohn gewesen damals.
+[00:02:25] VU: Und deshalb habe ich gesagt, okay, ich möchte die Branche umdrehen.
+[00:02:30] VU: Das heißt, dass man heute wissen, was für den Mehrwert die Branche hat, welche Vorteile es gibt, was man zu beachten hat.
+[00:02:36] VU: Aber auch generell, dass man einfach nur auf die Verordnung hat.
+[00:02:39] VU: Weil ich kam auch damals zwischenzeitlich ein bisschen aus der Unternehmensberatung, aber auch aus der Unternehmensberatung.
+[00:02:47] VU: Und das Ganze ist auch, wie hier die Verordnung.
+[00:02:50] VU: Sonsten habe ich da...
+[00:02:53] VU: Also von meinem Wissen her, mein Investmentwissens, weil wir voll bei der Ergung einfach haben, hatte ich auch private Investitionen, das heißt Aktien, Fonds, ETS.
+[00:03:02] VU: Das heißt, als ich dann meine Beratung gemacht habe, war das weniger für mich gearbeitet.
+[00:03:07] VU: Das war eher so, ich zeige meinen Kunden, was für ein Hobby ich habe und wie ich am besten selbst auch anfangen kann zu investieren in Deutschland.
+[00:03:14] VU: Das ist bis heute meine Beratung.
+[00:03:16] VU: So, und die Art, die ich auch mitgeben kann jetzt am Anfang, weil wir sind ja relativ kulturell gewünscht, hier ist keiner nativ deutsch, ich behaupten.
+[00:03:30] VU: Das ist eine der Sterben für uns ist, wir können auch im besten Falle eine andere Sprache außer Deutsch sprechen.
+[00:03:36] VU: Und das ist gerade in einer Stadt wie Berlin Gold wert.
+[00:03:40] VU: Weil es wird immer so als Nischengrund bezeichnet, wenn man eine andere Sprache dort spricht.
+[00:03:44] VU: Aber mittlerweile in den Städten wie Berlin ist es eher so, dass diese Nische halt nicht...
+[00:03:49] VU: Ich bin Syrisch-Kombo.
+[00:03:52] VU: Syrisch-Analyst-Kett ist auch sehr groß, sehr unterschätzt.
+[00:04:01] VU: Combo-Kriechenland.
+[00:04:04] VU: Combo-Kriechenland.
+[00:04:06] VU: Combo-Kriechenland.
+[00:04:07] VU: Mixed aus Griechenland und Combo-Kombo.
+[00:04:10] VU: So, ist schon ein Läufig.</pre>
     </details>
 
     <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
@@ -712,7 +729,7 @@
     ergomeetChartDefaults();
 
     const topics = [{"label": "Zahlen / KPIs", "weight": 56.1}, {"label": "Kunden / Vertrieb", "weight": 34.8}, {"label": "Prozesse / Tools", "weight": 6.3}, {"label": "Rente / Vorsorge", "weight": 1.2}, {"label": "Karriere / Stufe", "weight": 0.8}, {"label": "Team / F\u00fchrung", "weight": 0.8}];
-    const speakers = [{"name": "Yash Bora", "words": 8224, "pct": 100.0}];
+    const speakers = [{"name": "VU", "words": 8224, "pct": 100.0}];
     const goldPalette = ['#c9a962','#e8d5a3','#8b7355','#d4bc7a','#6b7c9e','#a89878'];
     window.__ergoCharts = window.__ergoCharts || [];
     window.__ergoCharts.push(new Chart(document.getElementById('topics'), {
