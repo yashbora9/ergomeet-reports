@@ -468,6 +468,36 @@
     .recap-ul li::marker { color: var(--gold); }
     .recap-col--do .recap-kicker { color: var(--gold-light); }
     .recap-col--watch .recap-kicker { color: #d4a0a0; }
+    /* Focus layout: collapsible Enhanced summary */
+    details.summary-details {
+      cursor: default;
+    }
+    details.summary-details > summary.summary-summary {
+      list-style: none;
+      cursor: pointer;
+      display: grid;
+      gap: 4px;
+      padding-bottom: 4px;
+    }
+    details.summary-details > summary.summary-summary::-webkit-details-marker { display: none; }
+    details.summary-details .summary-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--cream);
+    }
+    details.summary-details .summary-hint {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    details.summary-details[open] .summary-hint { display: none; }
+    details.summary-details .enhanced-summary {
+      margin-top: 16px;
+      padding-top: 8px;
+      border-top: 1px solid var(--line);
+    }
     .end-lists .end-ul {
       margin: 0;
       padding-left: 1.2rem;
@@ -614,8 +644,8 @@
 <div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li>Real estate is a powerful client acquisition tool. It&#x27;s a more tangible and exciting entry point than insurance, enabling agents to build trust and cross-sell financial products.</li><li>The strategy is to turn tax into wealth. By legally deducting property costs (like interest), clients can reduce taxable income, receive significant tax refunds, and use that money to pay down the property.</li><li>Leverage (Fremdkapitalhebel) is the key advantage. Using a bank&#x27;s capital (e.g., 90%) multiplies returns. A 3% return on a €200k property (financed with €10k equity) yields €6k/year, a 60% return on equity.</li></ul></div>
 <div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li>Email slides to Ergo Pro trainees (Hi)</li><li>Get trainer/structure contact numbers; save in CRM (Hi)</li><li>Hi: Host weekly deep-dive sessions on real estate (Wednesdays, 18:00) to build agent knowledge and confidence.</li></ul></div>
 </div></section>
-      <div class="kpi-row block" id="kpiRow" data-block="kpis"><div class="kpi"><div class="kpi-v">10.000</div><div class="kpi-l">Betrag</div></div><div class="kpi"><div class="kpi-v">1.000</div><div class="kpi-l">Betrag</div></div><div class="kpi"><div class="kpi-v">€200</div><div class="kpi-l">Summe</div></div><div class="kpi"><div class="kpi-v">€10</div><div class="kpi-l">Summe</div></div></div>
-      <section class="section block" id="summary" data-block="summary"><div class="section-label" data-i18n="lbl_overview">Overview</div><h2 data-i18n="summary_enhanced">Enhanced summary</h2><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Meeting Purpose</h3>
+      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Email slides to Ergo Pro trainees</span><span class="todo-meta">Hi</span></li><li><span class="todo-task">Get trainer/structure contact numbers; save in CRM</span><span class="todo-meta">Hi</span></li><li><span class="todo-task"><strong>Hi:</strong> Host weekly deep-dive sessions on real estate (Wednesdays, 18:00) to build agent knowledge and confidence.</span></li><li><span class="todo-task">Identify potential clients meeting the profile (€2.5k+ net income, €10k+ equity).</span></li><li><span class="todo-task">Use real estate as an entry point to build trust and cross-sell insurance products.</span></li><li><span class="todo-task">Attend the weekly sessions to learn how to pitch the concept effectively.</span></li></ul></section>
+      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Meeting Purpose</h3>
 <p class="exec-p">To introduce Ergo Pro agents to real estate as a tool for client acquisition.</p>
 <h3 class="exec-h">Key Takeaways</h3>
 <ul class="exec-ul">
@@ -678,51 +708,12 @@
 <li><strong>Compensation:</strong> Agents receive a direct referral commission of 20–30% of the total commission, typically €3,800–€6,000 per deal.</li>
 <li><strong>Client Profile:</strong> Ideal clients have a net income of €2,500–€3,000+ and at least €10,000 in equity for closing costs.</li>
 </ul>
-</ul></div></section>
+</ul></div></details>
       
-      <div class="grid2 block" id="chartsGrid" data-block="charts"><section class="section chart-box" id="topicsWrap" data-block="topics"><div class="section-label" data-i18n="lbl_distribution">Distribution</div><h2 data-i18n="topics">Topics</h2><canvas id="topics"></canvas></section><section class="section chart-box" id="speakersWrap" data-block="speakers"><div class="section-label" data-i18n="lbl_conversation">Conversation</div><h2 data-i18n="speaking_time">Speaking time</h2><canvas id="speakers"></canvas></section></div>
-      <section class="section block" id="timeline" data-block="timeline"><div class="section-label" data-i18n="lbl_moments">Moments</div><h2 data-i18n="timeline">Timeline</h2><div class="tl"><div class="tl-t">00:10:21</div><div class="tl-body"><div class="who">Hi</div><p>Bis ich mit 21 bei einer 55-jährigen Rechtsanwälte, die auf dem Fensil bekannt war, saß,</p></div></div><div class="tl"><div class="tl-t">00:13:08</div><div class="tl-body"><div class="who">Hi</div><p>Wichtig, Immobilien ist ein großes Thema, die Folie könnt ihr da haben, wir müssen nicht alles aufschreiben.</p></div></div><div class="tl"><div class="tl-t">00:13:13</div><div class="tl-body"><div class="who">Hi</div><p>es ist wichtig, mir ist wichtig, wenn ihr hier sitzt, scheiß drauf, was hier dran steht.</p></div></div><div class="tl"><div class="tl-t">00:17:03</div><div class="tl-body"><div class="who">Hi</div><p>Ihr bekommt Gehalt, das ist brutto, darauf müsst ihr Steuern zahlen, bis zu 42% vom Finanzamt.</p></div></div><div class="tl"><div class="tl-t">00:18:06</div><div class="tl-body"><div class="who">Hi</div><p>Das heißt, zwei- bis dreimal immer versteuert, bis das Geld durch ist.</p></div></div><div class="tl"><div class="tl-t">00:22:35</div><div class="tl-body"><div class="who">Hi</div><p>So, wichtig, Inflation, ihr müsst eine Sache, das ist jetzt ein kleines Knowledge, extra, wenn ihr 2025 10% Inflation ha…</p></div></div><div class="tl"><div class="tl-t">00:32:47</div><div class="tl-body"><div class="who">Hi</div><p>Wir steigen jedes Jahr 2 bis 4%, ich nehme einfach nur ganz bescheinend 3%.</p></div></div><div class="tl"><div class="tl-t">00:49:21</div><div class="tl-body"><div class="who">Hi</div><p>Leer 250.000 bis 300.000, mit Steckdosen 300.000.</p></div></div></section>
-      <details class="section block" id="transcript" data-block="transcript"><summary data-i18n="transcript_excerpt">Transcript excerpt</summary><pre>[00:00:09] Hi: Also, mein Name ist Hay, ich mache Immobilien seit fast 6 Jahren, ich habe davor Finanzfabrik gemacht, ich war auch schon mal bei der Ergo mit dabei gewesen, habe davor auch eine Ausbildung bei der DV
-[00:00:48] Hi: Ich frage mal kurz in den Raum, wie alt seid ihr so, einfach mal reinrufen, so den Durchschnitt.
-[00:00:52] Hi: Aufzählen.
-[00:00:54] Hi: 30.
-[00:00:55] Hi: 30.
-[00:00:55] Hi: 30.
-[00:00:56] Hi: der 11.
-[00:00:58] Hi: Okay, aber so, ich glaub, Durchschnitt werden im Raum gefühlt 19, sehr jung, okay.
-[00:01:04] Hi: Kurz mal Arm hoch, wer von euch wohnt schon alleine?
-[00:01:09] Hi: Okay, so, wer geht nebenbei schon arbeiten?
-[00:01:14] Hi: Okay.
-[00:01:15] Hi: Und die anderen noch nie gearbeitet und das ist das erste Mal, dass ihr beruflich tätig seid?
-[00:01:20] Hi: Ja.
-[00:01:22] Hi: Was soll das sein?
-[00:01:26] Hi: Okay, aber du hast schon mal gearbeitet, da geht&#x27;s, okay.
-[00:01:29] Hi: so, also warum bin ich heute hier?
-[00:01:31] Hi: Immobilien per se ist ja nicht von der Ergo, wir sind eine ganz andere Firma, wie gesagt, das heißt VHS.
-[00:01:37] Hi: Das ist die Immobilienfirma, mit der ich arbeite, da mache ich die Vertriebsleitung.
-[00:01:42] Hi: Was hat das mit Ergo zu tun?
-[00:01:43] Hi: Ihr seid jetzt alle roundabout fast einen Monat hier dabei, korrekt?
-[00:01:47] Hi: Nein.
-[00:01:47] Hi: Korrekt?
-[00:01:48] Hi: Das ist mein erster Tag hier.
-[00:01:50] Hi: Okay, du bist der Quereinsteiger komplett, okay.
-[00:01:54] Hi: Aber der Rest sonst schon einen Monat hier in der Schulung gewesen.
-[00:01:59] Hi: Okay, crazy.
-[00:02:01] Hi: Gut, da muss ich noch vorne anfangen.
-[00:02:02] Hi: Also, Finanz ist ein sehr großes Thema.
-[00:02:05] Hi: Das was Ergo hier, oder die Ergo Pro an sich macht, ist ja der Rat der World Investment für die Altersvorsorge.
-[00:02:10] Hi: Das ist das Hauptgeschäft.
-[00:02:12] Hi: Es gibt natürlich noch ganz viele andere Versicherungen, aber das ist das Hauptgeschäft.
-[00:02:16] Hi: Warum ich heute hier bin, ist ganz einfach, Investment und Immobilien hängen sehr eng miteinander an.
-[00:02:22] Hi: Das heißt, wenn wir über Investment reden, Geld anlegen, dann kommt schnell der Begriff, wenn man einmal ETFs und Fonds und Gold fertig habe, dann kommt man schnell zu Immobilien.
-[00:02:32] Hi: Und der Grund, warum ich heute im Zertim mit euch hier drin bin, Killing mich hier quasi rein platziert habe, ist um euch zu helfen, breiter zu beraten, mehr den Kunden anbieten zu können und mehr mit
-[00:02:44] Hi: Weil in dem Geschäft geht es darum, dass ihr so gut wie möglich die Leute beraten könnt auf das Thema.
-[00:02:54] Hi: Wenn ihr in Gespräche reingeht und sagt, ich mache Versicherung, ich mache Rentenversicherung, okay, cool, das machen viele, aber wenn ihr Versicherung macht und zusätzlich noch auf Immobilienberater 
-[00:03:23] Hi: Bei euch, alles gleiche, oder?
-[00:03:25] Hi: Manche keine Vorfahren, aber durch Internet heutzutage, Scam oder was auch immer.
-[00:03:31] Hi: Wenn es die falschen Leute machen, habt ihr recht, Scam, aber wenn man es richtig macht, dann ist es natürlich irgendwo auch sinnvoll.
-[00:03:37] Hi: Ihr müsst euch eine Sache merken, in dem Bereich der Finanzkienstleisterung spricht sich vieles Schlechtes sehr schnell rum, und gutes eher langsam.</pre></details>
-      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Email slides to Ergo Pro trainees</span><span class="todo-meta">Hi</span></li><li><span class="todo-task">Get trainer/structure contact numbers; save in CRM</span><span class="todo-meta">Hi</span></li><li><span class="todo-task"><strong>Hi:</strong> Host weekly deep-dive sessions on real estate (Wednesdays, 18:00) to build agent knowledge and confidence.</span></li><li><span class="todo-task">Identify potential clients meeting the profile (€2.5k+ net income, €10k+ equity).</span></li><li><span class="todo-task">Use real estate as an entry point to build trust and cross-sell insurance products.</span></li><li><span class="todo-task">Attend the weekly sessions to learn how to pitch the concept effectively.</span></li></ul></section>
+      
+      
+      
+      
       
     </div>
 
@@ -737,6 +728,7 @@
         recap_purpose: 'Zweck', recap_highlights: 'Was zählte',
         recap_do_next: 'Als Nächstes', recap_watch: 'Achtung',
         lbl_overview: 'Überblick', summary: 'Zusammenfassung', summary_enhanced: 'Enhanced Summary',
+        summary_expand: 'Antippen zum Öffnen',
         lbl_notes: 'Notizen', meeting_notes: 'Meeting-Notizen',
         lbl_focus: 'Fokus', key_takeaways: 'Kernaussagen',
         lbl_distribution: 'Verteilung', topics: 'Themen',
@@ -757,6 +749,7 @@
         recap_purpose: 'Purpose', recap_highlights: 'What mattered',
         recap_do_next: 'Do next', recap_watch: 'Watch-outs',
         lbl_overview: 'Overview', summary: 'Summary', summary_enhanced: 'Enhanced summary',
+        summary_expand: 'Tap to expand',
         lbl_notes: 'Notes', meeting_notes: 'Meeting notes',
         lbl_focus: 'Focus', key_takeaways: 'Key takeaways',
         lbl_distribution: 'Distribution', topics: 'Topics',
@@ -777,6 +770,7 @@
         recap_purpose: 'Amaç', recap_highlights: 'Ne önemliydi',
         recap_do_next: 'Sırada', recap_watch: 'Dikkat',
         lbl_overview: 'Genel bakış', summary: 'Özet', summary_enhanced: 'Gelişmiş özet',
+        summary_expand: 'Açmak için dokun',
         lbl_notes: 'Notlar', meeting_notes: 'Toplantı notları',
         lbl_focus: 'Odak', key_takeaways: 'Önemli çıkarımlar',
         lbl_distribution: 'Dağılım', topics: 'Konular',
@@ -870,8 +864,8 @@
     }
     ergomeetChartDefaults();
 
-    const topics = [{"label": "Zahlen / KPIs", "weight": 79.6}, {"label": "Kunden / Vertrieb", "weight": 12.4}, {"label": "Prozesse / Tools", "weight": 4.9}, {"label": "Rente / Vorsorge", "weight": 2.2}, {"label": "Team / F\u00fchrung", "weight": 0.9}, {"label": "Karriere", "weight": 0.1}];
-    const speakers = [{"name": "Hi", "words": 16186, "pct": 100.0}, {"name": "Speaker 2", "words": 2, "pct": 0.0}];
+    const topics = [];
+    const speakers = [];
     const goldPalette = ['#c9a962','#e8d5a3','#8b7355','#d4bc7a','#6b7c9e','#a89878'];
     window.__ergoCharts = window.__ergoCharts || [];
 
@@ -879,7 +873,7 @@
       document.querySelectorAll('[data-block]').forEach((el) => {
         const text = (el.textContent || '').replace(/\s+/g, ' ').trim();
         const hasCanvas = !!el.querySelector('canvas');
-        const hasListContent = !!el.querySelector('li, tr, .tl, .exec-p, .exec-h, .exec-ul li, pre');
+        const hasListContent = !!el.querySelector('li, tr, .tl, .exec-p, .exec-h, .exec-ul li, pre, .recap-one-text, .enhanced-summary');
         const topicsOk = !!(el.querySelector('#topics') && topics.length);
         const speakersOk = !!(el.querySelector('#speakers') && speakers.length);
         const hasMeaningful = hasListContent || (hasCanvas && (topicsOk || speakersOk));
@@ -889,21 +883,14 @@
           el.hidden = true;
         }
       });
-      const kpi = document.getElementById('kpiRow');
-      if (kpi && !kpi.querySelector('.kpi')) {
-        kpi.classList.add('is-empty');
-        kpi.hidden = true;
-      }
-      const charts = document.getElementById('chartsGrid');
-      if (charts) {
-        const visible = [...charts.querySelectorAll('.chart-box')].filter((c) => !c.classList.contains('is-empty') && !c.hidden);
-        if (!visible.length) {
-          charts.classList.add('is-empty');
-          charts.hidden = true;
-        } else if (visible.length === 1) {
-          charts.classList.add('grid2--single');
+      // Focus layout: never leave orphan empty shells
+      ['kpiRow', 'chartsGrid', 'timeline', 'transcript', 'ideas'].forEach((id) => {
+        const el = document.getElementById(id);
+        if (el && !el.querySelector('li, canvas, .tl, pre, .kpi')) {
+          el.classList.add('is-empty');
+          el.hidden = true;
         }
-      }
+      });
     })();
 
     (function buildToc() {
@@ -914,8 +901,13 @@
         const id = block.id || block.getAttribute('data-block');
         if (!id) return;
         if (!block.id) block.id = id;
-        const labelEl = block.querySelector('h2, summary, .section-label');
-        const label = (labelEl && labelEl.textContent.trim()) || id;
+        const labelEl = block.querySelector('.summary-title, h2, summary, .section-label');
+        let label = (labelEl && labelEl.textContent.trim()) || id;
+        // Prefer short TOC labels
+        if (block.id === 'recap') label = 'Recap';
+        if (block.id === 'todos') label = 'Todos';
+        if (block.id === 'summary') label = 'Summary';
+        if (block.id === 'notes') label = 'Notes';
         const a = document.createElement('a');
         a.href = '#' + block.id;
         a.textContent = label;
