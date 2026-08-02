@@ -468,6 +468,36 @@
     .recap-ul li::marker { color: var(--gold); }
     .recap-col--do .recap-kicker { color: var(--gold-light); }
     .recap-col--watch .recap-kicker { color: #d4a0a0; }
+    /* Focus layout: collapsible Enhanced summary */
+    details.summary-details {
+      cursor: default;
+    }
+    details.summary-details > summary.summary-summary {
+      list-style: none;
+      cursor: pointer;
+      display: grid;
+      gap: 4px;
+      padding-bottom: 4px;
+    }
+    details.summary-details > summary.summary-summary::-webkit-details-marker { display: none; }
+    details.summary-details .summary-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--cream);
+    }
+    details.summary-details .summary-hint {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    details.summary-details[open] .summary-hint { display: none; }
+    details.summary-details .enhanced-summary {
+      margin-top: 16px;
+      padding-top: 8px;
+      border-top: 1px solid var(--line);
+    }
     .end-lists .end-ul {
       margin: 0;
       padding-left: 1.2rem;
@@ -614,8 +644,8 @@
 <div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li>Build a Network Database: Systematically log contacts with key details (Name, Age, Job, Goals) to create a valuable asset for referrals and connections.</li><li>Network Actively: Meet one new person daily. Use social media (Instagram) as a digital business card to build trust and credibility.</li><li>Ask for Specific Referrals: Avoid vague requests. Ask for contacts with specific needs (e.g., &quot;Who do you know in IT earning €80k+?&quot;) and use warm introductions.</li></ul></div>
 <div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li>Create a network database with contacts and key details.</li><li>Set a goal to meet one new person daily.</li><li>Optimize your social media profile as a digital business card.</li></ul></div>
 </div></section>
-      <div class="kpi-row block" id="kpiRow" data-block="kpis"><div class="kpi"><div class="kpi-v">€80</div><div class="kpi-l">Summe</div></div><div class="kpi"><div class="kpi-v">€100</div><div class="kpi-l">Summe</div></div><div class="kpi"><div class="kpi-v">€600</div><div class="kpi-l">Summe</div></div><div class="kpi"><div class="kpi-v">100</div><div class="kpi-l">Prozent</div></div></div>
-      <section class="section block" id="summary" data-block="summary"><div class="section-label" data-i18n="lbl_overview">Overview</div><h2 data-i18n="summary_enhanced">Enhanced summary</h2><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Meeting Purpose</h3>
+      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Create a network database with contacts and key details.</span></li><li><span class="todo-task">Set a goal to meet one new person daily.</span></li><li><span class="todo-task">Optimize your social media profile as a digital business card.</span></li><li><span class="todo-task">Practice asking for specific referrals.</span></li><li><span class="todo-task">Begin recruiting early to build a team.</span></li><li><span class="todo-task">*Der totale Verkaufserfolg* (Zig Ziglar)</span></li><li><span class="todo-task">*Wie man Freunde gewinnt* (Dale Carnegie)</span></li><li><span class="todo-task">*Im Prinzip Gewinnen* (Arthur Williams)</span></li></ul></section>
+      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Meeting Purpose</h3>
 <p class="exec-p">To learn Basti&#x27;s four-pillar lead generation strategy.</p>
 <h3 class="exec-h">Key Takeaways</h3>
 <ul class="exec-ul">
@@ -730,51 +760,12 @@
 </ul>
 </ul>
 </ul>
-</ul></div></section>
+</ul></div></details>
       
-      <div class="grid2 block" id="chartsGrid" data-block="charts"><section class="section chart-box" id="topicsWrap" data-block="topics"><div class="section-label" data-i18n="lbl_distribution">Distribution</div><h2 data-i18n="topics">Topics</h2><canvas id="topics"></canvas></section><section class="section chart-box" id="speakersWrap" data-block="speakers"><div class="section-label" data-i18n="lbl_conversation">Conversation</div><h2 data-i18n="speaking_time">Speaking time</h2><canvas id="speakers"></canvas></section></div>
-      <section class="section block" id="timeline" data-block="timeline"><div class="section-label" data-i18n="lbl_moments">Moments</div><h2 data-i18n="timeline">Timeline</h2><div class="tl"><div class="tl-t">00:01:33</div><div class="tl-body"><div class="who">Basti</div><p>Für die Leute, es uns schon wissen, ich bin jetzt in der Stufe 5 zum Beispiel, deswegen, ich glaube, wie gesagt, mit den…</p></div></div><div class="tl"><div class="tl-t">00:01:51</div><div class="tl-body"><div class="who">Basti</div><p>Okay, für mich ist eine Sache immer relativ wichtig, und zwar,</p></div></div><div class="tl"><div class="tl-t">00:05:13</div><div class="tl-body"><div class="who">Basti</div><p>Jetzt bei mir zum Beispiel das Ding, kann ich sagen, meine Namensliste, wo ich damals angefangen habe, hat knapp 150 bis…</p></div></div><div class="tl"><div class="tl-t">00:05:42</div><div class="tl-body"><div class="who">Basti</div><p>Und zwar, ich habe mittlerweile 1.400 bis 1.500 Kontakten in der Telefonliste.</p></div></div><div class="tl"><div class="tl-t">00:05:48</div><div class="tl-body"><div class="who">Basti</div><p>Und das ist einfach das Ding, warum wir auch immer die anderen Dinge durchgehen, warum es so enorm wichtig ist, selber a…</p></div></div><div class="tl"><div class="tl-t">00:07:25</div><div class="tl-body"><div class="who">Basti</div><p>Aber es ist wichtig, diese ganzen Kontakte in seinem Kontaktfeld zu haben.</p></div></div><div class="tl"><div class="tl-t">00:07:29</div><div class="tl-body"><div class="who">Basti</div><p>Deswegen ist es auch für euch wichtig, diese Netzwerkdatenbank enorm zu pflegen.</p></div></div><div class="tl"><div class="tl-t">00:11:16</div><div class="tl-body"><div class="who">Basti</div><p>Deswegen ist es einerseits wichtig, sich mal wirklich über alle möglichen Sachen eine Übersicht zu verschaffen.</p></div></div></section>
-      <details class="section block" id="transcript" data-block="transcript"><summary data-i18n="transcript_excerpt">Transcript excerpt</summary><pre>[00:00:07] Basti: Ich will jetzt nicht euch irgendwie ein endloses Storytime oder sowas verwickeln, ich werde meistens wahrscheinlich sowieso, wenn es aus ist, einfach sitzen.
-[00:00:16] Basti: Soll ich mir vielleicht kurz auf Toilette oder sowas?
-[00:00:18] Basti: Das heißt, wenn ihr wollt, könnt mir da noch verschiedene Fragen stellen.
-[00:00:21] Basti: Ja, ganz kurz zu mir, damit ihr zumindest zu dem Gesicht auch einen Namen habt.
-[00:00:25] Basti: Mein Name ist Sebastian Halaikou.
-[00:00:27] Basti: Ich bin mir einfach eingefallen, und zwar lasst ihn quasi rind bei meinem Namen aus und nenn mich einfach Basti.
-[00:00:32] Basti: Also wenn mich jemand Sebastian nennt, fühle ich mich so komisch und unwohl.
-[00:00:37] Basti: Ich fühle mich an, ob meine Mutter mich anstrengen würde und meinen Freund Namen auspacken würde.
-[00:00:41] Basti: Deswegen lasst uns einfach auf Basti einigen.
-[00:00:43] Basti: Bin seit 2018 dabei, um genau zu seinem März.
-[00:00:48] Basti: Das heißt, ich stehe jetzt eigentlich so grob langsam auf meine 83 Jahre zu.
-[00:00:52] Basti: Ich sage es immer wieder gerne, ich habe sowohl vor Corona angefangen.
-[00:00:56] Basti: Ich habe ...
-[00:01:01] Basti: Die gesamten Jahre, die ich jetzt hier bin, waren Monat und Wochen.
-[00:01:04] Basti: Also ohne jegliche Pause.
-[00:01:05] Basti: heißt, wie gesagt, wenn euch irgendjemand dieses Geschäftsmodell hier auch mit und anderen transparent wiedergeben kann, ja, sowohl was ist schwer, was ist einfach, was muss man machen, ich hoffe, da 
-[00:01:18] Basti: Ja, kennt ihr von euch das Stufensystem einigermaßen, Karriere-System, in den Zwischenstufen es gibt, irgendjemand nicht, ehrlich, es gibt keinen Ton.
-[00:01:27] Basti: Also wenn du bescheinig bist, bist noch relativ frisch zu sagen, bei uns sechs Taillenstufen, dann wird dir wahrscheinlich schon Jakob erklären.
-[00:01:33] Basti: Für die Leute, es uns schon wissen, ich bin jetzt in der Stufe 5 zum Beispiel, deswegen, ich glaube, wie gesagt, mit den ganzen Eigenschaften kann ich euch so ein bisschen was mit dem Weg mitgeben.
-[00:01:44] Basti: Also, Jakob würde jetzt sagen, ich bin voll der Typ aus.
-[00:01:48] Basti: Jakob hat.
-[00:01:51] Basti: Okay, für mich ist eine Sache immer relativ wichtig, und zwar,
-[00:01:54] Basti: Und alle Themen, die ich euch heute sozusagen mitgebe, außer natürlich ein gewisser Paar.
-[00:01:59] Basti: Und zwar, wir beschäftigen uns mit einer Sache.
-[00:02:02] Basti: Und zwar, wo ich in diesem Geschäft ja angefangen habe.
-[00:02:05] Basti: Damals.
-[00:02:06] Basti: Auch jetzt zu mir selber, ich bin 27, das heißt, wo ich damals angefangen habe, war ich relativ frisch 19 Jahre alt.
-[00:02:13] Basti: Das heißt, man ist aus dem Adiktur gekommen, man hatte relativ okayes Kontaktpotenzial, aber für mich war irgendwann so diese allerallertypischste Frage, was passiert, wenn ich niemanden mehr habe?
-[00:02:26] Basti: Was ist, wenn meine Liste leer ist, was ist, wenn da keiner mehr ist?
-[00:02:28] Basti: Hat sich irgendjemand jetzt zu Beginn eurer Karriere mir diese Frage aufgestellt?
-[00:02:33] Basti: Okay, super.
-[00:02:35] Basti: Vielleicht unabhängig davon, dass ich das gleich schon mal thematisiere, ich bin vielleicht das lebende Beispiel, es kann weitergehen.
-[00:02:40] Basti: Also keine Angst, irgendwann kann es mal ein bisschen dem Ende entlegen treten, man kann aber dafür auch was machen.
-[00:02:46] Basti: Und zwar möchte ich gerne euch eine Sache durchgeben, und zwar hier halt und
-[00:02:51] Basti: Sorry, der Stift geht ein bisschen nach.
-[00:02:53] Basti: Die vier Wege der Lead-Gewinnung.
-[00:02:59] Basti: Das heißt, Leads, um es so zu sagen, sind halt sozusagen Kontaktpotenziale, mit denen wir arbeiten können.
-[00:03:04] Basti: Und ich möchte jetzt mit euch einfach mal diese vier Wege durchgehen.
-[00:03:07] Basti: Ich werde euch ein bisschen einschreiben, da habe so einen schönen Handschritt.
-[00:03:11] Basti: Das heißt, vier Wege, ihr selber auch stetig an neue Leute kommt.</pre></details>
-      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Create a network database with contacts and key details.</span></li><li><span class="todo-task">Set a goal to meet one new person daily.</span></li><li><span class="todo-task">Optimize your social media profile as a digital business card.</span></li><li><span class="todo-task">Practice asking for specific referrals.</span></li><li><span class="todo-task">Begin recruiting early to build a team.</span></li><li><span class="todo-task">*Der totale Verkaufserfolg* (Zig Ziglar)</span></li><li><span class="todo-task">*Wie man Freunde gewinnt* (Dale Carnegie)</span></li><li><span class="todo-task">*Im Prinzip Gewinnen* (Arthur Williams)</span></li></ul></section>
+      
+      
+      
+      
       
     </div>
 
@@ -789,6 +780,7 @@
         recap_purpose: 'Zweck', recap_highlights: 'Was zählte',
         recap_do_next: 'Als Nächstes', recap_watch: 'Achtung',
         lbl_overview: 'Überblick', summary: 'Zusammenfassung', summary_enhanced: 'Enhanced Summary',
+        summary_expand: 'Antippen zum Öffnen',
         lbl_notes: 'Notizen', meeting_notes: 'Meeting-Notizen',
         lbl_focus: 'Fokus', key_takeaways: 'Kernaussagen',
         lbl_distribution: 'Verteilung', topics: 'Themen',
@@ -809,6 +801,7 @@
         recap_purpose: 'Purpose', recap_highlights: 'What mattered',
         recap_do_next: 'Do next', recap_watch: 'Watch-outs',
         lbl_overview: 'Overview', summary: 'Summary', summary_enhanced: 'Enhanced summary',
+        summary_expand: 'Tap to expand',
         lbl_notes: 'Notes', meeting_notes: 'Meeting notes',
         lbl_focus: 'Focus', key_takeaways: 'Key takeaways',
         lbl_distribution: 'Distribution', topics: 'Topics',
@@ -829,6 +822,7 @@
         recap_purpose: 'Amaç', recap_highlights: 'Ne önemliydi',
         recap_do_next: 'Sırada', recap_watch: 'Dikkat',
         lbl_overview: 'Genel bakış', summary: 'Özet', summary_enhanced: 'Gelişmiş özet',
+        summary_expand: 'Açmak için dokun',
         lbl_notes: 'Notlar', meeting_notes: 'Toplantı notları',
         lbl_focus: 'Odak', key_takeaways: 'Önemli çıkarımlar',
         lbl_distribution: 'Dağılım', topics: 'Konular',
@@ -922,8 +916,8 @@
     }
     ergomeetChartDefaults();
 
-    const topics = [{"label": "Zahlen / KPIs", "weight": 55.2}, {"label": "Prozesse / Tools", "weight": 17.6}, {"label": "Karriere", "weight": 11.3}, {"label": "Team / F\u00fchrung", "weight": 10.8}, {"label": "Kunden / Vertrieb", "weight": 4.5}, {"label": "Rente / Vorsorge", "weight": 0.6}];
-    const speakers = [{"name": "Basti", "words": 18491, "pct": 100.0}];
+    const topics = [];
+    const speakers = [];
     const goldPalette = ['#c9a962','#e8d5a3','#8b7355','#d4bc7a','#6b7c9e','#a89878'];
     window.__ergoCharts = window.__ergoCharts || [];
 
@@ -931,7 +925,7 @@
       document.querySelectorAll('[data-block]').forEach((el) => {
         const text = (el.textContent || '').replace(/\s+/g, ' ').trim();
         const hasCanvas = !!el.querySelector('canvas');
-        const hasListContent = !!el.querySelector('li, tr, .tl, .exec-p, .exec-h, .exec-ul li, pre');
+        const hasListContent = !!el.querySelector('li, tr, .tl, .exec-p, .exec-h, .exec-ul li, pre, .recap-one-text, .enhanced-summary');
         const topicsOk = !!(el.querySelector('#topics') && topics.length);
         const speakersOk = !!(el.querySelector('#speakers') && speakers.length);
         const hasMeaningful = hasListContent || (hasCanvas && (topicsOk || speakersOk));
@@ -941,21 +935,14 @@
           el.hidden = true;
         }
       });
-      const kpi = document.getElementById('kpiRow');
-      if (kpi && !kpi.querySelector('.kpi')) {
-        kpi.classList.add('is-empty');
-        kpi.hidden = true;
-      }
-      const charts = document.getElementById('chartsGrid');
-      if (charts) {
-        const visible = [...charts.querySelectorAll('.chart-box')].filter((c) => !c.classList.contains('is-empty') && !c.hidden);
-        if (!visible.length) {
-          charts.classList.add('is-empty');
-          charts.hidden = true;
-        } else if (visible.length === 1) {
-          charts.classList.add('grid2--single');
+      // Focus layout: never leave orphan empty shells
+      ['kpiRow', 'chartsGrid', 'timeline', 'transcript', 'ideas'].forEach((id) => {
+        const el = document.getElementById(id);
+        if (el && !el.querySelector('li, canvas, .tl, pre, .kpi')) {
+          el.classList.add('is-empty');
+          el.hidden = true;
         }
-      }
+      });
     })();
 
     (function buildToc() {
@@ -966,8 +953,13 @@
         const id = block.id || block.getAttribute('data-block');
         if (!id) return;
         if (!block.id) block.id = id;
-        const labelEl = block.querySelector('h2, summary, .section-label');
-        const label = (labelEl && labelEl.textContent.trim()) || id;
+        const labelEl = block.querySelector('.summary-title, h2, summary, .section-label');
+        let label = (labelEl && labelEl.textContent.trim()) || id;
+        // Prefer short TOC labels
+        if (block.id === 'recap') label = 'Recap';
+        if (block.id === 'todos') label = 'Todos';
+        if (block.id === 'summary') label = 'Summary';
+        if (block.id === 'notes') label = 'Notes';
         const a = document.createElement('a');
         a.href = '#' + block.id;
         a.textContent = label;
