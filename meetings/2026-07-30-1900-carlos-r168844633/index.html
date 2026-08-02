@@ -468,6 +468,36 @@
     .recap-ul li::marker { color: var(--gold); }
     .recap-col--do .recap-kicker { color: var(--gold-light); }
     .recap-col--watch .recap-kicker { color: #d4a0a0; }
+    /* Focus layout: collapsible Enhanced summary */
+    details.summary-details {
+      cursor: default;
+    }
+    details.summary-details > summary.summary-summary {
+      list-style: none;
+      cursor: pointer;
+      display: grid;
+      gap: 4px;
+      padding-bottom: 4px;
+    }
+    details.summary-details > summary.summary-summary::-webkit-details-marker { display: none; }
+    details.summary-details .summary-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--cream);
+    }
+    details.summary-details .summary-hint {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    details.summary-details[open] .summary-hint { display: none; }
+    details.summary-details .enhanced-summary {
+      margin-top: 16px;
+      padding-top: 8px;
+      border-top: 1px solid var(--line);
+    }
     .end-lists .end-ul {
       margin: 0;
       padding-left: 1.2rem;
@@ -615,8 +645,8 @@
 <div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li>Die eigene Positionierung überprüfen (Kleidung, Sprache, Körpersprache).</li><li>Storytelling nutzen, um Kunden in die eigenen Ziele einzubinden.</li><li>Einen 3-Monats-Folgetermin bei der Policenübergabe vereinbaren.</li></ul></div>
 <div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li>Karriereweg, nicht Job: Das Angebot als Karriereweg mit Positionen (z. B. „Team Leader&quot;) präsentieren, nicht als Stufen (z. B. „Stufe 1&quot;).</li></ul></div>
 </div></section>
-      <div class="kpi-row block" id="kpiRow" data-block="kpis"><div class="kpi"><div class="kpi-v">80</div><div class="kpi-l">Prozent</div></div><div class="kpi"><div class="kpi-v">1</div><div class="kpi-l">Prozent</div></div><div class="kpi"><div class="kpi-v">40</div><div class="kpi-l">Prozent</div></div></div>
-      <section class="section block" id="summary" data-block="summary"><div class="section-label" data-i18n="lbl_overview">Overview</div><h2 data-i18n="summary_enhanced">Enhanced summary</h2><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Zweck des Meetings</h3>
+      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Die eigene Positionierung überprüfen (Kleidung, Sprache, Körpersprache).</span></li><li><span class="todo-task">Storytelling nutzen, um Kunden in die eigenen Ziele einzubinden.</span></li><li><span class="todo-task">Einen 3-Monats-Folgetermin bei der Policenübergabe vereinbaren.</span></li><li><span class="todo-task">Eine „Servicevereinbarung&quot; nutzen, um zukünftige Cross-Selling-Chancen zu sichern.</span></li><li><span class="todo-task">Erwachsene mit Berufserfahrung rekrutieren, insbesondere aus dem Kundenstamm.</span></li><li><span class="todo-task">Ein Excel-Dashboard zur Verfolgung aller Teamaktivitäten erstellen.</span></li><li><span class="todo-task">Drei wöchentliche Meetings durchführen: zwei für Schulungen und eines zur Besprechung der Zahlen.</span></li><li><span class="todo-task">Eine tägliche Checkliste nutzen, um die Erledigung von Aufgaben zu verfolgen.</span></li><li><span class="todo-task">Die administrativen Aufgaben der Partner proaktiv verwalten.</span></li></ul></section>
+      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Zweck des Meetings</h3>
 <p class="exec-p">Carlos stellt Systeme für Verkauf, Recruiting und Führung vor.</p>
 <h3 class="exec-h">Wichtigste Erkenntnisse</h3>
 <ul class="exec-ul">
@@ -709,51 +739,12 @@
 </ul>
 </ul>
 </ul>
-</ul></div></section>
+</ul></div></details>
       
-      <div class="grid2 block" id="chartsGrid" data-block="charts"><section class="section chart-box" id="topicsWrap" data-block="topics"><div class="section-label" data-i18n="lbl_distribution">Distribution</div><h2 data-i18n="topics">Topics</h2><canvas id="topics"></canvas></section><section class="section chart-box" id="speakersWrap" data-block="speakers"><div class="section-label" data-i18n="lbl_conversation">Conversation</div><h2 data-i18n="speaking_time">Speaking time</h2><canvas id="speakers"></canvas></section></div>
-      <section class="section block" id="timeline" data-block="timeline"><div class="section-label" data-i18n="lbl_moments">Moments</div><h2 data-i18n="timeline">Timeline</h2><div class="tl"><div class="tl-t">00:01:17</div><div class="tl-body"><div class="who">Carlos</div><p>Und da sind wir für die Systeme ja sehr wichtig.</p></div></div><div class="tl"><div class="tl-t">00:07:17</div><div class="tl-body"><div class="who">Carlos</div><p>Was ihr hier macht, und das ist sehr wichtig im Smalltalk, sehr, sehr wichtig.</p></div></div><div class="tl"><div class="tl-t">00:09:31</div><div class="tl-body"><div class="who">Carlos</div><p>Weil mein Ziel ist nicht so, dass wir ihn auszusehen, sondern ein anderes.</p></div></div><div class="tl"><div class="tl-t">00:22:07</div><div class="tl-body"><div class="who">Carlos</div><p>Es ist ja wichtig, immer die Hände über den Tisch sind.</p></div></div><div class="tl"><div class="tl-t">00:26:16</div><div class="tl-body"><div class="who">Carlos</div><p>Wir machen folgendes, und zwar, ganz wichtig, in meinem Storytelling, ihr müsst ja eure Ziele benehmen.</p></div></div><div class="tl"><div class="tl-t">00:27:29</div><div class="tl-body"><div class="who">Carlos</div><p>Und das ist ja wichtig, weil wenn ihr Ihnen ein Ziel gibt, die, wenn ihr Ihnen sagt, Dank.</p></div></div><div class="tl"><div class="tl-t">00:27:44</div><div class="tl-body"><div class="who">Carlos</div><p>Ihr müsst euch einen Grund geben, wieso er euch vertrauen musste und wieso es für ihn wichtig ist, dass er euch zuhört.</p></div></div><div class="tl"><div class="tl-t">00:31:04</div><div class="tl-body"><div class="who">Carlos</div><p>Ganz wichtig bei der Betäugung, ich werde euch eine Sache zeigen, weil mein Ziel, von mir könnt ihr auf Deutsch sein, au…</p></div></div></section>
-      <details class="section block" id="transcript" data-block="transcript"><summary data-i18n="transcript_excerpt">Transcript excerpt</summary><pre>[00:00:00] Carlos: Also, wie wurde gesagt, soll heute einstrengen, so wie sie mir hier reflektiert.
-[00:00:05] Carlos: Wer kennt mich hier nicht?
-[00:00:08] Carlos: Ja, das war einfach.
-[00:00:10] Carlos: Sehr gut, genau.
-[00:00:12] Carlos: Also ich bin seit zwei und ein halb Jahren ins Geschäft gekommen.
-[00:00:16] Carlos: Ich bin 24 aktuell.
-[00:00:20] Carlos: Und heute werde ich euch über drei Sachen platzieren.
-[00:00:24] Carlos: Und zwar, wir werden die erste Stunde über Verbrauch reden, die zweite Stunde über Recruiting im Netzwerken, und die dritte Stunde über Führung.
-[00:00:31] Carlos: Wieso werden wir diese drei Stunden so haben und nicht ein einziges Thema?
-[00:00:35] Carlos: Weil wir werden über einige ganz, ganz, ganz bestimmte Sachen reden heute.
-[00:00:40] Carlos: Und zwar über Systeme kreieren.
-[00:00:43] Carlos: Wofür sind Systeme gut in unseres Geschäfts?
-[00:00:46] Carlos: Wer hat eine Idee?
-[00:00:49] Carlos: Sehr Okay, super.
-[00:00:55] Carlos: zum nächsten Bis zum
-[00:00:57] Carlos: euch hat Bock das ganze Karriere hier oder das ganze Leben zu verkaufen und nur zu verkaufen?
-[00:01:06] Carlos: Nein.
-[00:01:07] Carlos: Ich glaube jeder von euch will irgendwann mal in der Situation sein oder in der Position sein, wo er einfach Geld vergeht ohne was zu tun.
-[00:01:16] Carlos: Richtig?
-[00:01:17] Carlos: Und da sind wir für die Systeme ja sehr wichtig.
-[00:01:19] Carlos: Wir werden erstmal gucken, wie Systeme aufgebaut sind vom Verkauf.
-[00:01:24] Carlos: Dafür werden wir jetzt mal über etwas reden.
-[00:01:28] Carlos: Und zwar, was würdet ihr sagen, bedeutet Verkauf?
-[00:01:34] Carlos: Ja, Wir sind alle richtig.
-[00:01:55] Carlos: Ich würde sagen, Verkaufen heißt Helfen.
-[00:02:00] Carlos: Wieso Helfen?
-[00:02:01] Carlos: Die meisten Leute denken, Verkaufen fängt an, wenn man dem Kunden Hallo sagt, bei der Begrüßung.
-[00:02:07] Carlos: Warum würdet ihr aber sagen, der Verkauf fängt an und die Aufnahme bei der Begrüßung?
-[00:02:11] Carlos: Oder wo fängt es an?
-[00:02:14] Carlos: Bei der Vorbereitung.
-[00:02:16] Carlos: Ich würde sagen, bei der Vorbereitung, die versuchen, vor dem Termin kennenzulernen.
-[00:02:20] Carlos: Okay?
-[00:02:22] Carlos: Macht jemand?
-[00:02:25] Carlos: Sehr gut.
-[00:02:26] Carlos: Also ja, eine Sache war auch richtig, und zwar, wer hat Aufenthalte gesagt?
-[00:02:30] Carlos: Sehr gut.
-[00:02:31] Carlos: Also, das ist auch gerade des Verkaufens, aber das Verkauf, da verkaufst du ja kein Produkt, das brauchst du dich selber.
-[00:02:36] Carlos: Ist auch sehr richtig.
-[00:02:38] Carlos: Aber ja, wenn du weißt, wo das Problem bei dem Kunden liegt, bzw.
-[00:02:46] Carlos: ob du ihm helfen kannst, und wie du ihm helfen</pre></details>
-      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Die eigene Positionierung überprüfen (Kleidung, Sprache, Körpersprache).</span></li><li><span class="todo-task">Storytelling nutzen, um Kunden in die eigenen Ziele einzubinden.</span></li><li><span class="todo-task">Einen 3-Monats-Folgetermin bei der Policenübergabe vereinbaren.</span></li><li><span class="todo-task">Eine „Servicevereinbarung&quot; nutzen, um zukünftige Cross-Selling-Chancen zu sichern.</span></li><li><span class="todo-task">Erwachsene mit Berufserfahrung rekrutieren, insbesondere aus dem Kundenstamm.</span></li><li><span class="todo-task">Ein Excel-Dashboard zur Verfolgung aller Teamaktivitäten erstellen.</span></li><li><span class="todo-task">Drei wöchentliche Meetings durchführen: zwei für Schulungen und eines zur Besprechung der Zahlen.</span></li><li><span class="todo-task">Eine tägliche Checkliste nutzen, um die Erledigung von Aufgaben zu verfolgen.</span></li><li><span class="todo-task">Die administrativen Aufgaben der Partner proaktiv verwalten.</span></li></ul></section>
+      
+      
+      
+      
       
     </div>
 
@@ -768,6 +759,7 @@
         recap_purpose: 'Zweck', recap_highlights: 'Was zählte',
         recap_do_next: 'Als Nächstes', recap_watch: 'Achtung',
         lbl_overview: 'Überblick', summary: 'Zusammenfassung', summary_enhanced: 'Enhanced Summary',
+        summary_expand: 'Antippen zum Öffnen',
         lbl_notes: 'Notizen', meeting_notes: 'Meeting-Notizen',
         lbl_focus: 'Fokus', key_takeaways: 'Kernaussagen',
         lbl_distribution: 'Verteilung', topics: 'Themen',
@@ -788,6 +780,7 @@
         recap_purpose: 'Purpose', recap_highlights: 'What mattered',
         recap_do_next: 'Do next', recap_watch: 'Watch-outs',
         lbl_overview: 'Overview', summary: 'Summary', summary_enhanced: 'Enhanced summary',
+        summary_expand: 'Tap to expand',
         lbl_notes: 'Notes', meeting_notes: 'Meeting notes',
         lbl_focus: 'Focus', key_takeaways: 'Key takeaways',
         lbl_distribution: 'Distribution', topics: 'Topics',
@@ -808,6 +801,7 @@
         recap_purpose: 'Amaç', recap_highlights: 'Ne önemliydi',
         recap_do_next: 'Sırada', recap_watch: 'Dikkat',
         lbl_overview: 'Genel bakış', summary: 'Özet', summary_enhanced: 'Gelişmiş özet',
+        summary_expand: 'Açmak için dokun',
         lbl_notes: 'Notlar', meeting_notes: 'Toplantı notları',
         lbl_focus: 'Odak', key_takeaways: 'Önemli çıkarımlar',
         lbl_distribution: 'Dağılım', topics: 'Konular',
@@ -901,8 +895,8 @@
     }
     ergomeetChartDefaults();
 
-    const topics = [{"label": "Zahlen / KPIs", "weight": 37.3}, {"label": "Prozesse / Tools", "weight": 23.8}, {"label": "Kunden / Vertrieb", "weight": 19.9}, {"label": "Team / F\u00fchrung", "weight": 13.3}, {"label": "Karriere", "weight": 5.8}];
-    const speakers = [{"name": "Carlos", "words": 11480, "pct": 100.0}];
+    const topics = [];
+    const speakers = [];
     const goldPalette = ['#c9a962','#e8d5a3','#8b7355','#d4bc7a','#6b7c9e','#a89878'];
     window.__ergoCharts = window.__ergoCharts || [];
 
@@ -910,7 +904,7 @@
       document.querySelectorAll('[data-block]').forEach((el) => {
         const text = (el.textContent || '').replace(/\s+/g, ' ').trim();
         const hasCanvas = !!el.querySelector('canvas');
-        const hasListContent = !!el.querySelector('li, tr, .tl, .exec-p, .exec-h, .exec-ul li, pre');
+        const hasListContent = !!el.querySelector('li, tr, .tl, .exec-p, .exec-h, .exec-ul li, pre, .recap-one-text, .enhanced-summary');
         const topicsOk = !!(el.querySelector('#topics') && topics.length);
         const speakersOk = !!(el.querySelector('#speakers') && speakers.length);
         const hasMeaningful = hasListContent || (hasCanvas && (topicsOk || speakersOk));
@@ -920,21 +914,14 @@
           el.hidden = true;
         }
       });
-      const kpi = document.getElementById('kpiRow');
-      if (kpi && !kpi.querySelector('.kpi')) {
-        kpi.classList.add('is-empty');
-        kpi.hidden = true;
-      }
-      const charts = document.getElementById('chartsGrid');
-      if (charts) {
-        const visible = [...charts.querySelectorAll('.chart-box')].filter((c) => !c.classList.contains('is-empty') && !c.hidden);
-        if (!visible.length) {
-          charts.classList.add('is-empty');
-          charts.hidden = true;
-        } else if (visible.length === 1) {
-          charts.classList.add('grid2--single');
+      // Focus layout: never leave orphan empty shells
+      ['kpiRow', 'chartsGrid', 'timeline', 'transcript', 'ideas'].forEach((id) => {
+        const el = document.getElementById(id);
+        if (el && !el.querySelector('li, canvas, .tl, pre, .kpi')) {
+          el.classList.add('is-empty');
+          el.hidden = true;
         }
-      }
+      });
     })();
 
     (function buildToc() {
@@ -945,8 +932,13 @@
         const id = block.id || block.getAttribute('data-block');
         if (!id) return;
         if (!block.id) block.id = id;
-        const labelEl = block.querySelector('h2, summary, .section-label');
-        const label = (labelEl && labelEl.textContent.trim()) || id;
+        const labelEl = block.querySelector('.summary-title, h2, summary, .section-label');
+        let label = (labelEl && labelEl.textContent.trim()) || id;
+        // Prefer short TOC labels
+        if (block.id === 'recap') label = 'Recap';
+        if (block.id === 'todos') label = 'Todos';
+        if (block.id === 'summary') label = 'Summary';
+        if (block.id === 'notes') label = 'Notes';
         const a = document.createElement('a');
         a.href = '#' + block.id;
         a.textContent = label;
