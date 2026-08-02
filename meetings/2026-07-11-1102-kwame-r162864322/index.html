@@ -468,6 +468,36 @@
     .recap-ul li::marker { color: var(--gold); }
     .recap-col--do .recap-kicker { color: var(--gold-light); }
     .recap-col--watch .recap-kicker { color: #d4a0a0; }
+    /* Focus layout: collapsible Enhanced summary */
+    details.summary-details {
+      cursor: default;
+    }
+    details.summary-details > summary.summary-summary {
+      list-style: none;
+      cursor: pointer;
+      display: grid;
+      gap: 4px;
+      padding-bottom: 4px;
+    }
+    details.summary-details > summary.summary-summary::-webkit-details-marker { display: none; }
+    details.summary-details .summary-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--cream);
+    }
+    details.summary-details .summary-hint {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    details.summary-details[open] .summary-hint { display: none; }
+    details.summary-details .enhanced-summary {
+      margin-top: 16px;
+      padding-top: 8px;
+      border-top: 1px solid var(--line);
+    }
     .end-lists .end-ul {
       margin: 0;
       padding-left: 1.2rem;
@@ -613,8 +643,8 @@
 <div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text">Ergo Meet with Kwame — open Enhanced summary for full detail.</p></div>
 <div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li>Privacy/serious image concerns. Addressed: Maintain professionalism; clean Highlights; avoid overly personal/freizügig content; keep accounts public for credibility. Overcome: Guidance provided.</li><li>Kwame: \~10–20 per highlight; avoid outdated/party/bikini/drawer shots; add Q\&amp;A, yearly recaps, business; keep account public; ensure profile photo, bio, pinned post, and highlights reflect professional identity.</li></ul></div>
 </div></section>
-      <div class="kpi-row block" id="kpiRow" data-block="kpis"><div class="kpi"><div class="kpi-v">2</div><div class="kpi-l">Prozent</div></div><div class="kpi"><div class="kpi-v">100</div><div class="kpi-l">Prozent</div></div></div>
-      <section class="section block" id="summary" data-block="summary"><div class="section-label" data-i18n="lbl_overview">Overview</div><h2 data-i18n="summary_enhanced">Enhanced summary</h2><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Deal Information</h3>
+      
+      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Deal Information</h3>
 <h4 class="exec-h2">Prospect</h4>
 <ul class="exec-ul">
 <ul class="exec-ul exec-ul-nested">
@@ -805,50 +835,11 @@
 <ul class="exec-ul exec-ul-nested">
 <li>Kwame: Maintain a professional “digital business card”: clean highlights, 1 pinned story post, 9-grid mix (lifestyle + business), occasional Reels/carousels; consistent Stories.</li>
 </ul>
-</ul></div></section>
+</ul></div></details>
       
-      <div class="grid2 block" id="chartsGrid" data-block="charts"><section class="section chart-box" id="topicsWrap" data-block="topics"><div class="section-label" data-i18n="lbl_distribution">Distribution</div><h2 data-i18n="topics">Topics</h2><canvas id="topics"></canvas></section><section class="section chart-box" id="speakersWrap" data-block="speakers"><div class="section-label" data-i18n="lbl_conversation">Conversation</div><h2 data-i18n="speaking_time">Speaking time</h2><canvas id="speakers"></canvas></section></div>
-      <section class="section block" id="timeline" data-block="timeline"><div class="section-label" data-i18n="lbl_moments">Moments</div><h2 data-i18n="timeline">Timeline</h2><div class="tl"><div class="tl-t">00:00:05</div><div class="tl-body"><div class="who">Kwame</div><p>Heute geht es natürlich ein um die Basics, weil viele Leute sind hier auch neu und haben natürlich auch das Ziel, das So…</p></div></div><div class="tl"><div class="tl-t">00:02:16</div><div class="tl-body"><div class="who">Kwame</div><p>bin in der Stufe 4 mittlerweile, also am 16.07.</p></div></div><div class="tl"><div class="tl-t">00:02:31</div><div class="tl-body"><div class="who">Kwame</div><p>Ich bin früh in der Stufe 4 seit Dezember.</p></div></div><div class="tl"><div class="tl-t">00:03:14</div><div class="tl-body"><div class="who">Kwame</div><p>Wir leben in einer Zeit, das ist ganz wichtig, wo es nicht mehr von höchster Priorität ist, möglichst viele Followers zu…</p></div></div><div class="tl"><div class="tl-t">00:04:48</div><div class="tl-body"><div class="who">Kwame</div><p>gibt schon eine gewisse Warte da aus, da sind viele auch Festplätze, das können wir alle für uns nutzen, weil wir sind j…</p></div></div><div class="tl"><div class="tl-t">00:15:45</div><div class="tl-body"><div class="who">Kwame</div><p>Bis jemand von euch glaubt, bis jemand euch genau so eine Nachricht schreibt.</p></div></div><div class="tl"><div class="tl-t">00:19:33</div><div class="tl-body"><div class="who">Kwame</div><p>Und wenn davon nur einer die Stufe 2 steilt, nur einer, ja, dann sind das 15.470 Euro Leitungsvergütung plus Bonus.</p></div></div><div class="tl"><div class="tl-t">00:21:25</div><div class="tl-body"><div class="who">Kwame</div><p>So, und am Ende war schon klar, okay, sag mal, du machst dich selbstständig in der Gastro, da musst du ja mindestens Kre…</p></div></div></section>
-      <details class="section block" id="transcript" data-block="transcript"><summary data-i18n="transcript_excerpt">Transcript excerpt</summary><pre>[00:00:05] Kwame: Heute geht es natürlich ein um die Basics, weil viele Leute sind hier auch neu und haben natürlich auch das Ziel, das Social Media, ihr Geschäft weiterzuentwickeln.
-[00:00:14] Kwame: Ich der Meinung, dass das eine riesengroße Chance ist.
-[00:00:16] Kwame: Ihr könnt gerne das Meeting interaktiv gestalten, auch wenn ich ein Meetingskonzept habe, gerne Fragen stellen.
-[00:00:24] Kwame: Heute geht es darum, dass ihr wirklich das absolute Fundament gelegt habt, um Social Media dafür zu sorgen, dass ihr Partner gewinnen, dass ihr Kunden gewinnen, je nachdem ihr es hier haben müsstet.
-[00:00:39] Kwame: Mit was für Erwartungen kurz denn das Wichtige war?
-[00:00:41] Kwame: Ich meine, die einen oder anderen haben wir schon den Kriegsplan gesehen.
-[00:00:45] Kwame: Was sind die Erwartungen von einzelnen Personen?
-[00:00:47] Kwame: Wie man schnell Reels macht und vielleicht so, dass man nicht intakte Firminer-Stopp-Moment muss.
-[00:00:54] Kwame: Okay, das merke ich mir.
-[00:00:58] Kwame: Vielleicht wie man auch über Social Media ein gezieltes Bild bei Personen erfolgt.
-[00:01:06] Kwame: Was habt noch für Erwartungen oder Fragezeichen, die noch mit der wichtigsten Beantwortung sind?
-[00:01:13] Kwame: Also wie man direkt jetzt an welcher Plan kommt, zum Beispiel durch Werben oder ähnliches.
-[00:01:19] Kwame: Okay, also ein bisschen komplexere Themen?
-[00:01:23] Kwame: Genau.
-[00:01:25] Kwame: Ich glaube, es ist ein großer Leihfahrt, weil viele wissen, okay, ich muss irgendwas auf Social Media machen.
-[00:01:30] Kwame: das ist nicht genau, was soll ich jetzt Reels machen, soll ich jetzt den Begriff machen, soll ich jetzt die ganze Zeit im Storys posten.
-[00:01:36] Kwame: Sie haben sozusagen keinen richtigen Leihfahrt.
-[00:01:38] Kwame: Und sie müssen ein bisschen los.
-[00:01:40] Kwame: Genau, wenn wir da auf jeden Fall sehr vertieft eingehen.
-[00:01:43] Kwame: So eine Frage?
-[00:01:44] Kwame: Ja, weil ich jetzt eigentlich selbst gesagt habe, inwiefern, also mein Punkt wäre inwiefern, Qualität und Quantität als Social Media.
-[00:01:50] Kwame: Ja, auch darauf kriegen wir heute ein.
-[00:01:52] Kwame: Okay, sehr gut.
-[00:01:53] Kwame: Ja, also...
-[00:01:54] Kwame: Also, wie man die Farblehre mit in die Social-Media-Gestellung einzogen kann.
-[00:02:01] Kwame: Auch sehr interessant.
-[00:02:04] Kwame: Also, zu mir, wer kennt mich noch nicht?
-[00:02:09] Kwame: Zum Anschluss.
-[00:02:10] Kwame: Ich weiß, kennt mich noch nicht.
-[00:02:12] Kwame: Ich heiße Fabi, ich habe vier Vorderungen, also ich könnte gerne eine Vivo-Vorderung machen.
-[00:02:16] Kwame: bin in der Stufe 4 mittlerweile, also am 16.07.
-[00:02:22] Kwame: bin ich tatsächlich genau fünf Jahre dabei.
-[00:02:25] Kwame: Für die, mich schon ein bisschen länger kennen.
-[00:02:28] Kwame: Die Zeitzeit geht sehr schnell.
-[00:02:30] Kwame: Ich jetzt 23.
-[00:02:31] Kwame: Ich bin früh in der Stufe 4 seit Dezember.
-[00:02:34] Kwame: Ich habe jetzt nicht die Bilderbuch-Karriere gehabt.
-[00:02:38] Kwame: Ich bin jetzt nicht der Durchstart, der nach drei Jahren schon der Sechste ist.
-[00:02:41] Kwame: Aber, dass ich die sechs steige, steht auf jeden Fall fest.
-[00:02:45] Kwame: Und, ja Leute.</pre></details>
+      
+      
+      
       
       
     </div>
@@ -864,6 +855,7 @@
         recap_purpose: 'Zweck', recap_highlights: 'Was zählte',
         recap_do_next: 'Als Nächstes', recap_watch: 'Achtung',
         lbl_overview: 'Überblick', summary: 'Zusammenfassung', summary_enhanced: 'Enhanced Summary',
+        summary_expand: 'Antippen zum Öffnen',
         lbl_notes: 'Notizen', meeting_notes: 'Meeting-Notizen',
         lbl_focus: 'Fokus', key_takeaways: 'Kernaussagen',
         lbl_distribution: 'Verteilung', topics: 'Themen',
@@ -884,6 +876,7 @@
         recap_purpose: 'Purpose', recap_highlights: 'What mattered',
         recap_do_next: 'Do next', recap_watch: 'Watch-outs',
         lbl_overview: 'Overview', summary: 'Summary', summary_enhanced: 'Enhanced summary',
+        summary_expand: 'Tap to expand',
         lbl_notes: 'Notes', meeting_notes: 'Meeting notes',
         lbl_focus: 'Focus', key_takeaways: 'Key takeaways',
         lbl_distribution: 'Distribution', topics: 'Topics',
@@ -904,6 +897,7 @@
         recap_purpose: 'Amaç', recap_highlights: 'Ne önemliydi',
         recap_do_next: 'Sırada', recap_watch: 'Dikkat',
         lbl_overview: 'Genel bakış', summary: 'Özet', summary_enhanced: 'Gelişmiş özet',
+        summary_expand: 'Açmak için dokun',
         lbl_notes: 'Notlar', meeting_notes: 'Toplantı notları',
         lbl_focus: 'Odak', key_takeaways: 'Önemli çıkarımlar',
         lbl_distribution: 'Dağılım', topics: 'Konular',
@@ -997,8 +991,8 @@
     }
     ergomeetChartDefaults();
 
-    const topics = [{"label": "Zahlen / KPIs", "weight": 62.2}, {"label": "Prozesse / Tools", "weight": 23.9}, {"label": "Team / F\u00fchrung", "weight": 6.2}, {"label": "Karriere", "weight": 3.9}, {"label": "Kunden / Vertrieb", "weight": 1.9}, {"label": "Rente / Vorsorge", "weight": 1.9}];
-    const speakers = [{"name": "Kwame", "words": 14141, "pct": 100.0}];
+    const topics = [];
+    const speakers = [];
     const goldPalette = ['#c9a962','#e8d5a3','#8b7355','#d4bc7a','#6b7c9e','#a89878'];
     window.__ergoCharts = window.__ergoCharts || [];
 
@@ -1006,7 +1000,7 @@
       document.querySelectorAll('[data-block]').forEach((el) => {
         const text = (el.textContent || '').replace(/\s+/g, ' ').trim();
         const hasCanvas = !!el.querySelector('canvas');
-        const hasListContent = !!el.querySelector('li, tr, .tl, .exec-p, .exec-h, .exec-ul li, pre');
+        const hasListContent = !!el.querySelector('li, tr, .tl, .exec-p, .exec-h, .exec-ul li, pre, .recap-one-text, .enhanced-summary');
         const topicsOk = !!(el.querySelector('#topics') && topics.length);
         const speakersOk = !!(el.querySelector('#speakers') && speakers.length);
         const hasMeaningful = hasListContent || (hasCanvas && (topicsOk || speakersOk));
@@ -1016,21 +1010,14 @@
           el.hidden = true;
         }
       });
-      const kpi = document.getElementById('kpiRow');
-      if (kpi && !kpi.querySelector('.kpi')) {
-        kpi.classList.add('is-empty');
-        kpi.hidden = true;
-      }
-      const charts = document.getElementById('chartsGrid');
-      if (charts) {
-        const visible = [...charts.querySelectorAll('.chart-box')].filter((c) => !c.classList.contains('is-empty') && !c.hidden);
-        if (!visible.length) {
-          charts.classList.add('is-empty');
-          charts.hidden = true;
-        } else if (visible.length === 1) {
-          charts.classList.add('grid2--single');
+      // Focus layout: never leave orphan empty shells
+      ['kpiRow', 'chartsGrid', 'timeline', 'transcript', 'ideas'].forEach((id) => {
+        const el = document.getElementById(id);
+        if (el && !el.querySelector('li, canvas, .tl, pre, .kpi')) {
+          el.classList.add('is-empty');
+          el.hidden = true;
         }
-      }
+      });
     })();
 
     (function buildToc() {
@@ -1041,8 +1028,13 @@
         const id = block.id || block.getAttribute('data-block');
         if (!id) return;
         if (!block.id) block.id = id;
-        const labelEl = block.querySelector('h2, summary, .section-label');
-        const label = (labelEl && labelEl.textContent.trim()) || id;
+        const labelEl = block.querySelector('.summary-title, h2, summary, .section-label');
+        let label = (labelEl && labelEl.textContent.trim()) || id;
+        // Prefer short TOC labels
+        if (block.id === 'recap') label = 'Recap';
+        if (block.id === 'todos') label = 'Todos';
+        if (block.id === 'summary') label = 'Summary';
+        if (block.id === 'notes') label = 'Notes';
         const a = document.createElement('a');
         a.href = '#' + block.id;
         a.textContent = label;
