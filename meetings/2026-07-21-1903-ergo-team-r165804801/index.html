@@ -468,6 +468,36 @@
     .recap-ul li::marker { color: var(--gold); }
     .recap-col--do .recap-kicker { color: var(--gold-light); }
     .recap-col--watch .recap-kicker { color: #d4a0a0; }
+    /* Focus layout: collapsible Enhanced summary */
+    details.summary-details {
+      cursor: default;
+    }
+    details.summary-details > summary.summary-summary {
+      list-style: none;
+      cursor: pointer;
+      display: grid;
+      gap: 4px;
+      padding-bottom: 4px;
+    }
+    details.summary-details > summary.summary-summary::-webkit-details-marker { display: none; }
+    details.summary-details .summary-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--cream);
+    }
+    details.summary-details .summary-hint {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    details.summary-details[open] .summary-hint { display: none; }
+    details.summary-details .enhanced-summary {
+      margin-top: 16px;
+      padding-top: 8px;
+      border-top: 1px solid var(--line);
+    }
     .end-lists .end-ul {
       margin: 0;
       padding-left: 1.2rem;
@@ -614,8 +644,8 @@
 <div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li>Goal: Set a new sales record today to build momentum for the second half of the year and achieve the &quot;Triple.&quot;</li><li>Motivation: This push directly supports individual Gino-Kamm goals and personal earnings.</li><li>Action: Everyone must focus on making calls to generate revenue.</li></ul></div>
 <div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li>Team: Focus on making calls to achieve the new daily sales record.</li></ul></div>
 </div></section>
-      
-      <section class="section block" id="summary" data-block="summary"><div class="section-label" data-i18n="lbl_overview">Overview</div><h2 data-i18n="summary_enhanced">Enhanced summary</h2><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Meeting Purpose</h3>
+      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task"><strong>Team:</strong> Focus on making calls to achieve the new daily sales record.</span></li></ul></section>
+      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Meeting Purpose</h3>
 <p class="exec-p">Rally the team for a record-breaking sales push.</p>
 <h3 class="exec-h">Key Takeaways</h3>
 <ul class="exec-ul">
@@ -641,18 +671,12 @@
 </ul>
 <li><strong>Action:</strong> The entire team must focus on making calls to drive revenue.</li>
 </ul>
-</ul></div></section>
+</ul></div></details>
       
-      <div class="grid2 block" id="chartsGrid" data-block="charts"><section class="section chart-box" id="topicsWrap" data-block="topics"><div class="section-label" data-i18n="lbl_distribution">Distribution</div><h2 data-i18n="topics">Topics</h2><canvas id="topics"></canvas></section><section class="section chart-box" id="speakersWrap" data-block="speakers"><div class="section-label" data-i18n="lbl_conversation">Conversation</div><h2 data-i18n="speaking_time">Speaking time</h2><canvas id="speakers"></canvas></section></div>
-      <section class="section block" id="timeline" data-block="timeline"><div class="section-label" data-i18n="lbl_moments">Moments</div><h2 data-i18n="timeline">Timeline</h2><div class="tl"><div class="tl-t">00:00:59</div><div class="tl-body"><div class="who">ERGO Team</div><p>bis dort hin, wie gesagt, viel Erfolg und mit Gas.</p></div></div></section>
-      <details class="section block" id="transcript" data-block="transcript"><summary data-i18n="transcript_excerpt">Transcript excerpt</summary><pre>[00:00:00] ERGO Team: Ich Schritt näher an eure Ziele kommen werden und vor allem einen riesengroßen Schritt näher an das Triple kommen werden.
-[00:00:07] ERGO Team: Deswegen Lass uns alle Gas geben, Lass uns heute mal einen Rekord setzen, den wir bisher noch nie geknackt haben.
-[00:00:15] ERGO Team: Weil wann, wenn nicht jetzt schon direkt am Anfang des Halbjahres ein riesen Ausrufezeichen zu schicken, so nur an die gesamte Ergo, Sondern vor allem, weil die meisten Leuten von euch auch an euer Gi
-[00:00:33] ERGO Team: Das denke ich mal, mit vielen Leuten geht es nicht schlecht.
-[00:00:35] ERGO Team: Deswegen lasst uns alle zusammen telefonieren, lasst uns denjenigen und lasst uns alle viel Geld verdienen!
-[00:00:57] ERGO Team: Allergies Zwang zu tragen.
-[00:00:59] ERGO Team: bis dort hin, wie gesagt, viel Erfolg und mit Gas.</pre></details>
-      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task"><strong>Team:</strong> Focus on making calls to achieve the new daily sales record.</span></li></ul></section>
+      
+      
+      
+      
       
     </div>
 
@@ -667,6 +691,7 @@
         recap_purpose: 'Zweck', recap_highlights: 'Was zählte',
         recap_do_next: 'Als Nächstes', recap_watch: 'Achtung',
         lbl_overview: 'Überblick', summary: 'Zusammenfassung', summary_enhanced: 'Enhanced Summary',
+        summary_expand: 'Antippen zum Öffnen',
         lbl_notes: 'Notizen', meeting_notes: 'Meeting-Notizen',
         lbl_focus: 'Fokus', key_takeaways: 'Kernaussagen',
         lbl_distribution: 'Verteilung', topics: 'Themen',
@@ -687,6 +712,7 @@
         recap_purpose: 'Purpose', recap_highlights: 'What mattered',
         recap_do_next: 'Do next', recap_watch: 'Watch-outs',
         lbl_overview: 'Overview', summary: 'Summary', summary_enhanced: 'Enhanced summary',
+        summary_expand: 'Tap to expand',
         lbl_notes: 'Notes', meeting_notes: 'Meeting notes',
         lbl_focus: 'Focus', key_takeaways: 'Key takeaways',
         lbl_distribution: 'Distribution', topics: 'Topics',
@@ -707,6 +733,7 @@
         recap_purpose: 'Amaç', recap_highlights: 'Ne önemliydi',
         recap_do_next: 'Sırada', recap_watch: 'Dikkat',
         lbl_overview: 'Genel bakış', summary: 'Özet', summary_enhanced: 'Gelişmiş özet',
+        summary_expand: 'Açmak için dokun',
         lbl_notes: 'Notlar', meeting_notes: 'Toplantı notları',
         lbl_focus: 'Odak', key_takeaways: 'Önemli çıkarımlar',
         lbl_distribution: 'Dağılım', topics: 'Konular',
@@ -800,8 +827,8 @@
     }
     ergomeetChartDefaults();
 
-    const topics = [{"label": "Prozesse / Tools", "weight": 52.2}, {"label": "Zahlen / KPIs", "weight": 26.1}, {"label": "Team / F\u00fchrung", "weight": 21.7}];
-    const speakers = [{"name": "ERGO Team", "words": 122, "pct": 100.0}];
+    const topics = [];
+    const speakers = [];
     const goldPalette = ['#c9a962','#e8d5a3','#8b7355','#d4bc7a','#6b7c9e','#a89878'];
     window.__ergoCharts = window.__ergoCharts || [];
 
@@ -809,7 +836,7 @@
       document.querySelectorAll('[data-block]').forEach((el) => {
         const text = (el.textContent || '').replace(/\s+/g, ' ').trim();
         const hasCanvas = !!el.querySelector('canvas');
-        const hasListContent = !!el.querySelector('li, tr, .tl, .exec-p, .exec-h, .exec-ul li, pre');
+        const hasListContent = !!el.querySelector('li, tr, .tl, .exec-p, .exec-h, .exec-ul li, pre, .recap-one-text, .enhanced-summary');
         const topicsOk = !!(el.querySelector('#topics') && topics.length);
         const speakersOk = !!(el.querySelector('#speakers') && speakers.length);
         const hasMeaningful = hasListContent || (hasCanvas && (topicsOk || speakersOk));
@@ -819,21 +846,14 @@
           el.hidden = true;
         }
       });
-      const kpi = document.getElementById('kpiRow');
-      if (kpi && !kpi.querySelector('.kpi')) {
-        kpi.classList.add('is-empty');
-        kpi.hidden = true;
-      }
-      const charts = document.getElementById('chartsGrid');
-      if (charts) {
-        const visible = [...charts.querySelectorAll('.chart-box')].filter((c) => !c.classList.contains('is-empty') && !c.hidden);
-        if (!visible.length) {
-          charts.classList.add('is-empty');
-          charts.hidden = true;
-        } else if (visible.length === 1) {
-          charts.classList.add('grid2--single');
+      // Focus layout: never leave orphan empty shells
+      ['kpiRow', 'chartsGrid', 'timeline', 'transcript', 'ideas'].forEach((id) => {
+        const el = document.getElementById(id);
+        if (el && !el.querySelector('li, canvas, .tl, pre, .kpi')) {
+          el.classList.add('is-empty');
+          el.hidden = true;
         }
-      }
+      });
     })();
 
     (function buildToc() {
@@ -844,8 +864,13 @@
         const id = block.id || block.getAttribute('data-block');
         if (!id) return;
         if (!block.id) block.id = id;
-        const labelEl = block.querySelector('h2, summary, .section-label');
-        const label = (labelEl && labelEl.textContent.trim()) || id;
+        const labelEl = block.querySelector('.summary-title, h2, summary, .section-label');
+        let label = (labelEl && labelEl.textContent.trim()) || id;
+        // Prefer short TOC labels
+        if (block.id === 'recap') label = 'Recap';
+        if (block.id === 'todos') label = 'Todos';
+        if (block.id === 'summary') label = 'Summary';
+        if (block.id === 'notes') label = 'Notes';
         const a = document.createElement('a');
         a.href = '#' + block.id;
         a.textContent = label;
