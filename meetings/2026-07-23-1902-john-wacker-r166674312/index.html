@@ -423,6 +423,51 @@
     }
     .exec-ul-nested li { margin-bottom: 6px; font-size: 0.92em; }
     .enhanced-summary { max-width: 52rem; }
+    .recap-card {
+      border-color: rgba(201, 169, 98, 0.45);
+      background: linear-gradient(145deg, rgba(201, 169, 98, 0.10), var(--surface));
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    }
+    .recap-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px 22px;
+    }
+    @media (min-width: 820px) {
+      .recap-grid {
+        grid-template-columns: 1.1fr 1fr;
+      }
+      .recap-one { grid-column: 1 / -1; }
+    }
+    .recap-kicker {
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .recap-one-text {
+      margin: 0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.25rem;
+      line-height: 1.35;
+      color: var(--cream);
+      font-weight: 500;
+    }
+    .recap-ul {
+      margin: 0;
+      padding-left: 1.15rem;
+    }
+    .recap-ul li {
+      margin-bottom: 8px;
+      color: var(--text-body);
+      line-height: 1.5;
+      font-size: 0.92rem;
+    }
+    .recap-ul li::marker { color: var(--gold); }
+    .recap-col--do .recap-kicker { color: var(--gold-light); }
+    .recap-col--watch .recap-kicker { color: #d4a0a0; }
     .end-lists .end-ul {
       margin: 0;
       padding-left: 1.2rem;
@@ -549,7 +594,7 @@
           <div class="brand" data-i18n="brand">ERGO · Meeting Intelligence</div>
           <h1>Ergo Meet · 23 July 2026 · John Wacker</h1>
           <div class="hero-sub">
-            <span class="pill">23.07.2026 19:02 CEST</span>
+            <span class="pill">23.07.2026 19:02 </span>
             
             
           </div>
@@ -561,6 +606,15 @@
     <!-- No empty shell under the heading: blocks only appear when builder marks them present -->
     <nav class="toc" id="sectionToc" aria-label="Sections"></nav>
     <div class="stack" id="reportStack">
+      <section class="section block recap-card" id="recap" data-block="recap">
+<div class="section-label" data-i18n="lbl_recap">60 seconds</div>
+<h2 data-i18n="recap">Recap</h2>
+<div class="recap-grid">
+<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text">Motivation und Strategien für den Erfolg in der Finanzberatung.</p></div>
+<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li>Definiere dein „Warum“: Dein persönliches „Warum“ ist dein Anker in schwierigen Zeiten. Es muss spezifisch, messbar und emotional überzeugend sein, um dich durchzuhalten.</li><li>Verstehe die drei Motive: Erkenne die drei Kernmotive (Leistung, Macht, Anschluss), um dich selbst zu verstehen, Kunden anzusprechen und ein ausgewogenes Team aufzubauen.</li><li>Setze die Grundlagen um: Erfolg erfordert Bildung, Erfahrung und Disziplin. Wende das Gelernte konsequent an, um Kompetenz aufzubauen und die Ergebnisse zu erzielen.</li></ul></div>
+<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li>Write SMART financial freedom target; include monthly amount (John Wacker)</li><li>Write 3 gratitude, 3 wins, 3 improvements nightly (John Wacker)</li><li>Definiere dein spezifisches, messbares „Warum“.</li></ul></div>
+<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li>1. Bildung: Kunden kaufen *dich*, nicht das Unternehmen. Investiere in deine Kompetenz, um zum vertrauenswürdigen Berater zu werden.</li></ul></div>
+</div></section>
       <div class="kpi-row block" id="kpiRow" data-block="kpis"><div class="kpi"><div class="kpi-v">5.000</div><div class="kpi-l">Betrag</div></div><div class="kpi"><div class="kpi-v">4.500</div><div class="kpi-l">Betrag</div></div><div class="kpi"><div class="kpi-v">200.000</div><div class="kpi-l">Betrag</div></div><div class="kpi"><div class="kpi-v">270.000</div><div class="kpi-l">Betrag</div></div></div>
       <section class="section block" id="summary" data-block="summary"><div class="section-label" data-i18n="lbl_overview">Overview</div><h2 data-i18n="summary_enhanced">Enhanced summary</h2><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Zweck des Meetings</h3>
 <p class="exec-p">Motivation und Strategien für den Erfolg in der Finanzberatung.</p>
@@ -703,7 +757,7 @@
 [00:03:56] John Wacker: Das heißt, finanziell frei ist etwas, was, ich glaube, ich 100 Leute im Raum sitzen und fragen, wer von euch finanziell frei sein kann, wo ihr dann meldet.
 [00:04:02] John Wacker: Die Frage ist aber, was bedeutet das im Summe?</pre></details>
       <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Write SMART financial freedom target; include monthly amount</span><span class="todo-meta">John Wacker</span></li><li><span class="todo-task">Write 3 gratitude, 3 wins, 3 improvements nightly</span><span class="todo-meta">John Wacker</span></li><li><span class="todo-task">Definiere dein spezifisches, messbares „Warum“.</span></li><li><span class="todo-task">Bewerte deine aktuelle Situation (1–10) und visualisiere dein Traumleben in den sechs Bereichen.</span></li><li><span class="todo-task">Beginne mit der „Erfolgs-Tabelle“: Schreibe jeden Abend 3 Dinge auf, für die du dankbar bist, 3 Erfolge und 3 Dinge, die du verbessern kannst.</span></li><li><span class="todo-task">Analysiere dein Umfeld und entferne negative Einflüsse.</span></li></ul></section>
-      <section class="section block end-lists" id="ideas" data-block="ideas"><div class="section-label" data-i18n="lbl_ideas">Capture</div><h2 data-i18n="new_ideas">New ideas</h2><ul class="end-ul ideas-ul"><li><strong>Definiere dein „Warum“:</strong> Dein persönliches „Warum“ ist dein Anker in schwierigen Zeiten. Es muss spezifisch, messbar und emotional überzeugend sein, um dich durchzuhalten.</li><li><strong>Verstehe die drei Motive:</strong> Erkenne die drei Kernmotive (Leistung, Macht, Anschluss), um dich selbst zu verstehen, Kunden anzusprechen und ein ausgewogenes Team aufzubauen.</li><li><strong>Setze die Grundlagen um:</strong> Erfolg erfordert Bildung, Erfahrung und Disziplin. Wende das Gelernte konsequent an, um Kompetenz aufzubauen und die Ergebnisse zu erzielen.</li><li><strong>Wähle dein Umfeld bewusst:</strong> Dein Umfeld prägt dich. Umgib dich mit unterstützenden Menschen, die deine Ziele teilen, und meide negative Einflüsse.</li></ul></section>
+      
     </div>
 
     <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
@@ -713,6 +767,9 @@
       de: {
         brand: 'ERGO · Meeting Intelligence',
         theme_light: 'Hell', theme_dark: 'Dunkel',
+        lbl_recap: '60 Sekunden', recap: 'Recap',
+        recap_purpose: 'Zweck', recap_highlights: 'Was zählte',
+        recap_do_next: 'Als Nächstes', recap_watch: 'Achtung',
         lbl_overview: 'Überblick', summary: 'Zusammenfassung', summary_enhanced: 'Enhanced Summary',
         lbl_notes: 'Notizen', meeting_notes: 'Meeting-Notizen',
         lbl_focus: 'Fokus', key_takeaways: 'Kernaussagen',
@@ -730,6 +787,9 @@
       en: {
         brand: 'ERGO · Meeting Intelligence',
         theme_light: 'Light', theme_dark: 'Dark',
+        lbl_recap: '60 seconds', recap: 'Recap',
+        recap_purpose: 'Purpose', recap_highlights: 'What mattered',
+        recap_do_next: 'Do next', recap_watch: 'Watch-outs',
         lbl_overview: 'Overview', summary: 'Summary', summary_enhanced: 'Enhanced summary',
         lbl_notes: 'Notes', meeting_notes: 'Meeting notes',
         lbl_focus: 'Focus', key_takeaways: 'Key takeaways',
@@ -747,6 +807,9 @@
       tr: {
         brand: 'ERGO · Toplantı özeti',
         theme_light: 'Açık', theme_dark: 'Koyu',
+        lbl_recap: '60 saniye', recap: 'Özet',
+        recap_purpose: 'Amaç', recap_highlights: 'Ne önemliydi',
+        recap_do_next: 'Sırada', recap_watch: 'Dikkat',
         lbl_overview: 'Genel bakış', summary: 'Özet', summary_enhanced: 'Gelişmiş özet',
         lbl_notes: 'Notlar', meeting_notes: 'Toplantı notları',
         lbl_focus: 'Odak', key_takeaways: 'Önemli çıkarımlar',
