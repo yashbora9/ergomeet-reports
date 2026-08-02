@@ -282,11 +282,23 @@
       border-bottom: 1px solid var(--line);
       letter-spacing: 0.04em;
     }
+    /* KPI strip — only rendered when builder injects cards; never show empty shell */
     .kpi-row {
-      display: grid;
+      display: none;
       grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 14px;
-      margin-bottom: 28px;
+      margin: 0 0 28px;
+    }
+    .kpi-row:has(.kpi) {
+      display: grid;
+    }
+    .kpi-row:empty,
+    .kpi-row.is-empty {
+      display: none !important;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      min-height: 0;
     }
     .kpi {
       background: var(--surface);
@@ -310,14 +322,52 @@
       letter-spacing: 0.12em;
       color: var(--muted);
     }
+    /* Dynamic stack: sections hide when empty; no blank cards under hero */
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .stack > :empty,
+    .block.is-empty,
+    .block:has(.exec:empty):not(:has(.exec *:not(:empty))),
+    .block:has(ul:empty),
+    .block:has(tbody:empty) {
+      display: none !important;
+    }
+    .toc {
+      display: none;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 8px;
+      padding: 0;
+      list-style: none;
+    }
+    .toc:has(a) { display: flex; }
+    .toc a {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--gold-light);
+      text-decoration: none;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .toc a:hover { background: var(--surface-hover); }
     .section {
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 28px 26px;
-      margin-bottom: 20px;
+      margin-bottom: 0;
       backdrop-filter: blur(6px);
     }
+    .section.is-empty { display: none !important; }
     .section-label {
       font-size: 0.65rem;
       letter-spacing: 0.2em;
@@ -347,6 +397,13 @@
       letter-spacing: 0.02em;
     }
     .exec-h:first-child { margin-top: 0; }
+    .exec-h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin: 16px 0 8px;
+    }
     .exec-p {
       margin: 0 0 12px;
       color: var(--text-soft);
@@ -360,6 +417,76 @@
       padding-left: 4px;
     }
     .exec-ul li::marker { color: var(--gold); }
+    .exec-ul-nested {
+      margin: 8px 0 4px;
+      padding-left: 1.1rem;
+    }
+    .exec-ul-nested li { margin-bottom: 6px; font-size: 0.92em; }
+    .enhanced-summary { max-width: 52rem; }
+    .recap-card {
+      border-color: rgba(201, 169, 98, 0.45);
+      background: linear-gradient(145deg, rgba(201, 169, 98, 0.10), var(--surface));
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    }
+    .recap-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px 22px;
+    }
+    @media (min-width: 820px) {
+      .recap-grid {
+        grid-template-columns: 1.1fr 1fr;
+      }
+      .recap-one { grid-column: 1 / -1; }
+    }
+    .recap-kicker {
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .recap-one-text {
+      margin: 0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.25rem;
+      line-height: 1.35;
+      color: var(--cream);
+      font-weight: 500;
+    }
+    .recap-ul {
+      margin: 0;
+      padding-left: 1.15rem;
+    }
+    .recap-ul li {
+      margin-bottom: 8px;
+      color: var(--text-body);
+      line-height: 1.5;
+      font-size: 0.92rem;
+    }
+    .recap-ul li::marker { color: var(--gold); }
+    .recap-col--do .recap-kicker { color: var(--gold-light); }
+    .recap-col--watch .recap-kicker { color: #d4a0a0; }
+    .end-lists .end-ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+    .end-lists .end-ul li {
+      margin-bottom: 12px;
+      color: var(--text-body);
+      line-height: 1.55;
+    }
+    .end-lists .end-ul li::marker { color: var(--gold); }
+    .todos-ul .todo-task { display: inline; }
+    .todos-ul .todo-meta {
+      display: block;
+      margin-top: 4px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .ideas-ul li { color: var(--text-soft); }
     .exec strong { color: var(--cream); font-weight: 600; }
     .muted { color: var(--muted); }
     .insights ul { margin: 0; padding-left: 1.1rem; }
@@ -368,10 +495,13 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
-      margin-bottom: 20px;
+      margin-bottom: 0;
     }
+    .grid2.is-empty { display: none !important; }
+    .grid2.grid2--single { grid-template-columns: 1fr; }
     @media (max-width: 768px) { .grid2 { grid-template-columns: 1fr; } }
     .chart-box { min-height: 240px; }
+    .chart-box.is-empty { display: none !important; }
     canvas { max-height: 220px !important; }
     table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
     thead th {
@@ -464,9 +594,8 @@
           <div class="brand" data-i18n="brand">ERGO · Meeting Intelligence</div>
           <h1>Ergo Meet · 9 July 2026 · ERGO Team</h1>
           <div class="hero-sub">
-            <span class="pill">09.07.2026 19:01 CEST</span>
+            <span class="pill">09.07.2026 19:01 </span>
             
-            <a class="btn-fathom" href="https://fathom.video/share/Am2ycs9oK_8YUBJjB4asPbGKN_qMCtYq" target="_blank" rel="noopener" data-i18n-open>Open recording</a>
             
           </div>
         </div>
@@ -474,149 +603,132 @@
       </div>
     </header>
 
-    <div class="kpi-row"><div class="kpi"><div class="kpi-v">Stufe 4</div><div class="kpi-l" data-i18n-kpi="kpi_stufe">Stufe</div></div><div class="kpi"><div class="kpi-v">000</div><div class="kpi-l">Einheiten</div></div></div>
-
-    <section class="section">
-      <div class="section-label" data-i18n="lbl_overview">Overview</div>
-      <h2 data-i18n="summary">Summary</h2>
-      <div class="exec exec-rich"><h3 class="exec-h">Deal Information</h3>
-<h3 class="exec-h">Prospect</h3>
-<p class="exec-p">No external prospect attended. This was an impromptu solo session led by Yash Bora focused on time management and productivity coaching; no buyer or prospect was present or identified.</p>
-<h3 class="exec-h">Call Context</h3>
-<p class="exec-p">Internal/productivity workshop-style monologue by Yash on calendar discipline and routines. No sales discovery with a prospect occurred.</p>
-<h3 class="exec-h">Seats</h3>
+    <!-- No empty shell under the heading: blocks only appear when builder marks them present -->
+    <nav class="toc" id="sectionToc" aria-label="Sections"></nav>
+    <div class="stack" id="reportStack">
+      <section class="section block recap-card" id="recap" data-block="recap">
+<div class="section-label" data-i18n="lbl_recap">60 seconds</div>
+<h2 data-i18n="recap">Recap</h2>
+<div class="recap-grid">
+<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text">No external prospect attended. This was an impromptu solo session led by ERGO Team focused on time management and productivity coaching; no buyer or prospect was present or identified.</p></div>
+</div></section>
+      
+      <section class="section block" id="summary" data-block="summary"><div class="section-label" data-i18n="lbl_overview">Overview</div><h2 data-i18n="summary_enhanced">Enhanced summary</h2><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Deal Information</h3>
+<h4 class="exec-h2">Prospect</h4>
+<p class="exec-p">No external prospect attended. This was an impromptu solo session led by ERGO Team focused on time management and productivity coaching; no buyer or prospect was present or identified.</p>
+<h4 class="exec-h2">Call Context</h4>
+<p class="exec-p">Internal/productivity workshop-style monologue by ERGO Team on calendar discipline and routines. No sales discovery with a prospect occurred.</p>
+<h4 class="exec-h2">Seats</h4>
 <p class="exec-p">Not discussed.</p>
-<h3 class="exec-h">Budget</h3>
+<h4 class="exec-h2">Budget</h4>
 <p class="exec-p">Not discussed.</p>
-<h3 class="exec-h">Current State</h3>
+<h4 class="exec-h2">Current State</h4>
 <p class="exec-p">Not discussed with a prospect.</p>
-<h3 class="exec-h">Pain Points</h3>
+<h4 class="exec-h2">Pain Points</h4>
 <ul class="exec-ul">
-<li>None captured from a prospect. Yash referenced generic productivity issues (lack of structure, “pseudo-productive” activities, inconsistent routines) in a coaching context.</li>
+<ul class="exec-ul exec-ul-nested">
+<li>None captured from a prospect. ERGO Team referenced generic productivity issues (lack of structure, “pseudo-productive” activities, inconsistent routines) in a coaching context.</li>
 </ul>
-<h3 class="exec-h">Specific Requirements</h3>
-<p class="exec-p">None from a prospect. Yash advocated:</p>
+</ul>
+<h4 class="exec-h2">Specific Requirements</h4>
+<p class="exec-p">None from a prospect. ERGO Team advocated:</p>
 <ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
 <li>Single calendar usage (TimeTree) with color-coding.</li>
 <li>Recurring events for predictable structure.</li>
 <li>Morning/evening routine blocks.</li>
 <li>Pre-scheduling personal tasks (gym, barber, commute).</li>
 </ul>
-<h3 class="exec-h">Tech Stack</h3>
+</ul>
+<h4 class="exec-h2">Tech Stack</h4>
 <ul class="exec-ul">
-<li>TimeTree calendar app (preferred by Yash).</li>
+<ul class="exec-ul exec-ul-nested">
+<li>TimeTree calendar app (preferred by ERGO Team).</li>
 <li>Mentions of Google Calendar as an alternative.</li>
 </ul>
-<h3 class="exec-h">Objections</h3>
+</ul>
+<h4 class="exec-h2">Objections</h4>
 <p class="exec-p">None raised by a prospect.</p>
-<h3 class="exec-h">Other Solutions Under Evaluation</h3>
+<h4 class="exec-h2">Other Solutions Under Evaluation</h4>
 <p class="exec-p">None.</p>
-<h3 class="exec-h">Timeline</h3>
+<h4 class="exec-h2">Timeline</h4>
 <p class="exec-p">Not applicable; no buying process discussed.</p>
-<h3 class="exec-h">Decision Maker</h3>
+<h4 class="exec-h2">Decision Maker</h4>
 <p class="exec-p">Not identified.</p>
-<h3 class="exec-h">Procurement Process</h3>
+<h4 class="exec-h2">Procurement Process</h4>
 <p class="exec-p">Not discussed.</p>
-<h3 class="exec-h">Next steps</h3>
+<h4 class="exec-h2">Next steps</h4>
 <ul class="exec-ul">
-<li>None with a prospect. Yash guided attendees to:</li>
+<ul class="exec-ul exec-ul-nested">
+<li>None with a prospect. ERGO Team guided attendees to:</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
 <li>Install TimeTree and create a shared/personal calendar.</li>
 <li>Set recurring team meetings and work/study/gym blocks.</li>
 <li>Establish daily morning and evening routine blocks.</li>
 </ul>
-<h3 class="exec-h">Q\&amp;A</h3>
-<h3 class="exec-h">Questions We Asked</h3>
-<ul class="exec-ul">
-<li>None to a prospect. Yash posed instructional prompts to attendees (e.g., identify “pseudo-productive” activities; who uses a calendar), but no prospect-level answers captured.</li>
 </ul>
-<h3 class="exec-h">Questions They Asked</h3>
+</ul>
+</ul>
+<h3 class="exec-h">Q\&amp;A</h3>
+<h4 class="exec-h2">Questions We Asked</h4>
 <ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>None to a prospect. ERGO Team posed instructional prompts to attendees (e.g., identify “pseudo-productive” activities; who uses a calendar), but no prospect-level answers captured.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Questions They Asked</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
 <li>None from a prospect.</li>
-</ul></div>
-    </section>
-
-    <section class="section insights">
-      <div class="section-label" data-i18n="lbl_focus">Focus</div>
-      <h2 data-i18n="key_takeaways">Key takeaways</h2>
-      <ul><li>None captured from a prospect. Yash referenced generic productivity issues (lack of structure, “pseudo-productive” activities, inconsistent routines) in a coaching context.</li><li>Single calendar usage (TimeTree) with color-coding.</li><li>Recurring events for predictable structure.</li><li>Morning/evening routine blocks.</li><li>Pre-scheduling personal tasks (gym, barber, commute).</li></ul>
-    </section>
-
-    <div class="grid2">
-      <section class="section chart-box">
-        <div class="section-label" data-i18n="lbl_distribution">Distribution</div>
-        <h2 data-i18n="topics">Topics</h2>
-        <canvas id="topics"></canvas>
-      </section>
-      <section class="section chart-box">
-        <div class="section-label" data-i18n="lbl_conversation">Conversation</div>
-        <h2 data-i18n="speaking_time">Speaking time</h2>
-        <canvas id="speakers"></canvas>
-      </section>
+</ul>
+</ul></div></section>
+      
+      <div class="grid2 block" id="chartsGrid" data-block="charts"><section class="section chart-box" id="topicsWrap" data-block="topics"><div class="section-label" data-i18n="lbl_distribution">Distribution</div><h2 data-i18n="topics">Topics</h2><canvas id="topics"></canvas></section><section class="section chart-box" id="speakersWrap" data-block="speakers"><div class="section-label" data-i18n="lbl_conversation">Conversation</div><h2 data-i18n="speaking_time">Speaking time</h2><canvas id="speakers"></canvas></section></div>
+      <section class="section block" id="timeline" data-block="timeline"><div class="section-label" data-i18n="lbl_moments">Moments</div><h2 data-i18n="timeline">Timeline</h2><div class="tl"><div class="tl-t">00:04:32</div><div class="tl-body"><div class="who">ERGO Team</div><p>Wir werden euch das anders verpassen, die wir im Alltag, die ich vielleicht nicht zu intensieren bringe, die aber einfac…</p></div></div><div class="tl"><div class="tl-t">00:05:07</div><div class="tl-body"><div class="who">ERGO Team</div><p>Und am letzten Monat habe die Stufe 4 sehr knapp verpasst, tatsächlich.</p></div></div><div class="tl"><div class="tl-t">00:09:31</div><div class="tl-body"><div class="who">ERGO Team</div><p>Also man sieht hier oben zum Beispiel im Sozialen Kurs, 11, 19, 19, also ich hatte wirklich schon 8 Uhr morgens bis 2 Uh…</p></div></div><div class="tl"><div class="tl-t">00:10:52</div><div class="tl-body"><div class="who">ERGO Team</div><p>Weil ich merke das selber sehr oft, allem wenn man wisst, wer von euch ist gerade regelmäßig hier, also wer hat eine Aus…</p></div></div><div class="tl"><div class="tl-t">00:15:46</div><div class="tl-body"><div class="who">ERGO Team</div><p>Es ist wichtig, die Wirklichkeit zu bündeln und die Umfrage, diese Zeit erstmal auszumerzen, um alle Aktivitäten in den …</p></div></div><div class="tl"><div class="tl-t">00:16:12</div><div class="tl-body"><div class="who">ERGO Team</div><p>Wir können jetzt mal kurz rechnen, wie man klagt, wie viel Zeit wir eigentlich haben, und warum der Kadernis wichtig ist…</p></div></div><div class="tl"><div class="tl-t">00:18:42</div><div class="tl-body"><div class="who">ERGO Team</div><p>Wenn ich jetzt aber beklang, Ziel weiß ich, ich gehe morgen, wir kommen zu uns zum Gym.</p></div></div><div class="tl"><div class="tl-t">00:19:35</div><div class="tl-body"><div class="who">ERGO Team</div><p>Jetzt wählt ihr 19 bis 21 Uhr aus, da steht das alle mitkommen.</p></div></div></section>
+      <details class="section block" id="transcript" data-block="transcript"><summary data-i18n="transcript_excerpt">Transcript excerpt</summary><pre>[00:00:00] ERGO Team: Ich ein sehr erfolgreicher Unternehmer.
+[00:00:01] ERGO Team: Ich habe einen guten Lifestyle, doch stellt sich heraus, früher am Morgen käme ich der Wecker, der Tag geht los und es gibt keine besonderen Sachen.
+[00:00:20] ERGO Team: Jede einzelne Stunde des Tages ist durchgedacht.
+[00:00:24] ERGO Team: Jede einzelne Stunde.
+[00:00:26] ERGO Team: Es gibt keine Pausen, keine Zeit zu vergeben.
+[00:00:31] ERGO Team: Erfolgreiche Unternehmer haben alle eine Sache gemeinsam und zwar die Effizienz ihrer Zeit.
+[00:00:37] ERGO Team: Wir haben alle 24 Stunden am Tag und wie kann es sein, dass andere Menschen leicht aus Erfolgreiche sind als wir, mit den gleichen Ressourcen, mit den gleichen Möglichkeiten.
+[00:00:48] ERGO Team: Das heutige Meeting soll um eine Sache gehen, und zwar Produktivität.
+[00:00:54] ERGO Team: Und wie bekomme ich einen Vollfilm-Karender wieder?
+[00:00:57] ERGO Team: Wie nutze ich meine Zeit produktiv, effizient und erleichtert meine Ziele, genauso wie erfolgreiche Menschen?
+[00:01:09] ERGO Team: Der Mann im Hintergrund, wer kennt diesen Mann?
+[00:01:13] ERGO Team: Hat sich schon mal gesehen?
+[00:01:18] ERGO Team: Wer hat sich gemeldet?
+[00:01:21] ERGO Team: Erzähl mal gerne, wer ist denn der Person?
+[00:01:23] ERGO Team: Ja, Alex Mousi, sehr erfolgreicher Westamerikaner, glaube ich.
+[00:01:27] ERGO Team: Wir haben einen kleinen Schildkirche gestartet.
+[00:01:30] ERGO Team: Wir haben viel mit einem Kassel und haben die Lizenzentwicklung zurückgezogen.
+[00:01:36] ERGO Team: Und wir haben auch noch ein paar andere Unternehmen, die sie besser haben.
+[00:01:42] ERGO Team: Genau das, Alex Mousi ist ein sehr, sehr beeindruckendes Bauwirt von ihm.
+[00:01:48] ERGO Team: Und von vielen anderen auch, die geschäftlich erfolgreich sind.
+[00:01:51] ERGO Team: Er ist ein Unternehmer, der seit Jahren...
+[00:01:54] ERGO Team: Er Jahren Konstanz und Disziplin.
+[00:01:59] ERGO Team: Er hat damals, wie ihr schon sagt, mit einer sehr, sehr kleinen Gymcat angefangen, hat gefailt, hat einen neuen Business-Hort, einen neuen Gymcat in Konstellation zu skalieren und ist mittlerweile nic
+[00:02:27] ERGO Team: Alexander Mosin ist für eine Sache bekannt, für eine Sache, und zwar für den Aspekt von Bollywood.
+[00:02:34] ERGO Team: Er hat mal eine Sache gesagt, und zwar ignore the opinion of others, of other people, and do so much Bollywood that is unreasonable for you not to become successful.
+[00:03:07] ERGO Team: Ich habe heute sehr Übungen eingebaut, sehr viele Übungen eingebaut.
+[00:03:26] ERGO Team: Sehr viel praxisorientiertes Wissen, ich bin ein großer Fan davon, dass wir alle was mitnehmen können, deshalb erwarte ich von euch eine Frage, eine Frage, ein Ansatz, was ihr dazu werdet von mir.
+[00:03:41] ERGO Team: Wer von euch würde sagen, er ist manchmal selbstverständlich.
+[00:03:49] ERGO Team: Ich gebe euch mal die erste Aufgabe wieder heute.
+[00:03:53] ERGO Team: Macht euch alle mal kurz an.
+[00:03:55] ERGO Team: Was sind Aktivitäten?
+[00:03:57] ERGO Team: Schreibt ihr euch mal auf, wo ihr euch erwischt, dass ihr scheinbar positiv seid.
+[00:04:01] ERGO Team: Thema, ich nehme mir was vor, gehe ins Büro vielleicht, oder ich gehe irgendwo hin.
+[00:04:05] ERGO Team: Einmal mache ich irgendwas, was gar nicht mit dem Geschäft zu tun hat.
+[00:04:07] ERGO Team: Oder gar nichts mit dem, was ich eigentlich heute tun wollte.
+[00:04:10] ERGO Team: Und ich gehe am Ende nach Hause und nehme, boah, scheiße, meine Zeit ist schnell wieder.
+[00:04:14] ERGO Team: Mach ich doch jetzt ein paar Gedanken, dann gebe ich das erst mal durch.
+[00:04:22] ERGO Team: Aktivitäten, die produktiv macht, oder?
+[00:04:27] ERGO Team: Scheinproduktive Aktivitäten.
+[00:04:28] ERGO Team: Also, wo erwischt ihr euch, dass ihr euch was vornimmt?</pre></details>
+      
+      
     </div>
-
-    <section class="section">
-      <div class="section-label" data-i18n="lbl_followup">Follow-up</div>
-      <h2 data-i18n="action_items">Action items</h2>
-      <table>
-        <thead><tr>
-          <th data-i18n="th_owner">Owner</th>
-          <th data-i18n="th_task">Task</th>
-          <th data-i18n="th_due">Due</th>
-          <th data-i18n="th_priority">Priority</th>
-        </tr></thead>
-        <tbody><tr><td colspan="4" style="color:var(--muted)">No action items</td></tr></tbody>
-      </table>
-    </section>
-
-    <section class="section">
-      <div class="section-label" data-i18n="lbl_moments">Moments</div>
-      <h2 data-i18n="timeline">Timeline</h2>
-      <div class="tl"><div class="tl-t">00:04:32</div><div class="tl-body"><div class="who">Yash Bora</div><p>Wir werden euch das anders verpassen, die wir im Alltag, die ich vielleicht nicht zu intensieren bringe, die aber einfac…</p></div></div><div class="tl"><div class="tl-t">00:05:07</div><div class="tl-body"><div class="who">Yash Bora</div><p>Und am letzten Monat habe die Stufe 4 sehr knapp verpasst, tatsächlich.</p></div></div><div class="tl"><div class="tl-t">00:09:31</div><div class="tl-body"><div class="who">Yash Bora</div><p>Also man sieht hier oben zum Beispiel im Sozialen Kurs, 11, 19, 19, also ich hatte wirklich schon 8 Uhr morgens bis 2 Uh…</p></div></div><div class="tl"><div class="tl-t">00:10:52</div><div class="tl-body"><div class="who">Yash Bora</div><p>Weil ich merke das selber sehr oft, allem wenn man wisst, wer von euch ist gerade regelmäßig hier, also wer hat eine Aus…</p></div></div><div class="tl"><div class="tl-t">00:15:46</div><div class="tl-body"><div class="who">Yash Bora</div><p>Es ist wichtig, die Wirklichkeit zu bündeln und die Umfrage, diese Zeit erstmal auszumerzen, um alle Aktivitäten in den …</p></div></div><div class="tl"><div class="tl-t">00:16:12</div><div class="tl-body"><div class="who">Yash Bora</div><p>Wir können jetzt mal kurz rechnen, wie man klagt, wie viel Zeit wir eigentlich haben, und warum der Kadernis wichtig ist…</p></div></div><div class="tl"><div class="tl-t">00:18:42</div><div class="tl-body"><div class="who">Yash Bora</div><p>Wenn ich jetzt aber beklang, Ziel weiß ich, ich gehe morgen, wir kommen zu uns zum Gym.</p></div></div><div class="tl"><div class="tl-t">00:19:35</div><div class="tl-body"><div class="who">Yash Bora</div><p>Jetzt wählt ihr 19 bis 21 Uhr aus, da steht das alle mitkommen.</p></div></div>
-    </section>
-
-    <details class="section">
-      <summary data-i18n="transcript_excerpt">Transcript excerpt</summary>
-      <pre>[00:00:00] Yash Bora: Ich ein sehr erfolgreicher Unternehmer.
-[00:00:01] Yash Bora: Ich habe einen guten Lifestyle, doch stellt sich heraus, früher am Morgen käme ich der Wecker, der Tag geht los und es gibt keine besonderen Sachen.
-[00:00:20] Yash Bora: Jede einzelne Stunde des Tages ist durchgedacht.
-[00:00:24] Yash Bora: Jede einzelne Stunde.
-[00:00:26] Yash Bora: Es gibt keine Pausen, keine Zeit zu vergeben.
-[00:00:31] Yash Bora: Erfolgreiche Unternehmer haben alle eine Sache gemeinsam und zwar die Effizienz ihrer Zeit.
-[00:00:37] Yash Bora: Wir haben alle 24 Stunden am Tag und wie kann es sein, dass andere Menschen leicht aus Erfolgreiche sind als wir, mit den gleichen Ressourcen, mit den gleichen Möglichkeiten.
-[00:00:48] Yash Bora: Das heutige Meeting soll um eine Sache gehen, und zwar Produktivität.
-[00:00:54] Yash Bora: Und wie bekomme ich einen Vollfilm-Karender wieder?
-[00:00:57] Yash Bora: Wie nutze ich meine Zeit produktiv, effizient und erleichtert meine Ziele, genauso wie erfolgreiche Menschen?
-[00:01:09] Yash Bora: Der Mann im Hintergrund, wer kennt diesen Mann?
-[00:01:13] Yash Bora: Hat sich schon mal gesehen?
-[00:01:18] Yash Bora: Wer hat sich gemeldet?
-[00:01:21] Yash Bora: Erzähl mal gerne, wer ist denn der Person?
-[00:01:23] Yash Bora: Ja, Alex Mousi, sehr erfolgreicher Westamerikaner, glaube ich.
-[00:01:27] Yash Bora: Wir haben einen kleinen Schildkirche gestartet.
-[00:01:30] Yash Bora: Wir haben viel mit einem Kassel und haben die Lizenzentwicklung zurückgezogen.
-[00:01:36] Yash Bora: Und wir haben auch noch ein paar andere Unternehmen, die sie besser haben.
-[00:01:42] Yash Bora: Genau das, Alex Mousi ist ein sehr, sehr beeindruckendes Bauwirt von ihm.
-[00:01:48] Yash Bora: Und von vielen anderen auch, die geschäftlich erfolgreich sind.
-[00:01:51] Yash Bora: Er ist ein Unternehmer, der seit Jahren...
-[00:01:54] Yash Bora: Er Jahren Konstanz und Disziplin.
-[00:01:59] Yash Bora: Er hat damals, wie ihr schon sagt, mit einer sehr, sehr kleinen Gymcat angefangen, hat gefailt, hat einen neuen Business-Hort, einen neuen Gymcat in Konstellation zu skalieren und ist mittlerweile nic
-[00:02:27] Yash Bora: Alexander Mosin ist für eine Sache bekannt, für eine Sache, und zwar für den Aspekt von Bollywood.
-[00:02:34] Yash Bora: Er hat mal eine Sache gesagt, und zwar ignore the opinion of others, of other people, and do so much Bollywood that is unreasonable for you not to become successful.
-[00:03:07] Yash Bora: Ich habe heute sehr Übungen eingebaut, sehr viele Übungen eingebaut.
-[00:03:26] Yash Bora: Sehr viel praxisorientiertes Wissen, ich bin ein großer Fan davon, dass wir alle was mitnehmen können, deshalb erwarte ich von euch eine Frage, eine Frage, ein Ansatz, was ihr dazu werdet von mir.
-[00:03:41] Yash Bora: Wer von euch würde sagen, er ist manchmal selbstverständlich.
-[00:03:49] Yash Bora: Ich gebe euch mal die erste Aufgabe wieder heute.
-[00:03:53] Yash Bora: Macht euch alle mal kurz an.
-[00:03:55] Yash Bora: Was sind Aktivitäten?
-[00:03:57] Yash Bora: Schreibt ihr euch mal auf, wo ihr euch erwischt, dass ihr scheinbar positiv seid.
-[00:04:01] Yash Bora: Thema, ich nehme mir was vor, gehe ins Büro vielleicht, oder ich gehe irgendwo hin.
-[00:04:05] Yash Bora: Einmal mache ich irgendwas, was gar nicht mit dem Geschäft zu tun hat.
-[00:04:07] Yash Bora: Oder gar nichts mit dem, was ich eigentlich heute tun wollte.
-[00:04:10] Yash Bora: Und ich gehe am Ende nach Hause und nehme, boah, scheiße, meine Zeit ist schnell wieder.
-[00:04:14] Yash Bora: Mach ich doch jetzt ein paar Gedanken, dann gebe ich das erst mal durch.
-[00:04:22] Yash Bora: Aktivitäten, die produktiv macht, oder?
-[00:04:27] Yash Bora: Scheinproduktive Aktivitäten.
-[00:04:28] Yash Bora: Also, wo erwischt ihr euch, dass ihr euch was vornimmt?</pre>
-    </details>
 
     <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
   </div>
@@ -625,47 +737,62 @@
       de: {
         brand: 'ERGO · Meeting Intelligence',
         theme_light: 'Hell', theme_dark: 'Dunkel',
-        lbl_overview: 'Überblick', summary: 'Zusammenfassung',
+        lbl_recap: '60 Sekunden', recap: 'Recap',
+        recap_purpose: 'Zweck', recap_highlights: 'Was zählte',
+        recap_do_next: 'Als Nächstes', recap_watch: 'Achtung',
+        lbl_overview: 'Überblick', summary: 'Zusammenfassung', summary_enhanced: 'Enhanced Summary',
+        lbl_notes: 'Notizen', meeting_notes: 'Meeting-Notizen',
         lbl_focus: 'Fokus', key_takeaways: 'Kernaussagen',
         lbl_distribution: 'Verteilung', topics: 'Themen',
         lbl_conversation: 'Gespräch', speaking_time: 'Sprechzeit',
         lbl_followup: 'Nachverfolgung', action_items: 'Aufgaben',
+        lbl_todos: 'Abschluss', todos: 'Todos',
+        lbl_ideas: 'Festhalten', new_ideas: 'Neue Ideen',
         th_owner: 'Verantwortlich', th_task: 'Aufgabe', th_due: 'Fällig', th_priority: 'Priorität',
         lbl_moments: 'Momente', timeline: 'Zeitstrahl',
         transcript_excerpt: 'Transkript (Auszug)',
         footer: 'Ergo Meet · Vertrauliches Arbeitsdokument',
-        open_recording: 'Aufnahme öffnen',
-        kpi_stufe: 'Stufe', kpi_ergo_since: 'ERGO seit',
+        kpi_ergo_since: 'ERGO seit',
       },
       en: {
         brand: 'ERGO · Meeting Intelligence',
         theme_light: 'Light', theme_dark: 'Dark',
-        lbl_overview: 'Overview', summary: 'Summary',
+        lbl_recap: '60 seconds', recap: 'Recap',
+        recap_purpose: 'Purpose', recap_highlights: 'What mattered',
+        recap_do_next: 'Do next', recap_watch: 'Watch-outs',
+        lbl_overview: 'Overview', summary: 'Summary', summary_enhanced: 'Enhanced summary',
+        lbl_notes: 'Notes', meeting_notes: 'Meeting notes',
         lbl_focus: 'Focus', key_takeaways: 'Key takeaways',
         lbl_distribution: 'Distribution', topics: 'Topics',
         lbl_conversation: 'Conversation', speaking_time: 'Speaking time',
         lbl_followup: 'Follow-up', action_items: 'Action items',
+        lbl_todos: 'Close-out', todos: 'Todos',
+        lbl_ideas: 'Capture', new_ideas: 'New ideas',
         th_owner: 'Owner', th_task: 'Task', th_due: 'Due', th_priority: 'Priority',
         lbl_moments: 'Moments', timeline: 'Timeline',
         transcript_excerpt: 'Transcript excerpt',
         footer: 'Ergo Meet · Confidential working document',
-        open_recording: 'Open recording',
-        kpi_stufe: 'Level', kpi_ergo_since: 'ERGO since',
+        kpi_ergo_since: 'ERGO since',
       },
       tr: {
         brand: 'ERGO · Toplantı özeti',
         theme_light: 'Açık', theme_dark: 'Koyu',
-        lbl_overview: 'Genel bakış', summary: 'Özet',
+        lbl_recap: '60 saniye', recap: 'Özet',
+        recap_purpose: 'Amaç', recap_highlights: 'Ne önemliydi',
+        recap_do_next: 'Sırada', recap_watch: 'Dikkat',
+        lbl_overview: 'Genel bakış', summary: 'Özet', summary_enhanced: 'Gelişmiş özet',
+        lbl_notes: 'Notlar', meeting_notes: 'Toplantı notları',
         lbl_focus: 'Odak', key_takeaways: 'Önemli çıkarımlar',
         lbl_distribution: 'Dağılım', topics: 'Konular',
         lbl_conversation: 'Konuşma', speaking_time: 'Konuşma süresi',
         lbl_followup: 'Takip', action_items: 'Aksiyonlar',
+        lbl_todos: 'Kapanış', todos: 'Yapılacaklar',
+        lbl_ideas: 'Kaydet', new_ideas: 'Yeni fikirler',
         th_owner: 'Sorumlu', th_task: 'Görev', th_due: 'Son tarih', th_priority: 'Öncelik',
         lbl_moments: 'Anlar', timeline: 'Zaman çizelgesi',
         transcript_excerpt: 'Transkript özeti',
         footer: 'Ergo Meet · Gizli çalışma belgesi',
-        open_recording: 'Kaydı aç',
-        kpi_stufe: 'Kademe', kpi_ergo_since: 'ERGO başlangıç',
+        kpi_ergo_since: 'ERGO başlangıç',
       },
     };
 
@@ -747,24 +874,77 @@
     }
     ergomeetChartDefaults();
 
-    const topics = [{"label": "Zahlen / KPIs", "weight": 59.5}, {"label": "Prozesse / Tools", "weight": 29.4}, {"label": "Team / F\u00fchrung", "weight": 8.7}, {"label": "Karriere / Stufe", "weight": 1.6}, {"label": "Kunden / Vertrieb", "weight": 0.8}];
-    const speakers = [{"name": "Yash Bora", "words": 4812, "pct": 100.0}];
+    const topics = [{"label": "Zahlen / KPIs", "weight": 50.0}, {"label": "Prozesse / Tools", "weight": 36.3}, {"label": "Team / F\u00fchrung", "weight": 10.8}, {"label": "Karriere", "weight": 2.0}, {"label": "Kunden / Vertrieb", "weight": 1.0}];
+    const speakers = [{"name": "ERGO Team", "words": 4812, "pct": 100.0}];
     const goldPalette = ['#c9a962','#e8d5a3','#8b7355','#d4bc7a','#6b7c9e','#a89878'];
     window.__ergoCharts = window.__ergoCharts || [];
-    window.__ergoCharts.push(new Chart(document.getElementById('topics'), {
-      type: 'doughnut',
-      data: {
-        labels: topics.map(t => t.label),
-        datasets: [{ data: topics.map(t => t.weight), backgroundColor: goldPalette, borderWidth: 0 }]
-      },
-      options: {
-        cutout: '62%',
-        plugins: { legend: { position: 'bottom', labels: { padding: 14, usePointStyle: true } } }
+
+    (function hideEmptyBlocks() {
+      document.querySelectorAll('[data-block]').forEach((el) => {
+        const text = (el.textContent || '').replace(/\s+/g, ' ').trim();
+        const hasCanvas = !!el.querySelector('canvas');
+        const hasListContent = !!el.querySelector('li, tr, .tl, .exec-p, .exec-h, .exec-ul li, pre');
+        const topicsOk = !!(el.querySelector('#topics') && topics.length);
+        const speakersOk = !!(el.querySelector('#speakers') && speakers.length);
+        const hasMeaningful = hasListContent || (hasCanvas && (topicsOk || speakersOk));
+        const bareDash = text === '—' || text === '-' || /No action items/i.test(text);
+        if ((!hasMeaningful && (!text || bareDash)) || el.classList.contains('force-empty')) {
+          el.classList.add('is-empty');
+          el.hidden = true;
+        }
+      });
+      const kpi = document.getElementById('kpiRow');
+      if (kpi && !kpi.querySelector('.kpi')) {
+        kpi.classList.add('is-empty');
+        kpi.hidden = true;
       }
-    }));
-    if (speakers.length) {
+      const charts = document.getElementById('chartsGrid');
+      if (charts) {
+        const visible = [...charts.querySelectorAll('.chart-box')].filter((c) => !c.classList.contains('is-empty') && !c.hidden);
+        if (!visible.length) {
+          charts.classList.add('is-empty');
+          charts.hidden = true;
+        } else if (visible.length === 1) {
+          charts.classList.add('grid2--single');
+        }
+      }
+    })();
+
+    (function buildToc() {
+      const toc = document.getElementById('sectionToc');
+      if (!toc) return;
+      const blocks = document.querySelectorAll('#reportStack [data-block]:not(.is-empty):not([hidden])');
+      blocks.forEach((block) => {
+        const id = block.id || block.getAttribute('data-block');
+        if (!id) return;
+        if (!block.id) block.id = id;
+        const labelEl = block.querySelector('h2, summary, .section-label');
+        const label = (labelEl && labelEl.textContent.trim()) || id;
+        const a = document.createElement('a');
+        a.href = '#' + block.id;
+        a.textContent = label;
+        toc.appendChild(a);
+      });
+    })();
+
+    const topicsEl = document.getElementById('topics');
+    if (topicsEl && topics.length) {
+      window.__ergoCharts.push(new Chart(topicsEl, {
+        type: 'doughnut',
+        data: {
+          labels: topics.map(t => t.label),
+          datasets: [{ data: topics.map(t => t.weight), backgroundColor: goldPalette, borderWidth: 0 }]
+        },
+        options: {
+          cutout: '62%',
+          plugins: { legend: { position: 'bottom', labels: { padding: 14, usePointStyle: true } } }
+        }
+      }));
+    }
+    const speakersEl = document.getElementById('speakers');
+    if (speakersEl && speakers.length) {
       const light = document.documentElement.getAttribute('data-theme') === 'light';
-      window.__ergoCharts.push(new Chart(document.getElementById('speakers'), {
+      window.__ergoCharts.push(new Chart(speakersEl, {
         type: 'bar',
         data: {
           labels: speakers.map(s => s.name),
