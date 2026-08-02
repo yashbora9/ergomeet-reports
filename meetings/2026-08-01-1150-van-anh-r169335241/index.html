@@ -423,6 +423,51 @@
     }
     .exec-ul-nested li { margin-bottom: 6px; font-size: 0.92em; }
     .enhanced-summary { max-width: 52rem; }
+    .recap-card {
+      border-color: rgba(201, 169, 98, 0.45);
+      background: linear-gradient(145deg, rgba(201, 169, 98, 0.10), var(--surface));
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    }
+    .recap-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px 22px;
+    }
+    @media (min-width: 820px) {
+      .recap-grid {
+        grid-template-columns: 1.1fr 1fr;
+      }
+      .recap-one { grid-column: 1 / -1; }
+    }
+    .recap-kicker {
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .recap-one-text {
+      margin: 0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.25rem;
+      line-height: 1.35;
+      color: var(--cream);
+      font-weight: 500;
+    }
+    .recap-ul {
+      margin: 0;
+      padding-left: 1.15rem;
+    }
+    .recap-ul li {
+      margin-bottom: 8px;
+      color: var(--text-body);
+      line-height: 1.5;
+      font-size: 0.92rem;
+    }
+    .recap-ul li::marker { color: var(--gold); }
+    .recap-col--do .recap-kicker { color: var(--gold-light); }
+    .recap-col--watch .recap-kicker { color: #d4a0a0; }
     .end-lists .end-ul {
       margin: 0;
       padding-left: 1.2rem;
@@ -561,6 +606,15 @@
     <!-- No empty shell under the heading: blocks only appear when builder marks them present -->
     <nav class="toc" id="sectionToc" aria-label="Sections"></nav>
     <div class="stack" id="reportStack">
+      <section class="section block recap-card" id="recap" data-block="recap">
+<div class="section-label" data-i18n="lbl_recap">60 seconds</div>
+<h2 data-i18n="recap">Recap</h2>
+<div class="recap-grid">
+<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text">Van Anh teilt ihre Strategien für Vertrieb, Recruiting und den Aufstieg zur Stufe 4.</p></div>
+<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li>Strategische Neuausrichtung: Van Anhs Aufstieg zur Stufe 4 wurde durch eine strategische Neuausrichtung ausgelöst, nachdem der Umsatz auf 11.000 Einheiten gesunken war. Sie finanzierte eine 3.600-€-Reise, um die Energie zurückzugewinnen, die sie für den Erfolg brauchte.</li><li>Zielgruppen-Fokus: Sie konzentriert sich auf drei Zielgruppen – Mütter, Selbstständige und Steuerberater –, die sie aufgrund ihrer hohen Affinität und ihres hohen Potenzials als „Crescendo“ bezeichnet.</li><li>Recruiting-Strategie: Van Anh nutzt eine „Herunterschrauben“-Strategie, um den Selbstwert von Frauen zu stärken, indem sie ihre eigenen Herausforderungen hervorhebt und so ihre Überzeugung stärkt, dass sie es schaffen können.</li></ul></div>
+<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li>Die drei Zielgruppen ansprechen: Mütter, Selbstständige und Steuerberater.</li><li>Die „Herunterschrauben“-Strategie im Recruiting nutzen.</li><li>BAV und U-Kasse bei Selbstständigen pitchen.</li></ul></div>
+<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li>„No-Brainer“: BAV (betriebliche Altersvorsorge) und U-Kasse. Viele Selbstständige kennen die BAV nicht, was ein großes ungenutztes Potenzial darstellt.</li></ul></div>
+</div></section>
       <div class="kpi-row block" id="kpiRow" data-block="kpis"><div class="kpi"><div class="kpi-v">2.000</div><div class="kpi-l">Betrag</div></div><div class="kpi"><div class="kpi-v">100</div><div class="kpi-l">Prozent</div></div><div class="kpi"><div class="kpi-v">01</div><div class="kpi-l">Prozent</div></div><div class="kpi"><div class="kpi-v">30</div><div class="kpi-l">Prozent</div></div></div>
       <section class="section block" id="summary" data-block="summary"><div class="section-label" data-i18n="lbl_overview">Overview</div><h2 data-i18n="summary_enhanced">Enhanced summary</h2><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Zweck des Meetings</h3>
 <p class="exec-p">Van Anh teilt ihre Strategien für Vertrieb, Recruiting und den Aufstieg zur Stufe 4.</p>
@@ -706,7 +760,7 @@
 [00:03:01] Van Anh: Yes, I was about to my personal I about the future.
 [00:03:07] Van Anh: going reflect personal view?</pre></details>
       <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Die drei Zielgruppen ansprechen: Mütter, Selbstständige und Steuerberater.</span></li><li><span class="todo-task">Die „Herunterschrauben“-Strategie im Recruiting nutzen.</span></li><li><span class="todo-task">BAV und U-Kasse bei Selbstständigen pitchen.</span></li><li><span class="todo-task">Eine Multichannel-Lead-Generierungsstrategie umsetzen.</span></li></ul></section>
-      <section class="section block end-lists" id="ideas" data-block="ideas"><div class="section-label" data-i18n="lbl_ideas">Capture</div><h2 data-i18n="new_ideas">New ideas</h2><ul class="end-ul ideas-ul"><li><strong>Strategische Neuausrichtung:</strong> Van Anhs Aufstieg zur Stufe 4 wurde durch eine strategische Neuausrichtung ausgelöst, nachdem der Umsatz auf 11.000 Einheiten gesunken war. Sie finanzierte eine 3.600-€-Reise, um die Energie zurückzugewinnen, die sie für den Erfolg brauchte.</li><li><strong>Zielgruppen-Fokus:</strong> Sie konzentriert sich auf drei Zielgruppen – Mütter, Selbstständige und Steuerberater –, die sie aufgrund ihrer hohen Affinität und ihres hohen Potenzials als „Crescendo“ bezeichnet.</li><li><strong>Recruiting-Strategie:</strong> Van Anh nutzt eine „Herunterschrauben“-Strategie, um den Selbstwert von Frauen zu stärken, indem sie ihre eigenen Herausforderungen hervorhebt und so ihre Überzeugung stärkt, dass sie es schaffen können.</li><li><strong>Multichannel-Lead-Generierung:</strong> Sie nutzt eine Multichannel-Strategie, die Social Media (TikTok), Messen, Networking und Empfehlungen kombiniert, um ein konstantes Lead-Volumen zu sichern.</li></ul></section>
+      
     </div>
 
     <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
@@ -716,6 +770,9 @@
       de: {
         brand: 'ERGO · Meeting Intelligence',
         theme_light: 'Hell', theme_dark: 'Dunkel',
+        lbl_recap: '60 Sekunden', recap: 'Recap',
+        recap_purpose: 'Zweck', recap_highlights: 'Was zählte',
+        recap_do_next: 'Als Nächstes', recap_watch: 'Achtung',
         lbl_overview: 'Überblick', summary: 'Zusammenfassung', summary_enhanced: 'Enhanced Summary',
         lbl_notes: 'Notizen', meeting_notes: 'Meeting-Notizen',
         lbl_focus: 'Fokus', key_takeaways: 'Kernaussagen',
@@ -733,6 +790,9 @@
       en: {
         brand: 'ERGO · Meeting Intelligence',
         theme_light: 'Light', theme_dark: 'Dark',
+        lbl_recap: '60 seconds', recap: 'Recap',
+        recap_purpose: 'Purpose', recap_highlights: 'What mattered',
+        recap_do_next: 'Do next', recap_watch: 'Watch-outs',
         lbl_overview: 'Overview', summary: 'Summary', summary_enhanced: 'Enhanced summary',
         lbl_notes: 'Notes', meeting_notes: 'Meeting notes',
         lbl_focus: 'Focus', key_takeaways: 'Key takeaways',
@@ -750,6 +810,9 @@
       tr: {
         brand: 'ERGO · Toplantı özeti',
         theme_light: 'Açık', theme_dark: 'Koyu',
+        lbl_recap: '60 saniye', recap: 'Özet',
+        recap_purpose: 'Amaç', recap_highlights: 'Ne önemliydi',
+        recap_do_next: 'Sırada', recap_watch: 'Dikkat',
         lbl_overview: 'Genel bakış', summary: 'Özet', summary_enhanced: 'Gelişmiş özet',
         lbl_notes: 'Notlar', meeting_notes: 'Toplantı notları',
         lbl_focus: 'Odak', key_takeaways: 'Önemli çıkarımlar',
