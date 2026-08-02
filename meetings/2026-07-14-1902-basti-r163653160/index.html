@@ -282,11 +282,23 @@
       border-bottom: 1px solid var(--line);
       letter-spacing: 0.04em;
     }
+    /* KPI strip — only rendered when builder injects cards; never show empty shell */
     .kpi-row {
-      display: grid;
+      display: none;
       grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 14px;
-      margin-bottom: 28px;
+      margin: 0 0 28px;
+    }
+    .kpi-row:has(.kpi) {
+      display: grid;
+    }
+    .kpi-row:empty,
+    .kpi-row.is-empty {
+      display: none !important;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      min-height: 0;
     }
     .kpi {
       background: var(--surface);
@@ -310,14 +322,52 @@
       letter-spacing: 0.12em;
       color: var(--muted);
     }
+    /* Dynamic stack: sections hide when empty; no blank cards under hero */
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .stack > :empty,
+    .block.is-empty,
+    .block:has(.exec:empty):not(:has(.exec *:not(:empty))),
+    .block:has(ul:empty),
+    .block:has(tbody:empty) {
+      display: none !important;
+    }
+    .toc {
+      display: none;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 8px;
+      padding: 0;
+      list-style: none;
+    }
+    .toc:has(a) { display: flex; }
+    .toc a {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--gold-light);
+      text-decoration: none;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .toc a:hover { background: var(--surface-hover); }
     .section {
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 28px 26px;
-      margin-bottom: 20px;
+      margin-bottom: 0;
       backdrop-filter: blur(6px);
     }
+    .section.is-empty { display: none !important; }
     .section-label {
       font-size: 0.65rem;
       letter-spacing: 0.2em;
@@ -347,6 +397,13 @@
       letter-spacing: 0.02em;
     }
     .exec-h:first-child { margin-top: 0; }
+    .exec-h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin: 16px 0 8px;
+    }
     .exec-p {
       margin: 0 0 12px;
       color: var(--text-soft);
@@ -360,6 +417,76 @@
       padding-left: 4px;
     }
     .exec-ul li::marker { color: var(--gold); }
+    .exec-ul-nested {
+      margin: 8px 0 4px;
+      padding-left: 1.1rem;
+    }
+    .exec-ul-nested li { margin-bottom: 6px; font-size: 0.92em; }
+    .enhanced-summary { max-width: 52rem; }
+    .recap-card {
+      border-color: rgba(201, 169, 98, 0.45);
+      background: linear-gradient(145deg, rgba(201, 169, 98, 0.10), var(--surface));
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    }
+    .recap-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px 22px;
+    }
+    @media (min-width: 820px) {
+      .recap-grid {
+        grid-template-columns: 1.1fr 1fr;
+      }
+      .recap-one { grid-column: 1 / -1; }
+    }
+    .recap-kicker {
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .recap-one-text {
+      margin: 0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.25rem;
+      line-height: 1.35;
+      color: var(--cream);
+      font-weight: 500;
+    }
+    .recap-ul {
+      margin: 0;
+      padding-left: 1.15rem;
+    }
+    .recap-ul li {
+      margin-bottom: 8px;
+      color: var(--text-body);
+      line-height: 1.5;
+      font-size: 0.92rem;
+    }
+    .recap-ul li::marker { color: var(--gold); }
+    .recap-col--do .recap-kicker { color: var(--gold-light); }
+    .recap-col--watch .recap-kicker { color: #d4a0a0; }
+    .end-lists .end-ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+    .end-lists .end-ul li {
+      margin-bottom: 12px;
+      color: var(--text-body);
+      line-height: 1.55;
+    }
+    .end-lists .end-ul li::marker { color: var(--gold); }
+    .todos-ul .todo-task { display: inline; }
+    .todos-ul .todo-meta {
+      display: block;
+      margin-top: 4px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .ideas-ul li { color: var(--text-soft); }
     .exec strong { color: var(--cream); font-weight: 600; }
     .muted { color: var(--muted); }
     .insights ul { margin: 0; padding-left: 1.1rem; }
@@ -368,10 +495,13 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
-      margin-bottom: 20px;
+      margin-bottom: 0;
     }
+    .grid2.is-empty { display: none !important; }
+    .grid2.grid2--single { grid-template-columns: 1fr; }
     @media (max-width: 768px) { .grid2 { grid-template-columns: 1fr; } }
     .chart-box { min-height: 240px; }
+    .chart-box.is-empty { display: none !important; }
     canvas { max-height: 220px !important; }
     table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
     thead th {
@@ -464,7 +594,7 @@
           <div class="brand" data-i18n="brand">ERGO · Meeting Intelligence</div>
           <h1>Ergo Meet · 14 July 2026 · Basti</h1>
           <div class="hero-sub">
-            <span class="pill">14.07.2026 19:02 CEST</span>
+            <span class="pill">14.07.2026 19:02 </span>
             
             
           </div>
@@ -473,170 +603,180 @@
       </div>
     </header>
 
-    <div class="kpi-row"><div class="kpi"><div class="kpi-v">€80</div><div class="kpi-l">Summe</div></div><div class="kpi"><div class="kpi-v">€100</div><div class="kpi-l">Summe</div></div><div class="kpi"><div class="kpi-v">€600</div><div class="kpi-l">Summe</div></div><div class="kpi"><div class="kpi-v">100</div><div class="kpi-l">Prozent</div></div></div>
-
-    <section class="section">
-      <div class="section-label" data-i18n="lbl_overview">Overview</div>
-      <h2 data-i18n="summary">Summary</h2>
-      <div class="exec exec-rich"><h3 class="exec-h">Meeting Purpose</h3>
+    <!-- No empty shell under the heading: blocks only appear when builder marks them present -->
+    <nav class="toc" id="sectionToc" aria-label="Sections"></nav>
+    <div class="stack" id="reportStack">
+      <section class="section block recap-card" id="recap" data-block="recap">
+<div class="section-label" data-i18n="lbl_recap">60 seconds</div>
+<h2 data-i18n="recap">Recap</h2>
+<div class="recap-grid">
+<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text">To learn Basti&#x27;s four-pillar lead generation strategy.</p></div>
+<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li>Build a Network Database: Systematically log contacts with key details (Name, Age, Job, Goals) to create a valuable asset for referrals and connections.</li><li>Network Actively: Meet one new person daily. Use social media (Instagram) as a digital business card to build trust and credibility.</li><li>Ask for Specific Referrals: Avoid vague requests. Ask for contacts with specific needs (e.g., &quot;Who do you know in IT earning €80k+?&quot;) and use warm introductions.</li></ul></div>
+<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li>Create a network database with contacts and key details.</li><li>Set a goal to meet one new person daily.</li><li>Optimize your social media profile as a digital business card.</li></ul></div>
+</div></section>
+      <div class="kpi-row block" id="kpiRow" data-block="kpis"><div class="kpi"><div class="kpi-v">€80</div><div class="kpi-l">Summe</div></div><div class="kpi"><div class="kpi-v">€100</div><div class="kpi-l">Summe</div></div><div class="kpi"><div class="kpi-v">€600</div><div class="kpi-l">Summe</div></div><div class="kpi"><div class="kpi-v">100</div><div class="kpi-l">Prozent</div></div></div>
+      <section class="section block" id="summary" data-block="summary"><div class="section-label" data-i18n="lbl_overview">Overview</div><h2 data-i18n="summary_enhanced">Enhanced summary</h2><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Meeting Purpose</h3>
 <p class="exec-p">To learn Basti&#x27;s four-pillar lead generation strategy.</p>
 <h3 class="exec-h">Key Takeaways</h3>
 <ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
 <li><strong>Build a Network Database:</strong> Systematically log contacts with key details (Name, Age, Job, Goals) to create a valuable asset for referrals and connections.</li>
 <li><strong>Network Actively:</strong> Meet one new person daily. Use social media (Instagram) as a digital business card to build trust and credibility.</li>
 <li><strong>Ask for Specific Referrals:</strong> Avoid vague requests. Ask for contacts with specific needs (e.g., &quot;Who do you know in IT earning €80k+?&quot;) and use warm introductions.</li>
 <li><strong>Prioritize Team Success:</strong> Your primary goal is making your team successful. Their unit production directly fuels your career advancement.</li>
 </ul>
+</ul>
 <h3 class="exec-h">Topics</h3>
-<h3 class="exec-h">The Challenge: A &quot;Leere Liste&quot; (Empty List)</h3>
+<h4 class="exec-h2">The Challenge: A &quot;Leere Liste&quot; (Empty List)</h4>
 <ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
 <li>The primary fear for new advisors: running out of contacts.</li>
 <li>Basti&#x27;s experience proves this is manageable:</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
 <li>Started with a list of \~150–200 contacts.</li>
 <li>Now has a network of 1,400–1,500 contacts.</li>
+</ul>
+</ul>
 <li>The solution is a systematic approach to lead generation.</li>
 </ul>
-<h3 class="exec-h">Pillar 1: The Network Database</h3>
+</ul>
+<h4 class="exec-h2">Pillar 1: The Network Database</h4>
 <ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
 <li><strong>Action:</strong> Create a master list of everyone you know.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
 <li>Include contacts from school, clubs, work, and friends of friends.</li>
 <li>Log all available details, even if only a name.</li>
+</ul>
+</ul>
 <li><strong>Rationale:</strong> This list is a valuable asset.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
 <li><strong>Example:</strong> Basti connected a client&#x27;s mother with a radiologist (a former client) for a fast-track MRI appointment, demonstrating the power of a well-maintained network.</li>
+</ul>
+</ul>
 <li><strong>Maintenance:</strong> Update the list regularly (e.g., weekly) with new contacts.</li>
 </ul>
-<h3 class="exec-h">Pillar 2: Networking</h3>
+</ul>
+<h4 class="exec-h2">Pillar 2: Networking</h4>
 <ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
 <li><strong>Action:</strong> Meet one new person daily.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
 <li><strong>Goal:</strong> Make networking a habit.</li>
 <li><strong>Method:</strong> Use shared interests (sports, events) to start conversations.</li>
 <li><strong>Example:</strong> A contact made at Karneval der Kulturen became a partner who built a 100+ person team.</li>
+</ul>
+</ul>
 <li><strong>Rationale:</strong> Networking is a numbers game. Consistent effort increases the probability of finding key partners.</li>
 <li><strong>Advanced Tactic:</strong> Connect two people from your network who can help each other (e.g., a restaurant owner needing a videographer). This creates value and strengthens your position as a connector.</li>
 </ul>
-<h3 class="exec-h">Pillar 3: Social Media</h3>
+</ul>
+<h4 class="exec-h2">Pillar 3: Social Media</h4>
 <ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
 <li><strong>Action:</strong> Use social media as a digital business card.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
 <li><strong>Platforms:</strong> Instagram, TikTok, Facebook, LinkedIn.</li>
 <li><strong>Content:</strong> Choose a style that feels authentic and can be maintained consistently (e.g., business-focused, lifestyle, or a mix).</li>
+</ul>
+</ul>
 <li><strong>Rationale:</strong> A professional profile builds credibility and trust, making it easier to connect with people met offline.</li>
 </ul>
-<h3 class="exec-h">Pillar 4: Referrals</h3>
+</ul>
+<h4 class="exec-h2">Pillar 4: Referrals</h4>
 <ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
 <li><strong>Action:</strong> Ask for specific referrals from clients and contacts.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
 <li><strong>Method:</strong> Frame requests around specific needs.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
 <li><strong>Ineffective:</strong> &quot;Do you know anyone who needs insurance?&quot;</li>
 <li><strong>Effective:</strong> &quot;Who do you know in IT earning €80k+ who might need private health insurance?&quot;</li>
+</ul>
+</ul>
 <li><strong>Warm Introduction:</strong> The most effective method is a three-way call where your contact introduces you to the referral.</li>
+</ul>
+</ul>
 <li><strong>Rationale:</strong> Referrals leverage your network&#x27;s networks, creating a powerful multiplier effect.</li>
 </ul>
-<h3 class="exec-h">The Ergo Career System &amp; Team Building</h3>
+</ul>
+<h4 class="exec-h2">The Ergo Career System &amp; Team Building</h4>
 <ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
 <li><strong>Unit System:</strong> Career advancement is based on units (`Einheiten`) earned from product sales.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
 <li><strong>Example Unit Values:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
 <li>€100/mo savings plan → \~82 units</li>
 <li>€600/mo private health insurance → \~200 units</li>
+</ul>
+</ul>
+</ul>
+</ul>
 <li><strong>Team Building:</strong> Start recruiting early (Stufe 1).</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
 <li><strong>Rationale:</strong> Your team&#x27;s success is your success. Their unit production directly contributes to your career advancement.</li>
 <li><strong>Example:</strong> To reach Stufe 4 (9,000 units), you can help three team members reach Stufe 3 (3,500 units each), which totals 10,500 units—more than enough for your goal.</li>
 </ul>
-<h3 class="exec-h">Next Steps</h3>
-<ul class="exec-ul">
-<li><strong>All:</strong></li>
-<li>Create a network database with contacts and key details.</li>
-<li>Set a goal to meet one new person daily.</li>
-<li>Optimize your social media profile as a digital business card.</li>
-<li>Practice asking for specific referrals.</li>
-<li>Begin recruiting early to build a team.</li>
-<li>Read recommended books:</li>
-<li>*Der totale Verkaufserfolg* (Zig Ziglar)</li>
-<li>*Wie man Freunde gewinnt* (Dale Carnegie)</li>
-<li>*Im Prinzip Gewinnen* (Arthur Williams)</li>
-</ul></div>
-    </section>
-
-    <section class="section insights">
-      <div class="section-label" data-i18n="lbl_focus">Focus</div>
-      <h2 data-i18n="key_takeaways">Key takeaways</h2>
-      <ul><li><strong>Build a Network Database:</strong> Systematically log contacts with key details (Name, Age, Job, Goals) to create a valuable asset for referrals and connections.</li><li><strong>Network Actively:</strong> Meet one new person daily. Use social media (Instagram) as a digital business card to build trust and credibility.</li><li><strong>Ask for Specific Referrals:</strong> Avoid vague requests. Ask for contacts with specific needs (e.g., &quot;Who do you know in IT earning €80k+?&quot;) and use warm introductions.</li><li><strong>Prioritize Team Success:</strong> Your primary goal is making your team successful. Their unit production directly fuels your career advancement.</li></ul>
-    </section>
-
-    <div class="grid2">
-      <section class="section chart-box">
-        <div class="section-label" data-i18n="lbl_distribution">Distribution</div>
-        <h2 data-i18n="topics">Topics</h2>
-        <canvas id="topics"></canvas>
-      </section>
-      <section class="section chart-box">
-        <div class="section-label" data-i18n="lbl_conversation">Conversation</div>
-        <h2 data-i18n="speaking_time">Speaking time</h2>
-        <canvas id="speakers"></canvas>
-      </section>
+</ul>
+</ul>
+</ul></div></section>
+      
+      <div class="grid2 block" id="chartsGrid" data-block="charts"><section class="section chart-box" id="topicsWrap" data-block="topics"><div class="section-label" data-i18n="lbl_distribution">Distribution</div><h2 data-i18n="topics">Topics</h2><canvas id="topics"></canvas></section><section class="section chart-box" id="speakersWrap" data-block="speakers"><div class="section-label" data-i18n="lbl_conversation">Conversation</div><h2 data-i18n="speaking_time">Speaking time</h2><canvas id="speakers"></canvas></section></div>
+      <section class="section block" id="timeline" data-block="timeline"><div class="section-label" data-i18n="lbl_moments">Moments</div><h2 data-i18n="timeline">Timeline</h2><div class="tl"><div class="tl-t">00:01:33</div><div class="tl-body"><div class="who">Basti</div><p>Für die Leute, es uns schon wissen, ich bin jetzt in der Stufe 5 zum Beispiel, deswegen, ich glaube, wie gesagt, mit den…</p></div></div><div class="tl"><div class="tl-t">00:01:51</div><div class="tl-body"><div class="who">Basti</div><p>Okay, für mich ist eine Sache immer relativ wichtig, und zwar,</p></div></div><div class="tl"><div class="tl-t">00:05:13</div><div class="tl-body"><div class="who">Basti</div><p>Jetzt bei mir zum Beispiel das Ding, kann ich sagen, meine Namensliste, wo ich damals angefangen habe, hat knapp 150 bis…</p></div></div><div class="tl"><div class="tl-t">00:05:42</div><div class="tl-body"><div class="who">Basti</div><p>Und zwar, ich habe mittlerweile 1.400 bis 1.500 Kontakten in der Telefonliste.</p></div></div><div class="tl"><div class="tl-t">00:05:48</div><div class="tl-body"><div class="who">Basti</div><p>Und das ist einfach das Ding, warum wir auch immer die anderen Dinge durchgehen, warum es so enorm wichtig ist, selber a…</p></div></div><div class="tl"><div class="tl-t">00:07:25</div><div class="tl-body"><div class="who">Basti</div><p>Aber es ist wichtig, diese ganzen Kontakte in seinem Kontaktfeld zu haben.</p></div></div><div class="tl"><div class="tl-t">00:07:29</div><div class="tl-body"><div class="who">Basti</div><p>Deswegen ist es auch für euch wichtig, diese Netzwerkdatenbank enorm zu pflegen.</p></div></div><div class="tl"><div class="tl-t">00:11:16</div><div class="tl-body"><div class="who">Basti</div><p>Deswegen ist es einerseits wichtig, sich mal wirklich über alle möglichen Sachen eine Übersicht zu verschaffen.</p></div></div></section>
+      <details class="section block" id="transcript" data-block="transcript"><summary data-i18n="transcript_excerpt">Transcript excerpt</summary><pre>[00:00:07] Basti: Ich will jetzt nicht euch irgendwie ein endloses Storytime oder sowas verwickeln, ich werde meistens wahrscheinlich sowieso, wenn es aus ist, einfach sitzen.
+[00:00:16] Basti: Soll ich mir vielleicht kurz auf Toilette oder sowas?
+[00:00:18] Basti: Das heißt, wenn ihr wollt, könnt mir da noch verschiedene Fragen stellen.
+[00:00:21] Basti: Ja, ganz kurz zu mir, damit ihr zumindest zu dem Gesicht auch einen Namen habt.
+[00:00:25] Basti: Mein Name ist Sebastian Halaikou.
+[00:00:27] Basti: Ich bin mir einfach eingefallen, und zwar lasst ihn quasi rind bei meinem Namen aus und nenn mich einfach Basti.
+[00:00:32] Basti: Also wenn mich jemand Sebastian nennt, fühle ich mich so komisch und unwohl.
+[00:00:37] Basti: Ich fühle mich an, ob meine Mutter mich anstrengen würde und meinen Freund Namen auspacken würde.
+[00:00:41] Basti: Deswegen lasst uns einfach auf Basti einigen.
+[00:00:43] Basti: Bin seit 2018 dabei, um genau zu seinem März.
+[00:00:48] Basti: Das heißt, ich stehe jetzt eigentlich so grob langsam auf meine 83 Jahre zu.
+[00:00:52] Basti: Ich sage es immer wieder gerne, ich habe sowohl vor Corona angefangen.
+[00:00:56] Basti: Ich habe ...
+[00:01:01] Basti: Die gesamten Jahre, die ich jetzt hier bin, waren Monat und Wochen.
+[00:01:04] Basti: Also ohne jegliche Pause.
+[00:01:05] Basti: heißt, wie gesagt, wenn euch irgendjemand dieses Geschäftsmodell hier auch mit und anderen transparent wiedergeben kann, ja, sowohl was ist schwer, was ist einfach, was muss man machen, ich hoffe, da 
+[00:01:18] Basti: Ja, kennt ihr von euch das Stufensystem einigermaßen, Karriere-System, in den Zwischenstufen es gibt, irgendjemand nicht, ehrlich, es gibt keinen Ton.
+[00:01:27] Basti: Also wenn du bescheinig bist, bist noch relativ frisch zu sagen, bei uns sechs Taillenstufen, dann wird dir wahrscheinlich schon Jakob erklären.
+[00:01:33] Basti: Für die Leute, es uns schon wissen, ich bin jetzt in der Stufe 5 zum Beispiel, deswegen, ich glaube, wie gesagt, mit den ganzen Eigenschaften kann ich euch so ein bisschen was mit dem Weg mitgeben.
+[00:01:44] Basti: Also, Jakob würde jetzt sagen, ich bin voll der Typ aus.
+[00:01:48] Basti: Jakob hat.
+[00:01:51] Basti: Okay, für mich ist eine Sache immer relativ wichtig, und zwar,
+[00:01:54] Basti: Und alle Themen, die ich euch heute sozusagen mitgebe, außer natürlich ein gewisser Paar.
+[00:01:59] Basti: Und zwar, wir beschäftigen uns mit einer Sache.
+[00:02:02] Basti: Und zwar, wo ich in diesem Geschäft ja angefangen habe.
+[00:02:05] Basti: Damals.
+[00:02:06] Basti: Auch jetzt zu mir selber, ich bin 27, das heißt, wo ich damals angefangen habe, war ich relativ frisch 19 Jahre alt.
+[00:02:13] Basti: Das heißt, man ist aus dem Adiktur gekommen, man hatte relativ okayes Kontaktpotenzial, aber für mich war irgendwann so diese allerallertypischste Frage, was passiert, wenn ich niemanden mehr habe?
+[00:02:26] Basti: Was ist, wenn meine Liste leer ist, was ist, wenn da keiner mehr ist?
+[00:02:28] Basti: Hat sich irgendjemand jetzt zu Beginn eurer Karriere mir diese Frage aufgestellt?
+[00:02:33] Basti: Okay, super.
+[00:02:35] Basti: Vielleicht unabhängig davon, dass ich das gleich schon mal thematisiere, ich bin vielleicht das lebende Beispiel, es kann weitergehen.
+[00:02:40] Basti: Also keine Angst, irgendwann kann es mal ein bisschen dem Ende entlegen treten, man kann aber dafür auch was machen.
+[00:02:46] Basti: Und zwar möchte ich gerne euch eine Sache durchgeben, und zwar hier halt und
+[00:02:51] Basti: Sorry, der Stift geht ein bisschen nach.
+[00:02:53] Basti: Die vier Wege der Lead-Gewinnung.
+[00:02:59] Basti: Das heißt, Leads, um es so zu sagen, sind halt sozusagen Kontaktpotenziale, mit denen wir arbeiten können.
+[00:03:04] Basti: Und ich möchte jetzt mit euch einfach mal diese vier Wege durchgehen.
+[00:03:07] Basti: Ich werde euch ein bisschen einschreiben, da habe so einen schönen Handschritt.
+[00:03:11] Basti: Das heißt, vier Wege, ihr selber auch stetig an neue Leute kommt.</pre></details>
+      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Create a network database with contacts and key details.</span></li><li><span class="todo-task">Set a goal to meet one new person daily.</span></li><li><span class="todo-task">Optimize your social media profile as a digital business card.</span></li><li><span class="todo-task">Practice asking for specific referrals.</span></li><li><span class="todo-task">Begin recruiting early to build a team.</span></li><li><span class="todo-task">*Der totale Verkaufserfolg* (Zig Ziglar)</span></li><li><span class="todo-task">*Wie man Freunde gewinnt* (Dale Carnegie)</span></li><li><span class="todo-task">*Im Prinzip Gewinnen* (Arthur Williams)</span></li></ul></section>
+      
     </div>
-
-    <section class="section">
-      <div class="section-label" data-i18n="lbl_followup">Follow-up</div>
-      <h2 data-i18n="action_items">Action items</h2>
-      <table>
-        <thead><tr>
-          <th data-i18n="th_owner">Owner</th>
-          <th data-i18n="th_task">Task</th>
-          <th data-i18n="th_due">Due</th>
-          <th data-i18n="th_priority">Priority</th>
-        </tr></thead>
-        <tbody><tr><td colspan="4" style="color:var(--muted)">No action items</td></tr></tbody>
-      </table>
-    </section>
-
-    <section class="section">
-      <div class="section-label" data-i18n="lbl_moments">Moments</div>
-      <h2 data-i18n="timeline">Timeline</h2>
-      <div class="tl"><div class="tl-t">00:01:33</div><div class="tl-body"><div class="who">Yash Bora</div><p>Für die Leute, es uns schon wissen, ich bin jetzt in der Stufe 5 zum Beispiel, deswegen, ich glaube, wie gesagt, mit den…</p></div></div><div class="tl"><div class="tl-t">00:01:51</div><div class="tl-body"><div class="who">Yash Bora</div><p>Okay, für mich ist eine Sache immer relativ wichtig, und zwar,</p></div></div><div class="tl"><div class="tl-t">00:05:13</div><div class="tl-body"><div class="who">Yash Bora</div><p>Jetzt bei mir zum Beispiel das Ding, kann ich sagen, meine Namensliste, wo ich damals angefangen habe, hat knapp 150 bis…</p></div></div><div class="tl"><div class="tl-t">00:05:42</div><div class="tl-body"><div class="who">Yash Bora</div><p>Und zwar, ich habe mittlerweile 1.400 bis 1.500 Kontakten in der Telefonliste.</p></div></div><div class="tl"><div class="tl-t">00:05:48</div><div class="tl-body"><div class="who">Yash Bora</div><p>Und das ist einfach das Ding, warum wir auch immer die anderen Dinge durchgehen, warum es so enorm wichtig ist, selber a…</p></div></div><div class="tl"><div class="tl-t">00:07:25</div><div class="tl-body"><div class="who">Yash Bora</div><p>Aber es ist wichtig, diese ganzen Kontakte in seinem Kontaktfeld zu haben.</p></div></div><div class="tl"><div class="tl-t">00:07:29</div><div class="tl-body"><div class="who">Yash Bora</div><p>Deswegen ist es auch für euch wichtig, diese Netzwerkdatenbank enorm zu pflegen.</p></div></div><div class="tl"><div class="tl-t">00:11:16</div><div class="tl-body"><div class="who">Yash Bora</div><p>Deswegen ist es einerseits wichtig, sich mal wirklich über alle möglichen Sachen eine Übersicht zu verschaffen.</p></div></div>
-    </section>
-
-    <details class="section">
-      <summary data-i18n="transcript_excerpt">Transcript excerpt</summary>
-      <pre>[00:00:07] Yash Bora: Ich will jetzt nicht euch irgendwie ein endloses Storytime oder sowas verwickeln, ich werde meistens wahrscheinlich sowieso, wenn es aus ist, einfach sitzen.
-[00:00:16] Yash Bora: Soll ich mir vielleicht kurz auf Toilette oder sowas?
-[00:00:18] Yash Bora: Das heißt, wenn ihr wollt, könnt mir da noch verschiedene Fragen stellen.
-[00:00:21] Yash Bora: Ja, ganz kurz zu mir, damit ihr zumindest zu dem Gesicht auch einen Namen habt.
-[00:00:25] Yash Bora: Mein Name ist Sebastian Halaikou.
-[00:00:27] Yash Bora: Ich bin mir einfach eingefallen, und zwar lasst ihn quasi rind bei meinem Namen aus und nenn mich einfach Basti.
-[00:00:32] Yash Bora: Also wenn mich jemand Sebastian nennt, fühle ich mich so komisch und unwohl.
-[00:00:37] Yash Bora: Ich fühle mich an, ob meine Mutter mich anstrengen würde und meinen Freund Namen auspacken würde.
-[00:00:41] Yash Bora: Deswegen lasst uns einfach auf Basti einigen.
-[00:00:43] Yash Bora: Bin seit 2018 dabei, um genau zu seinem März.
-[00:00:48] Yash Bora: Das heißt, ich stehe jetzt eigentlich so grob langsam auf meine 83 Jahre zu.
-[00:00:52] Yash Bora: Ich sage es immer wieder gerne, ich habe sowohl vor Corona angefangen.
-[00:00:56] Yash Bora: Ich habe ...
-[00:01:01] Yash Bora: Die gesamten Jahre, die ich jetzt hier bin, waren Monat und Wochen.
-[00:01:04] Yash Bora: Also ohne jegliche Pause.
-[00:01:05] Yash Bora: heißt, wie gesagt, wenn euch irgendjemand dieses Geschäftsmodell hier auch mit und anderen transparent wiedergeben kann, ja, sowohl was ist schwer, was ist einfach, was muss man machen, ich hoffe, da 
-[00:01:18] Yash Bora: Ja, kennt ihr von euch das Stufensystem einigermaßen, Karriere-System, in den Zwischenstufen es gibt, irgendjemand nicht, ehrlich, es gibt keinen Ton.
-[00:01:27] Yash Bora: Also wenn du bescheinig bist, bist noch relativ frisch zu sagen, bei uns sechs Taillenstufen, dann wird dir wahrscheinlich schon Jakob erklären.
-[00:01:33] Yash Bora: Für die Leute, es uns schon wissen, ich bin jetzt in der Stufe 5 zum Beispiel, deswegen, ich glaube, wie gesagt, mit den ganzen Eigenschaften kann ich euch so ein bisschen was mit dem Weg mitgeben.
-[00:01:44] Yash Bora: Also, Jakob würde jetzt sagen, ich bin voll der Typ aus.
-[00:01:48] Yash Bora: Jakob hat.
-[00:01:51] Yash Bora: Okay, für mich ist eine Sache immer relativ wichtig, und zwar,
-[00:01:54] Yash Bora: Und alle Themen, die ich euch heute sozusagen mitgebe, außer natürlich ein gewisser Paar.
-[00:01:59] Yash Bora: Und zwar, wir beschäftigen uns mit einer Sache.
-[00:02:02] Yash Bora: Und zwar, wo ich in diesem Geschäft ja angefangen habe.
-[00:02:05] Yash Bora: Damals.
-[00:02:06] Yash Bora: Auch jetzt zu mir selber, ich bin 27, das heißt, wo ich damals angefangen habe, war ich relativ frisch 19 Jahre alt.
-[00:02:13] Yash Bora: Das heißt, man ist aus dem Adiktur gekommen, man hatte relativ okayes Kontaktpotenzial, aber für mich war irgendwann so diese allerallertypischste Frage, was passiert, wenn ich niemanden mehr habe?
-[00:02:26] Yash Bora: Was ist, wenn meine Liste leer ist, was ist, wenn da keiner mehr ist?
-[00:02:28] Yash Bora: Hat sich irgendjemand jetzt zu Beginn eurer Karriere mir diese Frage aufgestellt?
-[00:02:33] Yash Bora: Okay, super.
-[00:02:35] Yash Bora: Vielleicht unabhängig davon, dass ich das gleich schon mal thematisiere, ich bin vielleicht das lebende Beispiel, es kann weitergehen.
-[00:02:40] Yash Bora: Also keine Angst, irgendwann kann es mal ein bisschen dem Ende entlegen treten, man kann aber dafür auch was machen.
-[00:02:46] Yash Bora: Und zwar möchte ich gerne euch eine Sache durchgeben, und zwar hier halt und
-[00:02:51] Yash Bora: Sorry, der Stift geht ein bisschen nach.
-[00:02:53] Yash Bora: Die vier Wege der Lead-Gewinnung.
-[00:02:59] Yash Bora: Das heißt, Leads, um es so zu sagen, sind halt sozusagen Kontaktpotenziale, mit denen wir arbeiten können.
-[00:03:04] Yash Bora: Und ich möchte jetzt mit euch einfach mal diese vier Wege durchgehen.
-[00:03:07] Yash Bora: Ich werde euch ein bisschen einschreiben, da habe so einen schönen Handschritt.
-[00:03:11] Yash Bora: Das heißt, vier Wege, ihr selber auch stetig an neue Leute kommt.</pre>
-    </details>
 
     <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
   </div>
@@ -645,11 +785,17 @@
       de: {
         brand: 'ERGO · Meeting Intelligence',
         theme_light: 'Hell', theme_dark: 'Dunkel',
-        lbl_overview: 'Überblick', summary: 'Zusammenfassung',
+        lbl_recap: '60 Sekunden', recap: 'Recap',
+        recap_purpose: 'Zweck', recap_highlights: 'Was zählte',
+        recap_do_next: 'Als Nächstes', recap_watch: 'Achtung',
+        lbl_overview: 'Überblick', summary: 'Zusammenfassung', summary_enhanced: 'Enhanced Summary',
+        lbl_notes: 'Notizen', meeting_notes: 'Meeting-Notizen',
         lbl_focus: 'Fokus', key_takeaways: 'Kernaussagen',
         lbl_distribution: 'Verteilung', topics: 'Themen',
         lbl_conversation: 'Gespräch', speaking_time: 'Sprechzeit',
         lbl_followup: 'Nachverfolgung', action_items: 'Aufgaben',
+        lbl_todos: 'Abschluss', todos: 'Todos',
+        lbl_ideas: 'Festhalten', new_ideas: 'Neue Ideen',
         th_owner: 'Verantwortlich', th_task: 'Aufgabe', th_due: 'Fällig', th_priority: 'Priorität',
         lbl_moments: 'Momente', timeline: 'Zeitstrahl',
         transcript_excerpt: 'Transkript (Auszug)',
@@ -659,11 +805,17 @@
       en: {
         brand: 'ERGO · Meeting Intelligence',
         theme_light: 'Light', theme_dark: 'Dark',
-        lbl_overview: 'Overview', summary: 'Summary',
+        lbl_recap: '60 seconds', recap: 'Recap',
+        recap_purpose: 'Purpose', recap_highlights: 'What mattered',
+        recap_do_next: 'Do next', recap_watch: 'Watch-outs',
+        lbl_overview: 'Overview', summary: 'Summary', summary_enhanced: 'Enhanced summary',
+        lbl_notes: 'Notes', meeting_notes: 'Meeting notes',
         lbl_focus: 'Focus', key_takeaways: 'Key takeaways',
         lbl_distribution: 'Distribution', topics: 'Topics',
         lbl_conversation: 'Conversation', speaking_time: 'Speaking time',
         lbl_followup: 'Follow-up', action_items: 'Action items',
+        lbl_todos: 'Close-out', todos: 'Todos',
+        lbl_ideas: 'Capture', new_ideas: 'New ideas',
         th_owner: 'Owner', th_task: 'Task', th_due: 'Due', th_priority: 'Priority',
         lbl_moments: 'Moments', timeline: 'Timeline',
         transcript_excerpt: 'Transcript excerpt',
@@ -673,11 +825,17 @@
       tr: {
         brand: 'ERGO · Toplantı özeti',
         theme_light: 'Açık', theme_dark: 'Koyu',
-        lbl_overview: 'Genel bakış', summary: 'Özet',
+        lbl_recap: '60 saniye', recap: 'Özet',
+        recap_purpose: 'Amaç', recap_highlights: 'Ne önemliydi',
+        recap_do_next: 'Sırada', recap_watch: 'Dikkat',
+        lbl_overview: 'Genel bakış', summary: 'Özet', summary_enhanced: 'Gelişmiş özet',
+        lbl_notes: 'Notlar', meeting_notes: 'Toplantı notları',
         lbl_focus: 'Odak', key_takeaways: 'Önemli çıkarımlar',
         lbl_distribution: 'Dağılım', topics: 'Konular',
         lbl_conversation: 'Konuşma', speaking_time: 'Konuşma süresi',
         lbl_followup: 'Takip', action_items: 'Aksiyonlar',
+        lbl_todos: 'Kapanış', todos: 'Yapılacaklar',
+        lbl_ideas: 'Kaydet', new_ideas: 'Yeni fikirler',
         th_owner: 'Sorumlu', th_task: 'Görev', th_due: 'Son tarih', th_priority: 'Öncelik',
         lbl_moments: 'Anlar', timeline: 'Zaman çizelgesi',
         transcript_excerpt: 'Transkript özeti',
@@ -765,23 +923,76 @@
     ergomeetChartDefaults();
 
     const topics = [{"label": "Zahlen / KPIs", "weight": 55.2}, {"label": "Prozesse / Tools", "weight": 17.6}, {"label": "Karriere", "weight": 11.3}, {"label": "Team / F\u00fchrung", "weight": 10.8}, {"label": "Kunden / Vertrieb", "weight": 4.5}, {"label": "Rente / Vorsorge", "weight": 0.6}];
-    const speakers = [{"name": "Yash Bora", "words": 18491, "pct": 100.0}];
+    const speakers = [{"name": "Basti", "words": 18491, "pct": 100.0}];
     const goldPalette = ['#c9a962','#e8d5a3','#8b7355','#d4bc7a','#6b7c9e','#a89878'];
     window.__ergoCharts = window.__ergoCharts || [];
-    window.__ergoCharts.push(new Chart(document.getElementById('topics'), {
-      type: 'doughnut',
-      data: {
-        labels: topics.map(t => t.label),
-        datasets: [{ data: topics.map(t => t.weight), backgroundColor: goldPalette, borderWidth: 0 }]
-      },
-      options: {
-        cutout: '62%',
-        plugins: { legend: { position: 'bottom', labels: { padding: 14, usePointStyle: true } } }
+
+    (function hideEmptyBlocks() {
+      document.querySelectorAll('[data-block]').forEach((el) => {
+        const text = (el.textContent || '').replace(/\s+/g, ' ').trim();
+        const hasCanvas = !!el.querySelector('canvas');
+        const hasListContent = !!el.querySelector('li, tr, .tl, .exec-p, .exec-h, .exec-ul li, pre');
+        const topicsOk = !!(el.querySelector('#topics') && topics.length);
+        const speakersOk = !!(el.querySelector('#speakers') && speakers.length);
+        const hasMeaningful = hasListContent || (hasCanvas && (topicsOk || speakersOk));
+        const bareDash = text === '—' || text === '-' || /No action items/i.test(text);
+        if ((!hasMeaningful && (!text || bareDash)) || el.classList.contains('force-empty')) {
+          el.classList.add('is-empty');
+          el.hidden = true;
+        }
+      });
+      const kpi = document.getElementById('kpiRow');
+      if (kpi && !kpi.querySelector('.kpi')) {
+        kpi.classList.add('is-empty');
+        kpi.hidden = true;
       }
-    }));
-    if (speakers.length) {
+      const charts = document.getElementById('chartsGrid');
+      if (charts) {
+        const visible = [...charts.querySelectorAll('.chart-box')].filter((c) => !c.classList.contains('is-empty') && !c.hidden);
+        if (!visible.length) {
+          charts.classList.add('is-empty');
+          charts.hidden = true;
+        } else if (visible.length === 1) {
+          charts.classList.add('grid2--single');
+        }
+      }
+    })();
+
+    (function buildToc() {
+      const toc = document.getElementById('sectionToc');
+      if (!toc) return;
+      const blocks = document.querySelectorAll('#reportStack [data-block]:not(.is-empty):not([hidden])');
+      blocks.forEach((block) => {
+        const id = block.id || block.getAttribute('data-block');
+        if (!id) return;
+        if (!block.id) block.id = id;
+        const labelEl = block.querySelector('h2, summary, .section-label');
+        const label = (labelEl && labelEl.textContent.trim()) || id;
+        const a = document.createElement('a');
+        a.href = '#' + block.id;
+        a.textContent = label;
+        toc.appendChild(a);
+      });
+    })();
+
+    const topicsEl = document.getElementById('topics');
+    if (topicsEl && topics.length) {
+      window.__ergoCharts.push(new Chart(topicsEl, {
+        type: 'doughnut',
+        data: {
+          labels: topics.map(t => t.label),
+          datasets: [{ data: topics.map(t => t.weight), backgroundColor: goldPalette, borderWidth: 0 }]
+        },
+        options: {
+          cutout: '62%',
+          plugins: { legend: { position: 'bottom', labels: { padding: 14, usePointStyle: true } } }
+        }
+      }));
+    }
+    const speakersEl = document.getElementById('speakers');
+    if (speakersEl && speakers.length) {
       const light = document.documentElement.getAttribute('data-theme') === 'light';
-      window.__ergoCharts.push(new Chart(document.getElementById('speakers'), {
+      window.__ergoCharts.push(new Chart(speakersEl, {
         type: 'bar',
         data: {
           labels: speakers.map(s => s.name),
