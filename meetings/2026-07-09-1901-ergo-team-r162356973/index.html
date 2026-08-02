@@ -468,6 +468,36 @@
     .recap-ul li::marker { color: var(--gold); }
     .recap-col--do .recap-kicker { color: var(--gold-light); }
     .recap-col--watch .recap-kicker { color: #d4a0a0; }
+    /* Focus layout: collapsible Enhanced summary */
+    details.summary-details {
+      cursor: default;
+    }
+    details.summary-details > summary.summary-summary {
+      list-style: none;
+      cursor: pointer;
+      display: grid;
+      gap: 4px;
+      padding-bottom: 4px;
+    }
+    details.summary-details > summary.summary-summary::-webkit-details-marker { display: none; }
+    details.summary-details .summary-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--cream);
+    }
+    details.summary-details .summary-hint {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    details.summary-details[open] .summary-hint { display: none; }
+    details.summary-details .enhanced-summary {
+      margin-top: 16px;
+      padding-top: 8px;
+      border-top: 1px solid var(--line);
+    }
     .end-lists .end-ul {
       margin: 0;
       padding-left: 1.2rem;
@@ -613,7 +643,7 @@
 <div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text">No external prospect attended. This was an impromptu solo session led by ERGO Team focused on time management and productivity coaching; no buyer or prospect was present or identified.</p></div>
 </div></section>
       
-      <section class="section block" id="summary" data-block="summary"><div class="section-label" data-i18n="lbl_overview">Overview</div><h2 data-i18n="summary_enhanced">Enhanced summary</h2><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Deal Information</h3>
+      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Deal Information</h3>
 <h4 class="exec-h2">Prospect</h4>
 <p class="exec-p">No external prospect attended. This was an impromptu solo session led by ERGO Team focused on time management and productivity coaching; no buyer or prospect was present or identified.</p>
 <h4 class="exec-h2">Call Context</h4>
@@ -682,50 +712,11 @@
 <ul class="exec-ul exec-ul-nested">
 <li>None from a prospect.</li>
 </ul>
-</ul></div></section>
+</ul></div></details>
       
-      <div class="grid2 block" id="chartsGrid" data-block="charts"><section class="section chart-box" id="topicsWrap" data-block="topics"><div class="section-label" data-i18n="lbl_distribution">Distribution</div><h2 data-i18n="topics">Topics</h2><canvas id="topics"></canvas></section><section class="section chart-box" id="speakersWrap" data-block="speakers"><div class="section-label" data-i18n="lbl_conversation">Conversation</div><h2 data-i18n="speaking_time">Speaking time</h2><canvas id="speakers"></canvas></section></div>
-      <section class="section block" id="timeline" data-block="timeline"><div class="section-label" data-i18n="lbl_moments">Moments</div><h2 data-i18n="timeline">Timeline</h2><div class="tl"><div class="tl-t">00:04:32</div><div class="tl-body"><div class="who">ERGO Team</div><p>Wir werden euch das anders verpassen, die wir im Alltag, die ich vielleicht nicht zu intensieren bringe, die aber einfac…</p></div></div><div class="tl"><div class="tl-t">00:05:07</div><div class="tl-body"><div class="who">ERGO Team</div><p>Und am letzten Monat habe die Stufe 4 sehr knapp verpasst, tatsächlich.</p></div></div><div class="tl"><div class="tl-t">00:09:31</div><div class="tl-body"><div class="who">ERGO Team</div><p>Also man sieht hier oben zum Beispiel im Sozialen Kurs, 11, 19, 19, also ich hatte wirklich schon 8 Uhr morgens bis 2 Uh…</p></div></div><div class="tl"><div class="tl-t">00:10:52</div><div class="tl-body"><div class="who">ERGO Team</div><p>Weil ich merke das selber sehr oft, allem wenn man wisst, wer von euch ist gerade regelmäßig hier, also wer hat eine Aus…</p></div></div><div class="tl"><div class="tl-t">00:15:46</div><div class="tl-body"><div class="who">ERGO Team</div><p>Es ist wichtig, die Wirklichkeit zu bündeln und die Umfrage, diese Zeit erstmal auszumerzen, um alle Aktivitäten in den …</p></div></div><div class="tl"><div class="tl-t">00:16:12</div><div class="tl-body"><div class="who">ERGO Team</div><p>Wir können jetzt mal kurz rechnen, wie man klagt, wie viel Zeit wir eigentlich haben, und warum der Kadernis wichtig ist…</p></div></div><div class="tl"><div class="tl-t">00:18:42</div><div class="tl-body"><div class="who">ERGO Team</div><p>Wenn ich jetzt aber beklang, Ziel weiß ich, ich gehe morgen, wir kommen zu uns zum Gym.</p></div></div><div class="tl"><div class="tl-t">00:19:35</div><div class="tl-body"><div class="who">ERGO Team</div><p>Jetzt wählt ihr 19 bis 21 Uhr aus, da steht das alle mitkommen.</p></div></div></section>
-      <details class="section block" id="transcript" data-block="transcript"><summary data-i18n="transcript_excerpt">Transcript excerpt</summary><pre>[00:00:00] ERGO Team: Ich ein sehr erfolgreicher Unternehmer.
-[00:00:01] ERGO Team: Ich habe einen guten Lifestyle, doch stellt sich heraus, früher am Morgen käme ich der Wecker, der Tag geht los und es gibt keine besonderen Sachen.
-[00:00:20] ERGO Team: Jede einzelne Stunde des Tages ist durchgedacht.
-[00:00:24] ERGO Team: Jede einzelne Stunde.
-[00:00:26] ERGO Team: Es gibt keine Pausen, keine Zeit zu vergeben.
-[00:00:31] ERGO Team: Erfolgreiche Unternehmer haben alle eine Sache gemeinsam und zwar die Effizienz ihrer Zeit.
-[00:00:37] ERGO Team: Wir haben alle 24 Stunden am Tag und wie kann es sein, dass andere Menschen leicht aus Erfolgreiche sind als wir, mit den gleichen Ressourcen, mit den gleichen Möglichkeiten.
-[00:00:48] ERGO Team: Das heutige Meeting soll um eine Sache gehen, und zwar Produktivität.
-[00:00:54] ERGO Team: Und wie bekomme ich einen Vollfilm-Karender wieder?
-[00:00:57] ERGO Team: Wie nutze ich meine Zeit produktiv, effizient und erleichtert meine Ziele, genauso wie erfolgreiche Menschen?
-[00:01:09] ERGO Team: Der Mann im Hintergrund, wer kennt diesen Mann?
-[00:01:13] ERGO Team: Hat sich schon mal gesehen?
-[00:01:18] ERGO Team: Wer hat sich gemeldet?
-[00:01:21] ERGO Team: Erzähl mal gerne, wer ist denn der Person?
-[00:01:23] ERGO Team: Ja, Alex Mousi, sehr erfolgreicher Westamerikaner, glaube ich.
-[00:01:27] ERGO Team: Wir haben einen kleinen Schildkirche gestartet.
-[00:01:30] ERGO Team: Wir haben viel mit einem Kassel und haben die Lizenzentwicklung zurückgezogen.
-[00:01:36] ERGO Team: Und wir haben auch noch ein paar andere Unternehmen, die sie besser haben.
-[00:01:42] ERGO Team: Genau das, Alex Mousi ist ein sehr, sehr beeindruckendes Bauwirt von ihm.
-[00:01:48] ERGO Team: Und von vielen anderen auch, die geschäftlich erfolgreich sind.
-[00:01:51] ERGO Team: Er ist ein Unternehmer, der seit Jahren...
-[00:01:54] ERGO Team: Er Jahren Konstanz und Disziplin.
-[00:01:59] ERGO Team: Er hat damals, wie ihr schon sagt, mit einer sehr, sehr kleinen Gymcat angefangen, hat gefailt, hat einen neuen Business-Hort, einen neuen Gymcat in Konstellation zu skalieren und ist mittlerweile nic
-[00:02:27] ERGO Team: Alexander Mosin ist für eine Sache bekannt, für eine Sache, und zwar für den Aspekt von Bollywood.
-[00:02:34] ERGO Team: Er hat mal eine Sache gesagt, und zwar ignore the opinion of others, of other people, and do so much Bollywood that is unreasonable for you not to become successful.
-[00:03:07] ERGO Team: Ich habe heute sehr Übungen eingebaut, sehr viele Übungen eingebaut.
-[00:03:26] ERGO Team: Sehr viel praxisorientiertes Wissen, ich bin ein großer Fan davon, dass wir alle was mitnehmen können, deshalb erwarte ich von euch eine Frage, eine Frage, ein Ansatz, was ihr dazu werdet von mir.
-[00:03:41] ERGO Team: Wer von euch würde sagen, er ist manchmal selbstverständlich.
-[00:03:49] ERGO Team: Ich gebe euch mal die erste Aufgabe wieder heute.
-[00:03:53] ERGO Team: Macht euch alle mal kurz an.
-[00:03:55] ERGO Team: Was sind Aktivitäten?
-[00:03:57] ERGO Team: Schreibt ihr euch mal auf, wo ihr euch erwischt, dass ihr scheinbar positiv seid.
-[00:04:01] ERGO Team: Thema, ich nehme mir was vor, gehe ins Büro vielleicht, oder ich gehe irgendwo hin.
-[00:04:05] ERGO Team: Einmal mache ich irgendwas, was gar nicht mit dem Geschäft zu tun hat.
-[00:04:07] ERGO Team: Oder gar nichts mit dem, was ich eigentlich heute tun wollte.
-[00:04:10] ERGO Team: Und ich gehe am Ende nach Hause und nehme, boah, scheiße, meine Zeit ist schnell wieder.
-[00:04:14] ERGO Team: Mach ich doch jetzt ein paar Gedanken, dann gebe ich das erst mal durch.
-[00:04:22] ERGO Team: Aktivitäten, die produktiv macht, oder?
-[00:04:27] ERGO Team: Scheinproduktive Aktivitäten.
-[00:04:28] ERGO Team: Also, wo erwischt ihr euch, dass ihr euch was vornimmt?</pre></details>
+      
+      
+      
       
       
     </div>
@@ -741,6 +732,7 @@
         recap_purpose: 'Zweck', recap_highlights: 'Was zählte',
         recap_do_next: 'Als Nächstes', recap_watch: 'Achtung',
         lbl_overview: 'Überblick', summary: 'Zusammenfassung', summary_enhanced: 'Enhanced Summary',
+        summary_expand: 'Antippen zum Öffnen',
         lbl_notes: 'Notizen', meeting_notes: 'Meeting-Notizen',
         lbl_focus: 'Fokus', key_takeaways: 'Kernaussagen',
         lbl_distribution: 'Verteilung', topics: 'Themen',
@@ -761,6 +753,7 @@
         recap_purpose: 'Purpose', recap_highlights: 'What mattered',
         recap_do_next: 'Do next', recap_watch: 'Watch-outs',
         lbl_overview: 'Overview', summary: 'Summary', summary_enhanced: 'Enhanced summary',
+        summary_expand: 'Tap to expand',
         lbl_notes: 'Notes', meeting_notes: 'Meeting notes',
         lbl_focus: 'Focus', key_takeaways: 'Key takeaways',
         lbl_distribution: 'Distribution', topics: 'Topics',
@@ -781,6 +774,7 @@
         recap_purpose: 'Amaç', recap_highlights: 'Ne önemliydi',
         recap_do_next: 'Sırada', recap_watch: 'Dikkat',
         lbl_overview: 'Genel bakış', summary: 'Özet', summary_enhanced: 'Gelişmiş özet',
+        summary_expand: 'Açmak için dokun',
         lbl_notes: 'Notlar', meeting_notes: 'Toplantı notları',
         lbl_focus: 'Odak', key_takeaways: 'Önemli çıkarımlar',
         lbl_distribution: 'Dağılım', topics: 'Konular',
@@ -874,8 +868,8 @@
     }
     ergomeetChartDefaults();
 
-    const topics = [{"label": "Zahlen / KPIs", "weight": 50.0}, {"label": "Prozesse / Tools", "weight": 36.3}, {"label": "Team / F\u00fchrung", "weight": 10.8}, {"label": "Karriere", "weight": 2.0}, {"label": "Kunden / Vertrieb", "weight": 1.0}];
-    const speakers = [{"name": "ERGO Team", "words": 4812, "pct": 100.0}];
+    const topics = [];
+    const speakers = [];
     const goldPalette = ['#c9a962','#e8d5a3','#8b7355','#d4bc7a','#6b7c9e','#a89878'];
     window.__ergoCharts = window.__ergoCharts || [];
 
@@ -883,7 +877,7 @@
       document.querySelectorAll('[data-block]').forEach((el) => {
         const text = (el.textContent || '').replace(/\s+/g, ' ').trim();
         const hasCanvas = !!el.querySelector('canvas');
-        const hasListContent = !!el.querySelector('li, tr, .tl, .exec-p, .exec-h, .exec-ul li, pre');
+        const hasListContent = !!el.querySelector('li, tr, .tl, .exec-p, .exec-h, .exec-ul li, pre, .recap-one-text, .enhanced-summary');
         const topicsOk = !!(el.querySelector('#topics') && topics.length);
         const speakersOk = !!(el.querySelector('#speakers') && speakers.length);
         const hasMeaningful = hasListContent || (hasCanvas && (topicsOk || speakersOk));
@@ -893,21 +887,14 @@
           el.hidden = true;
         }
       });
-      const kpi = document.getElementById('kpiRow');
-      if (kpi && !kpi.querySelector('.kpi')) {
-        kpi.classList.add('is-empty');
-        kpi.hidden = true;
-      }
-      const charts = document.getElementById('chartsGrid');
-      if (charts) {
-        const visible = [...charts.querySelectorAll('.chart-box')].filter((c) => !c.classList.contains('is-empty') && !c.hidden);
-        if (!visible.length) {
-          charts.classList.add('is-empty');
-          charts.hidden = true;
-        } else if (visible.length === 1) {
-          charts.classList.add('grid2--single');
+      // Focus layout: never leave orphan empty shells
+      ['kpiRow', 'chartsGrid', 'timeline', 'transcript', 'ideas'].forEach((id) => {
+        const el = document.getElementById(id);
+        if (el && !el.querySelector('li, canvas, .tl, pre, .kpi')) {
+          el.classList.add('is-empty');
+          el.hidden = true;
         }
-      }
+      });
     })();
 
     (function buildToc() {
@@ -918,8 +905,13 @@
         const id = block.id || block.getAttribute('data-block');
         if (!id) return;
         if (!block.id) block.id = id;
-        const labelEl = block.querySelector('h2, summary, .section-label');
-        const label = (labelEl && labelEl.textContent.trim()) || id;
+        const labelEl = block.querySelector('.summary-title, h2, summary, .section-label');
+        let label = (labelEl && labelEl.textContent.trim()) || id;
+        // Prefer short TOC labels
+        if (block.id === 'recap') label = 'Recap';
+        if (block.id === 'todos') label = 'Todos';
+        if (block.id === 'summary') label = 'Summary';
+        if (block.id === 'notes') label = 'Notes';
         const a = document.createElement('a');
         a.href = '#' + block.id;
         a.textContent = label;
