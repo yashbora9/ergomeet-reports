@@ -468,6 +468,36 @@
     .recap-ul li::marker { color: var(--gold); }
     .recap-col--do .recap-kicker { color: var(--gold-light); }
     .recap-col--watch .recap-kicker { color: #d4a0a0; }
+    /* Focus layout: collapsible Enhanced summary */
+    details.summary-details {
+      cursor: default;
+    }
+    details.summary-details > summary.summary-summary {
+      list-style: none;
+      cursor: pointer;
+      display: grid;
+      gap: 4px;
+      padding-bottom: 4px;
+    }
+    details.summary-details > summary.summary-summary::-webkit-details-marker { display: none; }
+    details.summary-details .summary-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--cream);
+    }
+    details.summary-details .summary-hint {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    details.summary-details[open] .summary-hint { display: none; }
+    details.summary-details .enhanced-summary {
+      margin-top: 16px;
+      padding-top: 8px;
+      border-top: 1px solid var(--line);
+    }
     .end-lists .end-ul {
       margin: 0;
       padding-left: 1.2rem;
@@ -614,8 +644,8 @@
 <div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li>Deep Prospect Research: Gather detailed info (Name, Age, Job, Goals) to build a valuable network, not just close a sale.</li><li>Authentic Pitches: Use a 45-second &quot;Elevator Pitch&quot; for quick calls and a personal &quot;Story Pitch&quot; for deeper connection.</li><li>Masterful Transitions: Use the &quot;May I get straight to the point?&quot; phrase to smoothly move from small talk to the pitch.</li></ul></div>
 <div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li>Apply the 5-step call flow (Research → Greeting → Small Talk → Transition → Pitch).</li><li>Use optional questions to guide prospects to a specific appointment time.</li><li>Provide live coaching and listen-ins to support the team.</li></ul></div>
 </div></section>
-      
-      <section class="section block" id="summary" data-block="summary"><div class="section-label" data-i18n="lbl_overview">Overview</div><h2 data-i18n="summary_enhanced">Enhanced summary</h2><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Meeting Purpose</h3>
+      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Apply the 5-step call flow (Research → Greeting → Small Talk → Transition → Pitch).</span></li><li><span class="todo-task">Use optional questions to guide prospects to a specific appointment time.</span></li><li><span class="todo-task">Provide live coaching and listen-ins to support the team.</span></li></ul></section>
+      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Meeting Purpose</h3>
 <p class="exec-p">To train the team on effective appointment-setting techniques.</p>
 <h3 class="exec-h">Key Takeaways</h3>
 <ul class="exec-ul">
@@ -713,51 +743,12 @@
 </ul>
 </ul>
 </ul>
-</ul></div></section>
+</ul></div></details>
       
-      <div class="grid2 block" id="chartsGrid" data-block="charts"><section class="section chart-box" id="topicsWrap" data-block="topics"><div class="section-label" data-i18n="lbl_distribution">Distribution</div><h2 data-i18n="topics">Topics</h2><canvas id="topics"></canvas></section><section class="section chart-box" id="speakersWrap" data-block="speakers"><div class="section-label" data-i18n="lbl_conversation">Conversation</div><h2 data-i18n="speaking_time">Speaking time</h2><canvas id="speakers"></canvas></section></div>
-      <section class="section block" id="timeline" data-block="timeline"><div class="section-label" data-i18n="lbl_moments">Moments</div><h2 data-i18n="timeline">Timeline</h2><div class="tl"><div class="tl-t">00:01:02</div><div class="tl-body"><div class="who">Basti</div><p>Okay, ich will gar nicht zu tief in irgendwelche Thematiken reinkriegen, weil ich glaube, dass das Herz von dem einen od…</p></div></div><div class="tl"><div class="tl-t">00:01:25</div><div class="tl-body"><div class="who">Basti</div><p>Oder wenn es jetzt vielleicht nicht direkt euer Ziel ist, sondern vielleicht auch das Ziel oder so wie.</p></div></div><div class="tl"><div class="tl-t">00:01:54</div><div class="tl-body"><div class="who">Basti</div><p>Deswegen, auch an die Leute, die jetzt wie gesagt nicht das direkt nächste Stufe haben, weil da vielleicht auch gar nich…</p></div></div><div class="tl"><div class="tl-t">00:02:54</div><div class="tl-body"><div class="who">Basti</div><p>Okay, ihr kommt einmal, also alle, die jetzt gemeldet haben, ihr habt euch ja gerade selber gesehen, ihr euch gemeldet h…</p></div></div><div class="tl"><div class="tl-t">00:11:25</div><div class="tl-body"><div class="who">Basti</div><p>Das ist, wie gesagt, neben Zusatzinformationen, meiner Meinung nach, Herkunft ist eine wichtige Information von Mitglied…</p></div></div><div class="tl"><div class="tl-t">00:15:25</div><div class="tl-body"><div class="who">Basti</div><p>habe keine 10 Tage, bis ich wieder in nächsten Geburtstag habe.</p></div></div><div class="tl"><div class="tl-t">00:29:03</div><div class="tl-body"><div class="who">Basti</div><p>So vorstellen, wie man zum Beispiel jetzt einen Fahnschlüge zu machen, und das jetzt schon relativ wichtig, dass man hal…</p></div></div><div class="tl"><div class="tl-t">00:31:36</div><div class="tl-body"><div class="who">Basti</div><p>Das wäre jetzt bis zu 70 Grenzen gewesen.</p></div></div></section>
-      <details class="section block" id="transcript" data-block="transcript"><summary data-i18n="transcript_excerpt">Transcript excerpt</summary><pre>[00:00:03] Basti: Fathom.
-[00:00:33] Basti: Ich habe das gemacht!
-[00:00:39] Basti: Super!
-[00:00:41] Basti: Herzlich Willkommen zum vorletzten Wikikopista!
-[00:01:02] Basti: Okay, ich will gar nicht zu tief in irgendwelche Thematiken reinkriegen, weil ich glaube, dass das Herz von dem einen oder anderen noch Richtung Freitag schlägt, Richtung P-Start, vielleicht ist das f
-[00:01:25] Basti: Oder wenn es jetzt vielleicht nicht direkt euer Ziel ist, sondern vielleicht auch das Ziel oder so wie.
-[00:01:31] Basti: Deswegen will ich mich gerne vorzeigen, wir kommen in ein super super super Halbjahr mit dem nächsten Halbjahr, wie Sie es jetzt nicht mitbekommen haben.
-[00:01:40] Basti: Wir haben ja zweimal in Folge die beste Geschäftsstelle geholt, das heißt wir sind dann wirklich 24 Monate abbasiert, wir sind aktuell Platz 1, das heißt wir könnten sogar 30 Monate tragen.
-[00:01:49] Basti: Und die nächsten 6 Monate entscheiden wir uns nochmal, das alles dehnfester zu machen.
-[00:01:53] Basti: rein.
-[00:01:53] Basti: Und dann dann Bis Untertitelung des
-[00:01:54] Basti: Deswegen, auch an die Leute, die jetzt wie gesagt nicht das direkt nächste Stufe haben, weil da vielleicht auch gar nicht in der Pfiffe sind, um einen Bonus zu bekommen.
-[00:02:02] Basti: Für die Leute, die jetzt nicht wissen, beispielsweise ein Bonus, gerade meine Lastung, ich würde gerne von einem Führungsgeld erklären.
-[00:02:07] Basti: Das ist auch wirklich eine ganz coole Sache.
-[00:02:10] Basti: Möchtest du heute eine Sache machen und zwar ganz, ganz simpel, wir legen Termine.
-[00:02:15] Basti: Nothing more.
-[00:02:17] Basti: Wir legen Termine, wir machen TTV, wir brauchen hier nicht jetzt gerade nochmal irgendwelche Studien oder irgendwas.
-[00:02:23] Basti: Wir legen schön Termine.
-[00:02:25] Basti: Und ich möchte gleichzeitig eine Sache anbieten, weil ich merke, dass dann doch irgendwo immer noch Nachholbedarf ist.
-[00:02:31] Basti: meine jetzt, Karl, wir haben das jetzt etwas mal gemacht.
-[00:02:34] Basti: ist gerade wieder.
-[00:02:36] Basti: Schaden wir überwarten, aber Dieter ist da.
-[00:02:39] Basti: Das heißt, einmal ganz kurz.
-[00:02:42] Basti: Alle Leute sich ganz, ganz kurz melden, die sich nicht wirklich fit beim Telefonieren...
-[00:02:54] Basti: Okay, ihr kommt einmal, also alle, die jetzt gemeldet haben, ihr habt euch ja gerade selber gesehen, ihr euch gemeldet habt, ihr sammelt euch hier einmal bei mir, auch alle anderen, die sich vielleich
-[00:03:35] Basti: Okay, alle anderen, ich sehe hier sind auch einige Führungskräfte dabei, oder auf jeden Fall angehende Führungskräfte, spermt aus, legt Termine, ich halte das ja alles dokumentiert vorne, ich würde je
-[00:03:48] Basti: damit wir es relativ einheitlich haben, beschreiben das nicht mittendrin ans Board.
-[00:03:54] Basti: Wir machen einfach eine Sache, wir treffen uns, würde ich jetzt mal sagen, 20-30, 20-40, sagt ihr?
-[00:04:02] Basti: Okay, treffen uns 20-40 am Ende, werten es aus, ich gehe rein um, RGV, was habt ihr dementsprechend gelegt?
-[00:04:11] Basti: Achtet bitte auf die Pausen, das heißt, wenn ihr jetzt hier im Gang rumlaufen solltet, werdet telefoniert.
-[00:04:16] Basti: Also ich würde euch empfehlen, das gar nichts zu machen, weil ihr werdet sonst die Zeitdeteilnehmer stören, außer ihr seid da weiter hinten.
-[00:04:20] Basti: Das einerseits, sonst geht es aufs Parkdeck, geht raus, was immer.
-[00:04:25] Basti: Wenn ihr Zeitdeteilnehmer habt, bitte seid ihr in der Pause zu einem Zeitdeteilnehmer da.
-[00:04:29] Basti: Wäre empfehlenswert.
-[00:04:31] Basti: Irgendwelche Fragen sonst?
-[00:04:34] Basti: Eigentlich nicht, wenn es was zu tun ist, wenn es für diese Termine D, das ist alles für euch.
-[00:04:40] Basti: Alle, die sich gemeldet haben, kommen zu mir, der Rest macht bitte den Basisraum frei, ich möchte nur mit den Leuten sagen.
-[00:04:45] Basti: Okay, thank you!
-[00:05:20] Basti: about the guy that&#x27;s in the file, or let&#x27;s just do like something.
-[00:05:26] Basti: So, we can decide.</pre></details>
-      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Apply the 5-step call flow (Research → Greeting → Small Talk → Transition → Pitch).</span></li><li><span class="todo-task">Use optional questions to guide prospects to a specific appointment time.</span></li><li><span class="todo-task">Provide live coaching and listen-ins to support the team.</span></li></ul></section>
+      
+      
+      
+      
       
     </div>
 
@@ -772,6 +763,7 @@
         recap_purpose: 'Zweck', recap_highlights: 'Was zählte',
         recap_do_next: 'Als Nächstes', recap_watch: 'Achtung',
         lbl_overview: 'Überblick', summary: 'Zusammenfassung', summary_enhanced: 'Enhanced Summary',
+        summary_expand: 'Antippen zum Öffnen',
         lbl_notes: 'Notizen', meeting_notes: 'Meeting-Notizen',
         lbl_focus: 'Fokus', key_takeaways: 'Kernaussagen',
         lbl_distribution: 'Verteilung', topics: 'Themen',
@@ -792,6 +784,7 @@
         recap_purpose: 'Purpose', recap_highlights: 'What mattered',
         recap_do_next: 'Do next', recap_watch: 'Watch-outs',
         lbl_overview: 'Overview', summary: 'Summary', summary_enhanced: 'Enhanced summary',
+        summary_expand: 'Tap to expand',
         lbl_notes: 'Notes', meeting_notes: 'Meeting notes',
         lbl_focus: 'Focus', key_takeaways: 'Key takeaways',
         lbl_distribution: 'Distribution', topics: 'Topics',
@@ -812,6 +805,7 @@
         recap_purpose: 'Amaç', recap_highlights: 'Ne önemliydi',
         recap_do_next: 'Sırada', recap_watch: 'Dikkat',
         lbl_overview: 'Genel bakış', summary: 'Özet', summary_enhanced: 'Gelişmiş özet',
+        summary_expand: 'Açmak için dokun',
         lbl_notes: 'Notlar', meeting_notes: 'Toplantı notları',
         lbl_focus: 'Odak', key_takeaways: 'Önemli çıkarımlar',
         lbl_distribution: 'Dağılım', topics: 'Konular',
@@ -905,8 +899,8 @@
     }
     ergomeetChartDefaults();
 
-    const topics = [{"label": "Zahlen / KPIs", "weight": 52.4}, {"label": "Prozesse / Tools", "weight": 36.7}, {"label": "Team / F\u00fchrung", "weight": 6.8}, {"label": "Karriere", "weight": 2.7}, {"label": "Kunden / Vertrieb", "weight": 0.7}, {"label": "Rente / Vorsorge", "weight": 0.7}];
-    const speakers = [{"name": "Basti", "words": 7594, "pct": 100.0}];
+    const topics = [];
+    const speakers = [];
     const goldPalette = ['#c9a962','#e8d5a3','#8b7355','#d4bc7a','#6b7c9e','#a89878'];
     window.__ergoCharts = window.__ergoCharts || [];
 
@@ -914,7 +908,7 @@
       document.querySelectorAll('[data-block]').forEach((el) => {
         const text = (el.textContent || '').replace(/\s+/g, ' ').trim();
         const hasCanvas = !!el.querySelector('canvas');
-        const hasListContent = !!el.querySelector('li, tr, .tl, .exec-p, .exec-h, .exec-ul li, pre');
+        const hasListContent = !!el.querySelector('li, tr, .tl, .exec-p, .exec-h, .exec-ul li, pre, .recap-one-text, .enhanced-summary');
         const topicsOk = !!(el.querySelector('#topics') && topics.length);
         const speakersOk = !!(el.querySelector('#speakers') && speakers.length);
         const hasMeaningful = hasListContent || (hasCanvas && (topicsOk || speakersOk));
@@ -924,21 +918,14 @@
           el.hidden = true;
         }
       });
-      const kpi = document.getElementById('kpiRow');
-      if (kpi && !kpi.querySelector('.kpi')) {
-        kpi.classList.add('is-empty');
-        kpi.hidden = true;
-      }
-      const charts = document.getElementById('chartsGrid');
-      if (charts) {
-        const visible = [...charts.querySelectorAll('.chart-box')].filter((c) => !c.classList.contains('is-empty') && !c.hidden);
-        if (!visible.length) {
-          charts.classList.add('is-empty');
-          charts.hidden = true;
-        } else if (visible.length === 1) {
-          charts.classList.add('grid2--single');
+      // Focus layout: never leave orphan empty shells
+      ['kpiRow', 'chartsGrid', 'timeline', 'transcript', 'ideas'].forEach((id) => {
+        const el = document.getElementById(id);
+        if (el && !el.querySelector('li, canvas, .tl, pre, .kpi')) {
+          el.classList.add('is-empty');
+          el.hidden = true;
         }
-      }
+      });
     })();
 
     (function buildToc() {
@@ -949,8 +936,13 @@
         const id = block.id || block.getAttribute('data-block');
         if (!id) return;
         if (!block.id) block.id = id;
-        const labelEl = block.querySelector('h2, summary, .section-label');
-        const label = (labelEl && labelEl.textContent.trim()) || id;
+        const labelEl = block.querySelector('.summary-title, h2, summary, .section-label');
+        let label = (labelEl && labelEl.textContent.trim()) || id;
+        // Prefer short TOC labels
+        if (block.id === 'recap') label = 'Recap';
+        if (block.id === 'todos') label = 'Todos';
+        if (block.id === 'summary') label = 'Summary';
+        if (block.id === 'notes') label = 'Notes';
         const a = document.createElement('a');
         a.href = '#' + block.id;
         a.textContent = label;
