@@ -448,6 +448,15 @@
     .recap-ul li{margin-bottom:8px;color:var(--text-body);line-height:1.5;font-size:.92rem}
     .recap-ul li::marker{color:var(--gold)}
 
+
+    details.summary-details{cursor:default}
+    details.summary-details>summary.summary-summary{list-style:none;cursor:pointer;display:grid;gap:4px}
+    details.summary-details>summary.summary-summary::-webkit-details-marker{display:none}
+    details.summary-details .summary-title{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--cream)}
+    details.summary-details .summary-hint{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    details.summary-details[open] .summary-hint{display:none}
+    details.summary-details .enhanced-summary{margin-top:16px;padding-top:8px;border-top:1px solid var(--line)}
+
 </style>
 </head>
 <body>
@@ -493,10 +502,7 @@
 
     </div>
 
-    <section class="section">
-      <div class="section-label" data-i18n="lbl_overview">Overview</div>
-      <h2 data-i18n="summary">Summary</h2>
-      <div class="exec exec-rich"><h3 class="exec-h">Deal Information</h3>
+    <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label">Overview</span><span class="summary-title">Enhanced summary</span><span class="summary-hint">Tap to expand</span></summary><div class="exec exec-rich"><h3 class="exec-h">Deal Information</h3>
 <h3 class="exec-h">Prospect</h3>
 <p class="exec-p">No external prospect present. This was a solo internal enablement/training session led by VU (seller) discussing Ergo retirement/investment products and sales approach for multicultural/foreign-language clients in Berlin.</p>
 <h3 class="exec-h">Call Context</h3>
@@ -513,27 +519,13 @@
 <h3 class="exec-h">Pain Points</h3>
 <ul class="exec-ul">
 <li>[Non-native clients struggle with Germa</li>
-</ul></div>
-    </section>
+</ul></div></details>
 
     <section class="section insights">
       <div class="section-label" data-i18n="lbl_focus">Focus</div>
       <h2 data-i18n="key_takeaways">Key takeaways</h2>
       <ul><li>Internal: New reps are ramping, doing first appointments (VW/LG), building networks, and improving discovery and closing skills.</li><li>Market: Many prospects are currently investing ad hoc (bank funds/ETFs) or have legacy insurance contracts with suboptimal setup (e.g., poor beneficiary settings, short contract terms).</li><li>[Non-native clients struggle with Germa</li></ul>
     </section>
-
-    <div class="grid2">
-      <section class="section chart-box">
-        <div class="section-label" data-i18n="lbl_distribution">Distribution</div>
-        <h2 data-i18n="topics">Topics</h2>
-        <canvas id="topics"></canvas>
-      </section>
-      <section class="section chart-box">
-        <div class="section-label" data-i18n="lbl_conversation">Conversation</div>
-        <h2 data-i18n="speaking_time">Speaking time</h2>
-        <canvas id="speakers"></canvas>
-      </section>
-    </div>
 
     <section class="section">
       <div class="section-label" data-i18n="lbl_followup">Follow-up</div>

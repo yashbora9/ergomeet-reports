@@ -448,6 +448,15 @@
     .recap-ul li{margin-bottom:8px;color:var(--text-body);line-height:1.5;font-size:.92rem}
     .recap-ul li::marker{color:var(--gold)}
 
+
+    details.summary-details{cursor:default}
+    details.summary-details>summary.summary-summary{list-style:none;cursor:pointer;display:grid;gap:4px}
+    details.summary-details>summary.summary-summary::-webkit-details-marker{display:none}
+    details.summary-details .summary-title{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--cream)}
+    details.summary-details .summary-hint{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    details.summary-details[open] .summary-hint{display:none}
+    details.summary-details .enhanced-summary{margin-top:16px;padding-top:8px;border-top:1px solid var(--line)}
+
 </style>
 <meta property="og:title" content="Ergo Meet · 27 June 2026 · Adrian Lorz" data-id="th-modified" ><meta property="og:image" content="https://tiiny.host/assets/logo-purple-bg.png" data-id="th-modified" ><meta property="og:image:width" content="1501" data-id="th-modified" ><meta property="og:image:height" content="1501" data-id="th-modified" ><meta property="og:image:type" content="image/png" data-id="th-modified" ><meta property="og:url" content="https://ergomeet-adrian-lorz.tiiny.site/" data-id="th-modified" ><meta property="og:type" content="website" data-id="th-modified" ><script defer data-domain="ergomeet-adrian-lorz.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script><script type="text/javascript" src="https://tiiny.host/ad-script.js"></script></head>
 <body>
@@ -491,12 +500,9 @@
       </div>
     </header>
 
-    <div class="kpi-row"><div class="kpi"><div class="kpi-v">Stufe 4</div><div class="kpi-l" data-i18n-kpi="kpi_stufe">Stufe</div></div><div class="kpi"><div class="kpi-v">October 2022</div><div class="kpi-l" data-i18n-kpi="kpi_ergo_since">ERGO since</div></div><div class="kpi"><div class="kpi-v">10</div><div class="kpi-l">Einheiten</div></div></div>
+    <div class="kpi-l" data-i18n-kpi="kpi_stufe">Stufe</div></div><div class="kpi"><div class="kpi-v">October 2022</div><div class="kpi-l" data-i18n-kpi="kpi_ergo_since">ERGO since</div></div><div class="kpi"><div class="kpi-v">10</div><div class="kpi-l">Einheiten</div></div></div>
 
-    <section class="section">
-      <div class="section-label" data-i18n="lbl_overview">Overview</div>
-      <h2 data-i18n="summary">Summary</h2>
-      <div class="exec exec-rich"><div class="part-block"><h3 class="part-title">Part 1 · 11:01–11:37</h3>
+    <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label">Overview</span><span class="summary-title">Enhanced summary</span><span class="summary-hint">Tap to expand</span></summary><div class="exec exec-rich"><div class="part-block"><h3 class="part-title">Part 1 · 11:01–11:37</h3>
 <h3 class="exec-h">Meeting Purpose</h3>
 <p class="exec-p">To learn the EVA framework for handling objections and skepticism.</p>
 <h3 class="exec-h">Key Takeaways</h3>
@@ -637,27 +643,13 @@
 <li><strong>All:</strong> Obtain objection-handling scripts from your &quot;Schucki&quot; (mentor).</li>
 <li><strong>All:</strong> Invest 4–6 hours in mastering these techniques, as they account for over 50% of success when combined with product knowledge.</li>
 </ul>
-</div></div>
-    </section>
+</div></div></details>
 
     <section class="section insights">
       <div class="section-label" data-i18n="lbl_focus">Focus</div>
       <h2 data-i18n="key_takeaways">Key takeaways</h2>
       <ul><li><strong>The EVA Framework:</strong> A 3-step process (Empathy, Questions, Conclusion) to handle objections by understanding their root cause (hidden fear/wish) and guiding the person to their own solution.</li><li><strong>Empathy First:</strong> Validate their perspective (&quot;I understand why you&#x27;d think that&quot;) to prevent arguments. A won argument is a lost client.</li><li><strong>Questions Over Arguments:</strong> Use questions to uncover the objection&#x27;s root cause and lead the person to their own conclusion. Arguments close the mind; questions open it.</li><li><strong>80% of People Are Undecided:</strong> The EVA framework targets this group, shifting them from &quot;maybe&quot; to &quot;yes&quot; and potentially increasing your success rate to 90%.</li><li><strong>The EFA Framework:</strong> A three-step process for handling objections: <strong>E</strong>mpathy (build trust), <strong>F</strong>ragen (use questions to guide self-realization), and <strong>A</strong>bschluss (summarize and close).</li><li><strong>Master the 10–13 Core Objections:</strong> All objections stem from either &quot;no trust&quot; or &quot;no priority.&quot; Learning the pre-written scripts for these takes only 4–6 hours and makes you an expert, enabling you to anticipate and counter any argument.</li><li><strong>Proactive Learning is Your Responsibility:</strong> Your sponsor&#x27;s success depends on yours. Proactively request the EFA scripts, learn them independently, and use practice sessions for refinement, not initial study.</li><li><strong>Use the &quot;Patrick Star&quot; technique</strong> to isolate objections with &quot;Mal abgesehen davon...&quot; (Aside from that...), secure a &quot;yes&quot; on the core value proposition, and then resolve the objection from a position of agreement.</li></ul>
     </section>
-
-    <div class="grid2">
-      <section class="section chart-box">
-        <div class="section-label" data-i18n="lbl_distribution">Distribution</div>
-        <h2 data-i18n="topics">Topics</h2>
-        <canvas id="topics"></canvas>
-      </section>
-      <section class="section chart-box">
-        <div class="section-label" data-i18n="lbl_conversation">Conversation</div>
-        <h2 data-i18n="speaking_time">Speaking time</h2>
-        <canvas id="speakers"></canvas>
-      </section>
-    </div>
 
     <section class="section">
       <div class="section-label" data-i18n="lbl_followup">Follow-up</div>
