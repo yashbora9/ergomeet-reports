@@ -468,6 +468,13 @@
     .recap-ul li::marker { color: var(--gold); }
     .recap-col--do .recap-kicker { color: var(--gold-light); }
     .recap-col--watch .recap-kicker { color: #d4a0a0; }
+    .live-summary-card {
+      border-color: rgba(201, 169, 98, 0.38);
+      margin-top: 28px;
+    }
+    .live-summary-card .live-summary {
+      margin-top: 8px;
+    }
     /* Focus layout: collapsible Enhanced summary */
     details.summary-details {
       cursor: default;
@@ -752,6 +759,94 @@
       
       
       
+      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><h3 class="exec-h">Germany Investment Statistics</h3>
+<ul class="exec-ul">
+<li>24% of Germans invest in stocks or funds</li>
+<li>26% feel well prepared for retirement</li>
+<li>41% feel unprepared for retirement and want to change this in the next 12 months</li>
+<li>57% express major concerns about their financial situation in old age</li>
+</ul>
+<h3 class="exec-h">Retirement Preparation Gap</h3>
+<ul class="exec-ul">
+<li>Only 3-4% of clients who already invest have a good strategy</li>
+<li>75% of Germans do not invest at all</li>
+<li>School system provides no financial education</li>
+<li>Knowledge gap leads to poor financial decisions</li>
+</ul>
+<h3 class="exec-h">Savings Behavior</h3>
+<ul class="exec-ul">
+<li>Over 50% of Germans prefer to park money in savings accounts</li>
+<li>30% of Germans earn money each year but choose low-yield options</li>
+<li>Quality investments require payment for professional advice</li>
+<li>People seek cheapest options in insurance and finance despite quality needs</li>
+</ul>
+<h3 class="exec-h">Market Opportunity</h3>
+<ul class="exec-ul">
+<li>Banks are closing branches</li>
+<li>Fewer people want to work in finance</li>
+<li>High demand for financial consulting exists</li>
+<li>Current timing offers largest opportunity in this field</li>
+</ul>
+<h3 class="exec-h">ERGO Company Position</h3>
+<ul class="exec-ul">
+<li>Part of Munich Re, world&#x27;s largest reinsurer</li>
+<li>155+ years of company history</li>
+<li>DAX-listed company with global recognition</li>
+<li>Sponsors German national team alongside Adidas and Volkswagen</li>
+</ul>
+<h3 class="exec-h">Quality vs Price Discussion</h3>
+<ul class="exec-ul">
+<li>People pay for quality in cars, phones, and clothing</li>
+<li>Insurance and finance are exceptions where cheapest options are sought</li>
+<li>Quality products cost money across all life areas</li>
+<li>Free advice often lacks proper expertise and accountability</li>
+</ul>
+<h3 class="exec-h">Client Decision Making</h3>
+<ul class="exec-ul">
+<li>People have many opinions but little knowledge about investments</li>
+<li>Successful individuals recognize need for specialized financial advisors</li>
+<li>Lower income and education levels correlate with stronger resistance to professional advice</li>
+<li>Trust in unqualified sources leads to poor financial outcomes</li>
+</ul>
+<h3 class="exec-h">Strategy Requirements</h3>
+<ul class="exec-ul">
+<li>Clear goals must be specific, measurable, and time-bound</li>
+<li>&quot;Someday&quot; goals without plans remain wishes</li>
+<li>Long-term discipline required for wealth building</li>
+<li>10-20 years of consistent investing needed for meaningful results</li>
+</ul>
+<h3 class="exec-h">Riester Pension Concerns</h3>
+<ul class="exec-ul">
+<li>50% government subsidy available but lacks flexibility</li>
+<li>Locked until age 65 with limited withdrawal options</li>
+<li>300 Euro monthly pension requires approximately 100,000 Euro capital</li>
+<li>25% subsidy often insufficient compensation for 40-year lock-in period</li>
+</ul>
+<h3 class="exec-h">Alternative Investment Approach</h3>
+<ul class="exec-ul">
+<li>Statutory pension provides minimum basic security only</li>
+<li>Company pension plans offer additional employer contributions</li>
+<li>Private investment through funds and stocks builds wealth</li>
+<li>Tax optimization through insurance wrappers and fund accounts</li>
+</ul>
+<h3 class="exec-h">Self-Management Reality</h3>
+<ul class="exec-ul">
+<li>People can handle basic tasks themselves but choose professional services</li>
+<li>Time value and expertise justify professional fees</li>
+<li>6 Euro monthly advisory cost provides complete financial oversight</li>
+<li>Professional guidance prevents costly mistakes over decades</li>
+</ul>
+<h3 class="exec-h">Emotional Resistance Factors</h3>
+<ul class="exec-ul">
+<li>Fear of making wrong decisions leads to inaction</li>
+<li>Past experiences with unqualified advisors create distrust</li>
+<li>Political messaging influences financial attitudes</li>
+<li>Success requires overcoming both rational and emotional barriers</li>
+</ul>
+<h3 class="exec-h">Action Items</h3>
+<ul class="exec-ul">
+<li>No action items detected</li>
+</ul></div></section>
     </div>
 
     <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
@@ -766,6 +861,7 @@
         recap_do_next: 'Als Nächstes', recap_watch: 'Achtung',
         lbl_overview: 'Überblick', summary: 'Zusammenfassung', summary_enhanced: 'Enhanced Summary',
         summary_expand: 'Antippen zum Öffnen',
+        lbl_live_summary: 'Live', live_meeting_summary: 'Live-Meeting-Zusammenfassung',
         lbl_notes: 'Notizen', meeting_notes: 'Meeting-Notizen',
         lbl_focus: 'Fokus', key_takeaways: 'Kernaussagen',
         lbl_distribution: 'Verteilung', topics: 'Themen',
@@ -787,6 +883,7 @@
         recap_do_next: 'Do next', recap_watch: 'Watch-outs',
         lbl_overview: 'Overview', summary: 'Summary', summary_enhanced: 'Enhanced summary',
         summary_expand: 'Tap to expand',
+        lbl_live_summary: 'Live', live_meeting_summary: 'Live meeting summary',
         lbl_notes: 'Notes', meeting_notes: 'Meeting notes',
         lbl_focus: 'Focus', key_takeaways: 'Key takeaways',
         lbl_distribution: 'Distribution', topics: 'Topics',
@@ -808,6 +905,7 @@
         recap_do_next: 'Sırada', recap_watch: 'Dikkat',
         lbl_overview: 'Genel bakış', summary: 'Özet', summary_enhanced: 'Gelişmiş özet',
         summary_expand: 'Açmak için dokun',
+        lbl_live_summary: 'Canlı', live_meeting_summary: 'Canlı toplantı özeti',
         lbl_notes: 'Notlar', meeting_notes: 'Toplantı notları',
         lbl_focus: 'Odak', key_takeaways: 'Önemli çıkarımlar',
         lbl_distribution: 'Dağılım', topics: 'Konular',
@@ -910,7 +1008,7 @@
       document.querySelectorAll('[data-block]').forEach((el) => {
         const text = (el.textContent || '').replace(/\s+/g, ' ').trim();
         const hasCanvas = !!el.querySelector('canvas');
-        const hasListContent = !!el.querySelector('li, tr, .tl, .exec-p, .exec-h, .exec-ul li, pre, .recap-one-text, .enhanced-summary');
+        const hasListContent = !!el.querySelector('li, tr, .tl, .exec-p, .exec-h, .exec-ul li, pre, .recap-one-text, .enhanced-summary, .live-summary');
         const topicsOk = !!(el.querySelector('#topics') && topics.length);
         const speakersOk = !!(el.querySelector('#speakers') && speakers.length);
         const hasMeaningful = hasListContent || (hasCanvas && (topicsOk || speakersOk));
@@ -945,6 +1043,7 @@
         if (block.id === 'todos') label = 'Todos';
         if (block.id === 'summary') label = 'Summary';
         if (block.id === 'notes') label = 'Notes';
+        if (block.id === 'live-summary') label = 'Live summary';
         const a = document.createElement('a');
         a.href = '#' + block.id;
         a.textContent = label;

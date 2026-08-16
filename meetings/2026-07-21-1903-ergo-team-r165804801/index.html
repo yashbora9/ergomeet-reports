@@ -468,6 +468,13 @@
     .recap-ul li::marker { color: var(--gold); }
     .recap-col--do .recap-kicker { color: var(--gold-light); }
     .recap-col--watch .recap-kicker { color: #d4a0a0; }
+    .live-summary-card {
+      border-color: rgba(201, 169, 98, 0.38);
+      margin-top: 28px;
+    }
+    .live-summary-card .live-summary {
+      margin-top: 8px;
+    }
     /* Focus layout: collapsible Enhanced summary */
     details.summary-details {
       cursor: default;
@@ -678,6 +685,31 @@
       
       
       
+      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><h3 class="exec-h">Opening Motivation</h3>
+<ul class="exec-ul">
+<li>Goal: move closer to personal targets and Triple qualification</li>
+<li>Call to action: set a new record never achieved before</li>
+<li>Timing: early in the half-year to send a strong signal to entire ERGO</li>
+<li>Focus: improve Gino-Kamm results for many team members</li>
+</ul>
+<h3 class="exec-h">Team Performance Status</h3>
+<ul class="exec-ul">
+<li>Current state: many team members performing well</li>
+<li>Next step: collective phone effort to convert momentum into sales</li>
+<li>Outcome target: generate significant revenue for all participants</li>
+</ul>
+<h3 class="exec-h">Dress Code Reminder</h3>
+<ul class="exec-ul">
+<li>Requirement: allergy mask must be worn during calls</li>
+<li>Context: health protocol for the session</li>
+</ul>
+<h3 class="exec-h">Closing Encouragement</h3>
+<ul class="exec-ul">
+<li>Message: wish success and maintain high energy</li>
+<li>Tone: motivational close to the segment</li>
+</ul>
+<h3 class="exec-h">Action Items</h3>
+<p class="exec-p">No action items detected</p></div></section>
     </div>
 
     <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
@@ -692,6 +724,7 @@
         recap_do_next: 'Als Nächstes', recap_watch: 'Achtung',
         lbl_overview: 'Überblick', summary: 'Zusammenfassung', summary_enhanced: 'Enhanced Summary',
         summary_expand: 'Antippen zum Öffnen',
+        lbl_live_summary: 'Live', live_meeting_summary: 'Live-Meeting-Zusammenfassung',
         lbl_notes: 'Notizen', meeting_notes: 'Meeting-Notizen',
         lbl_focus: 'Fokus', key_takeaways: 'Kernaussagen',
         lbl_distribution: 'Verteilung', topics: 'Themen',
@@ -713,6 +746,7 @@
         recap_do_next: 'Do next', recap_watch: 'Watch-outs',
         lbl_overview: 'Overview', summary: 'Summary', summary_enhanced: 'Enhanced summary',
         summary_expand: 'Tap to expand',
+        lbl_live_summary: 'Live', live_meeting_summary: 'Live meeting summary',
         lbl_notes: 'Notes', meeting_notes: 'Meeting notes',
         lbl_focus: 'Focus', key_takeaways: 'Key takeaways',
         lbl_distribution: 'Distribution', topics: 'Topics',
@@ -734,6 +768,7 @@
         recap_do_next: 'Sırada', recap_watch: 'Dikkat',
         lbl_overview: 'Genel bakış', summary: 'Özet', summary_enhanced: 'Gelişmiş özet',
         summary_expand: 'Açmak için dokun',
+        lbl_live_summary: 'Canlı', live_meeting_summary: 'Canlı toplantı özeti',
         lbl_notes: 'Notlar', meeting_notes: 'Toplantı notları',
         lbl_focus: 'Odak', key_takeaways: 'Önemli çıkarımlar',
         lbl_distribution: 'Dağılım', topics: 'Konular',
@@ -836,7 +871,7 @@
       document.querySelectorAll('[data-block]').forEach((el) => {
         const text = (el.textContent || '').replace(/\s+/g, ' ').trim();
         const hasCanvas = !!el.querySelector('canvas');
-        const hasListContent = !!el.querySelector('li, tr, .tl, .exec-p, .exec-h, .exec-ul li, pre, .recap-one-text, .enhanced-summary');
+        const hasListContent = !!el.querySelector('li, tr, .tl, .exec-p, .exec-h, .exec-ul li, pre, .recap-one-text, .enhanced-summary, .live-summary');
         const topicsOk = !!(el.querySelector('#topics') && topics.length);
         const speakersOk = !!(el.querySelector('#speakers') && speakers.length);
         const hasMeaningful = hasListContent || (hasCanvas && (topicsOk || speakersOk));
@@ -871,6 +906,7 @@
         if (block.id === 'todos') label = 'Todos';
         if (block.id === 'summary') label = 'Summary';
         if (block.id === 'notes') label = 'Notes';
+        if (block.id === 'live-summary') label = 'Live summary';
         const a = document.createElement('a');
         a.href = '#' + block.id;
         a.textContent = label;
