@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="dark">
+<html data-ergomeet-bilingual="1" lang="de" data-theme="dark">
 <head>
   <meta name="robots" content="noindex, nofollow" />
   <meta charset="utf-8"/>
@@ -605,18 +605,43 @@
       text-transform: uppercase;
       color: var(--muted);
     }
+  
+    /* ergomeet-bi */
+    .topbar-inner { justify-content: space-between; }
+    .topbar .toc {
+      display: flex !important;
+      flex: 1 1 auto;
+      min-width: 0;
+      margin: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      gap: 6px;
+    }
+    .topbar .toc::-webkit-scrollbar { display: none; }
+    .topbar .toc a { white-space: nowrap; flex-shrink: 0; }
+    html[lang="en"] .bi-de { display: none !important; }
+    html[lang="de"] .bi-en { display: none !important; }
+    span.bi-en, span.bi-de { display: inline; }
+    div.bi-en, div.bi-de { display: block; }
+    @media (max-width: 820px) {
+      .topbar-inner { flex-wrap: wrap; }
+      .topbar .toc { order: 2; flex-basis: 100%; }
+    }
+
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
+      <nav class="toc" id="sectionToc" aria-label="Sections">
+        <a class="toc-home" href="https://yashbora9.github.io/ergomeet-reports/" data-i18n="toc_home">Meetings</a>
+      </nav>
       <div class="topbar-controls">
         <select id="langSelect" class="lang-select" aria-label="Language">
           <option value="de">DE</option>
           <option value="en">EN</option>
-          <option value="tr">TR</option>
         </select>
-        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+<button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
           <span class="icon-sun" aria-hidden="true">☀</span>
           <span class="icon-moon" aria-hidden="true">☾</span>
           <span id="themeToggleLabel" data-i18n="theme_light">Light</span>
@@ -641,17 +666,16 @@
     </header>
 
     <!-- No empty shell under the heading: blocks only appear when builder marks them present -->
-    <nav class="toc" id="sectionToc" aria-label="Sections"></nav>
-    <div class="stack" id="reportStack">
+<div class="stack" id="reportStack">
       <section class="section block recap-card" id="recap" data-block="recap">
 <div class="section-label" data-i18n="lbl_recap">60 seconds</div>
 <h2 data-i18n="recap">Recap</h2>
 <div class="recap-grid">
-<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text">Ergo Meet with Kwame — open Enhanced summary for full detail.</p></div>
-<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li>Privacy/serious image concerns. Addressed: Maintain professionalism; clean Highlights; avoid overly personal/freizügig content; keep accounts public for credibility. Overcome: Guidance provided.</li><li>Kwame: \~10–20 per highlight; avoid outdated/party/bikini/drawer shots; add Q\&amp;A, yearly recaps, business; keep account public; ensure profile photo, bio, pinned post, and highlights reflect professional identity.</li></ul></div>
+<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text" data-topic-en="Ergo Meet with Kwame — open Enhanced summary for full detail." data-topic-de="Ergo Meet mit Kwame — Enhanced summary für vollständige Details öffnen."><span class="bi-en">Ergo Meet with Kwame — open Enhanced summary for full detail.</span><span class="bi-de">Ergo Meet mit Kwame — Enhanced summary für vollständige Details öffnen.</span></p></div>
+<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li><span class="bi-en">Privacy/serious image concerns. Addressed: Maintain professionalism; clean Highlights; avoid overly personal/revealing content; keep accounts public for credibility. Overcome: Guidance provided.</span><span class="bi-de">Privacy/serious image concerns. Addressed: Maintain professionalism; clean Highlights; avoid overly personal/freizügig content; keep accounts public for credibility. Overcome: Guidance provided.</span></li><li><span class="bi-en">Kwame: \~10–20 per highlight; avoid outdated/party/bikini/drawer shots; add Q\&amp;A, yearly recaps, business; keep account public; ensure profile photo, bio, pinned post, and highlights reflect professional identity.</span><span class="bi-de">Kwame: \~10–20 pro Highlight; veraltete/Party/Bikini/Schubladen-Fotos vermeiden; Q\&A, Jahresrückblicke, Business hinzufügen; Account öffentlich halten; Profilfoto, Bio, gepinnter Post und Highlights sollen professionelle Identität widerspiegeln.</span></li></ul></div>
 </div></section>
       
-      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Deal Information</h3>
+      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><div class="bi-en"><h3 class="exec-h">Deal Information</h3>
 <h4 class="exec-h2">Prospect</h4>
 <ul class="exec-ul">
 <ul class="exec-ul exec-ul-nested">
@@ -842,14 +866,205 @@
 <ul class="exec-ul exec-ul-nested">
 <li>Kwame: Maintain a professional “digital business card”: clean highlights, 1 pinned story post, 9-grid mix (lifestyle + business), occasional Reels/carousels; consistent Stories.</li>
 </ul>
-</ul></div></details>
+</ul></div><div class="bi-de"><h3 class="exec-h">Deal Information</h3>
+<h4 class="exec-h2">Prospect</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Keine externen Interessenten nahmen teil. Es handelte sich um eine interne Einzelsitzung, die von Kwame (Verkäufer) geleitet wurde und einen deutschsprachigen Workshop zu Social-Media-Grundlagen für eine Gruppe junger Finanz-/Versicherungsvertriebler (Verweise auf „Vertrieb“, „Finanzdienstleistung“, „GS-Teilnehmer“, „Stufe 4“, „Ergo“) darstellte. Mehrere namentlich nicht genannte Teilnehmer beteiligten sich über Q&A (z. B. „Stefan“, „John“ als Kollegen genannt), jedoch war keine identifizierbare kaufende Organisation oder Entscheidungsträger anwesend.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Call Context</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Impromptu-Training/Enablement-Call mit Fokus auf den Aufbau persönlicher Marken und Lead-Generierung über Social Media (Instagram/TikTok/Reels).</li>
+<li>Teammitglieder sind neu in den sozialen Medien und haben um Anleitung zu Content-Strategie, Geschwindigkeit der Reel-Erstellung, Werbeanzeigen, Farbtheorie und dem Ausbalancieren von Qualität versus Quantität gebeten.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Seats</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Nicht anwendbar. Kein Produkt oder Lizenzen besprochen.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Budget</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Nicht besprochen.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Current State</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Teilnehmer posten uneinheitlich in sozialen Medien; größtenteils Konsumenten statt Ersteller.</li>
+<li>Wenig Struktur: Unsicherheit bei Reels vs. Posts vs. Stories; Ad-hoc-Posting; veraltete oder unprofessionelle Instagram-Highlights; private Accounts fragmentieren die Marke.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Pain Points</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Fehlende klare Content-Roadmap; Lähmung bei der Frage, was gepostet werden soll.</li>
+<li>Überbetonung der Produktionsqualität; zu seltenes Posten aufgrund von Perfektionismus.</li>
+<li>Angst vor negativem Feedback/Hate und persönlicher Bloßstellung.</li>
+<li>Markeninkonsistenz (eines Tages Motivation, am nächsten Comedy, dann Finanzen).</li>
+<li>Schlechte Instagram-Hygiene (alte „Party“-Highlights, private Accounts, Meme-Reposts) untergräbt die Glaubwürdigkeit.</li>
+<li>Geringes Conversion-Verständnis: Verwechslung von Views mit Impact und Leads.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Specific Requirements</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Praktische, wiederholbare Formate, die man täglich mit minimalem Aufwand posten kann (Reels, Stories, Karussells).</li>
+<li>Framework für die persönliche Positionierung: Wer sie sind, Werte, was sie unterscheidet.</li>
+<li>Klare Do’s und Don’ts für eine branchengerechte Markenführung in der Finanzbranche (authentisch, glaubwürdig, nicht auffällig oder flex-lastig).</li>
+<li>Taktiken zur Ansprache von Nischen/Sprachen (z. B. Hindi-sprechende IT-Mitarbeiter in Berlin) und Call-to-Actions, die DMs generieren.</li>
+<li>Ratschläge zu Instagram-Funktionen: Highlights, angeheftete Beiträge, Test-Reels, Voiceovers, Repost-Etikette.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Tech Stack</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Instagram (Reels, Stories, Carousels, Highlights, gepinnte Posts, Analytics für Profi-Accounts).</li>
+<li>Instagram Reels Editor (bevorzugt gegenüber CapCut).</li>
+<li>TikTok konzeptionell erwähnt.</li>
+<li>Kein CRM, Ads Manager oder andere Tools besprochen.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Einwände</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Bedenken: Qualität vs. Quantität. Behandelt: Konsistenz und Authentizität über Perfektion betont; interessenbasierte Algorithmen belohnen häufige, nischenbezogene Inhalte. Überwunden: Ja.</li>
+<li>Angst vor Hass/Negativität. Behandelt: Hass normalisieren; selektiv engagieren; nicht übermäßig auf Kritiker fokussieren. Überwunden: Teilweise (Mindset-Shift empfohlen).</li>
+<li>Zeitliche Einschränkungen. Behandelt: Scroll-Zeit durch Erstellung ersetzen; einfache Formate nutzen (Voiceover, tägliche Stories). Überwunden: Teilweise mit praktischen Taktiken.</li>
+<li>Privacy/serious image concerns. Addressed: Maintain professionalism; clean Highlights; avoid overly personal/freizügig content; keep accounts public for credibility. Overcome: Guidance provided.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Weitere Lösungen in der Evaluierung</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Keine erwähnt. Gelegentliche Verweise auf „paid ads“ als Konzept, nicht als evaluierter Anbieter.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Timeline</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Sofortige Verhaltensänderung empfohlen: jetzt mit Posten beginnen; tägliche/wöchentliche Frequenz für Stories/Reels. Kein formeller Kaufzeitplan.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Entscheidungsträger</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Nicht zutreffend; interne Enablement-Gruppe ohne besprochene Kaufautorität.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Procurement Process</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Nicht zutreffend.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Nächste Schritte</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Attendees:</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>Beantworten und dokumentieren: Wer bin ich? Was sind meine Werte? Was macht mich anders?</li>
+<li>Instagram Highlights bereinigen (Party-/irrelevante Elemente entfernen); Q&A, Jahresrückblick, Business-Highlights hinzufügen.</li>
+<li>Gepinntes Carousel erstellen, das die persönliche Geschichte/Ziele erzählt.</li>
+<li>Täglich Stories posten; Reels mit einfachen Voiceovers; gelegentliche Karussells.</li>
+<li>Build an “Inspo” saves folder for formats/ideas.</li>
+<li>Für Nischen-Sprecher (z. B. Hindi) Nischen-gerichteten Intro-Content mit klarer CTA launchen.</li>
+</ul>
+</ul>
+<li>Kwame:</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>Ich habe die Teilnehmerprofile nach der Bereinigung überprüft.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h3 class="exec-h">Q\&amp;A</h3>
+<h4 class="exec-h2">Fragen, die wir gestellt haben</h4>
+<h4 class="exec-h2">Was sind eure Erwartungen an die Session?</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Teilnehmer suchten nach schnellen Reel-Erstellungsmethoden, gezieltem Branding, Anzeigennutzung, Farbtheorie und dem Ausgleich von Qualität versus Quantität.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Inwiefern Qualität vs. Quantität auf Social Media?</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Kwame: Priorisiere Quantität/Konsistenz und Authentizität; der Interessen-Algorithmus bevorzugt häufige, Nischen-Inhalte; polierte Produktion ist nicht erforderlich, um zu gewinnen.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Wer bist du? Was sind deine Werte? Was macht dich besonders?</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Promptete Teilnehmer, Positionierung zu definieren. Beispielantworten: Neugier, Ehrlichkeit, anderen helfen, Verantwortung für das Leben, Growth Mindset, Unabhängigkeit, Entschlossenheit. Kwame betonte, zu seinen Werten zu stehen und bereit zu sein, „edge“/Trigger zu setzen, um ernst genommen zu werden.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Wo ordnen wir Content-Formate (Tierlist)?</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Stories: S-Stufe (Beziehungsbrücke, täglich).</li>
+<li>Reels: S-tier (reach driver).</li>
+<li>Test Reels: S-tier (safe reach without hitting followers).</li>
+<li>Highlights: S-tier (first impression; curate).</li>
+<li>Carousels: A-tier (attention, narrative recaps).</li>
+<li>Zufällige Reposts/Memes: D–F-Stufe, wenn off-brand.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Fragen, die sie gestellt haben</h4>
+<h4 class="exec-h2">Wie starte ich heute aus einer Nische (z.B. Hindi in Berlin)?</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Kwame: Erstellen Sie ein Hindi-Intro-Video, das erklärt, wen Sie unterstützen (indische Expats in DE), Finanzstrukturierung, Steuer-/Leistungsnutzung; klarer CTA; Nische ist groß (Zehntausende in Berlin; >500k bundesweit), hochverdienende IT-Personas.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Wie viel Story/Highlight ist zu viel? Was in Highlights?</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Kwame: \~10–20 pro Highlight; veraltete/Party/Bikini/Schubladen-Fotos vermeiden; Q\&A, Jahresrückblicke, Business hinzufügen; Account öffentlich halten; Profilfoto, Bio, gepinnter Post und Highlights sollen professionelle Identität widerspiegeln.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Privates Konto vs. Öffentliches?</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Kwame: Öffentlich. Privat erzeugt den Verdacht, dass das „wahre Ich“ verborgen wird; schadet der Glaubwürdigkeit.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Was posten, wenn Leben “langweilig” ist?</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Kwame: Mehr Substanz – neue Hobbys, Lernen, Behind-the-Scenes, tägliche Arbeit; Voiceover-Reels nutzen; öffentlich aufbauen.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Wie mit Hate umgehen?</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Kwame: Erwarte es; manchmal spielerisch darauf eingehen; nicht überbewerten; weiter posten; Authentizität gewinnt.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Muss ich professionell schneiden?</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Kwame: Nein. Verwenden Sie den Instagram Reels Editor, Voiceovers, leichte Musik; überspringen Sie CapCut, es sei denn, es ist nötig.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Wie oft posten, wenn man nicht Creator werden will?</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Kwame: Pflegen Sie eine professionelle „digitale Visitenkarte“: saubere Highlights, 1 gepinnter Story-Post, 9-Grid-Mix (Lifestyle + Business), gelegentliche Reels/Carousels; konsistente Stories.</li>
+</ul>
+</ul></div></div></details>
       
       
       
       
       
       
-      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><h3 class="exec-h">Social Media Basics For New Team Members</h3>
+      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><div class="bi-en"><h3 class="exec-h">Social Media Basics For New Team Members</h3>
 <ul class="exec-ul">
 <li>Focus: laying the absolute foundation for partner and customer acquisition via social media</li>
 <li>Goal: move every participant from consumer to creator mindset</li>
@@ -1018,7 +1233,176 @@
 <li>Personal examples of direct communication shared</li>
 </ul>
 <h3 class="exec-h">Action Items</h3>
-<p class="exec-p">No action items detected</p></div></section>
+<p class="exec-p">No action items detected</p></div><div class="bi-de"><h3 class="exec-h">Social Media Grundlagen für neue Teammitglieder</h3>
+<ul class="exec-ul">
+<li>Fokus: die absolute Grundlage für Partner- und Kundengewinnung über Social Media legen</li>
+<li>Ziel: jeden Teilnehmer von der Consumer- in die Creator-Mindset bewegen</li>
+<li>Interaktives Format wird während der gesamten Sitzung empfohlen.</li>
+</ul>
+<h3 class="exec-h">Current Social Media Landscape</h3>
+<ul class="exec-ul">
+<li>Wechsel vom Follower-Algorithmus zum interessenbasierten Algorithmus</li>
+<li>Micro-Creator erreichen jetzt ihr Publikum über Nischenpositionierung</li>
+<li>Volumenbasierte Verteilung bevorzugt kontinuierliches Posten gegenüber Perfektion</li>
+</ul>
+<h3 class="exec-h">Follower-Anzahl Realitäts-Check</h3>
+<ul class="exec-ul">
+<li>10 Million oder 100 Follower können heute beide 1 Million Menschen erreichen</li>
+<li>Interest algorithm removes follower-count barrier</li>
+<li>Jeder Teilnehmer hat die gleichen Chancen, unabhängig von der aktuellen Publikumsgröße.</li>
+</ul>
+<h3 class="exec-h">Creator Versus Consumer Mindset</h3>
+<ul class="exec-ul">
+<li>Das Verbraucherverhalten führt zu null Output und leerer Pipeline.</li>
+<li>Zwei Optionen vorgestellt: Plattformen löschen oder mit der Content-Erstellung beginnen</li>
+<li>Das Erstellen von Inhalten ermöglicht kontinuierliche eingehende Partner- und Kundenanfragen</li>
+</ul>
+<h3 class="exec-h">Kwame Persönliche Ergebnisse seit Januar</h3>
+<ul class="exec-ul">
+<li>300,000 views and 115,000 reached accounts in 30 days</li>
+<li>Mehrere Reels haben 50.000 Klicks überschritten</li>
+<li>Regelmäßige DM-Anfragen zu Geschäftstätigkeiten</li>
+</ul>
+<h3 class="exec-h">Qualität versus Quantität Diskussion</h3>
+<ul class="exec-ul">
+<li>Am Anfang zählt Quantität mehr als Qualität.</li>
+<li>Authentischer Rohinhalt übertrifft anfangs überproduziertes Material</li>
+<li>John Beispiel: auch ohne Videobearbeitung werden Ergebnisse erzielt</li>
+</ul>
+<h3 class="exec-h">DM Lead Examples Shared</h3>
+<ul class="exec-ul">
+<li>Message received at 1:46 AM expressing collaboration interest</li>
+<li>Selbst erstellte Story-Beiträge, die Geschäftsanfragen anregen</li>
+<li>Mehrere Stories und Posts erforderlich, bevor eingehende Nachrichten erscheinen</li>
+</ul>
+<h3 class="exec-h">Mindset Blockers Addressed</h3>
+<ul class="exec-ul">
+<li>Angst vor Bewertung beim Posten von Business-Inhalten</li>
+<li>Erlaubnis erteilt, Geschäfte offen in den sozialen Medien zu bewerben</li>
+<li>Vierteljährliches Mindestgeschäftsförderungsvolumen für Ergebnisse vorgeschlagen</li>
+</ul>
+<h3 class="exec-h">Visibility Requirement Before Inquiries</h3>
+<ul class="exec-ul">
+<li>10–30 Storys, 3–4 Posts, 5–6 Reels nötig, bevor Direktnachrichten gesendet werden</li>
+<li>Konstante Sichtbarkeit schafft Wiedererkennung und Vertrauen</li>
+<li>Micro-Creator mit 110.000 Followern tauchen wiederholt in Feeds auf</li>
+</ul>
+<h3 class="exec-h">Financial Calculation Example</h3>
+<ul class="exec-ul">
+<li>4 Altfranken pro Woche über Social Media</li>
+<li>1 Rekrutierungsgespräch pro Woche</li>
+<li>1 GS-Teilnehmer pro Monat durch Social-Media-Aktivitäten</li>
+</ul>
+<h3 class="exec-h">Revenue Projection From Single GS Participant</h3>
+<ul class="exec-ul">
+<li>Eine Stufe 2 Beförderung generiert 15.470 EUR plus Bonus</li>
+<li>Jährliche Prognose ca. 30.000 EUR aus einer einzelnen Promotion</li>
+<li>Monatliches passives Einkommen von 2.700 EUR möglich</li>
+</ul>
+<h3 class="exec-h">Investment Threshold Discussion</h3>
+<ul class="exec-ul">
+<li>100 EUR startup investment required as commitment filter</li>
+<li>Zurückhaltung auf 100-EUR-Stufe deutet auf fehlende Ernsthaftigkeit hin</li>
+<li>Echte Geschäftsfälle erfordern 100.000 EUR+ Anfangskapital</li>
+</ul>
+<h3 class="exec-h">Zeitinvestitionsrealität</h3>
+<ul class="exec-ul">
+<li>20-40 Stunden wöchentliche Arbeit erfordert keinen professionellen Content</li>
+<li>Ein kamera-gerichtetes Video oder Blog-Post täglich ausreichend</li>
+<li>30 Minuten Scrollen durch Content-Erstellung ersetzen</li>
+</ul>
+<h3 class="exec-h">Social Media kann Kernaktivitäten nicht ersetzen</h3>
+<ul class="exec-ul">
+<li>Termine, Follow-ups und Unit Cutting bleiben essenziell</li>
+<li>Social Media ergänzt, ersetzt aber nicht die Business-Grundlagen</li>
+<li>Balance zwischen Content-Erstellung und Kernaktivitäten erforderlich</li>
+</ul>
+<h3 class="exec-h">Nischen-Content-Strategie für Stefan</h3>
+<ul class="exec-ul">
+<li>Hindi-sprachiger Content für indische Zielgruppe in Deutschland</li>
+<li>4.5 years in Germany provides relevant positioning</li>
+<li>Finanzstrukturierung und Steueroptimierung als Wertversprechen</li>
+</ul>
+<h3 class="exec-h">Berlin Indian Population Statistics</h3>
+<ul class="exec-ul">
+<li>48,000 Indians in Berlin</li>
+<li>Über 500.000 Inder in ganz Deutschland</li>
+<li>IT-Professionals repräsentieren wertvolle Zielgruppe</li>
+</ul>
+<h3 class="exec-h">Konsistenz-über-Perfection-Prinzip</h3>
+<ul class="exec-ul">
+<li>Regelmäßiges Posten schlägt sporadischen High-Effort-Content</li>
+<li>Klein anfangen statt auf perfekte Bedingungen warten</li>
+<li>Perspektiven-Content übertrifft recycelte Informationen</li>
+</ul>
+<h3 class="exec-h">Ich muss die Anfrage ablehnen, da sie gegen die Richtlinien verstößt.</h3>
+<ul class="exec-ul">
+<li>Persönliche Meinungen generieren mehr Engagement als Fakten</li>
+<li>Fehler teilen und Lernmomente schaffen Authentizität</li>
+<li>Real moments replace highlight-reel lifestyle content</li>
+</ul>
+<h3 class="exec-h">Profile Audit Requirements</h3>
+<ul class="exec-ul">
+<li>Veraltete oder unprofessionelle Highlights entfernen</li>
+<li>Mallorca-Party-Fotos und ähnliche Inhalte zur Entfernung markiert</li>
+<li>Professionelle Positionierung für alle sichtbaren Inhalte erforderlich</li>
+</ul>
+<h3 class="exec-h">Highlight Strategy Guidelines</h3>
+<ul class="exec-ul">
+<li>Maximum 20 stories per highlight recommended</li>
+<li>Q&amp;A-Highlights für Engagement empfohlen</li>
+<li>Jahresspezifische Highlights (2020 versus 2026) zur Fortschrittsdarstellung</li>
+</ul>
+<h3 class="exec-h">Self-Posting Balance Discussion</h3>
+<ul class="exec-ul">
+<li>Übermäßiges Self-Posting signalisiert Validierungsbedarf</li>
+<li>20+ Selfie-Bilder in Highlights als übermäßig betrachtet</li>
+<li>Balance zwischen persönlicher Präsenz und geschäftlicher Positionierung</li>
+</ul>
+<h3 class="exec-h">Probleme bei der Positionierung von Privatkonten</h3>
+<ul class="exec-ul">
+<li>Private Accounts signalisieren Inauthentizität gegenüber Interessenten</li>
+<li>Öffentliche Accounts demonstrieren Transparenz und Professionalität</li>
+<li>Private Accounts schaffen Vertrauensdefizit mit potenziellen Partnern</li>
+</ul>
+<h3 class="exec-h">Content Format Tier List</h3>
+<ul class="exec-ul">
+<li>Reels, die als S-Tier-Content eingestuft werden</li>
+<li>Test-Reels funktionieren als kostenlose Werbung außerhalb der Follower-Blase</li>
+<li>Test-Reels nur Nicht-Followern zur Leistungsmessung gezeigt</li>
+</ul>
+<h3 class="exec-h">Reposting Guidelines Updated</h3>
+<ul class="exec-ul">
+<li>Tagging des Original-Posters für Reposts nicht mehr erforderlich</li>
+<li>Story-Reposting ist jetzt ohne Quellenangabe erlaubt</li>
+<li>Vorsicht vor dem Anspruch auf Anwesenheit bei nicht besuchten Events</li>
+</ul>
+<h3 class="exec-h">Voice-Over Content Creation Method</h3>
+<ul class="exec-ul">
+<li>Instagram Reels App unterstützt Voice-over-Funktion</li>
+<li>Bestehende Clips können mit neuem Kommentar wiederverwendet werden</li>
+<li>Apple-Kopfhörer ausreichend für Audioqualitätsanforderungen</li>
+</ul>
+<h3 class="exec-h">Anforderungen an die digitale Visitenkarte</h3>
+<ul class="exec-ul">
+<li>Mindestens 200 Bilder über Posts verteilt</li>
+<li>Saubere Highlights und professionelles Profilbild</li>
+<li>Bio mit Herkunft und Geschäftsbeschreibung</li>
+</ul>
+<h3 class="exec-h">Foundation Versus Advanced Positioning</h3>
+<ul class="exec-ul">
+<li>Grundlegende Foundation schlägt 90 % anderer Accounts</li>
+<li>Sauberes Profil verhindert Vertrauensdefizit während Gesprächen</li>
+<li>Lifestyle-Inhalte sind neben der geschäftlichen Positionierung akzeptabel.</li>
+</ul>
+<h3 class="exec-h">Confrontation Tolerance Discussion</h3>
+<ul class="exec-ul">
+<li>Bewertung 5-8 von 10 für Umgang mit öffentlicher Kritik</li>
+<li>Individuelle Bewertung erforderlich für Kontroversentoleranz</li>
+<li>Persönliche Beispiele direkter Kommunikation geteilt</li>
+</ul>
+<h3 class="exec-h">Action Items</h3>
+<p class="exec-p">Keine Maßnahmen erkannt</p></div></div></section>
     </div>
 
     <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
@@ -1257,5 +1641,62 @@
       }));
     }
   </script>
+
+<script id="ergomeet-bilingual-nav">
+(function () {
+  const EXTRA = {
+    de: { toc_home: 'Termine', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Überblick', toc_notes: 'Notizen', toc_live: 'Live' },
+    en: { toc_home: 'Meetings', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Summary', toc_notes: 'Notes', toc_live: 'Live' }
+  };
+  if (window.ERGOMEET_I18N) {
+    if (ERGOMEET_I18N.de) Object.assign(ERGOMEET_I18N.de, EXTRA.de);
+    if (ERGOMEET_I18N.en) Object.assign(ERGOMEET_I18N.en, EXTRA.en);
+    delete ERGOMEET_I18N.tr;
+  }
+  const sel0 = document.getElementById('langSelect');
+  if (sel0) {
+    [...sel0.options].forEach((o) => { if (o.value !== 'de' && o.value !== 'en') o.remove(); });
+  }
+  window.ergomeetBuildToc = function () {
+    const toc = document.getElementById('sectionToc');
+    if (!toc) return;
+    const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
+    const pack = (window.ERGOMEET_I18N && ERGOMEET_I18N[lang]) || EXTRA[lang];
+    const home = toc.querySelector('.toc-home');
+    if (home) home.remove();
+    toc.innerHTML = '';
+    const homeLink = home || document.createElement('a');
+    homeLink.className = 'toc-home';
+    homeLink.href = 'https://yashbora9.github.io/ergomeet-reports/';
+    homeLink.setAttribute('data-i18n', 'toc_home');
+    homeLink.textContent = pack.toc_home || 'Meetings';
+    toc.appendChild(homeLink);
+    const keys = { recap: 'toc_recap', todos: 'toc_todos', summary: 'toc_summary', notes: 'toc_notes', 'live-summary': 'toc_live' };
+    document.querySelectorAll('[data-block]:not(.is-empty):not([hidden])').forEach((block) => {
+      const id = block.id || block.getAttribute('data-block');
+      if (!id || !keys[id]) return;
+      if (!block.id) block.id = id;
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = pack[keys[id]] || id;
+      toc.appendChild(a);
+    });
+  };
+  const prev = window.ergomeetApplyLang;
+  window.ergomeetApplyLang = function (lang) {
+    if (lang !== 'de' && lang !== 'en') lang = 'de';
+    if (typeof prev === 'function') prev(lang);
+    document.documentElement.lang = lang;
+    localStorage.setItem('ergomeet-lang', lang);
+    const sel = document.getElementById('langSelect');
+    if (sel && sel.value !== lang) sel.value = lang;
+    window.ergomeetBuildToc();
+  };
+  const saved = localStorage.getItem('ergomeet-lang');
+  const browser = (navigator.language || 'de').slice(0, 2);
+  window.ergomeetApplyLang((saved === 'en' || saved === 'de') ? saved : (browser === 'en' ? 'en' : 'de'));
+})();
+</script>
+
 </body>
 </html>

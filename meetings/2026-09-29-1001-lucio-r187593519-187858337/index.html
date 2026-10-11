@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="dark">
+<html data-ergomeet-bilingual="1" lang="de" data-theme="dark">
 <head>
   <meta name="robots" content="noindex, nofollow" />
   <meta charset="utf-8"/>
@@ -605,18 +605,43 @@
       text-transform: uppercase;
       color: var(--muted);
     }
+  
+    /* ergomeet-bi */
+    .topbar-inner { justify-content: space-between; }
+    .topbar .toc {
+      display: flex !important;
+      flex: 1 1 auto;
+      min-width: 0;
+      margin: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      gap: 6px;
+    }
+    .topbar .toc::-webkit-scrollbar { display: none; }
+    .topbar .toc a { white-space: nowrap; flex-shrink: 0; }
+    html[lang="en"] .bi-de { display: none !important; }
+    html[lang="de"] .bi-en { display: none !important; }
+    span.bi-en, span.bi-de { display: inline; }
+    div.bi-en, div.bi-de { display: block; }
+    @media (max-width: 820px) {
+      .topbar-inner { flex-wrap: wrap; }
+      .topbar .toc { order: 2; flex-basis: 100%; }
+    }
+
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
+      <nav class="toc" id="sectionToc" aria-label="Sections">
+        <a class="toc-home" href="https://yashbora9.github.io/ergomeet-reports/" data-i18n="toc_home">Meetings</a>
+      </nav>
       <div class="topbar-controls">
         <select id="langSelect" class="lang-select" aria-label="Language">
           <option value="de">DE</option>
           <option value="en">EN</option>
-          <option value="tr">TR</option>
         </select>
-        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+<button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
           <span class="icon-sun" aria-hidden="true">☀</span>
           <span class="icon-moon" aria-hidden="true">☾</span>
           <span id="themeToggleLabel" data-i18n="theme_light">Light</span>
@@ -641,19 +666,194 @@
     </header>
 
     <!-- No empty shell under the heading: blocks only appear when builder marks them present -->
-    <nav class="toc" id="sectionToc" aria-label="Sections"></nav>
-    <div class="stack" id="reportStack">
+<div class="stack" id="reportStack">
       <section class="section block recap-card" id="recap" data-block="recap">
 <div class="section-label" data-i18n="lbl_recap">60 seconds</div>
 <h2 data-i18n="recap">Recap</h2>
 <div class="recap-grid">
-<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text">Ein Coaching zur Manifestation von Erfolg durch das Annehmen einer „Main Character“-Mentalität.</p></div>
-<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li>„Main Character“-Mentalität: Nimm die Rolle des „Main Character“ an, nicht die eines „Non-Playable Character“ (NPC). Das bedeutet, eine bewusste Geschichte zu erschaffen, die spannend ist und die Aufmerksamkeit des Universums auf sich zieht.</li><li>5-Sinne-Manifestation: Nutze alle fünf Sinne, um deine Zielrealität zu erleben. Das schafft eine starke „Frequenz“, die Erfolg anzieht.</li><li>Ergebnisorientierter Kreislauf: Beginne mit dem *Ergebnis*, nicht mit dem Glauben. Das Ergebnis → Peak Performance → Aktionen → Glaube. Das ist der Kreislauf der Erfolgreichen, der den häufigen Misserfolgszyklus von NPCs umkehrt.</li></ul></div>
-<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li>Erschaffe eine spannende Geschichte und proklamiere sie mit Energie.</li><li>Nutze alle fünf Sinne, um deine Zielrealität zu erleben.</li><li>Beginne den ergebnisorientierten Kreislauf, indem du dein Ziel als bereits erreicht visualisierst.</li></ul></div>
-<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li>Den Preis zahlen: Investiere Zeit und Mühe in dein Business wie in ein Studium oder eine Ausbildung. Das ist der Preis für den Erfolg, und die ersten Jahre sind eine Investition, nicht ein Verlust.</li><li>Sei der „Main Character“ deiner Geschichte, nicht ein NPC.</li></ul></div>
+<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text" data-topic-en="A coaching session on manifesting success by adopting a “Main Character” mentality." data-topic-de="Ein Coaching zur Manifestation von Erfolg durch das Annehmen einer „Main Character“-Mentalität."><span class="bi-en">A coaching session on manifesting success by adopting a “Main Character” mentality.</span><span class="bi-de">Ein Coaching zur Manifestation von Erfolg durch das Annehmen einer „Main Character“-Mentalität.</span></p></div>
+<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li><span class="bi-en">„Main Character“ mentality: Adopt the role of the „Main Character“, not that of a „Non-Playable Character“ (NPC). This means consciously creating a story that is exciting and attracts the attention of the universe.</span><span class="bi-de">„Main Character“-Mentalität: Nimm die Rolle des „Main Character“ an, nicht die eines „Non-Playable Character“ (NPC). Das bedeutet, eine bewusste Geschichte zu erschaffen, die spannend ist und die Aufmerksamkeit des Universums auf sich zieht.</span></li><li><span class="bi-en">5-Sense-Manifestation: Use all five senses to experience your target reality. This creates a strong „frequency“ that attracts success.</span><span class="bi-de">5-Sinne-Manifestation: Nutze alle fünf Sinne, um deine Zielrealität zu erleben. Das schafft eine starke „Frequenz“, die Erfolg anzieht.</span></li><li><span class="bi-en">Result-oriented cycle: Start with the *result*, not with belief. The result → Peak Performance → Actions → Belief. This is the cycle of the successful, which reverses the common failure cycle of NPCs.</span><span class="bi-de">Ergebnisorientierter Kreislauf: Beginne mit dem *Ergebnis*, nicht mit dem Glauben. Das Ergebnis → Peak Performance → Aktionen → Glaube. Das ist der Kreislauf der Erfolgreichen, der den häufigen Misserfolgszyklus von NPCs umkehrt.</span></li></ul></div>
+<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li><span class="bi-en">Create an exciting story and proclaim it with energy.</span><span class="bi-de">Erschaffe eine spannende Geschichte und proklamiere sie mit Energie.</span></li><li><span class="bi-en">Use all five senses to experience your target reality.</span><span class="bi-de">Nutze alle fünf Sinne, um deine Zielrealität zu erleben.</span></li><li><span class="bi-en">Begin the results-oriented cycle by visualizing your goal as already achieved.</span><span class="bi-de">Beginne den ergebnisorientierten Kreislauf, indem du dein Ziel als bereits erreicht visualisierst.</span></li></ul></div>
+<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li><span class="bi-en">Pay the price: Invest time and effort in your business like in a degree or training program. This is the price of success, and the first years are an investment, not a loss.</span><span class="bi-de">Den Preis zahlen: Investiere Zeit und Mühe in dein Business wie in ein Studium oder eine Ausbildung. Das ist der Preis für den Erfolg, und die ersten Jahre sind eine Investition, nicht ein Verlust.</span></li><li><span class="bi-en">Be the “Main Character” of your story, not an NPC.</span><span class="bi-de">Sei der „Main Character“ deiner Geschichte, nicht ein NPC.</span></li></ul></div>
 </div></section>
-      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Erschaffe eine spannende Geschichte und proklamiere sie mit Energie.</span></li><li><span class="todo-task">Nutze alle fünf Sinne, um deine Zielrealität zu erleben.</span></li><li><span class="todo-task">Beginne den ergebnisorientierten Kreislauf, indem du dein Ziel als bereits erreicht visualisierst.</span></li><li><span class="todo-task">Investiere Zeit und Mühe in dein Business wie in ein Studium.</span></li><li><span class="todo-task">Besuche alle Team-Meetings und Coachings.</span></li><li><span class="todo-task">Bringe am Donnerstag ein Buch mit.</span></li><li><span class="todo-task">Das „Warum“ definieren und visualisieren (5-Whys, Blacklist/Whitelist, Zielcollage).</span></li><li><span class="todo-task">Hindernisse beseitigen (Ablenkungs-/Verzichtsliste, Taddeus-Corona-Übung).</span></li><li><span class="todo-task">Eine Fokus-Routine einführen (Morgen-/Abendreflexion, 21 Gründe).</span></li><li><span class="todo-task">Einen konkreten Rekrutierungsplan erstellen, um 8–15 direkte Einsteiger zu gewinnen.</span></li><li><span class="todo-task">Den Plan konsequent umsetzen, ohne Abweichungen.</span></li></ul></section>
-      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><div class="part-block"><h3 class="part-title">Part 1 · 10:01–10:38</h3>
+      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task"><span class="bi-en">Create an exciting story and proclaim it with energy.</span><span class="bi-de">Erschaffe eine spannende Geschichte und proklamiere sie mit Energie.</span></span></li><li><span class="todo-task"><span class="bi-en">Use all five senses to experience your target reality.</span><span class="bi-de">Nutze alle fünf Sinne, um deine Zielrealität zu erleben.</span></span></li><li><span class="todo-task"><span class="bi-en">Begin the results-oriented cycle by visualizing your goal as already achieved.</span><span class="bi-de">Beginne den ergebnisorientierten Kreislauf, indem du dein Ziel als bereits erreicht visualisierst.</span></span></li><li><span class="todo-task"><span class="bi-en">Invest time and effort in your business like in a degree program.</span><span class="bi-de">Investiere Zeit und Mühe in dein Business wie in ein Studium.</span></span></li><li><span class="todo-task"><span class="bi-en">Attend all team meetings and coaching sessions.</span><span class="bi-de">Besuche alle Team-Meetings und Coachings.</span></span></li><li><span class="todo-task"><span class="bi-en">Bring a book on Thursday.</span><span class="bi-de">Bringe am Donnerstag ein Buch mit.</span></span></li><li><span class="todo-task"><span class="bi-en">Define and visualize the “Why” (5-Whys, Blacklist/Whitelist, target collage).</span><span class="bi-de">Das „Warum“ definieren und visualisieren (5-Whys, Blacklist/Whitelist, Zielcollage).</span></span></li><li><span class="todo-task"><span class="bi-en">Remove obstacles (distraction/abstinence list, Taddeus-Corona exercise).</span><span class="bi-de">Hindernisse beseitigen (Ablenkungs-/Verzichtsliste, Taddeus-Corona-Übung).</span></span></li><li><span class="todo-task"><span class="bi-en">Introduce a focus routine (morning/evening reflection, 21 reasons).</span><span class="bi-de">Eine Fokus-Routine einführen (Morgen-/Abendreflexion, 21 Gründe).</span></span></li><li><span class="todo-task"><span class="bi-en">Create a concrete recruitment plan to attract 8–15 direct-entry hires.</span><span class="bi-de">Einen konkreten Rekrutierungsplan erstellen, um 8–15 direkte Einsteiger zu gewinnen.</span></span></li><li><span class="todo-task"><span class="bi-en">Consistently implement the plan without deviations.</span><span class="bi-de">Den Plan konsequent umsetzen, ohne Abweichungen.</span></span></li></ul></section>
+      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><div class="bi-en"><div class="part-block"><h3 class="part-title">Part 1 · 10:01–10:38</h3>
+<h3 class="exec-h">Purpose of the Meeting</h3>
+<p class="exec-p">A coaching session on manifesting success by adopting a “Main Character” mentality.</p>
+<h3 class="exec-h">Wichtigste Erkenntnisse</h3>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>„Main Character“ mentality:</strong> Adopt the role of the „Main Character“, not that of a „Non-Playable Character“ (NPC). This means consciously creating a story that is exciting and attracts the attention of the universe.</li>
+<li><strong>5-Sinne-Manifestation:</strong> Use all five senses to experience your target reality. This creates a strong „frequency“ that attracts success.</li>
+<li><strong>Ergebnisorientierter Kreislauf:</strong> Start with the *result*, not with belief. The result → Peak Performance → Actions → Belief. This is the cycle of successful people, which reverses the common failure cycle of NPCs.</li>
+<li><strong>Pay the price:</strong> Invest time and effort in your business as you would in a degree or apprenticeship. This is the price of success, and the first years are an investment, not a loss.</li>
+</ul>
+</ul>
+<h3 class="exec-h">Themen</h3>
+<h4 class="exec-h2">The „Main Character“ mentality</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Be the “Main Character” of your story, not an NPC.</li>
+<li>Create an exciting story that attracts the attention of the universe.</li>
+<li>Ignore the opinions of others; your truth is your own.</li>
+<li>Proclaim your story with energy and frequency.</li>
+<li><strong>Beispiel:</strong> Two rappers (Capital, Kapital Bra) from the same school became superstars because they shared the same „frequency“.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Manifestation with all 5 senses</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Stimulate all five senses to generate a strong „frequency“ that attracts success.</li>
+<li><strong>Geschmack:</strong> Drink Veuve Clicquot (the champagne of the „Big Boys“) or a non-alcoholic alternative such as Apfelschorle to experience the taste of success.</li>
+<li><strong>Sehen:</strong> Close your eyes and manifest your target reality.</li>
+<li><strong>Feel:</strong> Wear a high-quality suit or dress to feel the texture of success.</li>
+<li><strong>Riechen:</strong> Use a distinctive scent (e.g., Axe „Billionaire“) to smell your goal.</li>
+<li><strong>Hear:</strong> Listen to a motivational playlist to hear the sounds of your success.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">The result-oriented cycle</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Successful people start with the *result* and create a positive cycle:</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Ergebnis:</strong> Visualize and experience your goal as already achieved.</li>
+<li><strong>Potenzial:</strong> The result unleashes your full potential.</li>
+<li><strong>Aktion:</strong> The released potential leads to Peak Performance.</li>
+<li><strong>Glaube:</strong> Peak Performance generates a strong, unshakable belief.</li>
+</ul>
+</ul>
+<li><strong>Vergleich:</strong> NPCs start with belief. Doubt → limited potential → poor actions → poor results → even more doubt.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Pay the price</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Success requires an investment of time and effort.</li>
+<li><strong>Beispiel:</strong> The first 2–5 years of your business are an investment, not a loss.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>2 Jahre ohne Gewinn → 1.000 € Gewinn</li>
+<li>5 years without profit → millionaire</li>
+</ul>
+</ul>
+<li>Invest in your business like in a degree or training (3+ years).</li>
+<li><strong>Beispiel:</strong> Lucios VIP experience showed how a “Main Character” mentality shapes reality.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Begegnung 1:</strong> Traf einen Fahrradteile-Hersteller (3 Mio. € Umsatz, 5.000 Mitarbeiter).</li>
+<li><strong>Begegnung 2:</strong> Met a rapper (“Worschein”) and networked immediately.</li>
+<li><strong>Begegnung 3:</strong> Accidentally sat in a reserved seat but was not removed because he radiated the energy of belonging there.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+</div>
+<div class="part-block"><h3 class="part-title">Part 2 · 19:02–20:51</h3>
+<h3 class="exec-h">Purpose of the Meeting</h3>
+<p class="exec-p">A 6-step plan to reach Stufe 3 in the next 99 days.</p>
+<h3 class="exec-h">Wichtigste Erkenntnisse</h3>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Dringlichkeit:</strong> There are 99 days left until the end of the year (January 6) to reach Stufe 3 – a crucial milestone that transforms mindset and financial situation by 180°.</li>
+<li><strong>The “Why” is the engine:</strong> A deep, emotional “Why” is the engine for success. Use the “5-Whys” method to find your core motivation, and use a Blacklist/Whitelist to visualize it.</li>
+<li><strong>Hindernisse beseitigen:</strong> Success is subtraction, not addition. Remove distractions and negative influences. The “Taddeus-Corona exercise” evaluates your environment; a score below 2.0 indicates an environment that actively hinders success.</li>
+<li><strong>The tactic is simple:</strong> All recruitment methods work. The plan is to win 8–15 direct new entrants and supply them with 15 VG appointments. The challenge lies in consistent execution, not in the strategy.</li>
+</ul>
+</ul>
+<h3 class="exec-h">Themen</h3>
+<h4 class="exec-h2">The 99-day challenge to Stufe 3</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Stufe 3 is the most important milestone in the business, requiring a complete personal and professional transformation.</li>
+<li>The fight for Stufe 3 is a “turning point” that transforms mindset, self-confidence, and financial situation by 180°.</li>
+<li>Lucio reached Stufe 3 after starting with 0 units in September 2024, proving that success is achievable for everyone.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Schritt 1: Ziel setzen</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>The goal is clear: reach Stufe 3 by January 6, 2027.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Step 2: Define the “Why”</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>A strong “Why” is the engine that drives execution.</li>
+<li><strong>„5-Whys“-Methode:</strong> Frage „Warum?“ mindestens 3–5 Mal, um deine Kernmotivation zu finden.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>*Example:* “I want money.” → “Why?” → “For recognition.” → “Why?” → “To prove to myself that I can be successful.”</li>
+</ul>
+</ul>
+<li><strong>Visualisierungstools:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Blacklist:</strong> Personen, denen du deinen Erfolg beweisen willst.</li>
+<li><strong>Whitelist:</strong> People who have supported you and whom you want to thank.</li>
+<li><strong>Zielcollage:</strong> A visual representation of your life after reaching Stufe 3.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">Schritt 3: Hindernisse beseitigen</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Success is subtraction. Remove distractions before you begin execution.</li>
+<li><strong>Ablenkungsliste:</strong> List all things that distract you from focus.</li>
+<li><strong>Verzichtsliste:</strong> List all things you will give up for the next 99 days.</li>
+<li><strong>The “Taddeus-Corona exercise”:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<li>List the 10 people with whom you spend the most time.</li>
+<li>Rate each person: 3 (helps you achieve your goals), 2 (on equal footing), 1 (holds you back).</li>
+<li>Calculate the average value.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Ergebnis \&lt; 2,0:</strong> Your environment actively hinders success.</li>
+<li><strong>Ergebnis \&gt; 2,2:</strong> Your environment supports success.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">Schritt 4: Fokus aufbauen</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Focus is the value of your word to yourself.</li>
+<li><strong>Fokus-Tools:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Morgenroutine:</strong> Start the day with clear focus.</li>
+<li><strong>„Stille Stunde“:</strong> One hour without a phone to reflect and plan.</li>
+<li><strong>21 reasons for success:</strong> List 200–250 reasons for success daily to internalize the “why”.</li>
+<li><strong>Abendliche Reflexion:</strong> End the day with a review of progress and planning for the next day.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">Step 5: Implement the plan</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>The strategy is simple: win 8–15 direct starters and supply them with 15 VG appointments.</li>
+<li><strong>Rekrutierung:</strong> All five methods work. The challenge lies in consistent implementation.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Lucio-Beispiel:</strong> 8 direct starters were won through a mix of name list, DK, social media, and networking.</li>
+</ul>
+</ul>
+<li><strong>Struktur:</strong> First win starters to build momentum. Only then build strategic “chains” once you have enough starters to place.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Schritt 6: Durchziehen</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Stick consistently to the plan without deviations.</li>
+<li>These 6 steps are a universal success recipe that can be applied to any goal.</li>
+</ul>
+</ul>
+</div></div><div class="bi-de"><div class="part-block"><h3 class="part-title">Part 1 · 10:01–10:38</h3>
 <h3 class="exec-h">Zweck des Meetings</h3>
 <p class="exec-p">Ein Coaching zur Manifestation von Erfolg durch das Annehmen einer „Main Character“-Mentalität.</p>
 <h3 class="exec-h">Wichtigste Erkenntnisse</h3>
@@ -829,14 +1029,291 @@
 <li>Diese 6 Schritte sind ein universelles Erfolgsrezept, das auf jedes Ziel angewendet werden kann.</li>
 </ul>
 </ul>
-</div></div></details>
+</div></div></div></details>
       
       
       
       
       
       
-      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><h3 class="exec-h">Das Universum Ist Super Simpel Das</h3>
+      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><div class="bi-en"><h3 class="exec-h">The universe is super simple.</h3>
+<ul class="exec-ul">
+<li>The universe is super simple, the universe loves spice, the universe loves heat, the universe loves, that doesn’t just mean, the universe loves, that relaxes, that means you have to be something, Quarine, we…</li>
+<li>I’m telling you a story, a true story. In 2014, I was also at Wunderwaffels, I was still working there briefly, I was at Wunderwaffels, so, mainly with a friend, so, and we were chatting with…</li>
+<li>And that's why I say it's the most important topic, because I'm firmly convinced that for everyone in every room, writing Stufe 3 is the hardcore battle that most people in this business have to win,…</li>
+<li>So, I'm going to pull up my history again right now—not my left history, but my history from Stufe 3 and what I did and so on.</li>
+<li>And believe me when I tell you, writing Stufe 3 is the best thing most people can do for us.</li>
+<li>The writing of Stufe 3 is above all this key sticking point in this business, this sticking point where most of it then also starts.</li>
+</ul>
+<h3 class="exec-h">And that's why I say who knew</h3>
+<ul class="exec-ul">
+<li>And that's why I'm saying, who knew exactly that we have 99 days on the table closing, honestly, one person in the morning, and that shows me, you're all just quietly on 3er Kuss.</li>
+<li>It could be that one of you in this room, or two or three, or hopefully four, five, six or more, actually stumbles into the three and ends up in the system with 3,500 or more on the 6th.</li>
+<li>But for me it means writing Stufe and writing Stufe at the level where we say, I take the best with me.</li>
+<li>with and from the shrine of the levels for me, for my life, for my future, you only do that if you have a plan, you only do that if you have a course, you only mean that if you damn well know, je…</li>
+<li>If someone in the room had raised their hand when I asked how much time was left, and it was a person who knew, that would mean only one person in the room had given it enough thought…</li>
+<li>And now, do we still need questions about which time we haven't entered yet, and I think you need to address the question of business energy and how much time I still have left?</li>
+</ul>
+<h3 class="exec-h">That means if you have a room</h3>
+<ul class="exec-ul">
+<li>That means if you write a room, high room, a room 5, room 6, if you are inherited, then you get the Wörfli Co.</li>
+<li>Yes, so for those who don't know, I was back then on the 6th.</li>
+<li>January 2025, so I played in the Zweikhalter 2024.</li>
+<li>So every September, every year again, in September 2021 I started at ERGO.</li>
+<li>Because before the 3 I was a completely different person than after the 3.</li>
+<li>Most of you are sitting here in the room, and for me there’s always the business going to the 3, where you sometimes have small Gaumsätze and they still...</li>
+</ul>
+<h3 class="exec-h">In level 3 I have</h3>
+<ul class="exec-ul">
+<li>In Stufe 3, I had to leave everything negative inside me outside of me in order to reach the goal.</li>
+<li>And when you then see your goal before your eyes, feel your goal on your skin, taste your goal between your lips, hear your goal in your ears, where are you?</li>
+<li>So you have to imagine, I 0 units, so someone has much worse than 0 units in the main average.</li>
+<li>And I want to make a concrete plan with you, really Pout to Nuff, this up, so how can I really do that?</li>
+<li>And then I don't get asked about the thing at all, so how am I really on the 6th.</li>
+<li>January 2027 really in Stufe 3 and have really changed everything in my life.</li>
+</ul>
+<h3 class="exec-h">And We Do This Now Together</h3>
+<ul class="exec-ul">
+<li>And we do this now together here in Stufe 3 and then we can do it together at home, alone for your self-determination a bit more intensively.</li>
+<li>So, the very first thing you do, that's the first thing you have to do when you want to go somewhere, when you make the plan, you have to set the goal.</li>
+<li>So, the very first thing we have to do together now, we determine a goal.</li>
+<li>And I have already set that for you, for every single person in the room, so if you don't believe in the 3, then do my thing tonight again for Stufe 2, but I am in 3 months Stufe fight,…</li>
+<li>The second thing I do, and there I want to with you, I go like this, the second thing I do every time when I take my goal, that's a scheme how to achieve goals, works successfully, and there…</li>
+<li>So if I had set myself the goal of weighing 75 kilos by the sixth year 2027, and having a body fat percentage of twelve percent, to be trained, then I would have done it the same way, if I had done it the same way…</li>
+</ul>
+<h3 class="exec-h">Because I Can Do That Every Year</h3>
+<ul class="exec-ul">
+<li>Because I can do that every year, I can show you that I do that every year, I have torn it out now, because above all I haven't achieved everything, because I believe now, but because I have done that again every year.</li>
+<li>That's why we really start, thoughts run free, that we go to Stufe 4 here or something.</li>
+<li>Let's take Stufe 4 here now, as I said, or?</li>
+<li>So really concrete, a statement, a thought, what does that mean?</li>
+<li>Why 3er at the damn Erdbegruppe, at some insurance sales in Germany?</li>
+<li>So you really have to, if you have really achieved one thing, then you really have to understand, yes?</li>
+</ul>
+<h3 class="exec-h">Well So That's Such A</h3>
+<ul class="exec-ul">
+<li>Well, so, that's such a point, think about it, now I'll give you a few other points.</li>
+<li>I just really want to earn money, time though, so not stuck in a temporary employment relationship, because I know.</li>
+<li>So Stufe 3 has to be the confirmation that this business works and can become successful.</li>
+<li>Stufe 3 was for me the confirmation of the shit customer orientation.</li>
+<li>Because that's a confirmation for me, the business really works, because Stufe 2 is open.</li>
+<li>And with us, Stufe 2 is often simply the sum of that, good Struck, good conversion.</li>
+</ul>
+<h3 class="exec-h">Because I Told Myself Back Then</h3>
+<ul class="exec-ul">
+<li>Because I told myself back then, if I manage this once, I set myself a goal now, for something that is incomparable to me and I get it done, that makes no sense, right?</li>
+<li>And then also outside of business, it is yet a habit to act and think, can I keep going, right?</li>
+<li>And then we hold on, because now you know what is at stake in the game, because exactly a little positive can be, you can also prove to yourself that you did not succeed.</li>
+<li>Because I told myself back then, if I do not write the three now, then I prove to myself with that, that I cannot travel here, or not as the current girl, that I do not present a thing here…</li>
+<li>I saw people, missed some structure selection of medium Stufen, and when the medium takes 1.5 years, you know that you have subconscious first.</li>
+<li>Jetzt hier in denmouthschtenandaarab und dreht euch komplett um 180 Grad um.</li>
+</ul>
+<h3 class="exec-h">Oversee for example sometime when you</h3>
+<ul class="exec-ul">
+<li>überwarten for example at some point, when you yes also then, yes is this here, that with us does.</li>
+<li>Because the most belief that is given to you, are the people also given for that.</li>
+<li>Then we really do a goal collage, the next 99 days, what will my life look like then?</li>
+<li>many people implement me, but I would recommend that to you, because I am in my room, you have to imagine, I can show you photos of what my childhood room looks like.</li>
+<li>Yes, so with me it is really everywhere, I only do not have on the ceiling, we have in the offices even on the ceiling in the bed.</li>
+<li>If you make everything you do holy or not with full conviction, you have to be in full manifestation, you have to be in full miliere, then it is perhaps still a little, yes, all good, then…</li>
+</ul>
+<h3 class="exec-h">Most People Are That For</h3>
+<ul class="exec-ul">
+<li>Most people are that for them That is a 6er woman.</li>
+<li>Du verlierst in den ersten 2 Jahren kein Geld an.</li>
+<li>But in 2 years I transfer you 1,000 Euro.</li>
+<li>What did you really fall in love with in those 2 years, if you get a minute at the beginning of the year?</li>
+<li>Yes, and what is it for the 2 years in love now?</li>
+<li>Okay, so everyone we have won at the place, that is finished, many people are also caught in that, who has it hard, who has it hard, that some people have stood out, honestly, who has it hard, that some people e…</li>
+</ul>
+<h3 class="exec-h">It Goes Afterwards And Gets Because</h3>
+<ul class="exec-ul">
+<li>It goes afterwards and gets, because it is probably my last chance.</li>
+<li>Yes, because this person also stood only in one, like me.</li>
+<li>There were 1, 2, 3, 4, persons, to whom I did not come fixed, that I did not reach.</li>
+<li>Because I'm also such an ego-type who said how shitty it would be if in the end another person manages it and I don't.</li>
+<li>I know, it's already a question whether it's in this area, but in this area it's also a look, my tip for you is, wait, wait, wait, wait, wait, wait, wait, my tip for you is it.</li>
+<li>We're all running here towards a goal, one hundred percent.</li>
+</ul>
+<h3 class="exec-h">Once Again A Pulse In It We</h3>
+<ul class="exec-ul">
+<li>once again a pulse in it, we maybe continue with the next topics, connect, so commit yourselves.</li>
+<li>Commit yourselves, sometimes it's enough one person, maybe two, maybe it's a friend, maybe it's a person who is already in this Stufe.</li>
+<li>We can say about you today, you live in a Reißländer of the world, in a one of the West, in an interdependence, in a West, West.</li>
+<li>We have sports everywhere, we have to every day simply no Germany, if not someone asks, do you want to go today, say once, you say.</li>
+<li>Can the people chase the facts for too long?</li>
+<li>For those who don't know, there's an Indio, that's a black credit card, there we maybe have right, there we have 6,000 people in this world, there I invited myself.</li>
+</ul>
+<h3 class="exec-h">Have I Connected With Those The</h3>
+<ul class="exec-ul">
+<li>Have I connected with those, the one who directly asked about Instagram, it followed me in, I came to, we maybe come home, we have eternal friends.</li>
+<li>Directly we didn't understand, he has his own lodge there, do you know what he said with the market?</li>
+<li>I go down, into the DLK sector, that's a frontage, suddenly all the Kommis come, those on Legas and such like they are, suddenly I see, I'm sitting here, I'm sitting there, where the time sat, on a…</li>
+<li>I continue at the Losung, who needs it?</li>
+<li>I need again, when I rose, I hold myself to the function, energy, fair, fair.</li>
+<li>No, I trust myself, excusers, because people were in the consideration, I'm there, because I only have a lending like a distance.</li>
+</ul>
+<h3 class="exec-h">Glaubt Ihr Irgendein Mensch Hat Mir</h3>
+<ul class="exec-ul">
+<li>Do you believe, any human has ever explained to me, how she is subject to, where he writes the pieces 3?</li>
+<li>So I'm the biggest example of that, that if you simply only have a goal and you really simply know why, you don't even need a piece, don't need anyone.</li>
+<li>So you always said, when the business partner has caused a thing, why not, so yes I didn't know it.</li>
+<li>So what did I have, what my answer made?</li>
+<li>So if you really had wanted it, then you would have found a way to find into the house, or?</li>
+<li>So if you really wanted to hear the answer, then you would have found the way to get this goddamn answer.</li>
+</ul>
+<h3 class="exec-h">Also Get Rid Of The Great</h3>
+<ul class="exec-ul">
+<li>Also, get rid of the great distractions.</li>
+<li>So, roll out the things, are things that you can distract yourselves through.</li>
+<li>September 2023, because they had me there, yeah, I still have the stuff, I didn't have that outside.</li>
+<li>The only way we fail to reach a goal that is fundamentally achievable, even though we want to reach it, is if we get distracted along the way.</li>
+<li>So, let me introduce myself: I'm here and I want to go to Kjell, right?</li>
+<li>Because it's the only way I can actually reach you, that I get ahead of you, that I distract you from something more important at that moment and something more important, right?</li>
+</ul>
+<h3 class="exec-h">And then you do it calmly first</h3>
+<ul class="exec-ul">
+<li>And then you just do first, second, third, fourth, fifth.</li>
+<li>You do one, and this is very important.</li>
+<li>Make my waiver list for my goal, for study 3, point on the 7th.</li>
+<li>Januar, 3.20 Uhr, verzichte dich.</li>
+<li>Who is doing the waiver list?</li>
+<li>Back to the situation, don't skip over it, 3, 4 minutes, you do that.</li>
+</ul>
+<h3 class="exec-h">Okay friends, so we can now</h3>
+<ul class="exec-ul">
+<li>Okay, friends, so we can probably keep going for a very, very long time.</li>
+<li>Then you understand yourselves, every person lives on the BIP-Gesieftchen, you like to have a check, the heir bought, follow us, what has the person gained in this business over the last two decades.</li>
+<li>I have to say one thing, we need to keep a thumb on the basics.</li>
+<li>So at some point the day comes, the day, and when that day comes, you decide where you really look in the mirror, just like that, and really take a look at yourselves.</li>
+<li>In the matching-setting football, a scout comes who only sees you, how you play, he doesn't see the excuses.</li>
+<li>He also doesn't see that you, yes, had a turning point, just released from the trap.</li>
+</ul>
+<h3 class="exec-h">And I noticed one thing</h3>
+<ul class="exec-ul">
+<li>And one thing I noticed, so I think the two main singers at Lange Wachbein, yeah, but Lange Wachbein you probably mostly do because you don't know.</li>
+<li>Not down the AGU-Pro, in general, if you get a bit into the topic, I think in our generation, especially in Gen-Z, those are the two biggest killer promoters.</li>
+<li>Because the old circles usually fill up then.</li>
+<li>So these are mostly, and I want to do an exercise with you at the position.</li>
+<li>Network is like a personality coach, comes from the NBA, got injured, still has the Muten tools there, has the NBA course, a cool guy, Black, very, very successful faces.</li>
+<li>And he always has an exercise, I always say to us, Dils Coroma exercises, even if he says one thing, you take out the other phone, or an unknown, phone or list, but reading phones, it's super easy.</li>
+</ul>
+<h3 class="exec-h">When you're done, make the</h3>
+<ul class="exec-ul">
+<li>When you're done, each person should name one thing that helps them reach their goals and that is even further ahead than they are in achieving their goals.</li>
+<li>Dann schreibt er in die 3 hin.</li>
+<li>For people, you say, he writes a 3 in there.</li>
+<li>With people where you honestly say they are from those I just took on, the ones I want to reach now, who are further away.</li>
+<li>And 1 for the person, 2 for the probation.</li>
+<li>Okay, and then please do one thing beforehand: add up all the points, all the numbers for the long calculation, and divide the numbers by 10 once the 10 people have written them down—if they haven’t managed 10…</li>
+</ul>
+<h3 class="exec-h">Then you are either entitled to a very</h3>
+<ul class="exec-ul">
+<li>Then either a very, very severe stroke of fate awaits you if you simply reach a point where it is very draining and very exhausting to succeed.</li>
+<li>It's not that you can't become successful, it's just very exhausting to be successful. If the number is 2.2 or 2.3 everywhere, then you're on the next level.</li>
+<li>Because 2 is the average.</li>
+<li>If the number is below 2, you are only managed with the average and the environment, which also continues from new scenes.</li>
+<li>What you do with this information now, but people like that, where I've seen 1.3, 1.5...</li>
+<li>Also, enough already, you can't succeed, it would never work.</li>
+</ul>
+<h3 class="exec-h">My Path to Stufe 3 Can</h3>
+<ul class="exec-ul">
+<li>My path to Stufe 3, I can say, the path to Stufe 3 was very easy.</li>
+<li>The path to Stufe 3 is what you ask for at the birth of such a loan.</li>
+<li>I really said it radically, for 3 months, I will do without every person, because that's what I have to do to myself.</li>
+<li>Because it was also created in the news, I was mostly surrounded by people as well.</li>
+<li>I'll give you two more points, because the point is very, very important.</li>
+<li>So most people don't succeed because they have no goals at all and don't know why.</li>
+</ul>
+<h3 class="exec-h">Because there's one thing we can always do</h3>
+<ul class="exec-ul">
+<li>Because one thing we can always take, but never just our own word.</li>
+<li>And then I’m back at work, then I’m back in it, if I manage it, then you prove to me that my own word is valued, is worth it, and that I can do it, and that I can do everything else that…</li>
+<li>I was also in the 1890s, where many philosophers talk about it and many philosophers say that a large part of the population is held by the companies.</li>
+<li>Because I don't mean that you should really control it, but you yourself.</li>
+<li>I really didn't sit down, always just a low book and I'm always out, for example.</li>
+<li>Focus block is for example to always have a piece of paper where his 21 reasons are.</li>
+</ul>
+<h3 class="exec-h">He always has a pen paper</h3>
+<ul class="exec-ul">
+<li>He always has a pen paper over him, has folded it in a DIN-A4 sheet and has every free second where he somehow caught himself, just nothing to do, he said, during the day he has over 200 to 250 reasons...</li>
+<li>I can set home every 60 minutes and just bring my phone and show where it gets there.</li>
+<li>Those were for example things that I thought of.</li>
+<li>Yes, what I find super important in the morning and I could also do an evening reflection.</li>
+<li>A morning reflection, an evening reflection, because you focused into the day, focused outside the day and focused into the next day.</li>
+<li>Because when you come out, then it only means success, victory or defeat.</li>
+</ul>
+<h3 class="exec-h">Very early started and maybe</h3>
+<ul class="exec-ul">
+<li>Very early started and maybe he simply heard with the Daus, that was so, earlier, know the Cambridge, that was simply such a feeling of the time.</li>
+<li>So, back then it started earlier, such a primary school had, 200 kilometers, and the first such short distances ran.</li>
+<li>Yes, I will always have seen with other people who thought, well, I was second round place, although I was at the beginning of the race, there in front was, because there were namely two people the whole time, and there I have...</li>
+<li>Yes, because on a half, high level to come along, I need a tactic.</li>
+<li>Good, that means, now you take something like?</li>
+</ul>
+<h3 class="exec-h">Means approximately when the Ruhmer sure</h3>
+<ul class="exec-ul">
+<li>Means approximately, when the Ruhmer sure goes, 15 VG.</li>
+<li>Who in my position 15 VG mirror doesn't come out, and I am my own shot.</li>
+<li>He has 8, partly 5,000 you know, you don't know that, yes, but that's Wurzkeits, I already said that to Luigi once.</li>
+<li>We said directly after 9, look Luigi, don't complain, don't bother us, put 15 on it.</li>
+<li>15 questions are with me, that's 100,000 percent what we do.</li>
+<li>I already said, if you have 15 questions with me terministically and they are good, you won't make it and you immediately write something down.</li>
+</ul>
+<h3 class="exec-h">Jetzt In Diesem Wort Schreib Trotzdem</h3>
+<ul class="exec-ul">
+<li>Jetzt in diesem Wort, schreib trotzdem 5, 6, 5, so bleiben jetzt noch der Sender.</li>
+<li>He actually writes a good money, that it should do it again in 2 years, but that was for me, that is for me, that is going on.</li>
+<li>So, would you fail there?</li>
+<li>I would wish you 99 more years, if that was the point, fail?</li>
+<li>So, 8 direct and the first liver.</li>
+<li>Because, do we know the 5 things of reputation?</li>
+</ul>
+<h3 class="exec-h">The BDF I think already</h3>
+<ul class="exec-ul">
+<li>The BDF, I think, have already made music once, already with the restaurant, with car shading, the car shading, car shading, with the car shading, car shading, car shading, the car shading.</li>
+<li>Karim was, I networked three years ago, Insta-connected three years ago, Insta contact remained, so rather on social media plus networking.</li>
+<li>So with Luigi the same, also with three years networking I still have that social media.</li>
+<li>Eight direct, I would stable, 2 via name list, 2 via DK, 2 via social media, 1 via networks, 1 via Wikipedia.</li>
+<li>So, name list you have to do once properly and then you have to go through it.</li>
+<li>Recommendation, every day one, DK, every day five, social media, every day ten, sorry, networking, every day five, DK, If you do that, and you won't be much in three months, then I'm here with the Wasse…</li>
+</ul>
+<h3 class="exec-h">For example DK Where One With</h3>
+<ul class="exec-ul">
+<li>For example, DK, where one is with favorite path, plan was it, the empire was it.</li>
+<li>I mean Dekas-Potos, because the boss doesn't go, 100%.</li>
+<li>I'm packing two more direct ones in here now, because I have the Mr.</li>
+<li>Today is no meeting consistent, but truly it is still a bit concrete fixed about numbers, because I think, I can sometimes always get stomach aches in spring.</li>
+<li>So if I say, I would now have to do the 20 Dekas, or 10, or 20, whatever, and you knew, I'm doing that for the negative things, I'm recruiting for something bad, the people who then really at…</li>
+<li>I hope it's good, because otherwise, yes, look, right?</li>
+</ul>
+<h3 class="exec-h">Game number 1 You Must Know</h3>
+<ul class="exec-ul">
+<li>Game number 1, you must know how to handle your already existing network.</li>
+<li>And secondly, if that is not enough, then how do I build a new network?</li>
+<li>Via, also for example, via my area existing network also has a network building.</li>
+<li>Yes, because your photos depend on that.</li>
+<li>If eight 1GS participants then you are in the rule, if you have that now well, very important, in a short period of time, so that the people in the show positions, so that the people see, there is something in the choice, e…</li>
+<li>That's why eight minutes on a short period and write Stufe 3.</li>
+</ul>
+<h3 class="exec-h">Also Um Es Ganz Ganz Kurz</h3>
+<ul class="exec-ul">
+<li>So, to make it very, very short and extreme, if I didn't understand the plan, so 3,500 Musselborn, subtract your own capacity, and one or the other of the muscle customers has one born, so that…</li>
+<li>That was all planned, I have a notebook here, as I said, I have notebooks from 2</li>
+<li>I'm actually doing one thing today, and that is, all clear, because I think, he doesn't believe, that was for example 2025, my goals, goals are set there, yes, a goal of course, through ERGO, and there you see a…</li>
+<li>So that's no coincidence, right?</li>
+<li>No, and suddenly all my business lines put on the Stufe.</li>
+<li>And that's the extreme thing about writing Stufe 3.</li>
+</ul>
+<h3 class="exec-h">To step 6 Pull the shit</h3>
+<ul class="exec-ul">
+<li>To step 6, pull the shit through as well, just as I planned it.</li>
+<li>nobody, no person in the world would dissuade me from this plan and from this course, because I decided back then that that is important.</li>
+<li>If you manage to do these 6 steps once, 6 steps for the Schupe 6, then you will be offered the Schupe 6.</li>
+<li>Then it occurs to you, whether the units are from 3,000 or from 9,000, from 9,000 or from 25,000 or from 25,000 or from 60,000.</li>
+</ul>
+<h3 class="exec-h">Action Items</h3>
+<p class="exec-p">No action items detected</p></div><div class="bi-de"><h3 class="exec-h">Das Universum Ist Super Simpel Das</h3>
 <ul class="exec-ul">
 <li>Das Universum ist super simpel, das Universum liebt Spice, das Universum liebt Schärfe, das Universum liebt, das entspricht nicht nur, das Universum liebt, das entspannt wird, das heißt, du musst was sein, Quarine, we…</li>
 <li>Ich erzähle euch eine Geschichte, eine wahre Geschichte, ich habe 2014, auch ich im Wunderwaffels, ich habe kurz noch gearbeitet, ich habe im Wunderwaffels, so, haupt das mit einer Freundin, so, Und wir quatschen mite…</li>
@@ -1113,7 +1590,7 @@
 <li>Dann fällt euch auf, egal ob die Einheiten von 3.000 oder von 9.000, von 9.000 oder von 25.000 oder von 25.000 oder von 60.000.</li>
 </ul>
 <h3 class="exec-h">Action Items</h3>
-<p class="exec-p">No action items detected</p></div></section>
+<p class="exec-p">No action items detected</p></div></div></section>
     </div>
 
     <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
@@ -1352,5 +1829,62 @@
       }));
     }
   </script>
+
+<script id="ergomeet-bilingual-nav">
+(function () {
+  const EXTRA = {
+    de: { toc_home: 'Termine', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Überblick', toc_notes: 'Notizen', toc_live: 'Live' },
+    en: { toc_home: 'Meetings', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Summary', toc_notes: 'Notes', toc_live: 'Live' }
+  };
+  if (window.ERGOMEET_I18N) {
+    if (ERGOMEET_I18N.de) Object.assign(ERGOMEET_I18N.de, EXTRA.de);
+    if (ERGOMEET_I18N.en) Object.assign(ERGOMEET_I18N.en, EXTRA.en);
+    delete ERGOMEET_I18N.tr;
+  }
+  const sel0 = document.getElementById('langSelect');
+  if (sel0) {
+    [...sel0.options].forEach((o) => { if (o.value !== 'de' && o.value !== 'en') o.remove(); });
+  }
+  window.ergomeetBuildToc = function () {
+    const toc = document.getElementById('sectionToc');
+    if (!toc) return;
+    const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
+    const pack = (window.ERGOMEET_I18N && ERGOMEET_I18N[lang]) || EXTRA[lang];
+    const home = toc.querySelector('.toc-home');
+    if (home) home.remove();
+    toc.innerHTML = '';
+    const homeLink = home || document.createElement('a');
+    homeLink.className = 'toc-home';
+    homeLink.href = 'https://yashbora9.github.io/ergomeet-reports/';
+    homeLink.setAttribute('data-i18n', 'toc_home');
+    homeLink.textContent = pack.toc_home || 'Meetings';
+    toc.appendChild(homeLink);
+    const keys = { recap: 'toc_recap', todos: 'toc_todos', summary: 'toc_summary', notes: 'toc_notes', 'live-summary': 'toc_live' };
+    document.querySelectorAll('[data-block]:not(.is-empty):not([hidden])').forEach((block) => {
+      const id = block.id || block.getAttribute('data-block');
+      if (!id || !keys[id]) return;
+      if (!block.id) block.id = id;
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = pack[keys[id]] || id;
+      toc.appendChild(a);
+    });
+  };
+  const prev = window.ergomeetApplyLang;
+  window.ergomeetApplyLang = function (lang) {
+    if (lang !== 'de' && lang !== 'en') lang = 'de';
+    if (typeof prev === 'function') prev(lang);
+    document.documentElement.lang = lang;
+    localStorage.setItem('ergomeet-lang', lang);
+    const sel = document.getElementById('langSelect');
+    if (sel && sel.value !== lang) sel.value = lang;
+    window.ergomeetBuildToc();
+  };
+  const saved = localStorage.getItem('ergomeet-lang');
+  const browser = (navigator.language || 'de').slice(0, 2);
+  window.ergomeetApplyLang((saved === 'en' || saved === 'de') ? saved : (browser === 'en' ? 'en' : 'de'));
+})();
+</script>
+
 </body>
 </html>

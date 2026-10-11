@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="dark">
+<html data-ergomeet-bilingual="1" lang="de" data-theme="dark">
 <head>
   <meta name="robots" content="noindex, nofollow" />
   <meta charset="utf-8"/>
@@ -605,18 +605,43 @@
       text-transform: uppercase;
       color: var(--muted);
     }
+  
+    /* ergomeet-bi */
+    .topbar-inner { justify-content: space-between; }
+    .topbar .toc {
+      display: flex !important;
+      flex: 1 1 auto;
+      min-width: 0;
+      margin: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      gap: 6px;
+    }
+    .topbar .toc::-webkit-scrollbar { display: none; }
+    .topbar .toc a { white-space: nowrap; flex-shrink: 0; }
+    html[lang="en"] .bi-de { display: none !important; }
+    html[lang="de"] .bi-en { display: none !important; }
+    span.bi-en, span.bi-de { display: inline; }
+    div.bi-en, div.bi-de { display: block; }
+    @media (max-width: 820px) {
+      .topbar-inner { flex-wrap: wrap; }
+      .topbar .toc { order: 2; flex-basis: 100%; }
+    }
+
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
+      <nav class="toc" id="sectionToc" aria-label="Sections">
+        <a class="toc-home" href="https://yashbora9.github.io/ergomeet-reports/" data-i18n="toc_home">Meetings</a>
+      </nav>
       <div class="topbar-controls">
         <select id="langSelect" class="lang-select" aria-label="Language">
           <option value="de">DE</option>
           <option value="en">EN</option>
-          <option value="tr">TR</option>
         </select>
-        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+<button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
           <span class="icon-sun" aria-hidden="true">☀</span>
           <span class="icon-moon" aria-hidden="true">☾</span>
           <span id="themeToggleLabel" data-i18n="theme_light">Light</span>
@@ -641,18 +666,17 @@
     </header>
 
     <!-- No empty shell under the heading: blocks only appear when builder marks them present -->
-    <nav class="toc" id="sectionToc" aria-label="Sections"></nav>
-    <div class="stack" id="reportStack">
+<div class="stack" id="reportStack">
       <section class="section block recap-card" id="recap" data-block="recap">
 <div class="section-label" data-i18n="lbl_recap">60 seconds</div>
 <h2 data-i18n="recap">Recap</h2>
 <div class="recap-grid">
-<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text">To learn Basti&#x27;s four-pillar lead generation strategy.</p></div>
-<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li>Build a Network Database: Systematically log contacts with key details (Name, Age, Job, Goals) to create a valuable asset for referrals and connections.</li><li>Network Actively: Meet one new person daily. Use social media (Instagram) as a digital business card to build trust and credibility.</li><li>Ask for Specific Referrals: Avoid vague requests. Ask for contacts with specific needs (e.g., &quot;Who do you know in IT earning €80k+?&quot;) and use warm introductions.</li></ul></div>
-<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li>Create a network database with contacts and key details.</li><li>Set a goal to meet one new person daily.</li><li>Optimize your social media profile as a digital business card.</li></ul></div>
+<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text" data-topic-en="To learn Basti&amp;#x27;s four-pillar lead generation strategy." data-topic-de="Um Basti&#x27;s Vier-Säulen-Lead-Generierungsstrategie zu erlernen."><span class="bi-en">To learn Basti&#x27;s four-pillar lead generation strategy.</span><span class="bi-de">Um Basti's Vier-Säulen-Lead-Generierungsstrategie zu erlernen.</span></p></div>
+<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li><span class="bi-en">Build a Network Database: Systematically log contacts with key details (Name, Age, Job, Goals) to create a valuable asset for referrals and connections.</span><span class="bi-de">Netzwerk-Datenbank aufbauen: Kontakte systematisch mit wichtigen Details (Name, Age, Job, Goals) erfassen, um ein wertvolles Asset für Referrals und Connections zu schaffen.</span></li><li><span class="bi-en">Network Actively: Meet one new person daily. Use social media (Instagram) as a digital business card to build trust and credibility.</span><span class="bi-de">Network Actively: Täglich eine neue Person kennenlernen. Social Media (Instagram) als digitale Visitenkarte nutzen, um Vertrauen und Glaubwürdigkeit aufzubauen.</span></li><li><span class="bi-en">Ask for Specific Referrals: Avoid vague requests. Ask for contacts with specific needs (e.g., &quot;Who do you know in IT earning €80k+?&quot;) and use warm introductions.</span><span class="bi-de">Spezifische Empfehlungen anfragen: Vermeiden Sie vage Anfragen. Fragen Sie nach Kontakten mit spezifischen Bedürfnissen (z. B. „Wen kennen Sie in der IT, die €80k+ verdienen?“) und nutzen Sie warme Empfehlungen.</span></li></ul></div>
+<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li><span class="bi-en">Create a network database with contacts and key details.</span><span class="bi-de">Erstellen Sie eine Netzwerkdatenbank mit Kontakten und wichtigen Details.</span></li><li><span class="bi-en">Set a goal to meet one new person daily.</span><span class="bi-de">Setzen Sie sich das Ziel, täglich eine neue Person kennenzulernen.</span></li><li><span class="bi-en">Optimize your social media profile as a digital business card.</span><span class="bi-de">Optimieren Sie Ihr Social-Media-Profil als digitale Visitenkarte.</span></li></ul></div>
 </div></section>
-      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Create a network database with contacts and key details.</span></li><li><span class="todo-task">Set a goal to meet one new person daily.</span></li><li><span class="todo-task">Optimize your social media profile as a digital business card.</span></li><li><span class="todo-task">Practice asking for specific referrals.</span></li><li><span class="todo-task">Begin recruiting early to build a team.</span></li><li><span class="todo-task">*Der totale Verkaufserfolg* (Zig Ziglar)</span></li><li><span class="todo-task">*Wie man Freunde gewinnt* (Dale Carnegie)</span></li><li><span class="todo-task">*Im Prinzip Gewinnen* (Arthur Williams)</span></li></ul></section>
-      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Meeting Purpose</h3>
+      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task"><span class="bi-en">Create a network database with contacts and key details.</span><span class="bi-de">Erstellen Sie eine Netzwerkdatenbank mit Kontakten und wichtigen Details.</span></span></li><li><span class="todo-task"><span class="bi-en">Set a goal to meet one new person daily.</span><span class="bi-de">Setzen Sie sich das Ziel, täglich eine neue Person kennenzulernen.</span></span></li><li><span class="todo-task"><span class="bi-en">Optimize your social media profile as a digital business card.</span><span class="bi-de">Optimieren Sie Ihr Social-Media-Profil als digitale Visitenkarte.</span></span></li><li><span class="todo-task"><span class="bi-en">Practice asking for specific referrals.</span><span class="bi-de">Üben Sie, um konkrete Empfehlungen zu bitten.</span></span></li><li><span class="todo-task"><span class="bi-en">Begin recruiting early to build a team.</span><span class="bi-de">Beginnen Sie frühzeitig mit der Rekrutierung, um ein Team aufzubauen.</span></span></li><li><span class="todo-task"><span class="bi-en">*The Total Sales Success* (Zig Ziglar)</span><span class="bi-de">*Der totale Verkaufserfolg* (Zig Ziglar)</span></span></li><li><span class="todo-task"><span class="bi-en">*How to Win Friends* (Dale Carnegie)</span><span class="bi-de">*Wie man Freunde gewinnt* (Dale Carnegie)</span></span></li><li><span class="todo-task"><span class="bi-en">*Winning in Principle* (Arthur Williams)</span><span class="bi-de">*Im Prinzip Gewinnen* (Arthur Williams)</span></span></li></ul></section>
+      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><div class="bi-en"><h3 class="exec-h">Meeting Purpose</h3>
 <p class="exec-p">To learn Basti&#x27;s four-pillar lead generation strategy.</p>
 <h3 class="exec-h">Key Takeaways</h3>
 <ul class="exec-ul">
@@ -767,14 +791,129 @@
 </ul>
 </ul>
 </ul>
-</ul></div></details>
+</ul></div><div class="bi-de"><h3 class="exec-h">Meeting Purpose</h3>
+<p class="exec-p">Um Basti's Vier-Säulen-Lead-Generierungsstrategie zu erlernen.</p>
+<h3 class="exec-h">Key Takeaways</h3>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Build a Network Database:</strong> Systematisch Kontakte mit wichtigen Details (Name, Alter, Job, Ziele) erfassen, um ein wertvolles Asset für Empfehlungen und Verbindungen zu schaffen.</li>
+<li><strong>Network Actively:</strong> Treffe täglich eine neue Person. Nutze Social Media (Instagram) als digitale Visitenkarte, um Vertrauen und Glaubwürdigkeit aufzubauen.</li>
+<li><strong>Ask for Specific Referrals:</strong> Wer kennt jemanden in der IT, der mindestens 80.000 € verdient? Bitte nutzt warme Kontakte und direkte Empfehlungen.</li>
+<li><strong>Priorisieren Sie den Teamerfolg:</strong> Ihr primäres Ziel ist es, Ihr Team erfolgreich zu machen. Ihre Einheitenproduktion treibt direkt Ihren Karriereaufstieg voran.</li>
+</ul>
+</ul>
+<h3 class="exec-h">Topics</h3>
+<h4 class="exec-h2">Die Herausforderung: Eine „Leere Liste“ (Empty List)</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Die größte Angst neuer Berater: Kontakte auszugehen.</li>
+<li>Bastis Erfahrung beweist, dass das machbar ist:</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>Begann mit einer Liste von ca. 150–200 Kontakten.</li>
+<li>Hat jetzt ein Netzwerk von 1.400–1.500 Kontakten.</li>
+</ul>
+</ul>
+<li>Die Lösung ist ein systematischer Ansatz zur Lead-Generierung.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Säule 1: Die Netzwerkdatenbank</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Action:</strong> Create a master list of everyone you know.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>Include contacts from school, clubs, work, and friends of friends.</li>
+<li>Loggen Sie alle verfügbaren Details, auch wenn es nur ein Name ist.</li>
+</ul>
+</ul>
+<li><strong>Rationale:</strong> Diese Liste ist ein wertvoller Vermögenswert.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Example:</strong> Basti hat die Mutter eines Kunden mit einem Radiologen (ehemaliger Kunde) für einen Fast-Track-MRT-Termin verbunden und damit die Kraft eines gut gepflegten Netzwerks demonstriert.</li>
+</ul>
+</ul>
+<li><strong>Maintenance:</strong> Aktualisieren Sie die Liste regelmäßig (z. B. wöchentlich) mit neuen Kontakten.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Säule 2: Networking</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Action:</strong> Täglich eine neue Person kennenlernen.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Goal:</strong> Machen Sie Networking zur Gewohnheit.</li>
+<li><strong>Method:</strong> Nutzen Sie gemeinsame Interessen (Sport, Veranstaltungen), um Gespräche zu beginnen.</li>
+<li><strong>Example:</strong> A contact made at Karneval der Kulturen became a partner who built a 100+ person team.</li>
+</ul>
+</ul>
+<li><strong>Rationale:</strong> Networking ist ein Zahlen-Spiel. Kontinuierliche Anstrengung erhöht die Wahrscheinlichkeit, wichtige Partner zu finden.</li>
+<li><strong>Advanced Tactic:</strong> Verbinden Sie zwei Personen aus Ihrem Netzwerk, die sich gegenseitig helfen können (z. B. einen Restaurantbesitzer, der einen Videografen braucht). Dadurch schaffen Sie Mehrwert und stärken Ihre Position als Vermittler.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Pillar 3: Social Media</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Action:</strong> Use social media as a digital business card.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Platforms:</strong> Instagram, TikTok, Facebook, LinkedIn.</li>
+<li><strong>Hallo zusammen, ich möchte Sie alle zu unserem nächsten Meeting einladen. Wir werden über die Fortschritte bei ERGO, EVA und EFA sprechen, insbesondere über Stufe 3 und die nächsten Schritte.</strong> Wählen Sie einen Stil, der authentisch wirkt und konsistent beibehalten werden kann (z. B. geschäftlich, lifestyle-orientiert oder eine Mischung).</li>
+</ul>
+</ul>
+<li><strong>Rationale:</strong> Ein professionelles Profil schafft Glaubwürdigkeit und Vertrauen und erleichtert so die Kontaktaufnahme mit Personen, die man offline kennengelernt hat.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Säule 4: Empfehlungen</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Action:</strong> Bitten Sie um konkrete Empfehlungen von Kunden und Kontakten.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Method:</strong> Ich bitte darum, Anfragen auf konkrete Bedürfnisse zuzuschneiden.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Ineffective:</strong> Kennst du jemanden, der eine Versicherung braucht?</li>
+<li><strong>Effective:</strong> Wer kennt jemanden in der IT, der 80k+ verdient und vielleicht eine private Krankenversicherung braucht?</li>
+</ul>
+</ul>
+<li><strong>Warm Introduction:</strong> Die effektivste Methode ist ein Dreiergespräch, bei dem Ihr Kontakt Sie dem Referral vorstellt.</li>
+</ul>
+</ul>
+<li><strong>Rationale:</strong> Empfehlungen nutzen die Netzwerke Ihres Netzwerks und erzeugen so einen starken Multiplikatoreffekt.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Das Ergo Karrieresystem & Teamaufbau</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Unit System:</strong> Karrierefortschritt basiert auf Einheiten, die durch Produktverkäufe verdient werden.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Example Unit Values:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>€100/mo savings plan → \~82 units</li>
+<li>€600/mo private health insurance → \~200 units</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<li><strong>Team Building:</strong> Beginnen Sie frühzeitig mit der Rekrutierung (Stufe 1).</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Rationale:</strong> Der Erfolg Ihres Teams ist Ihr Erfolg. Ihre Einheitenproduktion trägt direkt zu Ihrem beruflichen Aufstieg bei.</li>
+<li><strong>Example:</strong> Um Stufe 4 (9.000 Einheiten) zu erreichen, kannst du drei Teammitglieder auf Stufe 3 (je 3.500 Einheiten) bringen, was insgesamt 10.500 Einheiten ergibt – mehr als genug für dein Ziel.</li>
+</ul>
+</ul>
+</ul>
+</ul></div></div></details>
       
       
       
       
       
       
-      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><h3 class="exec-h">Introduction And Name Preference</h3>
+      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><div class="bi-en"><h3 class="exec-h">Introduction And Name Preference</h3>
 <ul class="exec-ul">
 <li>Basti prefers to be called Basti instead of Sebastian</li>
 <li>Name preference stems from discomfort when called Sebastian</li>
@@ -1057,7 +1196,290 @@
 <h3 class="exec-h">Action Items</h3>
 <ul class="exec-ul">
 <li>No action items detected</li>
-</ul></div></section>
+</ul></div><div class="bi-de"><h3 class="exec-h">Einführung und Namenspräferenz</h3>
+<ul class="exec-ul">
+<li>Basti möchte lieber Basti genannt werden statt Sebastian.</li>
+<li>Der Namenswunsch resultiert aus dem Unbehagen, wenn er Sebastian genannt wird.</li>
+<li>Basti ist seit März 2018 im Unternehmen.</li>
+<li>Basti nähert sich 83 Monaten kontinuierlicher Aktivität ohne Unterbrechungen</li>
+</ul>
+<h3 class="exec-h">Karrierestufe und Erfahrung</h3>
+<ul class="exec-ul">
+<li>Basti ist derzeit auf Stufe 5</li>
+<li>Basti hat mit 19 angefangen und ist jetzt 27.</li>
+<li>Basti kann sowohl Herausforderungen als auch Vorteile des Geschäftsmodells beleuchten.</li>
+<li>Basti betont transparente Kommunikation über die geschäftlichen Realitäten</li>
+</ul>
+<h3 class="exec-h">Vier Lead-Generierungsmethoden Übersicht</h3>
+<ul class="exec-ul">
+<li>Basti stellt vier systematische Ansätze zur Gewinnung neuer Kontakte vor</li>
+<li>Methoden, die über den ERGO-Kontext hinaus für langfristige geschäftliche Anwendung konzipiert sind</li>
+<li>Fokus auf den Aufbau nachhaltiger Kontaktakquisesysteme</li>
+<li>Betonung auf praktischer Umsetzung statt theoretischer Diskussion</li>
+</ul>
+<h3 class="exec-h">Network Database Method</h3>
+<ul class="exec-ul">
+<li>Erste Methode konzentriert sich auf systematische Kontaktsammlung und -organisation</li>
+<li>Basti's ursprüngliche Namensliste enthielt zu Beginn 150-200 Personen.</li>
+<li>Aktuelle Telefonkontakte auf 1.400-1.500 Einträge erweitert</li>
+<li>Die Methode umfasst die Dokumentation aller bekannten Personen unabhängig vom unmittelbaren Geschäftspotenzial.</li>
+</ul>
+<h3 class="exec-h">Schul- und Bildungskontakte</h3>
+<ul class="exec-ul">
+<li>Die meisten Teilnehmer haben 1–3 Schulen besucht und dadurch große Kontaktpools geschaffen.</li>
+<li>Schulkontakte umfassen Mitschüler, Lehrer und erweiterte Netzwerke</li>
+<li>Basti's Abschlussjahrgang hatte 180 Schüler, die an den Abschlussprüfungen teilnahmen.</li>
+<li>Educational institutions provide foundational contact databases</li>
+</ul>
+<h3 class="exec-h">Club- und Organisationsnetzwerke</h3>
+<ul class="exec-ul">
+<li>Sportvereine und Organisationen schaffen zusätzliche Kontaktmöglichkeiten</li>
+<li>Turnierteilnahmen erweitern geografische und soziale Reichweite</li>
+<li>Leistungssport führt oft zu mehr Kontakten als herkömmliche Schulnetzwerke.</li>
+<li>Vereinsaktivitäten bieten natürliche Gesprächseinstiege und gemeinsame Interessen</li>
+</ul>
+<h3 class="exec-h">Professionelle und geschäftliche Kontakte</h3>
+<ul class="exec-ul">
+<li>Arbeitsbeziehungen erweitern systematisch die Netzwerkdatenbank</li>
+<li>Basti&#x27;s father demonstrates contact utilization in construction projects</li>
+<li>Professionelle Netzwerke umfassen Lieferanten, Kunden und Dienstleister</li>
+<li>Arbeitskontakte verfügen oft über spezialisierte Fähigkeiten, die für Empfehlungen wertvoll sind</li>
+</ul>
+<h3 class="exec-h">Contact Information Collection Strategy</h3>
+<ul class="exec-ul">
+<li>Grunddaten umfassen Name, Alter, Beruf und Herkunft</li>
+<li>Erweiterte Daten decken Familienstand, Geschwister und Karriereziele ab</li>
+<li>Informationsbeschaffung sollte sich eher wie ein Gespräch als wie ein Verhör anfühlen.</li>
+<li>Qualität der Fragen bestimmt die Tiefe der Beziehungsentwicklung</li>
+</ul>
+<h3 class="exec-h">Birthday Memory Technique</h3>
+<ul class="exec-ul">
+<li>Basti merkt sich Geburtstage nach einmaliger Exposition oder schriftlicher Aufzeichnung</li>
+<li>Gedächtnistechnik demonstriert echtes Interesse an anderen</li>
+<li>Beibehaltung persönlicher Details baut stärkere langfristige Verbindungen auf</li>
+<li>Systematic information storage creates relationship advantages</li>
+</ul>
+<h3 class="exec-h">Gesprächstiefe statt Small Talk</h3>
+<ul class="exec-ul">
+<li>Basti bevorzugt bedeutungsvolle Gespräche gegenüber oberflächlichen Austauschen</li>
+<li>Tiefe Verbindungen entstehen durch qualitatives Fragenstellen</li>
+<li>Menschen teilen Probleme und Herausforderungen innerhalb von 2-3 Gesprächen</li>
+<li>Vertrauen entwickelt sich schneller durch echte Interessensbekundung</li>
+</ul>
+<h3 class="exec-h">Multiplier Effect In Networks</h3>
+<ul class="exec-ul">
+<li>Jeder Kontakt hat sein eigenes Netzwerk und schafft exponentielle Reichweite</li>
+<li>1.000 Kontakte verbinden potenziell mit Tausenden weiteren Personen</li>
+<li>Netzwerkwert steigert sich durch Beziehungsebenen</li>
+<li>Datenbankpflege erfordert regelmäßige Aktualisierungen alle 3 Tage bis 2 Wochen</li>
+</ul>
+<h3 class="exec-h">Practical Contact Advantages</h3>
+<ul class="exec-ul">
+<li>Basti sicherte sich Konzertkarten über Netzwerkverbindungen und sparte 120 EUR</li>
+<li>Arztterminzugang über Radiologie-Kontakt ermöglicht</li>
+<li>Flughafensicherheitsunterstützung durch Lufthansa-Mitarbeiter-Kontakt</li>
+<li>Netzwerkvorteile gehen über unmittelbare Geschäftsanwendungen hinaus</li>
+</ul>
+<h3 class="exec-h">Information Gathering Approach</h3>
+<ul class="exec-ul">
+<li>Fragen sollten natürlich in Gesprächen fließen</li>
+<li>Polizeibeamter-Beispiel veranschaulicht die Erkundung von Karrierewegen</li>
+<li>Familienhintergrundfragen offenbaren zusätzliche Kontaktmöglichkeiten</li>
+<li>Berufliche Ziele unterscheiden sich oft von der aktuellen Einkommensrealität</li>
+</ul>
+<h3 class="exec-h">Cultural Background Exploration</h3>
+<ul class="exec-ul">
+<li>Herkunftsfragen bieten Gesprächstiefe und Verbindungspunkte</li>
+<li>Sprachkenntnisse und kulturelles Wissen schaffen Weiterempfehlungsmöglichkeiten</li>
+<li>Basti erkennt begrenzte persönliche Erfahrung mit Rassismus an</li>
+<li>Kulturaustausch baut authentische Beziehungsgrundlagen auf</li>
+</ul>
+<h3 class="exec-h">Datenbankpflegehäufigkeit</h3>
+<ul class="exec-ul">
+<li>Regelmäßige Aktualisierungen verhindern Veralterung von Kontaktinformationen</li>
+<li>Neue Kontakte sollten systematisch nach jeder Interaktion hinzugefügt werden</li>
+<li>Der Datenbankwert steigt mit Kontaktquantität und -qualität</li>
+<li>Das langfristige Ziel umfasst den Aufbau einer Datenbank mit signifikantem monetärem Wert</li>
+</ul>
+<h3 class="exec-h">Fragequalitätsauswirkung</h3>
+<ul class="exec-ul">
+<li>Lebensqualität korreliert direkt mit der Qualität gestellter Fragen</li>
+<li>Spezifische Fragen enthüllen versteckten Kontaktwert und Chancen</li>
+<li>Follow-up-Fragen bauen umfassendes Verständnis von Individuen auf</li>
+<li>Systematisches Fragen verhindert oberflächliche Beziehungsentwicklung</li>
+</ul>
+<h3 class="exec-h">Team Building Philosophy</h3>
+<ul class="exec-ul">
+<li>Basti begann mit dem Teamaufbau unmittelbar nach Erreichen von Stufe 1</li>
+<li>Die ersten beiden Teammitglieder umfassten einen Kellner und Polizisten</li>
+<li>Stufe 2 wurde innerhalb von 3 Monaten mit den ersten Teammitgliedern erreicht</li>
+<li>Stufe 3 wurde innerhalb von 6 Monaten durch Teamerweiterung erreicht</li>
+</ul>
+<h3 class="exec-h">Unit Requirements Per Stage</h3>
+<ul class="exec-ul">
+<li>Stage 4 requires 9,000 total units</li>
+<li>Stage 3 requires 3,500 total units</li>
+<li>Stage 5 requires 25,000 total units</li>
+<li>Team-Multiplikation ermöglicht die Verteilung von Unit-Anforderungen auf Mitglieder</li>
+</ul>
+<h3 class="exec-h">Beispiele zur Einheitenberechnung</h3>
+<ul class="exec-ul">
+<li>100 EUR monatlicher Sparplan entspricht 82 Units für junge Erwachsene</li>
+<li>Home contents insurance generates 3-4 units</li>
+<li>Liability insurance produces 2-3 units</li>
+<li>Legal expenses insurance yields 5-6 units</li>
+</ul>
+<h3 class="exec-h">Private Health Insurance Units</h3>
+<ul class="exec-ul">
+<li>600 EUR monthly private health insurance generates approximately 200 units</li>
+<li>Hochwertige Produkte führen zu einer erheblichen Stückzahl-Akkumulation</li>
+<li>Einmalzahlungen bei Vertragsabschluss sind Einheitenberechnungen.</li>
+<li>Vertragseinheiten bleiben unabhängig von Vertragsänderungen unverändert.</li>
+</ul>
+<h3 class="exec-h">Team Specialization Strategy</h3>
+<ul class="exec-ul">
+<li>Carlos ist auf die gewerbliche Versicherung und die betriebliche Absicherung spezialisiert.</li>
+<li>E-Bahn konzentriert sich auf Beratungen für selbstständige Unternehmer</li>
+<li>Guarmi bearbeitet ein erhebliches Volumen an privater Krankenversicherung.</li>
+<li>Lucio's Team arbeitet intensiv mit Kinder-Sparprodukten.</li>
+</ul>
+<h3 class="exec-h">Marktdurchdringung im Community-Bereich</h3>
+<ul class="exec-ul">
+<li>Essen-Team dringt in französischsprachige afrikanische Gemeinschaften vor</li>
+<li>Sprachkenntnisse ermöglichen eine tiefere Marktdurchdringung</li>
+<li>Specialized community focus creates competitive advantages</li>
+<li>Kulturelles Verständnis verbessert die Konversionsraten</li>
+</ul>
+<h3 class="exec-h">Bedeutung der Feedback-Umsetzung</h3>
+<ul class="exec-ul">
+<li>Basti hat sich anfangs gegen das Feedback des Mentors gewehrt, als er noch am Anfang seiner Karriere stand.</li>
+<li>Emotionale Reaktionen verhinderten die Aufnahme konstruktiver Kritik</li>
+<li>Spätere Erkennung des Feedback-Werts verbesserte die Leistung</li>
+<li>Mentor-Anleitung verhindert unnötige Neuerfindung bewährter Methoden</li>
+</ul>
+<h3 class="exec-h">Success Multiplication Principle</h3>
+<ul class="exec-ul">
+<li>Andere erfolgreich zu machen, schafft automatisch persönlichen Erfolg.</li>
+<li>Stufenaufstieg wird durch Team-Entwicklung erreichbar</li>
+<li>Drei Teammitglieder, die jeweils 3.000 Einheiten erreichen, übertreffen die Anforderungen der Stufe 4</li>
+<li>Führungskompetenz umfasst die Sicherstellung des Erfolgs der Teammitglieder</li>
+</ul>
+<h3 class="exec-h">Empfohlene Lektüre-Materialien</h3>
+<ul class="exec-ul">
+<li>„Der totale Verkaufserfolg“ von Sig Siegler als bestes Verkaufsbuch empfohlen</li>
+<li>Buch bietet umfangreiche Beispiele und Vergleiche, die für das Geschäftsmodell relevant sind</li>
+<li>15-20 EUR Investition für umfassende Verkaufsmethodik</li>
+<li>Inhalt direkt auf aktuelle geschäftliche Herausforderungen anwendbar</li>
+</ul>
+<h3 class="exec-h">Material Success Indicators</h3>
+<ul class="exec-ul">
+<li>Teammitglieder fahren verschiedene Luxusfahrzeuge einschließlich BMWs und Teslas</li>
+<li>70-80% der Fahrzeuge auf dem Parkplatz gehören Teammitgliedern</li>
+<li>Erfolg wird durch Teamerfolge gemessen, nicht durch persönliche Zurschaustellung</li>
+<li>Materielle Indikatoren spiegeln den Wohlstand des gesamten Teams wider</li>
+</ul>
+<h3 class="exec-h">Timeline Expectations</h3>
+<ul class="exec-ul">
+<li>Geschäftsentwicklung erfordert Geduld statt sofortiger Ergebnisse</li>
+<li>Three-year timeline mentioned as realistic achievement period</li>
+<li>System baut Marktwert durch Kompetenzerwerb über die Zeit auf</li>
+<li>Wertschöpfung entsteht durch menschliche Verbindungsfähigkeiten, nicht durch Qualifikationen</li>
+</ul>
+<h3 class="exec-h">Unit Rate Structure</h3>
+<ul class="exec-ul">
+<li>Each product has predetermined unit factors</li>
+<li>500 EUR Sparplan generiert 410 Einheiten durch Multiplikation</li>
+<li>Einheitenakkumulation beschleunigt sich mit höherwertigen Verträgen</li>
+<li>Regelmäßige Kontaktpflege sichert fortlaufende Einheitengenerierungsmöglichkeiten</li>
+</ul>
+<h3 class="exec-h">Time Limitation Recognition</h3>
+<ul class="exec-ul">
+<li>Individuelle Zeitbeschränkungen begrenzen die persönliche Kapazität</li>
+<li>Team-Multiplikation erweitert die effektive Arbeitszeit exponentiell</li>
+<li>70% der Kalender der Teammitglieder sind für Basti zugänglich</li>
+<li>Delegation verhindert individuelle Überlastung und erhält gleichzeitig die Produktivität.</li>
+</ul>
+<h3 class="exec-h">Straßenakquise-Beschränkungen</h3>
+<ul class="exec-ul">
+<li>Man kann nicht zuverlässig ausschließlich anhand des Erscheinungsbildes hochpotenzielle Interessenten identifizieren.</li>
+<li>Vorurteile erweisen sich häufig als falsch bei Einzelpersonen</li>
+<li>Sportumgebungen bieten natürliche Qualifikation durch gezeigte Disziplin</li>
+<li>Gemeinsame Aktivitäten schaffen sofort Gesprächsthemen und gemeinsame Basis</li>
+</ul>
+<h3 class="exec-h">Gaming Connection Discovery</h3>
+<ul class="exec-ul">
+<li>Basti entdeckte gemeinsame Gaming-Interessen mit dem Geschäftspartner</li>
+<li>YouTube content creation background created unexpected connection</li>
+<li>Die Mitgliedschaft in der Gaming-Community umfasst vielfältige Persönlichkeitstypen.</li>
+<li>Gemeinsame Interessen beschleunigen die Beziehungsentwicklung über Geschäftsthemen hinaus</li>
+</ul>
+<h3 class="exec-h">Frühe Teambuilding-Empfehlung</h3>
+<ul class="exec-ul">
+<li>Basti befürwortet sofortigen Teambuilding ab Stufe 1</li>
+<li>Erste Teammitglieder waren Kellner und Polizist.</li>
+<li>Stufe 2 innerhalb von 3 Monaten durch Teamleistung erreicht</li>
+<li>Stufe 3 innerhalb von 6 Monaten erreicht mit fortgesetzter Expansion</li>
+</ul>
+<h3 class="exec-h">Team-Mitglieder-Bindungsrealität</h3>
+<ul class="exec-ul">
+<li>Nicht alle Teammitglieder werden langfristig erfolgreich sein.</li>
+<li>Einige Teammitglieder verlassen das Meeting, während andere engagiert bleiben.</li>
+<li>Erfolg erfordert kontinuierlichen Einsatz und realistische Erwartungen</li>
+<li>Das Geschäftsmodell ermöglicht verschiedene Verpflichtungsstufen.</li>
+</ul>
+<h3 class="exec-h">Fokus auf persönliche Entwicklung</h3>
+<ul class="exec-ul">
+<li>Basti plant langfristig den Übergang in andere unternehmerische Projekte</li>
+<li>Medienasset-Entwicklung als zukünftiges Ziel erwähnt</li>
+<li>Aktuelles Geschäft bietet Grundlagenfähigkeiten für zukünftige Vorhaben</li>
+<li>Erhaltene Schulung schafft übertragbaren Wert unabhängig vom Karriereweg</li>
+</ul>
+<h3 class="exec-h">Vorteile der Vertriebsausbildung</h3>
+<ul class="exec-ul">
+<li>ERGO Einwandbehandlungsschulung übertrifft typische Vertriebsumgebungen</li>
+<li>Freunde in anderen Vertriebsrollen berichten von größeren Schwierigkeiten mit anderen Produkten</li>
+<li>Schulungsmethodik schafft Wettbewerbsvorteil im Einwandmanagement</li>
+<li>„Train hard, fight easy“-Philosophie gilt für die Vertriebsvorbereitung</li>
+</ul>
+<h3 class="exec-h">Erfolgsgeschichte des Durchschnittsmenschen</h3>
+<ul class="exec-ul">
+<li>Basti identifiziert sich als Durchschnittsmensch, der durchschnittliche Lebensergebnisse ablehnt</li>
+<li>Previous status included below-average academic performance</li>
+<li>Erfolg wurde durch Kompetenzentwicklung statt natürlicher Vorteile erreicht</li>
+<li>Durchschnittlicher Hintergrund macht Erfolge für neue Teammitglieder nachvollziehbarer</li>
+</ul>
+<h3 class="exec-h">Recommended Learning Resources</h3>
+<ul class="exec-ul">
+<li>&quot;How to Win Friends and Influence People&quot; as first recommended book</li>
+<li>Tyler von Korsenberg als wertvolle Ressource vorgeschlagen</li>
+<li>Arthur Williams' „The Winner“ für Einblicke in das Geschäftsmodell empfohlen</li>
+<li>Joe Rogan Podcast für vielfältige Themenaussetzung erwähnt</li>
+</ul>
+<h3 class="exec-h">Durchhaltevermögen durch anfängliches Unbehagen</h3>
+<ul class="exec-ul">
+<li>„Erste Geschäftsregel ist einfach erscheinen“ als grundlegendes Prinzip betont</li>
+<li>Anfängliche Unbeholfenheit während des Onboarding-Prozesses erwartet</li>
+<li>Konstante Präsenz ermöglicht Beziehungsentwicklung über die Zeit</li>
+<li>Podcast- und Buchempfehlungen unterstützen kontinuierliches Lernen</li>
+</ul>
+<h3 class="exec-h">Normalisierung der Abbruchrate</h3>
+<ul class="exec-ul">
+<li>Hohe anfängliche Abbruchraten gelten als normal in Bildungs- und Berufskontexten</li>
+<li>Universität und Polizeiakademie zeigen ähnliche Abbrechermuster</li>
+<li>Persistence unterscheidet erfolgreiche von nicht erfolgreichen Teilnehmern</li>
+<li>Weniger erfolgreiche Personen schaffen größere Chancen für verbleibende Teilnehmer</li>
+</ul>
+<h3 class="exec-h">Persönliche Verantwortungsanerkennung</h3>
+<ul class="exec-ul">
+<li>Basti erkennt persönliche Variable als entscheidenden Erfolgsfaktor an</li>
+<li>Alternative Karrieremöglichkeiten bestanden, wurden jedoch abgelehnt</li>
+<li>Selbstaufrichtigkeit über persönliche Verantwortung ermöglicht fortgesetzten Fortschritt</li>
+<li>Externe Faktoren können nicht für individuelles Engagement ersetzen</li>
+</ul>
+<h3 class="exec-h">Action Items</h3>
+<ul class="exec-ul">
+<li>Keine Maßnahmen erkannt</li>
+</ul></div></div></section>
     </div>
 
     <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
@@ -1296,5 +1718,62 @@
       }));
     }
   </script>
+
+<script id="ergomeet-bilingual-nav">
+(function () {
+  const EXTRA = {
+    de: { toc_home: 'Termine', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Überblick', toc_notes: 'Notizen', toc_live: 'Live' },
+    en: { toc_home: 'Meetings', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Summary', toc_notes: 'Notes', toc_live: 'Live' }
+  };
+  if (window.ERGOMEET_I18N) {
+    if (ERGOMEET_I18N.de) Object.assign(ERGOMEET_I18N.de, EXTRA.de);
+    if (ERGOMEET_I18N.en) Object.assign(ERGOMEET_I18N.en, EXTRA.en);
+    delete ERGOMEET_I18N.tr;
+  }
+  const sel0 = document.getElementById('langSelect');
+  if (sel0) {
+    [...sel0.options].forEach((o) => { if (o.value !== 'de' && o.value !== 'en') o.remove(); });
+  }
+  window.ergomeetBuildToc = function () {
+    const toc = document.getElementById('sectionToc');
+    if (!toc) return;
+    const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
+    const pack = (window.ERGOMEET_I18N && ERGOMEET_I18N[lang]) || EXTRA[lang];
+    const home = toc.querySelector('.toc-home');
+    if (home) home.remove();
+    toc.innerHTML = '';
+    const homeLink = home || document.createElement('a');
+    homeLink.className = 'toc-home';
+    homeLink.href = 'https://yashbora9.github.io/ergomeet-reports/';
+    homeLink.setAttribute('data-i18n', 'toc_home');
+    homeLink.textContent = pack.toc_home || 'Meetings';
+    toc.appendChild(homeLink);
+    const keys = { recap: 'toc_recap', todos: 'toc_todos', summary: 'toc_summary', notes: 'toc_notes', 'live-summary': 'toc_live' };
+    document.querySelectorAll('[data-block]:not(.is-empty):not([hidden])').forEach((block) => {
+      const id = block.id || block.getAttribute('data-block');
+      if (!id || !keys[id]) return;
+      if (!block.id) block.id = id;
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = pack[keys[id]] || id;
+      toc.appendChild(a);
+    });
+  };
+  const prev = window.ergomeetApplyLang;
+  window.ergomeetApplyLang = function (lang) {
+    if (lang !== 'de' && lang !== 'en') lang = 'de';
+    if (typeof prev === 'function') prev(lang);
+    document.documentElement.lang = lang;
+    localStorage.setItem('ergomeet-lang', lang);
+    const sel = document.getElementById('langSelect');
+    if (sel && sel.value !== lang) sel.value = lang;
+    window.ergomeetBuildToc();
+  };
+  const saved = localStorage.getItem('ergomeet-lang');
+  const browser = (navigator.language || 'de').slice(0, 2);
+  window.ergomeetApplyLang((saved === 'en' || saved === 'de') ? saved : (browser === 'en' ? 'en' : 'de'));
+})();
+</script>
+
 </body>
 </html>

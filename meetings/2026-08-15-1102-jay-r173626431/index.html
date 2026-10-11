@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="dark">
+<html data-ergomeet-bilingual="1" lang="de" data-theme="dark">
 <head>
   <meta name="robots" content="noindex, nofollow" />
   <meta charset="utf-8"/>
@@ -605,18 +605,43 @@
       text-transform: uppercase;
       color: var(--muted);
     }
+  
+    /* ergomeet-bi */
+    .topbar-inner { justify-content: space-between; }
+    .topbar .toc {
+      display: flex !important;
+      flex: 1 1 auto;
+      min-width: 0;
+      margin: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      gap: 6px;
+    }
+    .topbar .toc::-webkit-scrollbar { display: none; }
+    .topbar .toc a { white-space: nowrap; flex-shrink: 0; }
+    html[lang="en"] .bi-de { display: none !important; }
+    html[lang="de"] .bi-en { display: none !important; }
+    span.bi-en, span.bi-de { display: inline; }
+    div.bi-en, div.bi-de { display: block; }
+    @media (max-width: 820px) {
+      .topbar-inner { flex-wrap: wrap; }
+      .topbar .toc { order: 2; flex-basis: 100%; }
+    }
+
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
+      <nav class="toc" id="sectionToc" aria-label="Sections">
+        <a class="toc-home" href="https://yashbora9.github.io/ergomeet-reports/" data-i18n="toc_home">Meetings</a>
+      </nav>
       <div class="topbar-controls">
         <select id="langSelect" class="lang-select" aria-label="Language">
           <option value="de">DE</option>
           <option value="en">EN</option>
-          <option value="tr">TR</option>
         </select>
-        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+<button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
           <span class="icon-sun" aria-hidden="true">☀</span>
           <span class="icon-moon" aria-hidden="true">☾</span>
           <span id="themeToggleLabel" data-i18n="theme_light">Light</span>
@@ -641,19 +666,112 @@
     </header>
 
     <!-- No empty shell under the heading: blocks only appear when builder marks them present -->
-    <nav class="toc" id="sectionToc" aria-label="Sections"></nav>
-    <div class="stack" id="reportStack">
+<div class="stack" id="reportStack">
       <section class="section block recap-card" id="recap" data-block="recap">
 <div class="section-label" data-i18n="lbl_recap">60 seconds</div>
 <h2 data-i18n="recap">Recap</h2>
 <div class="recap-grid">
-<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text">Motivation des Teams für den „Run to the Sun“-Wettbewerb durch eine Erläuterung des Geschäftsmodells.</p></div>
-<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li>„Run to the Sun“-Wettbewerb: Gewinne eine kostenlose 3-tägige Reise nach Spanien, indem du 3 direkte Partner rekrutierst, die jeweils 99 Einheiten produzieren.</li><li>Strategische Rekrutierung: Nutze das bevorstehende „Grundseminar“ und das „Kick-off“-Event, um Interessenten die Unternehmenskultur und das Geschäftsmodell näherzubringen.</li><li>Der „Cashflow-Quadrant“-Pitch: Positioniere das Strukturvertriebsmodell als den einfachsten Weg, um vom Angestellten (Zeit gegen Geld) zum Geschäftsinhaber (Systeme gegen Geld) zu werden.</li></ul></div>
-<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li>Martin kontaktieren, um die Teilnahme am Grundseminar und am Kick-off-Event zu bestätigen.</li><li>Eine Liste der Top-5-Interessenten erstellen.</li><li>Den Pitch für die Events vorbereiten und üben.</li></ul></div>
-<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li>Ziel: Einen Termin für ein Folgegespräch sichern, nicht das Geschäft abschließen.</li></ul></div>
+<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text" data-topic-en="Motivation of the team for the „Run to the Sun“ competition through an explanation of the business model." data-topic-de="Motivation des Teams für den „Run to the Sun“-Wettbewerb durch eine Erläuterung des Geschäftsmodells."><span class="bi-en">Motivation of the team for the „Run to the Sun“ competition through an explanation of the business model.</span><span class="bi-de">Motivation des Teams für den „Run to the Sun“-Wettbewerb durch eine Erläuterung des Geschäftsmodells.</span></p></div>
+<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li><span class="bi-en">„Run to the Sun“ competition: Win a free 3-day trip to Spain by recruiting 3 direct partners who each produce 99 units.</span><span class="bi-de">„Run to the Sun“-Wettbewerb: Gewinne eine kostenlose 3-tägige Reise nach Spanien, indem du 3 direkte Partner rekrutierst, die jeweils 99 Einheiten produzieren.</span></li><li><span class="bi-en">Strategic recruitment: Use the upcoming “Grundseminar” and the “Kick-off” event to introduce interested parties to the company culture and business model.</span><span class="bi-de">Strategische Rekrutierung: Nutze das bevorstehende „Grundseminar“ und das „Kick-off“-Event, um Interessenten die Unternehmenskultur und das Geschäftsmodell näherzubringen.</span></li><li><span class="bi-en">The „Cashflow-Quadrant“ pitch: Position the Strukturvertriebsmodell as the simplest way to move from employee (time for money) to business owner (systems for money).</span><span class="bi-de">Der „Cashflow-Quadrant“-Pitch: Positioniere das Strukturvertriebsmodell als den einfachsten Weg, um vom Angestellten (Zeit gegen Geld) zum Geschäftsinhaber (Systeme gegen Geld) zu werden.</span></li></ul></div>
+<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li><span class="bi-en">Contact Martin to confirm participation in the basic seminar and the kick-off event.</span><span class="bi-de">Martin kontaktieren, um die Teilnahme am Grundseminar und am Kick-off-Event zu bestätigen.</span></li><li><span class="bi-en">Create a list of the top 5 interested parties.</span><span class="bi-de">Eine Liste der Top-5-Interessenten erstellen.</span></li><li><span class="bi-en">Prepare and practice the pitch for the events.</span><span class="bi-de">Den Pitch für die Events vorbereiten und üben.</span></li></ul></div>
+<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li><span class="bi-en">Goal: Secure a date for a follow-up discussion, not close the deal.</span><span class="bi-de">Ziel: Einen Termin für ein Folgegespräch sichern, nicht das Geschäft abschließen.</span></li></ul></div>
 </div></section>
-      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Martin kontaktieren, um die Teilnahme am Grundseminar und am Kick-off-Event zu bestätigen.</span></li><li><span class="todo-task">Eine Liste der Top-5-Interessenten erstellen.</span></li><li><span class="todo-task">Den Pitch für die Events vorbereiten und üben.</span></li><li><span class="todo-task">Termine für Folgegespräche mit Interessenten vereinbaren.</span></li></ul></section>
-      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Zweck des Meetings</h3>
+      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task"><span class="bi-en">Contact Martin to confirm participation in the basic seminar and the kick-off event.</span><span class="bi-de">Martin kontaktieren, um die Teilnahme am Grundseminar und am Kick-off-Event zu bestätigen.</span></span></li><li><span class="todo-task"><span class="bi-en">Create a list of the top 5 interested parties.</span><span class="bi-de">Eine Liste der Top-5-Interessenten erstellen.</span></span></li><li><span class="todo-task"><span class="bi-en">Prepare and practice the pitch for the events.</span><span class="bi-de">Den Pitch für die Events vorbereiten und üben.</span></span></li><li><span class="todo-task"><span class="bi-en">Schedule follow-up meetings with interested parties.</span><span class="bi-de">Termine für Folgegespräche mit Interessenten vereinbaren.</span></span></li></ul></section>
+      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><div class="bi-en"><h3 class="exec-h">Purpose of the Meeting</h3>
+<p class="exec-p">Motivation of the team for the „Run to the Sun“ competition through an explanation of the business model.</p>
+<h3 class="exec-h">Wichtigste Erkenntnisse</h3>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>„Run to the Sun“-Wettbewerb:</strong> Win a free 3-day trip to Spain by recruiting 3 direct partners who each produce 99 units.</li>
+<li><strong>Strategische Rekrutierung:</strong> Use the upcoming “Grundseminar” and the “Kick-off” event to introduce prospects to the company culture and business model.</li>
+<li><strong>The “Cashflow-Quadrant” pitch:</strong> Position the network-marketing model as the easiest way to move from employee (time for money) to business owner (systems for money).</li>
+<li><strong>Pitch-Taktik:</strong> Secure an appointment by offering a “test phase” that defers the decision to a later date and minimizes risk for the prospect.</li>
+</ul>
+</ul>
+<h3 class="exec-h">Themen</h3>
+<h4 class="exec-h2">„Run to the Sun“-Wettbewerb</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Ziel:</strong> Win a free 3-day trip to Spain for two people.</li>
+<li><strong>Voraussetzung:</strong> Recruit 3 direct partners who each produce at least 99 units.</li>
+<li><strong>Zeitrahmen:</strong> 6+ Wochen verbleiben.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Bevorstehende Rekrutierungs-Events</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Grundseminar (Samstag):</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Zweck:</strong> Introduce prospects to the company culture and leadership.</li>
+<li><strong>Umfang:</strong> 150–200 participants, internal football matches.</li>
+</ul>
+</ul>
+<li><strong>Kick-off-Event (Sonntag):</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Zweck:</strong> Show prospects the size and potential of the company.</li>
+<li><strong>Umfang:</strong> 300 participants, €50,000 budget, catering, top speakers from Munich.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">Why the business model works</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>1. Riesiger Markt:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Market of untapped potential:</strong> 83 % of Germans have no financial products.</li>
+<li><strong>Displacement market:</strong> Replace poor products (e.g., an ETF policy that delivered -0.7 % p. a. over 15 years) with better ones.</li>
+</ul>
+</ul>
+<li><strong>2. Supportive environment:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Netzwerk:</strong> Connect with like-minded, goal-oriented people.</li>
+<li><strong>Work-Life-Integration:</strong> Merge work and private life by working with friends and family.</li>
+</ul>
+</ul>
+<li><strong>3. Personal development:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Leadership:</strong> Take early responsibility for the success of a team.</li>
+<li><strong>Skills:</strong> Develop routines, strategy and self-discipline.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">Recruitment pitch: The „Cashflow-Quadrant“</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Konzept:</strong> Explain the four work categories to position the structure-distribution model.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Angestellter (E):</strong> Tauscht Zeit gegen Geld.</li>
+<li><strong>Self-employed (S):</strong> Trades his skills for money.</li>
+<li><strong>Business owner (B):</strong> Nutzt Systeme, um Geld zu verdienen.</li>
+<li><strong>Investor (I):</strong> Nutzt Geld, um Geld zu verdienen.</li>
+</ul>
+</ul>
+<li><strong>Positionierung:</strong> The structure-distribution model is the simplest way to move from employee to business owner.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>System:</strong> A team of self-employed partners.</li>
+<li><strong>Vorteil:</strong> No salary costs, as ERGO pays the partners directly.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">Pitch tactic for the events</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Ziel:</strong> Secure an appointment for a follow-up conversation, not close the deal.</li>
+<li><strong>Rahmen:</strong> Offer a „test phase“ to minimize the risk for the prospect.</li>
+<li><strong>Formulierung:</strong> „Listen to it, form your own opinion and then decide whether it is something for you.“</li>
+<li><strong>Dringlichkeit:</strong> Emphasize that this is the last chance to experience the „basic seminar“.</li>
+</ul>
+</ul></div><div class="bi-de"><h3 class="exec-h">Zweck des Meetings</h3>
 <p class="exec-p">Motivation des Teams für den „Run to the Sun“-Wettbewerb durch eine Erläuterung des Geschäftsmodells.</p>
 <h3 class="exec-h">Wichtigste Erkenntnisse</h3>
 <ul class="exec-ul">
@@ -747,14 +865,14 @@
 <li><strong>Formulierung:</strong> „Hör es dir an, bilde dir deine eigene Meinung und entscheide dann, ob es etwas für dich ist.“</li>
 <li><strong>Dringlichkeit:</strong> Betone, dass dies die letzte Chance ist, das „Grundseminar“ zu erleben.</li>
 </ul>
-</ul></div></details>
+</ul></div></div></details>
       
       
       
       
       
       
-      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><h3 class="exec-h">November Trip To Orbea</h3>
+      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><div class="bi-en"><h3 class="exec-h">November Trip To Orbea</h3>
 <ul class="exec-ul">
 <li>3-day trip to Orbea, Spain in November</li>
 <li>Team gathering with partners, no work required</li>
@@ -880,7 +998,133 @@
 <li>Prepare pitch for recruitment conversations</li>
 <li>Focus on setting appointments, not selling the business</li>
 <li>Use &quot;make your own picture&quot; approach in conversations</li>
-</ul></div></section>
+</ul></div><div class="bi-de"><h3 class="exec-h">November-Trip nach Orbea</h3>
+<ul class="exec-ul">
+<li>3-tägige Reise nach Orbea, Spanien im November</li>
+<li>Teamtreffen mit Partnern, keine Arbeit erforderlich</li>
+<li>Entscheidung: Alle bestätigt, an der Reise teilzunehmen</li>
+</ul>
+<h3 class="exec-h">November Trip Competition</h3>
+<ul class="exec-ul">
+<li>Free trip (flight + hotel) as competition prize</li>
+<li>Muss 3 direkte Partner (keine Downline) mit jeweils 99+ Einheiten rekrutieren</li>
+<li>Noch 6+ Wochen, um die Anforderungen zu erfüllen.</li>
+<li>Step-by-step plan presented today</li>
+</ul>
+<h3 class="exec-h">Warum dieses Geschäftsmodell</h3>
+<ul class="exec-ul">
+<li>Der Schlüssel zur Rekrutierung: Verstehen, warum Sie hier sind</li>
+<li>Jay identifiziert sich stark mit dem Geschäftsmodell</li>
+<li>Heutiger Fokus: Vorteile des Modells aufschlüsseln</li>
+</ul>
+<h3 class="exec-h">Upcoming Event (August 16)</h3>
+<ul class="exec-ul">
+<li>Ganztägige Veranstaltung nach dem Sonntagsseminar, ganztägiger Standort</li>
+<li>Beinhaltet Dresscode, Entertainment und Catering</li>
+<li>Evening: top performers hosting 5 events in the Bronx from 7 PM</li>
+<li>Ziel: maximale Energie und Dopamin für die Teilnehmer</li>
+</ul>
+<h3 class="exec-h">Event Preparation</h3>
+<ul class="exec-ul">
+<li>Alle Teammitglieder müssen sich heute für das Event anmelden</li>
+<li>Wochenendplan: Grundseminar (Samstag) + Kickoff für neue Mitglieder</li>
+<li>Kickoff hilft neuen Mitgliedern, sich zu vernetzen und Meinungen zu bilden</li>
+</ul>
+<h3 class="exec-h">Grundseminar Details</h3>
+<ul class="exec-ul">
+<li>Begrenzte Sitzplätze; Event ist ausgebucht</li>
+<li>Zu den Gastrednern gehören ein Stufe-6-Leiter und ein Bankvertreter.</li>
+<li>Fokus: Netzwerken mit interessanten Persönlichkeiten, nicht Produktinformationen</li>
+<li>Samstagsplanung beinhaltet ein Fußballspiel am Abend (intern)</li>
+</ul>
+<h3 class="exec-h">Sunday Kickoff Details</h3>
+<ul class="exec-ul">
+<li>Budget: 50.000 EUR für das Event</li>
+<li>Dresscode: lässig, wettergerechte Kleidung für warme Tage</li>
+<li>Gastredner aus München, Top 2 Speaker im Unternehmen</li>
+</ul>
+<h3 class="exec-h">Rekrutierungsstrategie für die November-Reise</h3>
+<ul class="exec-ul">
+<li>Wir brauchen 3 neue Geschäftspartner von der Firma Beyer.</li>
+<li>Wochenendveranstaltungen dienen als Rekrutierungsmöglichkeit</li>
+<li>Jay plant, persönlich an Veranstaltungen teilzunehmen und sich dort einzubringen.</li>
+</ul>
+<h3 class="exec-h">Warum dieses Geschäftsmodell (Interaktive Session)</h3>
+<ul class="exec-ul">
+<li>Jay bittet das Team, zu teilen, was sie am Geschäft cool finden.</li>
+<li>Themen: persönliche Entwicklung, Teambuilding, Selbstständigkeit</li>
+</ul>
+<h3 class="exec-h">Warum dieses Geschäftsmodell (Marktauswahl)</h3>
+<ul class="exec-ul">
+<li>Jay rät dem Team, sich für die Samstagsveranstaltung Notizen zu machen.</li>
+<li>Drei Schlüssel-Märkte: Finance, Beauty und ein weiterer</li>
+<li>Finanzierung gewählt: hoher Geldfluss = hohes Wertpotenzial</li>
+<li>Hoher Geldfluss bedeutet auch mehr Spielraum für Fehler (26 % Fehlerrate)</li>
+<li>US-Fehlerrate: 60 %; erhebliches Potenzial zur Wertschöpfung</li>
+<li>Two market types: Erschließungsmarkt (new) vs Verdrängungsmarkt (replace)</li>
+</ul>
+<h3 class="exec-h">Warum dieses Geschäftsmodell (Markttyp)</h3>
+<ul class="exec-ul">
+<li>Verdrängungsmarkt example: Mercedes-Benz sales</li>
+<li>Erschließungsmarkt: 83% of German market</li>
+<li>Finance market is Erschließungsmarkt</li>
+<li>Kein Wettbewerb im neuen Markt</li>
+</ul>
+<h3 class="exec-h">Warum dieses Geschäftsmodell (Produktkenntnisse)</h3>
+<ul class="exec-ul">
+<li>Jay has 30-50 insurance policies</li>
+<li>ERGO has ETF savings plan as flagship product</li>
+<li>Produktwissen ist spezialisiert und tiefgehend</li>
+<li>Wettbewerber haben breites, aber oberflächliches Wissen</li>
+</ul>
+<h3 class="exec-h">Warum dieses Geschäftsmodell (Kundenbeispiel)</h3>
+<ul class="exec-ul">
+<li>Arzt-Kunde hatte von der Bank verwaltete ETFs</li>
+<li>15-jährige Performance: minus 0,7 % pro Jahr</li>
+<li>Die Opportunitätskosten waren erheblich</li>
+<li>Der Kunde hat nach dem Sehen der Ergebnisse gewechselt.</li>
+</ul>
+<h3 class="exec-h">Warum dieses Geschäftsmodell (Umfeld)</h3>
+<ul class="exec-ul">
+<li>Jay lebt mit engsten Freunden im Geschäft zusammen.</li>
+<li>Funktioniert mit den meisten von ihnen, ohne von ihrer Struktur zu profitieren</li>
+<li>Geschäft schafft tiefe Verbindungen über Transaktionen hinaus</li>
+<li>Netzwerk definiert Ihren Netto-Vermögenswert</li>
+</ul>
+<h3 class="exec-h">Warum dieses Geschäftsmodell (Work-Life Balance)</h3>
+<ul class="exec-ul">
+<li>Work-Life-Balance existiert nicht</li>
+<li>Energie ist zu 100 % gesamt, verteilt auf die Bereiche</li>
+<li>Kann nicht 100 % Energie auf 500 % über alles multiplizieren</li>
+</ul>
+<h3 class="exec-h">Warum dieses Geschäftsmodell (Cashflow Quadrant)</h3>
+<ul class="exec-ul">
+<li>Vier Positionen: Mitarbeiter, Selbstständiger, Unternehmer, Investor</li>
+<li>Employees trade time for money</li>
+<li>Selbstständige tauschen mehr Zeit gegen mehr Geld</li>
+<li>Unternehmer bauen Systeme, die auch ohne sie funktionieren</li>
+</ul>
+<h3 class="exec-h">Warum dieses Geschäftsmodell (Structure Sales Advantage)</h3>
+<ul class="exec-ul">
+<li>Strukturvertrieb ist der einfachste Weg zum Unternehmertum</li>
+<li>Teammitglieder sind alle selbstständig</li>
+<li>Es ist nicht nötig, Mitarbeiter zu bezahlen.</li>
+<li>Teammitglieder arbeiten eigenverantwortlich mit Mentoring</li>
+</ul>
+<h3 class="exec-h">Warum dieses Geschäftsmodell (Recruitment Edge)</h3>
+<ul class="exec-ul">
+<li>Kann ohne viel Geld, Wissen oder Erfahrung erfolgreich sein</li>
+<li>Konzentrieren Sie sich auf persönliche Entwicklung und Überzeugung.</li>
+<li>Muss Interesse daran haben, mit Menschen zusammenzuarbeiten</li>
+</ul>
+<h3 class="exec-h">Action Items</h3>
+<ul class="exec-ul">
+<li>Alle Teammitglieder melden sich heute für die Veranstaltung am 16. August an</li>
+<li>Top 5 Personen für die Wochenendveranstaltungen notieren</li>
+<li>Pitch für Rekrutierungsgespräche vorbereiten</li>
+<li>Fokus auf Terminvereinbarungen, nicht auf den Verkauf des Geschäfts</li>
+<li>„Make your own picture“-Ansatz in Gesprächen verwenden</li>
+</ul></div></div></section>
     </div>
 
     <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
@@ -1119,5 +1363,62 @@
       }));
     }
   </script>
+
+<script id="ergomeet-bilingual-nav">
+(function () {
+  const EXTRA = {
+    de: { toc_home: 'Termine', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Überblick', toc_notes: 'Notizen', toc_live: 'Live' },
+    en: { toc_home: 'Meetings', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Summary', toc_notes: 'Notes', toc_live: 'Live' }
+  };
+  if (window.ERGOMEET_I18N) {
+    if (ERGOMEET_I18N.de) Object.assign(ERGOMEET_I18N.de, EXTRA.de);
+    if (ERGOMEET_I18N.en) Object.assign(ERGOMEET_I18N.en, EXTRA.en);
+    delete ERGOMEET_I18N.tr;
+  }
+  const sel0 = document.getElementById('langSelect');
+  if (sel0) {
+    [...sel0.options].forEach((o) => { if (o.value !== 'de' && o.value !== 'en') o.remove(); });
+  }
+  window.ergomeetBuildToc = function () {
+    const toc = document.getElementById('sectionToc');
+    if (!toc) return;
+    const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
+    const pack = (window.ERGOMEET_I18N && ERGOMEET_I18N[lang]) || EXTRA[lang];
+    const home = toc.querySelector('.toc-home');
+    if (home) home.remove();
+    toc.innerHTML = '';
+    const homeLink = home || document.createElement('a');
+    homeLink.className = 'toc-home';
+    homeLink.href = 'https://yashbora9.github.io/ergomeet-reports/';
+    homeLink.setAttribute('data-i18n', 'toc_home');
+    homeLink.textContent = pack.toc_home || 'Meetings';
+    toc.appendChild(homeLink);
+    const keys = { recap: 'toc_recap', todos: 'toc_todos', summary: 'toc_summary', notes: 'toc_notes', 'live-summary': 'toc_live' };
+    document.querySelectorAll('[data-block]:not(.is-empty):not([hidden])').forEach((block) => {
+      const id = block.id || block.getAttribute('data-block');
+      if (!id || !keys[id]) return;
+      if (!block.id) block.id = id;
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = pack[keys[id]] || id;
+      toc.appendChild(a);
+    });
+  };
+  const prev = window.ergomeetApplyLang;
+  window.ergomeetApplyLang = function (lang) {
+    if (lang !== 'de' && lang !== 'en') lang = 'de';
+    if (typeof prev === 'function') prev(lang);
+    document.documentElement.lang = lang;
+    localStorage.setItem('ergomeet-lang', lang);
+    const sel = document.getElementById('langSelect');
+    if (sel && sel.value !== lang) sel.value = lang;
+    window.ergomeetBuildToc();
+  };
+  const saved = localStorage.getItem('ergomeet-lang');
+  const browser = (navigator.language || 'de').slice(0, 2);
+  window.ergomeetApplyLang((saved === 'en' || saved === 'de') ? saved : (browser === 'en' ? 'en' : 'de'));
+})();
+</script>
+
 </body>
 </html>

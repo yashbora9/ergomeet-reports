@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="dark">
+<html data-ergomeet-bilingual="1" lang="de" data-theme="dark">
 <head>
   <meta name="robots" content="noindex, nofollow" />
   <meta charset="utf-8"/>
@@ -605,18 +605,43 @@
       text-transform: uppercase;
       color: var(--muted);
     }
+  
+    /* ergomeet-bi */
+    .topbar-inner { justify-content: space-between; }
+    .topbar .toc {
+      display: flex !important;
+      flex: 1 1 auto;
+      min-width: 0;
+      margin: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      gap: 6px;
+    }
+    .topbar .toc::-webkit-scrollbar { display: none; }
+    .topbar .toc a { white-space: nowrap; flex-shrink: 0; }
+    html[lang="en"] .bi-de { display: none !important; }
+    html[lang="de"] .bi-en { display: none !important; }
+    span.bi-en, span.bi-de { display: inline; }
+    div.bi-en, div.bi-de { display: block; }
+    @media (max-width: 820px) {
+      .topbar-inner { flex-wrap: wrap; }
+      .topbar .toc { order: 2; flex-basis: 100%; }
+    }
+
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
+      <nav class="toc" id="sectionToc" aria-label="Sections">
+        <a class="toc-home" href="https://yashbora9.github.io/ergomeet-reports/" data-i18n="toc_home">Meetings</a>
+      </nav>
       <div class="topbar-controls">
         <select id="langSelect" class="lang-select" aria-label="Language">
           <option value="de">DE</option>
           <option value="en">EN</option>
-          <option value="tr">TR</option>
         </select>
-        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+<button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
           <span class="icon-sun" aria-hidden="true">☀</span>
           <span class="icon-moon" aria-hidden="true">☾</span>
           <span id="themeToggleLabel" data-i18n="theme_light">Light</span>
@@ -641,19 +666,124 @@
     </header>
 
     <!-- No empty shell under the heading: blocks only appear when builder marks them present -->
-    <nav class="toc" id="sectionToc" aria-label="Sections"></nav>
-    <div class="stack" id="reportStack">
+<div class="stack" id="reportStack">
       <section class="section block recap-card" id="recap" data-block="recap">
 <div class="section-label" data-i18n="lbl_recap">60 seconds</div>
 <h2 data-i18n="recap">Recap</h2>
 <div class="recap-grid">
-<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text">Marvins persönliche Geschichte und eine Schritt-für-Schritt-Anleitung für den Aufbau eines 10.000-€/Monat-Geschäfts teilen.</p></div>
-<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li>Eine Entscheidung, kein Talent: Marvins schneller Aufstieg (10.000 €/Monat im 2. Monat, Stufe 3 im 4. Monat) war das Ergebnis einer Entscheidung, nicht von Talent. Er brach sein Studium ab, um sich voll auf Ergo zu konzentrieren, und ignorierte dabei die Skepsis seiner Familie.</li><li>Identifikation ist entscheidend: Erfolg erfordert eine 100%ige Überzeugung von Ergos Wert. Diese Überzeugung entsteht, indem man die drei Kernfragen beantwortet: Warum ist Investieren wichtig? Warum sind ETFs die beste Lösung? Und warum ist Ergo die beste Plattform?</li><li>Das Gesetz der großen Zahlen: Erfolg ist ein Zahlen- und kein Talentproblem. Ergo ist ein „finanzieller Unfallschutz“, und das Geschäft besteht darin, möglichst viele Menschen zu erreichen, um sie vor einem „finanziellen Unfall“ zu bewahren.</li></ul></div>
-<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li>Coordinate w/ structurer: schedule 3-topic onboarding; then draft Dec plan (GS Oct 17/Nov 14, 6 calls/day, 8+16) (Marvin)</li><li>Mit dem Strukturier treffen, um die drei Kernfragen zu Ergos Wertversprechen zu klären.</li><li>Einen Umsetzungsplan erstellen, um bis Dezember Stufe 3 zu erreichen.</li></ul></div>
-<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li>Inflation und ein marodes Rentensystem machen es zu einer Notwendigkeit, nicht zu einem Luxus.</li></ul></div>
+<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text" data-topic-en="Marvin&#x27;s personal story and a step-by-step guide for building a 10,000-€/month business." data-topic-de="Marvins persönliche Geschichte und eine Schritt-für-Schritt-Anleitung für den Aufbau eines 10.000-€/Monat-Geschäfts teilen."><span class="bi-en">Marvin's personal story and a step-by-step guide for building a 10,000-€/month business.</span><span class="bi-de">Marvins persönliche Geschichte und eine Schritt-für-Schritt-Anleitung für den Aufbau eines 10.000-€/Monat-Geschäfts teilen.</span></p></div>
+<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li><span class="bi-en">A decision, not talent: Marvin's rapid rise (10,000 €/month in month 2, Stufe 3 in month 4) was the result of a decision, not talent. He dropped out of his studies to focus fully on Ergo, ignoring his family's skepticism.</span><span class="bi-de">Eine Entscheidung, kein Talent: Marvins schneller Aufstieg (10.000 €/Monat im 2. Monat, Stufe 3 im 4. Monat) war das Ergebnis einer Entscheidung, nicht von Talent. Er brach sein Studium ab, um sich voll auf Ergo zu konzentrieren, und ignorierte dabei die Skepsis seiner Familie.</span></li><li><span class="bi-en">Identification is crucial: success requires 100% conviction in ERGO's value. This conviction is achieved by answering the three core questions: Why is investing important? Why are ETFs the best solution? And why is ERGO the best platform?</span><span class="bi-de">Identifikation ist entscheidend: Erfolg erfordert eine 100%ige Überzeugung von Ergos Wert. Diese Überzeugung entsteht, indem man die drei Kernfragen beantwortet: Warum ist Investieren wichtig? Warum sind ETFs die beste Lösung? Und warum ist Ergo die beste Plattform?</span></li><li><span class="bi-en">The law of large numbers: Success is a numbers problem, not a talent problem. ERGO is "financial accident protection," and the business consists of reaching as many people as possible to protect them from a "financial accident."</span><span class="bi-de">Das Gesetz der großen Zahlen: Erfolg ist ein Zahlen- und kein Talentproblem. Ergo ist ein „finanzieller Unfallschutz“, und das Geschäft besteht darin, möglichst viele Menschen zu erreichen, um sie vor einem „finanziellen Unfall“ zu bewahren.</span></li></ul></div>
+<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li><span class="bi-en">Coordinate w/ structurer: schedule 3-topic onboarding; then draft Dec plan (GS Oct 17/Nov 14, 6 calls/day, 8+16) (Marvin)</span><span class="bi-de">Mit Structurer abstimmen: 3-Themen-Onboarding terminieren; dann Dez-Plan entwerfen (GS 17. Okt/14. Nov, 6 Calls/Tag, 8+16) (Marvin)</span></li><li><span class="bi-en">Meet with the structuring team to clarify the three core questions regarding ERGO's value proposition.</span><span class="bi-de">Mit dem Strukturier treffen, um die drei Kernfragen zu Ergos Wertversprechen zu klären.</span></li><li><span class="bi-en">Create an implementation plan to reach Stufe 3 by December.</span><span class="bi-de">Einen Umsetzungsplan erstellen, um bis Dezember Stufe 3 zu erreichen.</span></li></ul></div>
+<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li><span class="bi-en">Inflation and a dilapidated pension system make it a necessity, not a luxury.</span><span class="bi-de">Inflation und ein marodes Rentensystem machen es zu einer Notwendigkeit, nicht zu einem Luxus.</span></li></ul></div>
 </div></section>
-      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Coordinate w/ structurer: schedule 3-topic onboarding; then draft Dec plan (GS Oct 17/Nov 14, 6 calls/day, 8+16)</span><span class="todo-meta">Marvin</span></li><li><span class="todo-task">Mit dem Strukturier treffen, um die drei Kernfragen zu Ergos Wertversprechen zu klären.</span></li><li><span class="todo-task">Einen Umsetzungsplan erstellen, um bis Dezember Stufe 3 zu erreichen.</span></li><li><span class="todo-task">Das tägliche Ziel von 6 qualifizierten Anrufen umsetzen.</span></li><li><span class="todo-task">Die Präsenz und die Führungskompetenz durch Üben vor dem Spiegel verbessern.</span></li></ul></section>
-      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Zweck des Meetings</h3>
+      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task"><span class="bi-en">Coordinate w/ structurer: schedule 3-topic onboarding; then draft Dec plan (GS Oct 17/Nov 14, 6 calls/day, 8+16)</span><span class="bi-de">Mit Structurer abstimmen: 3-Themen-Onboarding terminieren; anschließend Dez-Plan entwerfen (GS 17. Okt/14. Nov, 6 Calls/Tag, 8+16)</span></span><span class="todo-meta">Marvin</span></li><li><span class="todo-task"><span class="bi-en">Meet with the structuring team to clarify the three core questions regarding ERGO's value proposition.</span><span class="bi-de">Mit dem Strukturier treffen, um die drei Kernfragen zu Ergos Wertversprechen zu klären.</span></span></li><li><span class="todo-task"><span class="bi-en">Create an implementation plan to reach Stufe 3 by December.</span><span class="bi-de">Einen Umsetzungsplan erstellen, um bis Dezember Stufe 3 zu erreichen.</span></span></li><li><span class="todo-task"><span class="bi-en">Implement the daily target of 6 qualified calls.</span><span class="bi-de">Das tägliche Ziel von 6 qualifizierten Anrufen umsetzen.</span></span></li><li><span class="todo-task"><span class="bi-en">Improve presence and leadership skills by practicing in front of the mirror.</span><span class="bi-de">Die Präsenz und die Führungskompetenz durch Üben vor dem Spiegel verbessern.</span></span></li></ul></section>
+      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><div class="bi-en"><h3 class="exec-h">Purpose of the Meeting</h3>
+<p class="exec-p">Marvin's personal story and a step-by-step guide for building a 10,000-€/month business.</p>
+<h3 class="exec-h">Wichtigste Erkenntnisse</h3>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>A decision, not talent:</strong> Marvin’s rapid rise (10,000 €/month in month 2, Stufe 3 in month 4) was the result of a decision, not talent. He dropped out of university to focus fully on Ergo, ignoring his family’s skepticism.</li>
+<li><strong>Identification is crucial:</strong> Success requires 100% conviction in Ergo’s value. This conviction comes from answering the three core questions: Why is investing important? Why are ETFs the best solution? And why is Ergo the best platform?</li>
+<li><strong>The law of large numbers:</strong> Success is a numbers problem, not a talent problem. Ergo is “financial accident protection,” and the business is about reaching as many people as possible to protect them from a “financial accident.”</li>
+<li><strong>A clear implementation plan:</strong> To reach Stufe 3 by December, 3,500 units must be produced. This requires 24 new partners, split across the last two Grundseminare (GS), equating to a daily target of 6 calls.</li>
+</ul>
+</ul>
+<h3 class="exec-h">Themen</h3>
+<h4 class="exec-h2">Marvin’s path: A decision, not talent</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Marvin’s story shows that success is a decision. He dropped out of university and turned down a secure Bundeswehr salary of 3,000 €/month to focus fully on Ergo.</li>
+<li>He had previously tried other business models (dropshipping, trading, social media marketing) and concluded that Ergo is the most scalable and simplest.</li>
+<li><strong>Ergebnisse:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Monat 1:</strong> Stufe 2</li>
+<li><strong>Monat 2:</strong> \&gt;10.000 €/Monat Einkommen</li>
+<li><strong>Monat 4:</strong> Stufe 3</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">The success formula: Identification & Law of large numbers</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Success requires 100% identification with Ergo’s value proposition. This conviction comes from answering three questions:</li>
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Why is investing important?</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>Inflation and a dilapidated pension system make it a necessity, not a luxury.</li>
+</ul>
+</ul>
+</ul>
+<li><strong>Why are ETFs the best solution?</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>They offer security, diversification, high returns (some Ergo ETFs >45 %) and low entry barriers.</li>
+</ul>
+</ul>
+</ul>
+<li><strong>Why is Ergo the best platform?</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>Ergo offers the most cost-effective and efficient way to build long-term wealth.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<li><strong>The law of large numbers:</strong> Success is a numbers problem, not a talent problem.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Analogie:</strong> Ergo is “financial accident protection.” The business is about reaching as many people as possible to protect them from a “financial accident.”</li>
+<li><strong>Umsetzung:</strong> Increase the number of conversations to raise the probability of closing deals.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">The implementation plan: Reach Stufe 3 by December</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Ziel:</strong> Reach Stufe 3 by December to position yourself for the positive changes at Ergo next year.</li>
+<li><strong>Anforderungen:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Produktion:</strong> 3.500 Einheiten.</li>
+<li><strong>Rekrutierung:</strong> 24 new partners (based on an average of 150 units/partner).</li>
+</ul>
+</ul>
+<li><strong>Plan:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>17. Okt. GS:</strong> 8 neue Partner gewinnen.</li>
+<li><strong>14. Nov. GS:</strong> 16 neue Partner gewinnen.</li>
+</ul>
+</ul>
+<li><strong>Daily metrics:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Anrufe:</strong> 6 qualifizierte Anrufe/Tag.</li>
+<li><strong>Termine:</strong> 48 Termine in 8 Tagen (basierend auf einer 1:2-Abschlussquote).</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">Live-Coaching: Energie &amp; Storytelling</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>A series of mini-games demonstrated the importance of energy and storytelling.</li>
+<li><strong>Erkenntnisse:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Energy is crucial:</strong> The way something is said is more important than the content.</li>
+<li><strong>Storytelling schafft Verbindung:</strong> Connecting customers with a personal story or a vision for their future is more effective than a purely product-based sales pitch.</li>
+<li><strong>Practice in front of the mirror:</strong> Improve presence and leadership skills.</li>
+</ul>
+</ul>
+</ul>
+</ul></div><div class="bi-de"><h3 class="exec-h">Zweck des Meetings</h3>
 <p class="exec-p">Marvins persönliche Geschichte und eine Schritt-für-Schritt-Anleitung für den Aufbau eines 10.000-€/Monat-Geschäfts teilen.</p>
 <h3 class="exec-h">Wichtigste Erkenntnisse</h3>
 <ul class="exec-ul">
@@ -759,14 +889,14 @@
 </ul>
 </ul>
 </ul>
-</ul></div></details>
+</ul></div></div></details>
       
       
       
       
       
       
-      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><h3 class="exec-h">Opening Introduction</h3>
+      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><div class="bi-en"><h3 class="exec-h">Opening Introduction</h3>
 <ul class="exec-ul">
 <li>Speaker Marvin introduced with strong respect and recognition</li>
 <li>Marvin described as having double holding structure</li>
@@ -985,7 +1115,226 @@
 <h3 class="exec-h">Action Items</h3>
 <ul class="exec-ul">
 <li>No action items detected</li>
-</ul></div></section>
+</ul></div><div class="bi-de"><h3 class="exec-h">Eröffnungs-Einführung</h3>
+<ul class="exec-ul">
+<li>Speaker Marvin mit starkem Respekt und Anerkennung vorgestellt</li>
+<li>Marvin wird als doppelte Holding-Struktur beschrieben.</li>
+<li>Marvin erreichte Stufe 3 innerhalb von vier Monaten</li>
+<li>Marvin erzielte in kurzer Zeit verrückte Ergebnisse</li>
+<li>Publikum angewiesen, laut für Marvins Vorstellung zu jubeln</li>
+</ul>
+<h3 class="exec-h">Vision für das Geschäftswachstum</h3>
+<ul class="exec-ul">
+<li>Aktuelles Wachstum als verrückt mit außergewöhnlichen Menschen beschrieben</li>
+<li>Vision, Grundseminare innerhalb von drei Jahren im Olympiastadion abzuhalten</li>
+<li>Community erwartet, in Deutschland neue Maßstäbe zu setzen</li>
+<li>Gute Zeiten für das Team</li>
+<li>Speaker Marvin bedankt sich für die Teilnahme</li>
+</ul>
+<h3 class="exec-h">Wright-Brüder-Analogie</h3>
+<ul class="exec-ul">
+<li>Erster Flug der Wright-Brüder dauerte 12 Sekunden und überbrückte 37 Meter</li>
+<li>Viele hielten motorisiertes Fliegen damals für unmöglich</li>
+<li>Brüder sahen sich jahrelang mit Misserfolgen und Spott konfrontiert</li>
+<li>66 Jahre später landete der erste Mensch auf dem Mond</li>
+<li>Botschaft: anderen beweisen, dass 10.000 EUR monatlich verdienbar sind</li>
+</ul>
+<h3 class="exec-h">Persönliche Reise-Übersicht</h3>
+<ul class="exec-ul">
+<li>Thema dreht sich darum, ERGO zum Hauptberuf zu machen</li>
+<li>Speaker sieht dies als Lebensleidenschaft, nicht nur als Job</li>
+<li>Begann mit 23 Jahren und setzte alles auf eine Karte</li>
+<li>Möchte das Publikum auf die persönliche Reise mitnehmen</li>
+<li>Speaker startete sehr schnell und erzielte raschen Erfolg</li>
+</ul>
+<h3 class="exec-h">Audience Demographics</h3>
+<ul class="exec-ul">
+<li>Many participants under 22 years old</li>
+<li>Die meisten haben kürzlich die Schule/Abitur abgeschlossen</li>
+<li>Zwei Teilnehmer verdienen bereits 10.000 EUR monatlich (Trading und Immobilien)</li>
+<li>Die Mehrheit möchte 10.000 EUR monatlich verdienen</li>
+<li>Die 10.000 EUR-Marke wurde als erster großer Meilenstein identifiziert</li>
+</ul>
+<h3 class="exec-h">Bundeswehr Experience</h3>
+<ul class="exec-ul">
+<li>Der Speaker ging nach dem Abitur zur Bundeswehr</li>
+<li>Verbrachte vier Wochen im Wald bei minus 15 Grad</li>
+<li>Hatte während des Trainings eine Schlange im Zelt</li>
+<li>Nutzte die Erfahrung zur Lebensreflexion</li>
+<li>Many young people follow prescribed paths without questioning</li>
+</ul>
+<h3 class="exec-h">Bedeutung der Zielsetzung</h3>
+<ul class="exec-ul">
+<li>Es ist essenziell, klare Lebensziele zu haben</li>
+<li>Erfolgreiche Menschen brauchen Ziele, auf die sie hinarbeiten können</li>
+<li>Der Speaker hinterfragte, ob der aktuelle Weg mit den Zielen übereinstimmt</li>
+<li>Viele kamen durch Social Media mit Selbstständigkeit in Berührung</li>
+<li>Videos über Erfolg weckten das anfängliche Interesse</li>
+</ul>
+<h3 class="exec-h">Family Motivation</h3>
+<ul class="exec-ul">
+<li>Auch Eltern haben Träume und Ziele</li>
+<li>Möglichkeit, den Eltern das zu ermöglichen, was sie nicht erreichen konnten</li>
+<li>Eltern haben ihr Leben lang für ihre Kinder Opfer gebracht</li>
+<li>Erfolg nicht zu verfolgen bedeutet, das eigene Potenzial zu missachten</li>
+<li>Die Familienmotivation wurde zur treibenden Kraft für den Start</li>
+</ul>
+<h3 class="exec-h">Mehrere Geschäftsversuche</h3>
+<ul class="exec-ul">
+<li>Der Redner hat Dropshipping, Trading und Social-Media-Marketing ausprobiert.</li>
+<li>Hatte eigene Agentur für den Verkauf von Websites</li>
+<li>Ich habe eine Mode-Marke gegründet, die Kleidung online verkauft.</li>
+<li>Habe Amazon FBA und verschiedene andere Modelle ausprobiert</li>
+<li>All attempts provided valuable learning experience</li>
+</ul>
+<h3 class="exec-h">Wichtige Erkenntnis zur Ausdauer</h3>
+<ul class="exec-ul">
+<li>Wenn du einen falschen Zug machst, steig rechtzeitig aus.</li>
+<li>Je länger du auf dem falschen Weg bleibst, desto teurer wird das Rückfahrticket.</li>
+<li>Ratschläge, Aktivitäten aufzugeben, die nicht mit den Zielen übereinstimmen.</li>
+<li>Eltern und Freunde können Entscheidungen ablehnen</li>
+<li>Außergewöhnliche Ergebnisse erfordern außergewöhnliche Maßnahmen</li>
+</ul>
+<h3 class="exec-h">Universitäts-Entscheidungspunkt</h3>
+<ul class="exec-ul">
+<li>Der Redner hat Betriebswirtschaftslehre mit guten Noten studiert.</li>
+<li>Vor der finalen Bachelorprüfung den Weg hinterfragen</li>
+<li>Es muss täglich 24 Stunden bewusst investiert werden</li>
+<li>Decided to exit 9-to-5 hamster wheel completely</li>
+<li>Schrieb „9-2-5-Exit, see you in Dubai“ auf die Prüfung.</li>
+</ul>
+<h3 class="exec-h">Mentale Stärke Entwicklung</h3>
+<ul class="exec-ul">
+<li>Erfolg erfordert zuerst die Persönlichkeit zu werden, dann Millionär.</li>
+<li>Kleine tägliche Entscheidungen summieren sich mit der Zeit (Gesetz der Akkumulation)</li>
+<li>Mentale Entscheidung, nicht aufzugeben, stärkt das Selbstvertrauen</li>
+<li>Ohne Snooze-Button aufzuwachen beginnt die tägliche Disziplin</li>
+<li>Ehrlich zu sich selbst zu sein, verhindert Selbstsabotage</li>
+</ul>
+<h3 class="exec-h">Rapid Success Timeline</h3>
+<ul class="exec-ul">
+<li>Started ERGO April 2025</li>
+<li>Month 1: Achieved Stage 2</li>
+<li>Monat 2: Über 10.000 EUR generiert</li>
+<li>Monat 3: Schöne Autos mit dem Team bestellt</li>
+<li>Month 4: Achieved Stage 3</li>
+</ul>
+<h3 class="exec-h">Entscheidung gegen den Familienwiderspruch</h3>
+<ul class="exec-ul">
+<li>Eltern hätten den Redner beinahe enterbt, weil er die Universität verlassen hat.</li>
+<li>Mother cried at home, family called repeatedly</li>
+<li>Der Redner entschied sich, nur Menschen zuzuhören, die bereits dort sind, wo er sein möchte.</li>
+<li>Eltern nicht am gewünschten Ziel, daher ihr Rat begrenzt</li>
+<li>Entscheidung gegen Familie erwies sich als richtig</li>
+</ul>
+<h3 class="exec-h">Vorteile des Geschäftsmodells</h3>
+<ul class="exec-ul">
+<li>ERGO wurde nach dem Ausprobieren aller anderen Varianten als bestes Geschäftsmodell identifiziert</li>
+<li>Extrem einfach, skalierbar und wirksam</li>
+<li>Es braucht keine spezifische Kundenansprache wie bei anderen Unternehmen.</li>
+<li>Kann Nachbarn, Onkel, Studenten oder jeden ansprechen</li>
+<li>Mehrere Akquisitionskanäle verfügbar (Cold Calling, Ads, Zeitungen)</li>
+</ul>
+<h3 class="exec-h">Wertschöpfungsfokus</h3>
+<ul class="exec-ul">
+<li>Welchen Wert bringe ich anderen?</li>
+<li>Geschäftlicher Erfolg entsteht dadurch, Menschen wirklich zu helfen</li>
+<li>Alles andere folgt aus der Value-Creation-Mindset.</li>
+<li>Der Speaker hat durch kontinuierlichen Einsatz Reisen und Anerkennung gewonnen.</li>
+<li>ERGO trips described as incredible experiences</li>
+</ul>
+<h3 class="exec-h">Team Building Emphasis</h3>
+<ul class="exec-ul">
+<li>Erfolg mit Freunden war ein wichtiges Ziel</li>
+<li>Zeig mir deine fünf besten Freunde, und ich zeige dir, wer du bist.</li>
+<li>Wenn du der Schlechteste im Raum bist, such dir einen anderen Raum.</li>
+<li>Von Top-Performern zu lernen beschleunigt den Erfolg</li>
+<li>Community sorgt für automatischen Schwung</li>
+</ul>
+<h3 class="exec-h">Back To Basics Philosophy</h3>
+<ul class="exec-ul">
+<li>Keine Notwendigkeit für komplexe Millionen-Dollar-Geschäftsideen</li>
+<li>Nutzen Sie, was bereits funktioniert, statt neu zu erfinden.</li>
+<li>Konzentrieren Sie sich auf bewährte Grundlagen</li>
+<li>Erfolg erfordert nicht, besonders oder außergewöhnlich zu sein</li>
+<li>Konsequenz bei den Basics führt zu Ergebnissen</li>
+</ul>
+<h3 class="exec-h">Marktzugänglichkeit</h3>
+<ul class="exec-ul">
+<li>Im Gegensatz zum Webdesign-Geschäft, das Unternehmer als Kunden benötigt</li>
+<li>ERGO arbeitet mit jeder Person unabhängig vom Hintergrund zusammen.</li>
+<li>Es gibt keine Einschränkungen, wen man ansprechen darf.</li>
+<li>Es gibt mehrere Möglichkeiten, Interessenten zu generieren</li>
+<li>Persönliche Verantwortung bestimmt die Kundengewinnung</li>
+</ul>
+<h3 class="exec-h">Gesetz der großen Zahlen</h3>
+<ul class="exec-ul">
+<li>Talent entscheidet nicht über Erfolg, die Anzahl der Gespräche schon</li>
+<li>Aktivitätsverfolgung zeigt, warum einige erfolgreich sind und andere nicht</li>
+<li>Leistungsorientiertes Arbeiten erforderlich, unabhängig von unmittelbaren Ergebnissen</li>
+<li>Man kann die Entscheidungen von Interessenten nicht steuern, nur die Aktivitätslevel.</li>
+<li>Unternehmertum entspricht der Anwendung des Gesetzes der großen Zahlen</li>
+</ul>
+<h3 class="exec-h">Goal Setting Framework</h3>
+<ul class="exec-ul">
+<li>Konkrete Pläne festlegen und konsequent umsetzen</li>
+<li>König setzt die Richtung, Adlige beraten die Strategie, Krieger führen aus</li>
+<li>Man kann nicht täglich gleichzeitig König und Krieger sein.</li>
+<li>Set year-end goals once, then execute plan</li>
+<li>Die nächsten drei Monate bestimmen die Entwicklung der nächsten fünf Jahre.</li>
+</ul>
+<h3 class="exec-h">Mathematische Aufschlüsselung für den Erfolg</h3>
+<ul class="exec-ul">
+<li>Each Grundseminar participant worth approximately 150 units</li>
+<li>3.500 Einheiten benötigt erfordert insgesamt 23-24 Teilnehmer</li>
+<li>Aufteilung zwischen zwei verbleibenden Seminaren: 12 und 16 Teilnehmer</li>
+<li>1:2 Abschlussquote erfordert 48 Termine über 8 Tage</li>
+<li>Täglich 6 Anrufe als erreichbares Ziel für die erforderlichen Ergebnisse</li>
+</ul>
+<h3 class="exec-h">Three-Month Sprint Recommendation</h3>
+<ul class="exec-ul">
+<li>Die nächsten drei Monate zu einem generationenübergreifenden Erfolg machen.</li>
+<li>Lassen Sie Hobbys und Ablenkungen zu Hause</li>
+<li>Fokussieren Sie sich ausschließlich auf geschäftliche Aktivitäten.</li>
+<li>Wird in den folgenden Jahren einen Butterfly-Effekt erzeugen.</li>
+<li>Stufe 3 Erfolg verändert alles ab jetzt</li>
+</ul>
+<h3 class="exec-h">Competition Structure</h3>
+<ul class="exec-ul">
+<li>Mehrere Minispiele für die Publikumsbeteiligung geplant</li>
+<li>Freiwillige für verschiedene Herausforderungen ausgewählt</li>
+<li>Konzentriert euch auf Energie und Einstellung statt auf perfekten Inhalt.</li>
+<li>Teilnehmer wurden aus ihrer Komfortzone gedrängt</li>
+<li>Kleine Entscheidungen führen zu Schmetterlingseffekten im Leben</li>
+</ul>
+<h3 class="exec-h">Motivational Speech Challenge</h3>
+<ul class="exec-ul">
+<li>Zwei Teilnehmer lieferten denselben Text mit unterschiedlicher Energie.</li>
+<li>Das Jury-Feedback betonte Energie vor perfekter Präsentation.</li>
+<li>Der Textinhalt ist weniger wichtig als die Haltung bei der Vermittlung.</li>
+<li>Energie wird vom Sprecher auf das Publikum übertragen</li>
+<li>Dieselben Worte erzielten je nach Präsentation eine unterschiedliche Wirkung.</li>
+</ul>
+<h3 class="exec-h">Final Customer Objection Handling</h3>
+<ul class="exec-ul">
+<li>Ich habe die Anfrage verstanden, aber ich kann keine Übersetzung liefern, da der Kontext unklar ist. Bitte geben Sie den englischen Meeting-Text an, den Sie übersetzen möchten.</li>
+<li>Konzentrieren Sie sich darauf, den Kunden in seine persönliche Geschichte einzubeziehen.</li>
+<li>Ich habe keine Anweisung, die Zeitreise-Visualisierungstechnik zu verwenden. Bitte geben Sie den englischen Meeting-Satz an, den ich ins natürliche Deutsch übersetzen soll.</li>
+<li>Schaffen Sie eine emotionale Verbindung, die über Produktmerkmale hinausgeht.</li>
+<li>Persönliche Einsätze steigern die Abschlusseffektivität</li>
+</ul>
+<h3 class="exec-h">Ein-Minuten-Legacy-Nachricht</h3>
+<ul class="exec-ul">
+<li>Challenge to deliver final message as if never seeing family again</li>
+<li>Konzentrieren Sie sich auf emotionale, sentimentale oder motivierende Inhalte.</li>
+<li>Worte sollten einprägsam und wirkungsvoll sein.</li>
+<li>Übung vor dem Spiegel wird zur Verbesserung empfohlen</li>
+<li>Führung erfordert die Fähigkeit, Menschen emotional zu bewegen</li>
+</ul>
+<h3 class="exec-h">Action Items</h3>
+<ul class="exec-ul">
+<li>Keine Maßnahmen erkannt</li>
+</ul></div></div></section>
     </div>
 
     <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
@@ -1224,5 +1573,62 @@
       }));
     }
   </script>
+
+<script id="ergomeet-bilingual-nav">
+(function () {
+  const EXTRA = {
+    de: { toc_home: 'Termine', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Überblick', toc_notes: 'Notizen', toc_live: 'Live' },
+    en: { toc_home: 'Meetings', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Summary', toc_notes: 'Notes', toc_live: 'Live' }
+  };
+  if (window.ERGOMEET_I18N) {
+    if (ERGOMEET_I18N.de) Object.assign(ERGOMEET_I18N.de, EXTRA.de);
+    if (ERGOMEET_I18N.en) Object.assign(ERGOMEET_I18N.en, EXTRA.en);
+    delete ERGOMEET_I18N.tr;
+  }
+  const sel0 = document.getElementById('langSelect');
+  if (sel0) {
+    [...sel0.options].forEach((o) => { if (o.value !== 'de' && o.value !== 'en') o.remove(); });
+  }
+  window.ergomeetBuildToc = function () {
+    const toc = document.getElementById('sectionToc');
+    if (!toc) return;
+    const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
+    const pack = (window.ERGOMEET_I18N && ERGOMEET_I18N[lang]) || EXTRA[lang];
+    const home = toc.querySelector('.toc-home');
+    if (home) home.remove();
+    toc.innerHTML = '';
+    const homeLink = home || document.createElement('a');
+    homeLink.className = 'toc-home';
+    homeLink.href = 'https://yashbora9.github.io/ergomeet-reports/';
+    homeLink.setAttribute('data-i18n', 'toc_home');
+    homeLink.textContent = pack.toc_home || 'Meetings';
+    toc.appendChild(homeLink);
+    const keys = { recap: 'toc_recap', todos: 'toc_todos', summary: 'toc_summary', notes: 'toc_notes', 'live-summary': 'toc_live' };
+    document.querySelectorAll('[data-block]:not(.is-empty):not([hidden])').forEach((block) => {
+      const id = block.id || block.getAttribute('data-block');
+      if (!id || !keys[id]) return;
+      if (!block.id) block.id = id;
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = pack[keys[id]] || id;
+      toc.appendChild(a);
+    });
+  };
+  const prev = window.ergomeetApplyLang;
+  window.ergomeetApplyLang = function (lang) {
+    if (lang !== 'de' && lang !== 'en') lang = 'de';
+    if (typeof prev === 'function') prev(lang);
+    document.documentElement.lang = lang;
+    localStorage.setItem('ergomeet-lang', lang);
+    const sel = document.getElementById('langSelect');
+    if (sel && sel.value !== lang) sel.value = lang;
+    window.ergomeetBuildToc();
+  };
+  const saved = localStorage.getItem('ergomeet-lang');
+  const browser = (navigator.language || 'de').slice(0, 2);
+  window.ergomeetApplyLang((saved === 'en' || saved === 'de') ? saved : (browser === 'en' ? 'en' : 'de'));
+})();
+</script>
+
 </body>
 </html>

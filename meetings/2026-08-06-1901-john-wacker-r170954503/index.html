@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="dark">
+<html data-ergomeet-bilingual="1" lang="de" data-theme="dark">
 <head>
   <meta name="robots" content="noindex, nofollow" />
   <meta charset="utf-8"/>
@@ -605,18 +605,43 @@
       text-transform: uppercase;
       color: var(--muted);
     }
+  
+    /* ergomeet-bi */
+    .topbar-inner { justify-content: space-between; }
+    .topbar .toc {
+      display: flex !important;
+      flex: 1 1 auto;
+      min-width: 0;
+      margin: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      gap: 6px;
+    }
+    .topbar .toc::-webkit-scrollbar { display: none; }
+    .topbar .toc a { white-space: nowrap; flex-shrink: 0; }
+    html[lang="en"] .bi-de { display: none !important; }
+    html[lang="de"] .bi-en { display: none !important; }
+    span.bi-en, span.bi-de { display: inline; }
+    div.bi-en, div.bi-de { display: block; }
+    @media (max-width: 820px) {
+      .topbar-inner { flex-wrap: wrap; }
+      .topbar .toc { order: 2; flex-basis: 100%; }
+    }
+
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
+      <nav class="toc" id="sectionToc" aria-label="Sections">
+        <a class="toc-home" href="https://yashbora9.github.io/ergomeet-reports/" data-i18n="toc_home">Meetings</a>
+      </nav>
       <div class="topbar-controls">
         <select id="langSelect" class="lang-select" aria-label="Language">
           <option value="de">DE</option>
           <option value="en">EN</option>
-          <option value="tr">TR</option>
         </select>
-        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+<button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
           <span class="icon-sun" aria-hidden="true">☀</span>
           <span class="icon-moon" aria-hidden="true">☾</span>
           <span id="themeToggleLabel" data-i18n="theme_light">Light</span>
@@ -641,19 +666,117 @@
     </header>
 
     <!-- No empty shell under the heading: blocks only appear when builder marks them present -->
-    <nav class="toc" id="sectionToc" aria-label="Sections"></nav>
-    <div class="stack" id="reportStack">
+<div class="stack" id="reportStack">
       <section class="section block recap-card" id="recap" data-block="recap">
 <div class="section-label" data-i18n="lbl_recap">60 seconds</div>
 <h2 data-i18n="recap">Recap</h2>
 <div class="recap-grid">
-<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text">Motivation des Teams durch die Darstellung der Dringlichkeit der Finanzberatung in Deutschland.</p></div>
-<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li>Deutschland steht vor einer Rentenkrise: Die gesetzliche Rente ist nicht nachhaltig, und die Hälfte der heutigen Arbeitnehmer wird voraussichtlich in Altersarmut leben.</li><li>Die Deutschen sind finanziell unvorbereitet: Nur 24 % investieren, 50 % horten Bargeld und 57 % haben Angst vor ihrer finanziellen Zukunft.</li><li>Berater sind die Lösung: Das Team muss seine Rolle als unverzichtbare Experten selbstbewusst vertreten, die Kunden vor kostspieligen Fehlern bewahren und ihnen helfen, Vermögen aufzubauen.</li></ul></div>
-<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li>Post IdaSforzorger Depot explainer in group chat for attendees (John Wacker)</li><li>John Wacker: Die Präsentation zum Altersvorsorge-Depot mit dem Team teilen.</li><li>Die eigene Altersvorsorge prüfen und mit den Eltern besprechen.</li></ul></div>
-<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li>Problem: Das umlagefinanzierte Rentensystem ist nicht nachhaltig.</li><li>Die Falle des niedrigen Preises: Billige Produkte liefern schlechte Ergebnisse.</li></ul></div>
+<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text" data-topic-en="Motivation of the team through the presentation of the urgency of financial advice in Germany." data-topic-de="Motivation des Teams durch die Darstellung der Dringlichkeit der Finanzberatung in Deutschland."><span class="bi-en">Motivation of the team through the presentation of the urgency of financial advice in Germany.</span><span class="bi-de">Motivation des Teams durch die Darstellung der Dringlichkeit der Finanzberatung in Deutschland.</span></p></div>
+<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li><span class="bi-en">Germany is facing a pension crisis: the statutory pension is not sustainable, and half of today's workers are expected to live in old-age poverty.</span><span class="bi-de">Deutschland steht vor einer Rentenkrise: Die gesetzliche Rente ist nicht nachhaltig, und die Hälfte der heutigen Arbeitnehmer wird voraussichtlich in Altersarmut leben.</span></li><li><span class="bi-en">Germans are financially unprepared: Only 24% invest, 50% hoard cash and 57% fear their financial future.</span><span class="bi-de">Die Deutschen sind finanziell unvorbereitet: Nur 24 % investieren, 50 % horten Bargeld und 57 % haben Angst vor ihrer finanziellen Zukunft.</span></li><li><span class="bi-en">Advisors are the solution: The team must confidently represent its role as indispensable experts who protect clients from costly mistakes and help them build wealth.</span><span class="bi-de">Berater sind die Lösung: Das Team muss seine Rolle als unverzichtbare Experten selbstbewusst vertreten, die Kunden vor kostspieligen Fehlern bewahren und ihnen helfen, Vermögen aufzubauen.</span></li></ul></div>
+<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li><span class="bi-en">Post IdaSforzorger Depot explainer in group chat for attendees (John Wacker)</span><span class="bi-de">Posten Sie die IdaSforzorger Depot-Erklärung im Gruppenchat für die Teilnehmer (John Wacker)</span></li><li><span class="bi-en">John Wacker: Share the presentation on the Altersvorsorge-Depot with the team.</span><span class="bi-de">John Wacker: Die Präsentation zum Altersvorsorge-Depot mit dem Team teilen.</span></li><li><span class="bi-en">Review personal retirement planning and discuss with parents.</span><span class="bi-de">Die eigene Altersvorsorge prüfen und mit den Eltern besprechen.</span></li></ul></div>
+<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li><span class="bi-en">Problem: The pay-as-you-go pension system is not sustainable.</span><span class="bi-de">Problem: Das umlagefinanzierte Rentensystem ist nicht nachhaltig.</span></li><li><span class="bi-en">The trap of the low price: Cheap products deliver poor results.</span><span class="bi-de">Die Falle des niedrigen Preises: Billige Produkte liefern schlechte Ergebnisse.</span></li></ul></div>
 </div></section>
-      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Post IdaSforzorger Depot explainer in group chat for attendees</span><span class="todo-meta">John Wacker</span></li><li><span class="todo-task"><strong>John Wacker:</strong> Die Präsentation zum Altersvorsorge-Depot mit dem Team teilen.</span></li><li><span class="todo-task">Die eigene Altersvorsorge prüfen und mit den Eltern besprechen.</span></li><li><span class="todo-task">Die Rolle als unverzichtbare Experten selbstbewusst vertreten, die Kunden vor der Rentenkrise bewahren.</span></li></ul></section>
-      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Zweck des Meetings</h3>
+      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task"><span class="bi-en">Post IdaSforzorger Depot explainer in group chat for attendees</span><span class="bi-de">Posten Sie den IdaSforzorger Depot-Erklärer im Gruppenchat für die Teilnehmer.</span></span><span class="todo-meta">John Wacker</span></li><li><span class="todo-task"><span class="bi-en"><strong>John Wacker:</strong> Share the presentation on the retirement savings depot with the team.</span><span class="bi-de"><strong>John Wacker:</strong> Die Präsentation zum Altersvorsorge-Depot mit dem Team teilen.</span></span></li><li><span class="todo-task"><span class="bi-en">Review personal retirement planning and discuss with parents.</span><span class="bi-de">Die eigene Altersvorsorge prüfen und mit den Eltern besprechen.</span></span></li><li><span class="todo-task"><span class="bi-en">Confidently represent the role as indispensable experts who protect customers from the pension crisis.</span><span class="bi-de">Die Rolle als unverzichtbare Experten selbstbewusst vertreten, die Kunden vor der Rentenkrise bewahren.</span></span></li></ul></section>
+      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><div class="bi-en"><h3 class="exec-h">Purpose of the Meeting</h3>
+<p class="exec-p">Motivation of the team through the presentation of the urgency of financial advice in Germany.</p>
+<h3 class="exec-h">Wichtigste Erkenntnisse</h3>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Deutschland steht vor einer Rentenkrise:</strong> The statutory pension is not sustainable, and half of today's workers are expected to live in old-age poverty.</li>
+<li><strong>Germans are financially unprepared:</strong> Only 24 % invest, 50 % hoard cash and 57 % fear their financial future.</li>
+<li><strong>Advisors are the solution:</strong> The team must confidently represent its role as indispensable experts who protect clients from costly mistakes and help them build wealth.</li>
+<li><strong>The strategy is simple:</strong> Build an emergency fund, invest in ETFs to accumulate capital, and then use this capital to acquire real estate as an asset.</li>
+</ul>
+</ul>
+<h3 class="exec-h">Themen</h3>
+<h4 class="exec-h2">The German pension crisis</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Problem:</strong> The pay-as-you-go pension system is not sustainable.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>The birth rate is only 1.4–1.5.</li>
+<li>The ratio of workers to retirees is expected to fall to 1.5:1.</li>
+</ul>
+</ul>
+<li><strong>State solutions:</strong> Insufficient and harmful.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Cut benefits:</strong> Pensions are already declining.</li>
+<li><strong>Increase contributions:</strong> Social security contributions are rising and burdening disposable income.</li>
+<li><strong>Schulden machen:</strong> Prolongs the problem for future generations.</li>
+<li><strong>Rentenalter anheben:</strong> The Bundesbank already suggests 69; 71+ is likely.</li>
+</ul>
+</ul>
+<li><strong>Ergebnis:</strong> The middle class is shrinking as disposable income falls and prices rise.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">The unprepared German investor</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Geringe Beteiligung:</strong> Only 24 % of Germans invest in stocks or funds.</li>
+<li><strong>Schlechte Strategie:</strong> Of investors, only 3–4 % have an effective strategy.</li>
+<li><strong>Bargeldhortung:</strong> Over 50 % of Germans hoard cash, causing them to lose money through inflation.</li>
+<li><strong>Finanzielle Angst:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>57 % are very concerned about their financial future.</li>
+<li>41 % want to address their retirement planning in the next 12 months.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">The role of the advisor: quality instead of price</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Customer priority:</strong> Customers seek quality in all areas of life (e.g. Apple, Audi), except for financial products, where they aim for the lowest price.</li>
+<li><strong>The low-price trap:</strong> Billige Produkte liefern schlechte Ergebnisse.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Beispiel:</strong> A legal-expenses insurance policy for €1/month does not provide comprehensive coverage.</li>
+</ul>
+</ul>
+<li><strong>The value of the advisor:</strong> Customers pay for the expertise that protects them from costly mistakes.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Beispiel:</strong> A customer lost a deal after being advised by a colleague who was not qualified.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">The solution: a simple wealth-building strategy</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>1. Notgroschen:</strong> 2–3 Monate Fixkosten als Reserve aufbauen.</li>
+<li><strong>2. Kapital aufbauen:</strong> Use monthly savings plans (ETFs) to build capital.</li>
+<li><strong>3. Kapital nutzen:</strong> Use the capital to purchase a rental property.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Beispiel:</strong> A police officer built a fortune of €1.5–1.8 million by buying a property every 3.5 years.</li>
+</ul>
+</ul>
+<li><strong>4. Steuern optimieren:</strong> Use products such as the “insurance wrapper” to minimize the tax burden.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Beispiel:</strong> John Wacker’s own calculation showed that he would save around €400,000 in taxes with an ERGO product.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">Analysis of the new retirement savings account</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Subsidy:</strong> 25 % on contributions up to €1,800/year.</li>
+<li><strong>Problem:</strong> The product is inflexible and unsuitable for most people.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Sperrfrist:</strong> The money is locked until age 65.</li>
+<li><strong>Rentenfaktor:</strong> €100,000 in capital yields a pension of only around €300/month.</li>
+</ul>
+</ul>
+<li><strong>Empfehlung:</strong> Take the subsidy only for a small amount (e.g. €30/month). The main wealth-building should be done in more flexible products.</li>
+</ul>
+</ul></div><div class="bi-de"><h3 class="exec-h">Zweck des Meetings</h3>
 <p class="exec-p">Motivation des Teams durch die Darstellung der Dringlichkeit der Finanzberatung in Deutschland.</p>
 <h3 class="exec-h">Wichtigste Erkenntnisse</h3>
 <ul class="exec-ul">
@@ -752,14 +875,14 @@
 </ul>
 <li><strong>Empfehlung:</strong> Nur die Förderung für einen kleinen Betrag mitnehmen (z. B. 30 €/Monat). Der Hauptvermögensaufbau sollte in flexibleren Produkten erfolgen.</li>
 </ul>
-</ul></div></details>
+</ul></div></div></details>
       
       
       
       
       
       
-      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><h3 class="exec-h">Germany Investment Statistics</h3>
+      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><div class="bi-en"><h3 class="exec-h">Germany Investment Statistics</h3>
 <ul class="exec-ul">
 <li>24% of Germans invest in stocks or funds</li>
 <li>26% feel well prepared for retirement</li>
@@ -846,7 +969,94 @@
 <h3 class="exec-h">Action Items</h3>
 <ul class="exec-ul">
 <li>No action items detected</li>
-</ul></div></section>
+</ul></div><div class="bi-de"><h3 class="exec-h">Germany Investment Statistics</h3>
+<ul class="exec-ul">
+<li>24% der Deutschen investieren in Aktien oder Fonds</li>
+<li>26% fühlen sich gut auf den Ruhestand vorbereitet</li>
+<li>41% fühlen sich unvorbereitet auf den Ruhestand und wollen dies in den nächsten 12 Monaten ändern</li>
+<li>57% äußern große Sorgen um ihre finanzielle Situation im Alter</li>
+</ul>
+<h3 class="exec-h">Vorbereitungslücke für den Ruhestand</h3>
+<ul class="exec-ul">
+<li>Nur 3-4% der Kunden, die bereits investieren, haben eine gute Strategie</li>
+<li>75% der Deutschen investieren überhaupt nicht</li>
+<li>Das Schulsystem bietet keine Finanzbildung</li>
+<li>Wissenslücke führt zu schlechten finanziellen Entscheidungen</li>
+</ul>
+<h3 class="exec-h">Savings Behavior</h3>
+<ul class="exec-ul">
+<li>Über 50% der Deutschen bevorzugen es, Geld auf Sparkonten zu parken</li>
+<li>30% der Deutschen verdienen jedes Jahr Geld, wählen aber renditeschwache Optionen</li>
+<li>Qualitätsinvestitionen erfordern Zahlung für professionelle Beratung</li>
+<li>Menschen suchen trotz Qualitätsbedarf die günstigsten Optionen in Versicherung und Finanzen</li>
+</ul>
+<h3 class="exec-h">Market Opportunity</h3>
+<ul class="exec-ul">
+<li>Banken schließen Filialen</li>
+<li>Fewer people want to work in finance</li>
+<li>Hohe Nachfrage nach Finanzberatung besteht</li>
+<li>Aktueller Zeitpunkt bietet größte Chance in diesem Bereich</li>
+</ul>
+<h3 class="exec-h">ERGO Company Position</h3>
+<ul class="exec-ul">
+<li>Teil von Munich Re, weltweit größter Rückversicherer</li>
+<li>155+ years of company history</li>
+<li>DAX-notiertes Unternehmen mit globaler Anerkennung</li>
+<li>Sponsert die deutsche Nationalmannschaft neben Adidas und Volkswagen</li>
+</ul>
+<h3 class="exec-h">Qualität vs Preis Diskussion</h3>
+<ul class="exec-ul">
+<li>Menschen zahlen für Qualität bei Autos, Handys und Kleidung</li>
+<li>Versicherung und Finanzen sind Ausnahmen, bei denen die günstigsten Optionen gesucht werden.</li>
+<li>Qualitätsprodukte kosten Geld in allen Lebensbereichen</li>
+<li>Kostenloser Rat mangelt oft an fachlicher Kompetenz und Verantwortlichkeit.</li>
+</ul>
+<h3 class="exec-h">Client Decision Making</h3>
+<ul class="exec-ul">
+<li>Die Leute haben viele Meinungen, aber wenig Wissen über Investments.</li>
+<li>Erfolgreiche Menschen erkennen die Notwendigkeit spezialisierter Finanzberater</li>
+<li>Niedrigere Einkommens- und Bildungsniveaus korrelieren mit stärkerem Widerstand gegen professionelle Beratung</li>
+<li>Vertrauen in unqualifizierte Quellen führt zu schlechten finanziellen Ergebnissen</li>
+</ul>
+<h3 class="exec-h">Strategy Requirements</h3>
+<ul class="exec-ul">
+<li>Klare Ziele müssen spezifisch, messbar und zeitgebunden sein.</li>
+<li>„Someday“-Ziele ohne Pläne bleiben Wünsche</li>
+<li>Langfristige Disziplin für den Vermögensaufbau erforderlich</li>
+<li>10–20 Jahre konsequentes Investieren sind nötig, um spürbare Ergebnisse zu erzielen.</li>
+</ul>
+<h3 class="exec-h">Riester Pension Concerns</h3>
+<ul class="exec-ul">
+<li>50 % staatliche Förderung verfügbar, aber es fehlt an Flexibilität</li>
+<li>Bis zum Alter von 65 Jahren gesperrt mit begrenzten Auszahlungsmöglichkeiten</li>
+<li>300 Euro monthly pension requires approximately 100,000 Euro capital</li>
+<li>25 % Zuschuss oft unzureichende Entschädigung für 40-jährige Bindungsfrist</li>
+</ul>
+<h3 class="exec-h">Alternative Investment Approach</h3>
+<ul class="exec-ul">
+<li>Die gesetzliche Rente bietet nur eine minimale Grundsicherung.</li>
+<li>Betriebliche Altersvorsorge bietet zusätzliche Arbeitgeberbeiträge</li>
+<li>Private Investitionen über Fonds und Aktien bauen Vermögen auf</li>
+<li>Steueroptimierung durch Versicherungshüllen und Fondskonten</li>
+</ul>
+<h3 class="exec-h">Selbstmanagement Realität</h3>
+<ul class="exec-ul">
+<li>Menschen können grundlegende Aufgaben selbst erledigen, wählen aber professionelle Dienstleistungen</li>
+<li>Zeitwert und Expertise rechtfertigen professionelle Gebühren</li>
+<li>6 Euro monatliche Beratungskosten bieten vollständige Finanzübersicht</li>
+<li>Professionelle Beratung verhindert kostspielige Fehler über Jahrzehnte</li>
+</ul>
+<h3 class="exec-h">Emotional Resistance Factors</h3>
+<ul class="exec-ul">
+<li>Angst vor Fehlentscheidungen führt zu Untätigkeit</li>
+<li>Vergangene Erfahrungen mit unqualifizierten Beratern schaffen Misstrauen</li>
+<li>Political messaging influences financial attitudes</li>
+<li>Erfolg erfordert Überwindung rationaler und emotionaler Barrieren</li>
+</ul>
+<h3 class="exec-h">Action Items</h3>
+<ul class="exec-ul">
+<li>Keine Maßnahmen erkannt</li>
+</ul></div></div></section>
     </div>
 
     <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
@@ -1085,5 +1295,62 @@
       }));
     }
   </script>
+
+<script id="ergomeet-bilingual-nav">
+(function () {
+  const EXTRA = {
+    de: { toc_home: 'Termine', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Überblick', toc_notes: 'Notizen', toc_live: 'Live' },
+    en: { toc_home: 'Meetings', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Summary', toc_notes: 'Notes', toc_live: 'Live' }
+  };
+  if (window.ERGOMEET_I18N) {
+    if (ERGOMEET_I18N.de) Object.assign(ERGOMEET_I18N.de, EXTRA.de);
+    if (ERGOMEET_I18N.en) Object.assign(ERGOMEET_I18N.en, EXTRA.en);
+    delete ERGOMEET_I18N.tr;
+  }
+  const sel0 = document.getElementById('langSelect');
+  if (sel0) {
+    [...sel0.options].forEach((o) => { if (o.value !== 'de' && o.value !== 'en') o.remove(); });
+  }
+  window.ergomeetBuildToc = function () {
+    const toc = document.getElementById('sectionToc');
+    if (!toc) return;
+    const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
+    const pack = (window.ERGOMEET_I18N && ERGOMEET_I18N[lang]) || EXTRA[lang];
+    const home = toc.querySelector('.toc-home');
+    if (home) home.remove();
+    toc.innerHTML = '';
+    const homeLink = home || document.createElement('a');
+    homeLink.className = 'toc-home';
+    homeLink.href = 'https://yashbora9.github.io/ergomeet-reports/';
+    homeLink.setAttribute('data-i18n', 'toc_home');
+    homeLink.textContent = pack.toc_home || 'Meetings';
+    toc.appendChild(homeLink);
+    const keys = { recap: 'toc_recap', todos: 'toc_todos', summary: 'toc_summary', notes: 'toc_notes', 'live-summary': 'toc_live' };
+    document.querySelectorAll('[data-block]:not(.is-empty):not([hidden])').forEach((block) => {
+      const id = block.id || block.getAttribute('data-block');
+      if (!id || !keys[id]) return;
+      if (!block.id) block.id = id;
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = pack[keys[id]] || id;
+      toc.appendChild(a);
+    });
+  };
+  const prev = window.ergomeetApplyLang;
+  window.ergomeetApplyLang = function (lang) {
+    if (lang !== 'de' && lang !== 'en') lang = 'de';
+    if (typeof prev === 'function') prev(lang);
+    document.documentElement.lang = lang;
+    localStorage.setItem('ergomeet-lang', lang);
+    const sel = document.getElementById('langSelect');
+    if (sel && sel.value !== lang) sel.value = lang;
+    window.ergomeetBuildToc();
+  };
+  const saved = localStorage.getItem('ergomeet-lang');
+  const browser = (navigator.language || 'de').slice(0, 2);
+  window.ergomeetApplyLang((saved === 'en' || saved === 'de') ? saved : (browser === 'en' ? 'en' : 'de'));
+})();
+</script>
+
 </body>
 </html>

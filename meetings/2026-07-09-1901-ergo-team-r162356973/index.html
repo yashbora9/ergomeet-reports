@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="dark">
+<html data-ergomeet-bilingual="1" lang="de" data-theme="dark">
 <head>
   <meta name="robots" content="noindex, nofollow" />
   <meta charset="utf-8"/>
@@ -605,18 +605,43 @@
       text-transform: uppercase;
       color: var(--muted);
     }
+  
+    /* ergomeet-bi */
+    .topbar-inner { justify-content: space-between; }
+    .topbar .toc {
+      display: flex !important;
+      flex: 1 1 auto;
+      min-width: 0;
+      margin: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      gap: 6px;
+    }
+    .topbar .toc::-webkit-scrollbar { display: none; }
+    .topbar .toc a { white-space: nowrap; flex-shrink: 0; }
+    html[lang="en"] .bi-de { display: none !important; }
+    html[lang="de"] .bi-en { display: none !important; }
+    span.bi-en, span.bi-de { display: inline; }
+    div.bi-en, div.bi-de { display: block; }
+    @media (max-width: 820px) {
+      .topbar-inner { flex-wrap: wrap; }
+      .topbar .toc { order: 2; flex-basis: 100%; }
+    }
+
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
+      <nav class="toc" id="sectionToc" aria-label="Sections">
+        <a class="toc-home" href="https://yashbora9.github.io/ergomeet-reports/" data-i18n="toc_home">Meetings</a>
+      </nav>
       <div class="topbar-controls">
         <select id="langSelect" class="lang-select" aria-label="Language">
           <option value="de">DE</option>
           <option value="en">EN</option>
-          <option value="tr">TR</option>
         </select>
-        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+<button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
           <span class="icon-sun" aria-hidden="true">☀</span>
           <span class="icon-moon" aria-hidden="true">☾</span>
           <span id="themeToggleLabel" data-i18n="theme_light">Light</span>
@@ -641,16 +666,15 @@
     </header>
 
     <!-- No empty shell under the heading: blocks only appear when builder marks them present -->
-    <nav class="toc" id="sectionToc" aria-label="Sections"></nav>
-    <div class="stack" id="reportStack">
+<div class="stack" id="reportStack">
       <section class="section block recap-card" id="recap" data-block="recap">
 <div class="section-label" data-i18n="lbl_recap">60 seconds</div>
 <h2 data-i18n="recap">Recap</h2>
 <div class="recap-grid">
-<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text">No external prospect attended. This was an impromptu solo session led by ERGO Team focused on time management and productivity coaching; no buyer or prospect was present or identified.</p></div>
+<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text" data-topic-en="No external prospect attended. This was an impromptu solo session led by ERGO Team focused on time management and productivity coaching; no buyer or prospect was present or identified." data-topic-de="Kein externer Interessent nahm teil. Es handelte sich um eine spontane Solo-Session unter Leitung des ERGO Teams mit Fokus auf Zeitmanagement und Produktivitäts-Coaching; kein Käufer oder Interessent war anwesend oder identifiziert."><span class="bi-en">No external prospect attended. This was an impromptu solo session led by ERGO Team focused on time management and productivity coaching; no buyer or prospect was present or identified.</span><span class="bi-de">Kein externer Interessent nahm teil. Es handelte sich um eine spontane Solo-Session unter Leitung des ERGO Teams mit Fokus auf Zeitmanagement und Produktivitäts-Coaching; kein Käufer oder Interessent war anwesend oder identifiziert.</span></p></div>
 </div></section>
       
-      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Deal Information</h3>
+      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><div class="bi-en"><h3 class="exec-h">Deal Information</h3>
 <h4 class="exec-h2">Prospect</h4>
 <p class="exec-p">No external prospect attended. This was an impromptu solo session led by ERGO Team focused on time management and productivity coaching; no buyer or prospect was present or identified.</p>
 <h4 class="exec-h2">Call Context</h4>
@@ -719,14 +743,83 @@
 <ul class="exec-ul exec-ul-nested">
 <li>None from a prospect.</li>
 </ul>
-</ul></div></details>
+</ul></div><div class="bi-de"><h3 class="exec-h">Deal Information</h3>
+<h4 class="exec-h2">Prospect</h4>
+<p class="exec-p">Kein externer Interessent nahm teil. Es handelte sich um eine spontane Solo-Session unter Leitung des ERGO Teams mit Fokus auf Zeitmanagement und Produktivitäts-Coaching; kein Käufer oder Interessent war anwesend oder identifiziert.</p>
+<h4 class="exec-h2">Call Context</h4>
+<p class="exec-p">Internes Produktivitäts-Workshop-Monolog des ERGO-Teams zu Kalenderdisziplin und Routinen. Es fand keine Sales-Discovery mit einem Interessenten statt.</p>
+<h4 class="exec-h2">Seats</h4>
+<p class="exec-p">Nicht besprochen.</p>
+<h4 class="exec-h2">Budget</h4>
+<p class="exec-p">Nicht besprochen.</p>
+<h4 class="exec-h2">Current State</h4>
+<p class="exec-p">Nicht mit einem Interessenten besprochen.</p>
+<h4 class="exec-h2">Pain Points</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Kein Capture von einem Interessenten. Das ERGO-Team sprach im Coaching-Kontext von allgemeinen Produktivitätsproblemen (fehlende Struktur, „pseudo-produktive“ Aktivitäten, inkonsistente Routinen).</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Specific Requirements</h4>
+<p class="exec-p">Keiner von einem Interessenten. ERGO-Team befürwortet:</p>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Einzelne Kalendernutzung (TimeTree) mit Farbcodierung.</li>
+<li>Wiederkehrende Termine für vorhersehbare Struktur.</li>
+<li>Morgen-/Abendroutine-Blöcke.</li>
+<li>Vorab-Planung persönlicher Aufgaben (Fitnessstudio, Friseur, Pendeln).</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Tech Stack</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>TimeTree-Kalender-App (von ERGO-Team bevorzugt).</li>
+<li>Erwähnungen von Google Calendar als Alternative.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Einwände</h4>
+<p class="exec-p">Keine von einem Interessenten erhoben.</p>
+<h4 class="exec-h2">Weitere Lösungen in der Evaluierung</h4>
+<p class="exec-p">None.</p>
+<h4 class="exec-h2">Timeline</h4>
+<p class="exec-p">Nicht anwendbar; kein Kaufprozess besprochen.</p>
+<h4 class="exec-h2">Entscheidungsträger</h4>
+<p class="exec-p">Nicht identifiziert.</p>
+<h4 class="exec-h2">Procurement Process</h4>
+<p class="exec-p">Nicht besprochen.</p>
+<h4 class="exec-h2">Nächste Schritte</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Keiner mit einem Interessenten. Das ERGO-Team führte die Teilnehmer zu:</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>Installieren Sie TimeTree und erstellen Sie einen gemeinsamen oder persönlichen Kalender.</li>
+<li>Richten Sie wiederkehrende Team-Meetings und Arbeits-/Lern-/Sportblöcke ein.</li>
+<li>Richten Sie tägliche Morgen- und Abend-Routine-Blöcke ein.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h3 class="exec-h">Q\&amp;A</h3>
+<h4 class="exec-h2">Fragen, die wir gestellt haben</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Keine an einen Interessenten. Das ERGO-Team stellte den Teilnehmern instruktive Fragen (z. B. „pseudo-produktive“ Aktivitäten identifizieren; wer nutzt einen Kalender), aber es wurden keine Antworten auf Interessentenebene erfasst.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Fragen, die sie gestellt haben</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Keiner von einem Interessenten.</li>
+</ul>
+</ul></div></div></details>
       
       
       
       
       
       
-      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><h3 class="exec-h">Meeting Topic</h3>
+      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><div class="bi-en"><h3 class="exec-h">Meeting Topic</h3>
 <ul class="exec-ul">
 <li>Focus: Productivity and time management for business success</li>
 <li>Goal: Learn how to structure a full-film calendar like successful entrepreneurs</li>
@@ -834,7 +927,115 @@
 <li>Set up morning and evening routine blocks</li>
 <li>Identify and eliminate pseudo-productive activities</li>
 <li>No action items detected</li>
-</ul></div></section>
+</ul></div><div class="bi-de"><h3 class="exec-h">Meeting Topic</h3>
+<ul class="exec-ul">
+<li>Fokus: Produktivität und Zeitmanagement für den Geschäftserfolg</li>
+<li>Ziel: Lernen, wie man einen vollständigen Filmkalender strukturiert wie erfolgreiche Unternehmer</li>
+<li>Betonung auf Effizienz mit denselben 24 Stunden, die jeder hat</li>
+</ul>
+<h3 class="exec-h">Eröffnungskontext</h3>
+<ul class="exec-ul">
+<li>Der Sprecher nennt Alex Mousi als Beispiel für Konsistenz und Disziplin.</li>
+<li>Alex fing an mit einem kleinen Fitnessstudio-Konzept an, scheiterte, skalierte ein neues Geschäft und wurde Investor.</li>
+<li>Ignoriere die Meinung anderer und mach so viel Bollywood, dass es unvernünftig ist, nicht erfolgreich zu werden.</li>
+</ul>
+<h3 class="exec-h">Session Structure</h3>
+<ul class="exec-ul">
+<li>Viele praktische Übungen geplant</li>
+<li>Erwartung: Jeder Teilnehmer verlässt das Meeting mit einer Frage und einem Ansatz.</li>
+<li>Interaktives Format mit sofortiger Anwendung</li>
+</ul>
+<h3 class="exec-h">Erste Übung</h3>
+<ul class="exec-ul">
+<li>Teilnehmer wurden gebeten, pseudo-produktive Aktivitäten zu identifizieren</li>
+<li>Beispiele geteilt: YouTube-Produktivitätsvideos schauen, Musik zum Dopamin-Boost hören</li>
+<li>Erkenntnis, dass diese ein Gefühl von Produktivität ohne tatsächliche Ergebnisse erzeugen</li>
+</ul>
+<h3 class="exec-h">Zusätzliche Pseudo-Produktivitätsaktivitäten identifiziert</h3>
+<ul class="exec-ul">
+<li>Essen gehen, während man sich selbst überzeugt, dass es produktiv ist</li>
+<li>Planen, zu netzwerken, aber niemanden anzusprechen</li>
+<li>Allgemeine flaggenbezogene Aktivitäten ohne klare Ergebnisse</li>
+</ul>
+<h3 class="exec-h">Persönliche Erfahrung geteilt</h3>
+<ul class="exec-ul">
+<li>Der Sprecher gibt zu, dass er dieselben Probleme mit der Kalenderstruktur hat.</li>
+<li>Früher hatte man Tage von 8 Uhr morgens bis 2 Uhr nachts ohne Pausen</li>
+<li>Frühere Monate zeigten nur Trainingseinheiten ohne weitere Struktur.</li>
+<li>Es wurde erkannt, dass die Zeit unterschätzt wurde.</li>
+</ul>
+<h3 class="exec-h">Schlüsseleinführung des Tools</h3>
+<ul class="exec-ul">
+<li>Kalender als A und O für das Gefühl von Kontrolle identifiziert</li>
+<li>Wer nutzt derzeit einen Kalender im Alltag?</li>
+<li>Positive Rückmeldung zeigt einen guten Ausgangspunkt an</li>
+</ul>
+<h3 class="exec-h">Zeitberechnungsübung</h3>
+<ul class="exec-ul">
+<li>168 total hours per week</li>
+<li>Täglich 8 Stunden Schlaf = 112 Stunden verbleibend</li>
+<li>Täglich 2 Stunden Sport angenommen</li>
+<li>40 hours work assumed</li>
+<li>Zusätzliche Abzüge für Pendeln, Familie, Freunde</li>
+<li>Ergebnis: Sehr begrenzte verbleibende Zeit für Geschäftstätigkeiten</li>
+</ul>
+<h3 class="exec-h">Ich empfehle, die App zu nutzen.</h3>
+<ul class="exec-ul">
+<li>Timetree recommended as best calendar app</li>
+<li>Unterstützt mehrere Kalender</li>
+<li>Participants instructed to install immediately</li>
+<li>Alternative: Google Calendar akzeptabel, falls bereits im Einsatz</li>
+</ul>
+<h3 class="exec-h">Calendar Setup Tutorial</h3>
+<ul class="exec-ul">
+<li>Farbcodierungssystem für Aktivitätstypen eingeführt</li>
+<li>Red: Team meetings</li>
+<li>Grün: Freizeit</li>
+<li>Lila: Gym</li>
+<li>Headlaut: Familienaktivitäten</li>
+<li>Orange: Appointments</li>
+</ul>
+<h3 class="exec-h">Recurring Events Setup</h3>
+<ul class="exec-ul">
+<li>Wiederholungsfunktion für Team-Meetings demonstriert</li>
+<li>Dienstag und Donnerstag 19–21 Uhr Beispiel</li>
+<li>Standortfeld für bestimmte Veranstaltungsorte empfohlen</li>
+<li>Kopierfunktion für wiederkehrende Samstagsveranstaltungen</li>
+</ul>
+<h3 class="exec-h">Work Schedule Blocking</h3>
+<ul class="exec-ul">
+<li>Fixed work/study hours to be entered first</li>
+<li>Schichtarbeit, Studium oder Bürozeiten zu blockieren</li>
+<li>Schafft Grundlage vor Hinzufügen von Geschäftstätigkeiten</li>
+</ul>
+<h3 class="exec-h">Routine-Blöcke</h3>
+<ul class="exec-ul">
+<li>Morgen- und Abendroutine-Blöcke für jeden Tag empfohlen</li>
+<li>Zweck: Steuern, wie der Tag beginnt und endet</li>
+<li>Verhindert, dass man durch unerwartete Ereignisse aus der Fassung gebracht wird</li>
+<li>Einfaches 5-Minuten-Journal als Beispiel erwähnt</li>
+</ul>
+<h3 class="exec-h">Geschäftszeit-Investition</h3>
+<ul class="exec-ul">
+<li>Frage zu den gewünschten wöchentlichen Geschäftszeiten</li>
+<li>Besprochene Optionen: 2, 3, 4 oder 5+ Stunden</li>
+<li>Konsistenz vor Intensität stellen</li>
+</ul>
+<h3 class="exec-h">Practical Application</h3>
+<ul class="exec-ul">
+<li>All participants to create their own calendar structure</li>
+<li>Konzentrieren Sie sich darauf, nachhaltige Routinen aufzubauen.</li>
+<li>Goal: Make each day maximally productive</li>
+</ul>
+<h3 class="exec-h">Action Items</h3>
+<ul class="exec-ul">
+<li>Installieren Sie die Timetree Kalender-App.</li>
+<li>Persönlichen Kalender mit Farbcodierungssystem erstellen</li>
+<li>Block work/study hours as recurring events</li>
+<li>Morgen- und Abendroutine-Blöcke einrichten</li>
+<li>Pseudo-produktive Aktivitäten identifizieren und eliminieren</li>
+<li>Keine Maßnahmen erkannt</li>
+</ul></div></div></section>
     </div>
 
     <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
@@ -1073,5 +1274,62 @@
       }));
     }
   </script>
+
+<script id="ergomeet-bilingual-nav">
+(function () {
+  const EXTRA = {
+    de: { toc_home: 'Termine', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Überblick', toc_notes: 'Notizen', toc_live: 'Live' },
+    en: { toc_home: 'Meetings', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Summary', toc_notes: 'Notes', toc_live: 'Live' }
+  };
+  if (window.ERGOMEET_I18N) {
+    if (ERGOMEET_I18N.de) Object.assign(ERGOMEET_I18N.de, EXTRA.de);
+    if (ERGOMEET_I18N.en) Object.assign(ERGOMEET_I18N.en, EXTRA.en);
+    delete ERGOMEET_I18N.tr;
+  }
+  const sel0 = document.getElementById('langSelect');
+  if (sel0) {
+    [...sel0.options].forEach((o) => { if (o.value !== 'de' && o.value !== 'en') o.remove(); });
+  }
+  window.ergomeetBuildToc = function () {
+    const toc = document.getElementById('sectionToc');
+    if (!toc) return;
+    const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
+    const pack = (window.ERGOMEET_I18N && ERGOMEET_I18N[lang]) || EXTRA[lang];
+    const home = toc.querySelector('.toc-home');
+    if (home) home.remove();
+    toc.innerHTML = '';
+    const homeLink = home || document.createElement('a');
+    homeLink.className = 'toc-home';
+    homeLink.href = 'https://yashbora9.github.io/ergomeet-reports/';
+    homeLink.setAttribute('data-i18n', 'toc_home');
+    homeLink.textContent = pack.toc_home || 'Meetings';
+    toc.appendChild(homeLink);
+    const keys = { recap: 'toc_recap', todos: 'toc_todos', summary: 'toc_summary', notes: 'toc_notes', 'live-summary': 'toc_live' };
+    document.querySelectorAll('[data-block]:not(.is-empty):not([hidden])').forEach((block) => {
+      const id = block.id || block.getAttribute('data-block');
+      if (!id || !keys[id]) return;
+      if (!block.id) block.id = id;
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = pack[keys[id]] || id;
+      toc.appendChild(a);
+    });
+  };
+  const prev = window.ergomeetApplyLang;
+  window.ergomeetApplyLang = function (lang) {
+    if (lang !== 'de' && lang !== 'en') lang = 'de';
+    if (typeof prev === 'function') prev(lang);
+    document.documentElement.lang = lang;
+    localStorage.setItem('ergomeet-lang', lang);
+    const sel = document.getElementById('langSelect');
+    if (sel && sel.value !== lang) sel.value = lang;
+    window.ergomeetBuildToc();
+  };
+  const saved = localStorage.getItem('ergomeet-lang');
+  const browser = (navigator.language || 'de').slice(0, 2);
+  window.ergomeetApplyLang((saved === 'en' || saved === 'de') ? saved : (browser === 'en' ? 'en' : 'de'));
+})();
+</script>
+
 </body>
 </html>

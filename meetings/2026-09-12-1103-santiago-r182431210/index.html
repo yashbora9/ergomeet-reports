@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="dark">
+<html data-ergomeet-bilingual="1" lang="de" data-theme="dark">
 <head>
   <meta name="robots" content="noindex, nofollow" />
   <meta charset="utf-8"/>
@@ -605,18 +605,43 @@
       text-transform: uppercase;
       color: var(--muted);
     }
+  
+    /* ergomeet-bi */
+    .topbar-inner { justify-content: space-between; }
+    .topbar .toc {
+      display: flex !important;
+      flex: 1 1 auto;
+      min-width: 0;
+      margin: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      gap: 6px;
+    }
+    .topbar .toc::-webkit-scrollbar { display: none; }
+    .topbar .toc a { white-space: nowrap; flex-shrink: 0; }
+    html[lang="en"] .bi-de { display: none !important; }
+    html[lang="de"] .bi-en { display: none !important; }
+    span.bi-en, span.bi-de { display: inline; }
+    div.bi-en, div.bi-de { display: block; }
+    @media (max-width: 820px) {
+      .topbar-inner { flex-wrap: wrap; }
+      .topbar .toc { order: 2; flex-basis: 100%; }
+    }
+
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
+      <nav class="toc" id="sectionToc" aria-label="Sections">
+        <a class="toc-home" href="https://yashbora9.github.io/ergomeet-reports/" data-i18n="toc_home">Meetings</a>
+      </nav>
       <div class="topbar-controls">
         <select id="langSelect" class="lang-select" aria-label="Language">
           <option value="de">DE</option>
           <option value="en">EN</option>
-          <option value="tr">TR</option>
         </select>
-        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+<button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
           <span class="icon-sun" aria-hidden="true">☀</span>
           <span class="icon-moon" aria-hidden="true">☾</span>
           <span id="themeToggleLabel" data-i18n="theme_light">Light</span>
@@ -641,19 +666,184 @@
     </header>
 
     <!-- No empty shell under the heading: blocks only appear when builder marks them present -->
-    <nav class="toc" id="sectionToc" aria-label="Sections"></nav>
-    <div class="stack" id="reportStack">
+<div class="stack" id="reportStack">
       <section class="section block recap-card" id="recap" data-block="recap">
 <div class="section-label" data-i18n="lbl_recap">60 seconds</div>
 <h2 data-i18n="recap">Recap</h2>
 <div class="recap-grid">
-<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text">Motivation zu konsequenter Umsetzung und effektivem Networking für den Geschäftserfolg.</p></div>
-<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li>Konsequente Umsetzung ist entscheidend. Erfolg erfordert eine unerbittliche Umsetzung, die durch ein starkes „Warum&quot; angetrieben wird. Die „21-Ziele-Regel&quot; ist eine Taktik, um diese Konsequenz zu trainieren, bis sie zur Gewohnheit wird.</li><li>Networking ist eine erlernbare Fähigkeit. Es ist ein wesentlicher Bestandteil des Geschäfts, der durch Übung gemeistert werden kann. Der Erfolg hängt davon ab, wertvolle Kontakte zu rekrutieren („Gold zu Diamant machen&quot;), nicht davon, schlechte zu retten („Scheiße zu Gold machen&quot;).</li><li>Die Kommunikation muss auf die Persönlichkeit zugeschnitten sein. Das DISC-Modell (Rot, Gelb, Blau, Grün) hilft dabei, die Kommunikation auf die Motivation eines Kontakts abzustimmen, um eine effektive Verbindung herzustellen.</li></ul></div>
-<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li>Schreibe 21 persönliche und geschäftliche Ziele auf, um die Konsequenz zu trainieren.</li><li>Erstelle eine persönliche Geschichte mit einer klaren Struktur aus Vergangenheit, Gegenwart und Zukunft.</li><li>Nutze Social Media, um Kontakte zu pflegen und Interesse zu wecken.</li></ul></div>
-<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li>Lektion: Wir haben den Vorteil eines bewährten Systems und müssen nicht warten.</li></ul></div>
+<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text" data-topic-en="Motivation for consistent implementation and effective networking for business success." data-topic-de="Motivation zu konsequenter Umsetzung und effektivem Networking für den Geschäftserfolg."><span class="bi-en">Motivation for consistent implementation and effective networking for business success.</span><span class="bi-de">Motivation zu konsequenter Umsetzung und effektivem Networking für den Geschäftserfolg.</span></p></div>
+<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li><span class="bi-en">Consistent implementation is crucial. Success requires relentless execution driven by a strong "Why". The "21-goal rule" is a tactic to train this consistency until it becomes a habit.</span><span class="bi-de">Konsequente Umsetzung ist entscheidend. Erfolg erfordert eine unerbittliche Umsetzung, die durch ein starkes „Warum&quot; angetrieben wird. Die „21-Ziele-Regel&quot; ist eine Taktik, um diese Konsequenz zu trainieren, bis sie zur Gewohnheit wird.</span></li><li><span class="bi-en">Networking is a learnable skill. It is an essential part of business that can be mastered through practice. Success depends on recruiting valuable contacts ("turning gold into diamonds"), not on saving bad ones ("turning shit into gold").</span><span class="bi-de">Networking ist eine erlernbare Fähigkeit. Es ist ein wesentlicher Bestandteil des Geschäfts, der durch Übung gemeistert werden kann. Der Erfolg hängt davon ab, wertvolle Kontakte zu rekrutieren („Gold zu Diamant machen&quot;), nicht davon, schlechte zu retten („Scheiße zu Gold machen&quot;).</span></li><li><span class="bi-en">Communication must be tailored to the personality. The DISC model (Red, Yellow, Blue, Green) helps adjust communication to the motivation of a contact to establish an effective connection.</span><span class="bi-de">Die Kommunikation muss auf die Persönlichkeit zugeschnitten sein. Das DISC-Modell (Rot, Gelb, Blau, Grün) hilft dabei, die Kommunikation auf die Motivation eines Kontakts abzustimmen, um eine effektive Verbindung herzustellen.</span></li></ul></div>
+<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li><span class="bi-en">Write down 21 personal and business goals to train consistency.</span><span class="bi-de">Schreibe 21 persönliche und geschäftliche Ziele auf, um die Konsequenz zu trainieren.</span></li><li><span class="bi-en">Create a personal story with a clear structure from past, present, and future.</span><span class="bi-de">Erstelle eine persönliche Geschichte mit einer klaren Struktur aus Vergangenheit, Gegenwart und Zukunft.</span></li><li><span class="bi-en">Use social media to maintain contacts and generate interest.</span><span class="bi-de">Nutze Social Media, um Kontakte zu pflegen und Interesse zu wecken.</span></li></ul></div>
+<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li><span class="bi-en">Lesson: We have the advantage of a proven system and do not have to wait.</span><span class="bi-de">Lektion: Wir haben den Vorteil eines bewährten Systems und müssen nicht warten.</span></li></ul></div>
 </div></section>
-      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Schreibe 21 persönliche und geschäftliche Ziele auf, um die Konsequenz zu trainieren.</span></li><li><span class="todo-task">Erstelle eine persönliche Geschichte mit einer klaren Struktur aus Vergangenheit, Gegenwart und Zukunft.</span></li><li><span class="todo-task">Nutze Social Media, um Kontakte zu pflegen und Interesse zu wecken.</span></li></ul></section>
-      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Zweck des Meetings</h3>
+      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task"><span class="bi-en">Write down 21 personal and business goals to train consistency.</span><span class="bi-de">Schreibe 21 persönliche und geschäftliche Ziele auf, um die Konsequenz zu trainieren.</span></span></li><li><span class="todo-task"><span class="bi-en">Create a personal story with a clear structure from past, present, and future.</span><span class="bi-de">Erstelle eine persönliche Geschichte mit einer klaren Struktur aus Vergangenheit, Gegenwart und Zukunft.</span></span></li><li><span class="todo-task"><span class="bi-en">Use social media to maintain contacts and generate interest.</span><span class="bi-de">Nutze Social Media, um Kontakte zu pflegen und Interesse zu wecken.</span></span></li></ul></section>
+      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><div class="bi-en"><h3 class="exec-h">Purpose of the Meeting</h3>
+<p class="exec-p">Motivation for consistent implementation and effective networking for business success.</p>
+<h3 class="exec-h">Wichtigste Erkenntnisse</h3>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Consistent implementation is crucial.</strong> Success requires relentless implementation driven by a strong „Why“. The „21-Goals-Rule“ is a tactic to train this consistency until it becomes a habit.</li>
+<li><strong>Networking is a learnable skill.</strong> It is an essential part of business that can be mastered through practice. Success depends on recruiting valuable contacts („turning gold into diamonds“), not on saving bad ones („turning shit into gold“).</li>
+<li><strong>Communication must be tailored to the personality.</strong> The DISC model (Red, Yellow, Blue, Green) helps align communication with a contact’s motivation to establish an effective connection.</li>
+<li><strong>A personal story is the most powerful tool.</strong> A well-crafted story that connects a „low point“ (past), current success (present), and future vision creates a strong emotional connection.</li>
+</ul>
+</ul>
+<h3 class="exec-h">Themen</h3>
+<h4 class="exec-h2">The necessity of consistent implementation</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Success requires relentless implementation driven by a strong „Why“.</li>
+<li><strong>Analogy of the master and the student:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>A master holds a student’s head underwater to illustrate the value of consistency.</li>
+<li>The student fights for air until he sees it as his only priority.</li>
+<li><strong>Lektion:</strong> Success must become as relentless a priority as breathing.</li>
+</ul>
+</ul>
+<li><strong>21-Ziele-Regel:</strong> A tactic to train consistency.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>Achieving 21 goals turns implementation into a habit by transforming it from a task into an urgent priority.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">Networking as a learnable skill</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Networking is a learnable skill, not an innate trait.</li>
+<li><strong>Erfolgreiche Rekrutierung:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>Focus on recruiting and developing valuable contacts („turning gold into diamonds“).</li>
+<li>Avoid recruiting and saving bad contacts („turning shit into gold“).</li>
+</ul>
+</ul>
+<li><strong>Example from Taddeus Cuomo:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>A contact acquired through networking invested €1.5 million, proving the value of building relationships.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">The DISC personality model</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>A framework for aligning communication with a contact’s motivation.</li>
+<li><strong>Rot (Dominant):</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Motivation:</strong> Macht, Geld, Wettbewerb, Entscheidungsfindung.</li>
+<li><strong>Kommunikation:</strong> Direkt, zielorientiert.</li>
+</ul>
+</ul>
+<li><strong>Gelb (Einflussreich):</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Motivation:</strong> Fun, recognition, inspiration.</li>
+<li><strong>Kommunikation:</strong> Enthusiastic, visionary.</li>
+</ul>
+</ul>
+<li><strong>Blau (Gewissenhaft):</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Motivation:</strong> Daten, Fakten, Details, Planung.</li>
+<li><strong>Kommunikation:</strong> Logisch, analytisch.</li>
+</ul>
+</ul>
+<li><strong>Green (Steady):</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Motivation:</strong> Harmony, teamwork, stability.</li>
+<li><strong>Kommunikation:</strong> Supportive, reliable.</li>
+</ul>
+</ul>
+<li><strong>Dynamik:</strong> Opposing types (e.g. Blue vs. Yellow) often have different priorities, requiring conscious adjustment of communication.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">The networking process</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>1. Small Talk → Big Talk:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>Start with small talk and then move on to deeper questions to understand the contact’s motivation.</li>
+<li>Keep control of the conversation by asking questions.</li>
+</ul>
+</ul>
+<li><strong>2. Your personal story:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Struktur:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Vergangenheit (Tiefpunkt):</strong> Describe a difficult struggle or challenge.</li>
+<li><strong>Gegenwart (Aufstieg):</strong> Explain how you seized this opportunity.</li>
+<li><strong>Zukunft (Vision):</strong> Outline your plans and involve the contact in the success.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<li><strong>3. Anecdotes and analogies:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>Use stories to build belief and clarify concepts.</li>
+<li><strong>Belgische Pferde-Analogie:</strong> A single horse pulls 4–8 tons. Two pull 24 tons (the weight of three).</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Lektion:</strong> A united team is exponentially more effective than the sum of its parts.</li>
+</ul>
+</ul>
+<li><strong>Tom-Platte-Analogie:</strong> A story about a man who waited 50 years for his success.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Lektion:</strong> We have the advantage of a proven system and do not need to wait.</li>
+</ul>
+</ul>
+<li><strong>Affen-Experiment-Analogie:</strong> A story about monkeys preventing new monkeys from climbing a ladder without knowing why.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Lektion:</strong> Question negative beliefs adopted from others, especially from family and friends.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">Praktische Networking-Tipps</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Nonverbale Kommunikation:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>„3 V&#x27;s&quot;:</strong> Verbal (7 %), Vocal (38 %), Visual (55 %). Body language is crucial.</li>
+<li><strong>Selbstbewusstsein:</strong> A confident appearance is essential.</li>
+</ul>
+</ul>
+<li><strong>Social Media:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>Use it to maintain contacts and spark interest.</li>
+<li><strong>Beispiel:</strong> A contact maintained via social media came to the office the next day.</li>
+</ul>
+</ul>
+<li><strong>Logistik:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Nachfassen:</strong> Send a message immediately after the event to solidify the connection.</li>
+<li><strong>Kontaktinformationen:</strong> Use nonverbal cues (e.g., taking out your phone) to facilitate the exchange of contact information.</li>
+</ul>
+</ul>
+<li><strong>Mindset:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>„Ja-Tamam, Nein-Tamam&quot;:</strong> A "no" is okay. It is an opportunity to learn and refine your skills.</li>
+</ul>
+</ul>
+</ul>
+</ul></div><div class="bi-de"><h3 class="exec-h">Zweck des Meetings</h3>
 <p class="exec-p">Motivation zu konsequenter Umsetzung und effektivem Networking für den Geschäftserfolg.</p>
 <h3 class="exec-h">Wichtigste Erkenntnisse</h3>
 <ul class="exec-ul">
@@ -819,14 +1009,14 @@
 </ul>
 </ul>
 </ul>
-</ul></div></details>
+</ul></div></div></details>
       
       
       
       
       
       
-      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><h3 class="exec-h">Personal Goals Sharing</h3>
+      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><div class="bi-en"><h3 class="exec-h">Personal Goals Sharing</h3>
 <ul class="exec-ul">
 <li>Lola shared goal of financial freedom as first priority</li>
 <li>Goal includes building a cool team and having fun at work</li>
@@ -966,7 +1156,147 @@
 <li>Practice networking conversations daily</li>
 <li>Develop personal story pack for presentations</li>
 <li>Schedule follow-up meetings with interested prospects</li>
-</ul></div></section>
+</ul></div><div class="bi-de"><h3 class="exec-h">Persönliche Ziele teilen</h3>
+<ul class="exec-ul">
+<li>Lola teilte das Ziel der finanziellen Freiheit als oberste Priorität</li>
+<li>Ziel beinhaltet den Aufbau eines coolen Teams und Spaß bei der Arbeit</li>
+<li>Mutter als Motivation für finanzielle Freiheit erwähnt</li>
+<li>Familie in Russland mit schwierigen Zeiten erwähnt</li>
+</ul>
+<h3 class="exec-h">Warum dieses Geschäftsmodell (Mindset)</h3>
+<ul class="exec-ul">
+<li>Santiago betont, dass Ziele ohne Handlung bedeutungslos sind.</li>
+<li>Startete das Geschäft mit 59 Instagram-Followern nach der Kündigung</li>
+<li>Niemand sonst wird für Ihre Ziele kämpfen</li>
+<li>Must know your &quot;why&quot; to succeed</li>
+</ul>
+<h3 class="exec-h">Consistency Story (Water Submersion)</h3>
+<ul class="exec-ul">
+<li>Meister bittet Schüler, sich um 5 Uhr morgens zu treffen, um das Geheimnis des Erfolgs zu erfahren.</li>
+<li>Student bleibt die ganze Nacht wach, um sich vorzubereiten.</li>
+<li>Master pushes student&#x27;s head underwater</li>
+<li>Student kämpft sich nach 20 Minuten an die Oberfläche.</li>
+<li>Erfolg muss so dringend sein wie die Luft zum Atmen.</li>
+</ul>
+<h3 class="exec-h">21-Ziele-Übung</h3>
+<ul class="exec-ul">
+<li>21 Ziele zu schreiben ist extrem wichtig</li>
+<li>Nach 21 Punkten werden die Prioritäten klar</li>
+<li>Ziele verschieben sich von Wünschen zu dringenden Bedürfnissen</li>
+<li>Bewegung hilft zu erkennen, was wirklich zählt</li>
+</ul>
+<h3 class="exec-h">Netzwerk-Marketing-Identität</h3>
+<ul class="exec-ul">
+<li>Das Team sind keine Finanzberater oder Versicherungsvertreter.</li>
+<li>Self-identified as &quot;Life-Changers&quot;</li>
+<li>Konzentrieren Sie sich darauf, Leben zu verändern, statt Produkte zu verkaufen.</li>
+<li>Ziel ist es, Menschen zu helfen, den Multimillionen-Status zu erreichen.</li>
+</ul>
+<h3 class="exec-h">Direct Partners Target</h3>
+<ul class="exec-ul">
+<li>Ich brauche 5 direkte Partner, die Erfolg gleichermaßen wollen.</li>
+<li>Direktpartner sind wertvoller als Downline</li>
+<li>Bei der Rekrutierung Qualität vor Quantität stellen.</li>
+<li>Direktpartner schaffen eine nachhaltige Geschäftsgrundlage</li>
+</ul>
+<h3 class="exec-h">Steve Jobs Partnership Example</h3>
+<ul class="exec-ul">
+<li>Steve Jobs hatte Vision, brauchte aber einen Geschäftspartner</li>
+<li>Partner hat die Ausführung übernommen, während Jobs die Vision hatte.</li>
+<li>Erfolg erfordert sowohl Vision als auch Umsetzungsfähigkeit</li>
+<li>Partnerschaft ermöglichte Apple-Erfolg</li>
+</ul>
+<h3 class="exec-h">Jusco Roma Reference</h3>
+<ul class="exec-ul">
+<li>Sales coach known in African community</li>
+<li>Extrem bekannte Persönlichkeit in Deutschland</li>
+<li>Wird als Beispiel für Transparenz im Unternehmen verwendet</li>
+<li>Zeigt die Bedeutung authentischer Verbindungen auf</li>
+</ul>
+<h3 class="exec-h">Überwindung begrenzender Glaubenssätze</h3>
+<ul class="exec-ul">
+<li>Santiago glaubte zunächst, er sei nicht für Networking geeignet.</li>
+<li>Selbstzweifel beim Ansprechen von hochrangigen Personen</li>
+<li>Überwand die Überzeugung, dass erfolgreiche Menschen nicht interessiert wären</li>
+<li>Netzwerken ist eine erlernbare Fähigkeit</li>
+</ul>
+<h3 class="exec-h">Network Market Concept</h3>
+<ul class="exec-ul">
+<li>Must network within your market</li>
+<li>Nicht nur beliebige Kontakte, sondern relevante Marktverbindungen</li>
+<li>Qualität des Netzwerks bestimmt das Geschäftspotenzial</li>
+<li>Network market provides better conversion opportunities</li>
+</ul>
+<h3 class="exec-h">Wale 3 Communication Framework</h3>
+<ul class="exec-ul">
+<li>Verbal: die Worte, die man sagt</li>
+<li>Ton: wie man die Worte sagt</li>
+<li>Körpersprache: Mimik und Gestik</li>
+<li>Alle drei Komponenten müssen übereinstimmen für effektive Kommunikation</li>
+</ul>
+<h3 class="exec-h">Beispiele für den Rekrutierungsansatz</h3>
+<ul class="exec-ul">
+<li>Martin wurde im Fitnessstudio mit frischer Jacke angesprochen</li>
+<li>Jolan wurde über gemeinsame Freunde angesprochen</li>
+<li>Approach works in various environments</li>
+<li>Persönliche Verbindung schlägt Cold Approaches</li>
+</ul>
+<h3 class="exec-h">Small Talk zu Big Talk-Übergang</h3>
+<ul class="exec-ul">
+<li>Mit natürlichem Small Talk beginnen</li>
+<li>Zu tieferen Fragen über das Leben übergehen</li>
+<li>Nach Träumen und Zielen fragen</li>
+<li>Verwenden Sie Nachfragen, um eine Verbindung aufzubauen.</li>
+</ul>
+<h3 class="exec-h">Story Pack Development</h3>
+<ul class="exec-ul">
+<li>Persönliche Geschichte muss gut entwickelt sein</li>
+<li>Geschichte positioniert einen vor dem Prospect</li>
+<li>Vergangene Herausforderungen und aktuellen Erfolg einbeziehen</li>
+<li>Geschichte schafft emotionale Verbindung zum Prospect</li>
+</ul>
+<h3 class="exec-h">Zukünftige Schritttechnik</h3>
+<ul class="exec-ul">
+<li>Sprich über zukünftigen Erfolg, als ob der Prospect ihn bereits erreicht</li>
+<li>Use examples of other successful partners</li>
+<li>Male ein Bild davon, wie ihr Leben aussehen könnte</li>
+<li>Erzeugt den Wunsch, der Opportunity beizutreten</li>
+</ul>
+<h3 class="exec-h">Belgian Horses Teamwork Story</h3>
+<ul class="exec-ul">
+<li>Ein belgischer Kaltblüter zieht 4-8 Tonnen</li>
+<li>Two horses should pull 8-16 tons theoretically</li>
+<li>Zusammen ziehen sie tatsächlich 24 Tonnen</li>
+<li>Demonstriert die Kraft von abgestimmtem Teamwork</li>
+</ul>
+<h3 class="exec-h">Appen Affengeschichte (Begrenzende Glaubenssätze)</h3>
+<ul class="exec-ul">
+<li>Affen wurden mit Wasser besprüht, wenn sie die Leiter hochstiegen</li>
+<li>Neue Affen wurden von anderen heruntergezogen</li>
+<li>Schließlich versuchte kein Affe mehr zu klettern</li>
+<li>Zeigt, wie limitierende Glaubenssätze weitergegeben werden</li>
+</ul>
+<h3 class="exec-h">Parent Objection Handling</h3>
+<ul class="exec-ul">
+<li>Eltern wollen Sicherheit und Stabilität</li>
+<li>Zeige ihnen, dass das Business bessere Sicherheit bietet</li>
+<li>Demonstriere das langfristige Wealth-Building-Potenzial</li>
+<li>Gehe auf ihre Bedenken mit konkreten Beispielen ein</li>
+</ul>
+<h3 class="exec-h">Networking Practice Examples</h3>
+<ul class="exec-ul">
+<li>Übe an Ampeln und in öffentlichen Räumen</li>
+<li>Konzentriere dich auf echte Gespräche</li>
+<li>Zwinge nicht sofort zu Business-Diskussionen</li>
+<li>Baue Rapport auf, bevor du die Opportunity präsentierst</li>
+</ul>
+<h3 class="exec-h">Action Items</h3>
+<ul class="exec-ul">
+<li>Schreibe diese Woche 21 persönliche Ziele</li>
+<li>Übe täglich Networking-Gespräche</li>
+<li>Entwickle ein persönliches Story-Pack für Präsentationen</li>
+<li>Plane Follow-up-Meetings mit interessierten Interessenten</li>
+</ul></div></div></section>
     </div>
 
     <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
@@ -1205,5 +1535,62 @@
       }));
     }
   </script>
+
+<script id="ergomeet-bilingual-nav">
+(function () {
+  const EXTRA = {
+    de: { toc_home: 'Termine', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Überblick', toc_notes: 'Notizen', toc_live: 'Live' },
+    en: { toc_home: 'Meetings', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Summary', toc_notes: 'Notes', toc_live: 'Live' }
+  };
+  if (window.ERGOMEET_I18N) {
+    if (ERGOMEET_I18N.de) Object.assign(ERGOMEET_I18N.de, EXTRA.de);
+    if (ERGOMEET_I18N.en) Object.assign(ERGOMEET_I18N.en, EXTRA.en);
+    delete ERGOMEET_I18N.tr;
+  }
+  const sel0 = document.getElementById('langSelect');
+  if (sel0) {
+    [...sel0.options].forEach((o) => { if (o.value !== 'de' && o.value !== 'en') o.remove(); });
+  }
+  window.ergomeetBuildToc = function () {
+    const toc = document.getElementById('sectionToc');
+    if (!toc) return;
+    const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
+    const pack = (window.ERGOMEET_I18N && ERGOMEET_I18N[lang]) || EXTRA[lang];
+    const home = toc.querySelector('.toc-home');
+    if (home) home.remove();
+    toc.innerHTML = '';
+    const homeLink = home || document.createElement('a');
+    homeLink.className = 'toc-home';
+    homeLink.href = 'https://yashbora9.github.io/ergomeet-reports/';
+    homeLink.setAttribute('data-i18n', 'toc_home');
+    homeLink.textContent = pack.toc_home || 'Meetings';
+    toc.appendChild(homeLink);
+    const keys = { recap: 'toc_recap', todos: 'toc_todos', summary: 'toc_summary', notes: 'toc_notes', 'live-summary': 'toc_live' };
+    document.querySelectorAll('[data-block]:not(.is-empty):not([hidden])').forEach((block) => {
+      const id = block.id || block.getAttribute('data-block');
+      if (!id || !keys[id]) return;
+      if (!block.id) block.id = id;
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = pack[keys[id]] || id;
+      toc.appendChild(a);
+    });
+  };
+  const prev = window.ergomeetApplyLang;
+  window.ergomeetApplyLang = function (lang) {
+    if (lang !== 'de' && lang !== 'en') lang = 'de';
+    if (typeof prev === 'function') prev(lang);
+    document.documentElement.lang = lang;
+    localStorage.setItem('ergomeet-lang', lang);
+    const sel = document.getElementById('langSelect');
+    if (sel && sel.value !== lang) sel.value = lang;
+    window.ergomeetBuildToc();
+  };
+  const saved = localStorage.getItem('ergomeet-lang');
+  const browser = (navigator.language || 'de').slice(0, 2);
+  window.ergomeetApplyLang((saved === 'en' || saved === 'de') ? saved : (browser === 'en' ? 'en' : 'de'));
+})();
+</script>
+
 </body>
 </html>

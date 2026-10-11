@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="dark">
+<html data-ergomeet-bilingual="1" lang="de" data-theme="dark">
 <head>
   <meta name="robots" content="noindex, nofollow" />
   <meta charset="utf-8"/>
@@ -605,18 +605,43 @@
       text-transform: uppercase;
       color: var(--muted);
     }
+  
+    /* ergomeet-bi */
+    .topbar-inner { justify-content: space-between; }
+    .topbar .toc {
+      display: flex !important;
+      flex: 1 1 auto;
+      min-width: 0;
+      margin: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      gap: 6px;
+    }
+    .topbar .toc::-webkit-scrollbar { display: none; }
+    .topbar .toc a { white-space: nowrap; flex-shrink: 0; }
+    html[lang="en"] .bi-de { display: none !important; }
+    html[lang="de"] .bi-en { display: none !important; }
+    span.bi-en, span.bi-de { display: inline; }
+    div.bi-en, div.bi-de { display: block; }
+    @media (max-width: 820px) {
+      .topbar-inner { flex-wrap: wrap; }
+      .topbar .toc { order: 2; flex-basis: 100%; }
+    }
+
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
+      <nav class="toc" id="sectionToc" aria-label="Sections">
+        <a class="toc-home" href="https://yashbora9.github.io/ergomeet-reports/" data-i18n="toc_home">Meetings</a>
+      </nav>
       <div class="topbar-controls">
         <select id="langSelect" class="lang-select" aria-label="Language">
           <option value="de">DE</option>
           <option value="en">EN</option>
-          <option value="tr">TR</option>
         </select>
-        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+<button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
           <span class="icon-sun" aria-hidden="true">☀</span>
           <span class="icon-moon" aria-hidden="true">☾</span>
           <span id="themeToggleLabel" data-i18n="theme_light">Light</span>
@@ -641,19 +666,102 @@
     </header>
 
     <!-- No empty shell under the heading: blocks only appear when builder marks them present -->
-    <nav class="toc" id="sectionToc" aria-label="Sections"></nav>
-    <div class="stack" id="reportStack">
+<div class="stack" id="reportStack">
       <section class="section block recap-card" id="recap" data-block="recap">
 <div class="section-label" data-i18n="lbl_recap">60 seconds</div>
 <h2 data-i18n="recap">Recap</h2>
 <div class="recap-grid">
-<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text">Basti gibt Einblicke in die Denkweise und die Gewohnheiten, die zum Erfolg führen.</p></div>
-<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li>Das Umfeld prägt die Normen: Umfeld und Gewohnheiten bestimmen, was man für möglich hält. Um sich weiterzuentwickeln, muss man sich mit Menschen umgeben, die einen voranbringen, und Routinen einführen, die die Entscheidungsermüdung reduzieren.</li><li>Ego gegen Erfolg: Das Ablegen des Egos ist entscheidend, um kontinuierlich zu lernen. Bastis Durchbruch kam, als er sich von der Vorstellung löste, alles allein zu wissen, und aktiv Feedback einholte, was ihn von Stufe 4 auf Stufe 5 brachte.</li><li>Glaubenssätze neu formulieren: Negative Überzeugungen sind die größte Barriere. Man muss sie identifizieren, in positive Affirmationen umwandeln und diese täglich bekräftigen, um die Realität neu zu gestalten.</li></ul></div>
-<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li>Collect weekly Stufe updates from team (Basti)</li><li>Ein negatives Glaubensmuster identifizieren.</li><li>Es in eine positive Affirmation umwandeln.</li></ul></div>
-<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li>Beispiel: „Ich bin eine Führungskraft; warum sollten die Leute mir nicht folgen?“</li><li>Beispiel: Erfolgreiche Verhandlungen über eine Bankprovision, obwohl man sich nicht gewachsen fühlte.</li></ul></div>
+<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text" data-topic-en="Basti provides insights into the mindset and habits that lead to success." data-topic-de="Basti gibt Einblicke in die Denkweise und die Gewohnheiten, die zum Erfolg führen."><span class="bi-en">Basti provides insights into the mindset and habits that lead to success.</span><span class="bi-de">Basti gibt Einblicke in die Denkweise und die Gewohnheiten, die zum Erfolg führen.</span></p></div>
+<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li><span class="bi-en">The environment shapes the norms: environment and habits determine what one considers possible. To develop further, one must surround oneself with people who advance one, and introduce routines that reduce decision fatigue.</span><span class="bi-de">Das Umfeld prägt die Normen: Umfeld und Gewohnheiten bestimmen, was man für möglich hält. Um sich weiterzuentwickeln, muss man sich mit Menschen umgeben, die einen voranbringen, und Routinen einführen, die die Entscheidungsermüdung reduzieren.</span></li><li><span class="bi-en">Ego versus success: Letting go of the ego is crucial for continuous learning. Basti’s breakthrough came when he moved away from the idea that he knew everything alone and actively sought feedback, which took him from Stufe 4 to Stufe 5.</span><span class="bi-de">Ego gegen Erfolg: Das Ablegen des Egos ist entscheidend, um kontinuierlich zu lernen. Bastis Durchbruch kam, als er sich von der Vorstellung löste, alles allein zu wissen, und aktiv Feedback einholte, was ihn von Stufe 4 auf Stufe 5 brachte.</span></li><li><span class="bi-en">Reframing beliefs: Negative beliefs are the biggest barrier. They must be identified, transformed into positive affirmations, and reinforced daily to reshape reality.</span><span class="bi-de">Glaubenssätze neu formulieren: Negative Überzeugungen sind die größte Barriere. Man muss sie identifizieren, in positive Affirmationen umwandeln und diese täglich bekräftigen, um die Realität neu zu gestalten.</span></li></ul></div>
+<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li><span class="bi-en">Collect weekly Stufe updates from team (Basti)</span><span class="bi-de">Wöchentliche Stufe-Updates vom Team einsammeln (Basti)</span></li><li><span class="bi-en">Identify a negative belief pattern.</span><span class="bi-de">Ein negatives Glaubensmuster identifizieren.</span></li><li><span class="bi-en">Es in eine positive Affirmation umwandeln.</span><span class="bi-de">Es ist eine positive Affirmation.</span></li></ul></div>
+<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li><span class="bi-en">Example: "I'm a leader; why shouldn't people follow me?"</span><span class="bi-de">Beispiel: „Ich bin eine Führungskraft; warum sollten die Leute mir nicht folgen?“</span></li><li><span class="bi-en">Example: Successful negotiations on a bank commission, even though one did not feel up to it.</span><span class="bi-de">Beispiel: Erfolgreiche Verhandlungen über eine Bankprovision, obwohl man sich nicht gewachsen fühlte.</span></li></ul></div>
 </div></section>
-      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Collect weekly Stufe updates from team</span><span class="todo-meta">Basti</span></li><li><span class="todo-task">Ein negatives Glaubensmuster identifizieren.</span></li><li><span class="todo-task">Es in eine positive Affirmation umwandeln.</span></li><li><span class="todo-task">Beweise aus der Vergangenheit finden, die die neue Überzeugung stützen.</span></li><li><span class="todo-task">Die Affirmation täglich bekräftigen.</span></li><li><span class="todo-task">Feedback als konstruktiv betrachten, nicht persönlich.</span></li><li><span class="todo-task">Die Kernaktivitäten beherrschen (z. B. das Verkaufsskript).</span></li><li><span class="todo-task">Regelmäßig mit der Führungskraft in Kontakt treten, um die Ziele zu verfolgen.</span></li></ul></section>
-      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Zweck des Meetings</h3>
+      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task"><span class="bi-en">Collect weekly Stufe updates from team</span><span class="bi-de">Wöchentliche Stufe-Updates vom Team einsammeln</span></span><span class="todo-meta">Basti</span></li><li><span class="todo-task"><span class="bi-en">Identify a negative belief pattern.</span><span class="bi-de">Ein negatives Glaubensmuster identifizieren.</span></span></li><li><span class="todo-task"><span class="bi-en">Es in eine positive Affirmation umwandeln.</span><span class="bi-de">Es ist eine positive Affirmation.</span></span></li><li><span class="todo-task"><span class="bi-en">Find evidence from the past that supports the new conviction.</span><span class="bi-de">Beweise aus der Vergangenheit finden, die die neue Überzeugung stützen.</span></span></li><li><span class="todo-task"><span class="bi-en">Affirm the affirmation daily.</span><span class="bi-de">Die Affirmation täglich bekräftigen.</span></span></li><li><span class="todo-task"><span class="bi-en">Consider feedback as constructive, not personal.</span><span class="bi-de">Feedback als konstruktiv betrachten, nicht persönlich.</span></span></li><li><span class="todo-task"><span class="bi-en">Master the core activities (e.g. the sales script).</span><span class="bi-de">Die Kernaktivitäten beherrschen (z. B. das Verkaufsskript).</span></span></li><li><span class="todo-task"><span class="bi-en">Regularly contact the manager to pursue the goals.</span><span class="bi-de">Regelmäßig mit der Führungskraft in Kontakt treten, um die Ziele zu verfolgen.</span></span></li></ul></section>
+      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><div class="bi-en"><h3 class="exec-h">Purpose of the Meeting</h3>
+<p class="exec-p">Basti provides insights into the mindset and habits that lead to success.</p>
+<h3 class="exec-h">Wichtigste Erkenntnisse</h3>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>The environment shapes the norms:</strong> Environment and habits determine what one considers possible. To develop further, one must surround oneself with people who advance one and introduce routines that reduce decision fatigue.</li>
+<li><strong>Ego gegen Erfolg:</strong> Letting go of the ego is crucial for continuous learning. Basti’s breakthrough came when he let go of the idea that he knew everything alone and actively sought feedback, which took him from Stufe 4 to Stufe 5.</li>
+<li><strong>Reframing beliefs:</strong> Negative beliefs are the biggest barrier. One must identify them, transform them into positive affirmations, and reinforce these daily to reshape reality.</li>
+<li><strong>Perspective is crucial:</strong> The view of setbacks determines the outcome. An attitude of gratitude and learning turns failures into opportunities and prevents giving up just before success.</li>
+</ul>
+</ul>
+<h3 class="exec-h">Themen</h3>
+<h4 class="exec-h2">The environment shapes the norms</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>The environment determines what one considers normal.</li>
+<li><strong>Beispiel:</strong> Basti’s friends adapted their language and behavior to the academics they surrounded themselves with.</li>
+<li>To develop further, one must surround oneself with people who advance one.</li>
+<li><strong>Beispiel:</strong> Basti reduced contact with his mother to protect himself from her negativity.</li>
+<li>Routines reduce decision fatigue and create mental capacity for more important tasks.</li>
+<li><strong>Beispiel:</strong> Steve Jobs and Mark Zuckerberg always wore the same clothes.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Ego gegen Erfolg</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Letting go of the ego is the key to continuous learning.</li>
+<li><strong>Prinzip:</strong> If you are the smartest person in the room, you have finished the level and must move to a more challenging environment.</li>
+<li>Basti’s breakthrough came when he let go of the idea that he knew everything alone and actively sought feedback.</li>
+<li><strong>Aktion:</strong> He completed 3–4 coaching sessions per week (Zoom/in-person) for 4–6 weeks.</li>
+<li><strong>Ergebnis:</strong> This approach enabled him to advance from Stufe 4 to Stufe 5.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Reframing beliefs</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Negative beliefs are the biggest barrier to success.</li>
+<li><strong>Prinzip:</strong> If one can be negative without reason, one can also be positive without reason.</li>
+<li><strong>Methode:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Identifizieren:</strong> Einen negativen Glaubenssatz finden.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Beispiel:</strong> “I can’t build a team because I have nothing to show (e.g., a house).”</li>
+</ul>
+</ul>
+</ul>
+<li><strong>Umwandeln:</strong> In eine positive Affirmation umformulieren.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Beispiel:</strong> "I'm a leader; why shouldn't people follow me?"</li>
+</ul>
+</ul>
+</ul>
+<li><strong>Beweisen:</strong> Find evidence from the past that supports the new conviction.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Beispiel:</strong> Successful negotiations over a bank commission, even though one did not feel up to it.</li>
+</ul>
+</ul>
+</ul>
+<li><strong>Affirm:</strong> Repeat the new affirmation daily.</li>
+</ul>
+<li><strong>Zeitrahmen:</strong> It takes about 30 days to change a belief, and up to 60 days for deeply rooted convictions.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Perspective is crucial</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>The way one views setbacks determines the outcome.</li>
+<li><strong>Prinzip:</strong> You cannot be sad while you are grateful.</li>
+<li><strong>Beispiel:</strong> A customer who leaves is a setback, but also an opportunity to learn.</li>
+<li><strong>Analogie:</strong> Two reactions to spilled coffee:</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Negative Reaktion:</strong> Anger and frustration.</li>
+<li><strong>Positive Reaktion:</strong> Gratitude that one reacted quickly enough to avoid an accident.</li>
+</ul>
+</ul>
+<li><strong>Ergebnis:</strong> A positive perspective prevents giving up just before success.</li>
+</ul>
+</ul></div><div class="bi-de"><h3 class="exec-h">Zweck des Meetings</h3>
 <p class="exec-p">Basti gibt Einblicke in die Denkweise und die Gewohnheiten, die zum Erfolg führen.</p>
 <h3 class="exec-h">Wichtigste Erkenntnisse</h3>
 <ul class="exec-ul">
@@ -737,14 +845,146 @@
 </ul>
 <li><strong>Ergebnis:</strong> Eine positive Sichtweise verhindert, dass man kurz vor dem Erfolg aufgibt.</li>
 </ul>
-</ul></div></details>
+</ul></div></div></details>
       
       
       
       
       
       
-      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><h3 class="exec-h">Also Da Sind Schon Coole Videos</h3>
+      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><div class="bi-en"><h3 class="exec-h">Also, there are already some cool videos.</h3>
+<ul class="exec-ul">
+<li>Also, there are already some cool videos, but nice that they are there when the Ophi-Demmung.</li>
+<li>Pay attention right away, again on that point, I can only tell you, earn your money here well, live that, talk to your Stufis about what you can't do there.</li>
+<li>People, who you spend your time with, what you read, throw and see does not hit, where you regularly stay.</li>
+<li>Just quickly, I don't want to drag this out, let's do 30 rounds for each department.</li>
+<li>So you&#x27;ve heard of you can you hands And then been bit, you don&#x27;t what&#x27;s happening, but I&#x27;m going ...or can So we want more money to buy that.</li>
+<li>Back then, for example, I had Southern European friends who only played with Germans, with academics, and these Southern Europeans really spoke as if they could complain to you.</li>
+</ul>
+<h3 class="exec-h">I can't do much fundamentally.</h3>
+<ul class="exec-ul">
+<li>However, I generally cannot spend much time with her because I have to focus on myself.</li>
+<li>And no matter how strong I am, no matter how established I may already seem in your character, anyone can also slip from this firm status into a soft status, because you might just have something,…</li>
+<li>So I didn't go to myself and somehow have a friendship termination conversation or something like that, but it just naturally kind of drifted apart.</li>
+<li>If I talk to anyone about the fact that, as I said, I want a super-karma summer, and then they say something to me like, well, with the fuel price, that’s rounded up, that’s high,…</li>
+<li>So, but I hate cyclists, so it's very important to set your definition.</li>
+<li>I believe this is the most typical example we know from Steve Jobs and Mark Zuckerberg.</li>
+</ul>
+<h3 class="exec-h">And you want to somehow do that with it</h3>
+<ul class="exec-ul">
+<li>And you want to somehow profile yourselves with that, that you are so cool, because you are somehow the strongest, the smartest or whatever in this room.</li>
+<li>But you probably don't have a great learning effect right now, because you haven't learned.</li>
+<li>If each of you has done martial arts, you know that it can be relatively tough at the beginning if you keep getting hit in the face.</li>
+<li>But because I still got the Schnauze and had only somehow asked, I became relatively good.</li>
+<li>In Stufe 4, as I said, I puzzled for a very, very long time about what I could do to finally need Stufe 4 Rostro and Stufe 5.</li>
+<li>And then came this golden sentence that probably one or the other has heard, for example Ego or success.</li>
+</ul>
+<h3 class="exec-h">So and that is a skill</h3>
+<ul class="exec-ul">
+<li>So, and this is a skill that I would also say, or a characteristic that, for example, is only attributed to Killingheit.</li>
+<li>Also, what all applies to it.</li>
+<li>Also, he really goes, I don't know, into the year 317, what Mongolia did back then, and how this one blade of grass was bent, what influence it had on the fact that, I don't know, Hitler did that with my…</li>
+<li>I wanted a transmitter in such conversations, and you can't process that at all, and then you find out that you are for a culture, and then you tell each other 5,000 things about your culture.</li>
+<li>You have to be like people accordingly, you have to have these skills so that people accordingly hit back on you.</li>
+<li>Yes, about this little book, I say it is decisive for my Stufe 5, belief setting.</li>
+</ul>
+<h3 class="exec-h">And He Then Always Said</h3>
+<ul class="exec-ul">
+<li>And he then always said, who among you has ever really felt bad all of a sudden without reason?</li>
+<li>Nothing happened, that's why I'm giving it back to you.</li>
+<li>And then he said something like, if you can manage to be negative without reason, then we now have to take on the Vierigkeit, to be positive without reason.</li>
+<li>Actually, it's basically always such a thing, which I then simply notice.</li>
+<li>And that's why you might also notice it from conversations with your parents, who simply can't talk to your parents at all if they are not ready to somehow have a different perspective.</li>
+<li>Also mein Vater will mir ja auch mal verblicken.</li>
+</ul>
+<h3 class="exec-h">No Matter What Happens Be It A</h3>
+<ul class="exec-ul">
+<li>No matter what happens, be it a setback, be it a customer who doesn't close.</li>
+<li>I don't know, has anyone ever experienced that something didn't work out, didn't function, something didn't get postponed, or something.</li>
+<li>And exactly then, what then after, you were gone in that moment, but afterwards came a thing that was even much much better.</li>
+<li>So, I can only say it personally like that.</li>
+<li>I met with an old colleague yesterday, his name is Nails, he was always like, I don't know, that he is astral travel.</li>
+<li>He told a cool story back then, he said, people are so zen, you could spit in their face, give them a job, they would already take your hand and ask, how can I…</li>
+</ul>
+<h3 class="exec-h">I Am Of The Opinion That Everything</h3>
+<ul class="exec-ul">
+<li>I am of the opinion that everything really, so I mean, the whole thing is really all in my life so there, as happened for me.</li>
+<li>But if we were to go back completely to the first crisis, people who were just about to have a break-in somewhere simply unfortunately confirmed in it that everything perhaps…</li>
+<li>So I think, instead of this Sinnersenseck thing, I could have also made this meme, with this guy with the pick-axe, who keeps wobbling the whole time and then stops shortly before.</li>
+<li>And for me the thing is, I can stop with the other things, because my beliefs confirm that.</li>
+<li>For me, I'm only over it, I'm directly so frustrant, I'm a hacker, I'm a little guy, I achieve everything I set out to do.</li>
+<li>I didn't have hands before, only had an existing team.</li>
+</ul>
+<h3 class="exec-h">So And The Thing Is Then</h3>
+<ul class="exec-ul">
+<li>So, and the thing is then simply only, Kiep is unfortunately always a thing present, that is also in many, in many areas Kiep was conducted, again and again over the whole last years.</li>
+<li>my, hand circles, best example, somehow getting into it.</li>
+<li>Because in the time, where I make such thoughts, in the time, where I let such negativity, where I come in, so I waste through resources, may I earn more money.</li>
+<li>And when then sometime the thing comes down again, 60, 70, then it is of course even cooler.</li>
+<li>But simply only, because one then simply already has the beliefs, like the Pflege now are.</li>
+<li>I know for example also business-related, that was back then a Kirby.</li>
+</ul>
+<h3 class="exec-h">I'm only the 2, why?</h3>
+<ul class="exec-ul">
+<li>I am only the 2, why should he not start?</li>
+<li>Now one formulates this negative belief, which exactly unfolds the opposite of the variant as positive belief.</li>
+<li>I like to receive help and am ready to learn from similar mistakes to learn people.</li>
+<li>I am an onboarding specialist, why should you not emboss?</li>
+<li>Write yourselves, that was with me back then something out, proofs, not founded, but proofs for it, why this belief, which you now say, is correct.</li>
+<li>That means, your belief for example is something like, I can, as said, not really only meet people.</li>
+</ul>
+<h3 class="exec-h">And with one outside the study</h3>
+<ul class="exec-ul">
+<li>And with one outside the study out, with the last such questions, which I back then in the program also asked, that is always a very hard study 6er AC written.</li>
+<li>And he meant, in the Pflegefall one should only tackle one belief at a time, one needs about 30 days and with firmly anchored beliefs partly 60 days, until the belief itself no longer so in the…</li>
+<li>I believe, with all things the industry acts accordingly, because a belief, which can go from negative to positive, can unfortunately go from positive to negative.</li>
+<li>Glaubenssätze is really our schelligstes topic, happened, was in Breiten a piece back then, with a Zweierin with us, over two hours long she completely therapied with the topic Glaubenssätze.</li>
+<li>So, so, ernest you the question, if we want to write a Stufe 3, 3500 units, and it stands after five months at Sagengeschreibungen 80 units, stands there somehow still a belief somehow Stufe with it?</li>
+<li>So, very understandable, we also do not say all.</li>
+</ul>
+<h3 class="exec-h">Also, with me it was usually the</h3>
+<ul class="exec-ul">
+<li>So with me stood mostly the same things.</li>
+<li>I once wrote down back then, I am rich, not давноstelle, And that I have now with me stood I at have have still simply a memory seen.</li>
+<li>Du wirst dann so wie Dago, weil mag gleich.</li>
+<li>And then we sat there, we had twice 50er Sparung.</li>
+<li>Also, wichtig zu sagen, 1.</li>
+<li>And I can't say one thing, maybe I was a bit of a role model towards it, but many people close customers in an EMT, they really earn significantly more than that.</li>
+</ul>
+<h3 class="exec-h">Well, I didn't know that</h3>
+<ul class="exec-ul">
+<li>Well, I didn't know that, that's my friend, he told me, that's trained, already for a year, I, has played it in the house.</li>
+<li>Well, I also thought like that, it seems to work simply.</li>
+<li>So, he did all that, so, and that's just simply the thing, a belief for every single one of today, who tells November and December to accept.</li>
+<li>And you can now, as said, roll all that up to hold all these little hands.</li>
+<li>I hear you now saying these typical Instagram things, where it says, Hey, in the first half hour, when you open, any hands, social media or any hands, or any customers, to that…</li>
+<li>Back then I had some math task, where you first open the math task the alarm, or I had some middle and knowledge task, which I have to calculate.</li>
+</ul>
+<h3 class="exec-h">All these things and the conference</h3>
+<ul class="exec-ul">
+<li>All these things, and the conference, every meeting to be there, again perceive onboarding, write down all these things, internalize all these things, that's actually so crazy, most basic stuff, you get…</li>
+<li>And I tell you honestly, I already see here in the room, because I'm also not a person now, says, I'm a Fiver and hit myself the lonely with the ass, I mean, know here the one or other a sack,…</li>
+<li>Who likes to sleep after 4 o'clock?</li>
+<li>If you were to start again from Point Zero, what tips would you give to a new person who starts here?</li>
+<li>I have taken many things personally, so, that one also says, well, it was a negative project, I everything, as said, taken personally, taken technically, thereby I have with things, like…</li>
+<li>So, if one has understood the system in some way in the management conversation, it is not in the intention that your manager will ensure that you somehow a bad help or…</li>
+</ul>
+<h3 class="exec-h">Because what most people</h3>
+<ul class="exec-ul">
+<li>Because what most people say, would already always have its correctness.</li>
+<li>Well, this design with us is possible, it is simply, purely from the understanding, I believe that everyone of you after at least two onboardings probably has been excited from our language country, and still…</li>
+<li>Because, as said, we do that with the whole topic of learning, some people will tell me something, some people want to click something for me.</li>
+<li>And then the feedback is of course also cool, because many people are always like, I also want to see something sometime and rather where.</li>
+<li>believe, his mother has really paid in 60,000 Euro in the savings plan, and it was 25,000 Euro.</li>
+<li>But I guarantee now 100% my father would not have given privately as a consultant voter.</li>
+</ul>
+<h3 class="exec-h">Danke Frau Rauthaus</h3>
+<ul class="exec-ul">
+<li>Danke, Frau Rauthaus.</li>
+<li>Thank you very much.</li>
+</ul>
+<h3 class="exec-h">Action Items</h3>
+<p class="exec-p">No action items detected</p></div><div class="bi-de"><h3 class="exec-h">Also Da Sind Schon Coole Videos</h3>
 <ul class="exec-ul">
 <li>Also, da sind schon coole Videos dabei, aber schön, dass sie bei sein, als die Ophi-Demmung.</li>
 <li>Achtet euch gleich abo, nochmal zu dem Punkt, kann ich euch natürlich nur sagen, verdient euer Geld hier gut, lebt das an, sprecht mit euren Stufis, was ihr da nicht machen könnt.</li>
@@ -876,7 +1116,7 @@
 <li>Schönen Dank.</li>
 </ul>
 <h3 class="exec-h">Action Items</h3>
-<p class="exec-p">No action items detected</p></div></section>
+<p class="exec-p">No action items detected</p></div></div></section>
     </div>
 
     <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
@@ -1115,5 +1355,62 @@
       }));
     }
   </script>
+
+<script id="ergomeet-bilingual-nav">
+(function () {
+  const EXTRA = {
+    de: { toc_home: 'Termine', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Überblick', toc_notes: 'Notizen', toc_live: 'Live' },
+    en: { toc_home: 'Meetings', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Summary', toc_notes: 'Notes', toc_live: 'Live' }
+  };
+  if (window.ERGOMEET_I18N) {
+    if (ERGOMEET_I18N.de) Object.assign(ERGOMEET_I18N.de, EXTRA.de);
+    if (ERGOMEET_I18N.en) Object.assign(ERGOMEET_I18N.en, EXTRA.en);
+    delete ERGOMEET_I18N.tr;
+  }
+  const sel0 = document.getElementById('langSelect');
+  if (sel0) {
+    [...sel0.options].forEach((o) => { if (o.value !== 'de' && o.value !== 'en') o.remove(); });
+  }
+  window.ergomeetBuildToc = function () {
+    const toc = document.getElementById('sectionToc');
+    if (!toc) return;
+    const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
+    const pack = (window.ERGOMEET_I18N && ERGOMEET_I18N[lang]) || EXTRA[lang];
+    const home = toc.querySelector('.toc-home');
+    if (home) home.remove();
+    toc.innerHTML = '';
+    const homeLink = home || document.createElement('a');
+    homeLink.className = 'toc-home';
+    homeLink.href = 'https://yashbora9.github.io/ergomeet-reports/';
+    homeLink.setAttribute('data-i18n', 'toc_home');
+    homeLink.textContent = pack.toc_home || 'Meetings';
+    toc.appendChild(homeLink);
+    const keys = { recap: 'toc_recap', todos: 'toc_todos', summary: 'toc_summary', notes: 'toc_notes', 'live-summary': 'toc_live' };
+    document.querySelectorAll('[data-block]:not(.is-empty):not([hidden])').forEach((block) => {
+      const id = block.id || block.getAttribute('data-block');
+      if (!id || !keys[id]) return;
+      if (!block.id) block.id = id;
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = pack[keys[id]] || id;
+      toc.appendChild(a);
+    });
+  };
+  const prev = window.ergomeetApplyLang;
+  window.ergomeetApplyLang = function (lang) {
+    if (lang !== 'de' && lang !== 'en') lang = 'de';
+    if (typeof prev === 'function') prev(lang);
+    document.documentElement.lang = lang;
+    localStorage.setItem('ergomeet-lang', lang);
+    const sel = document.getElementById('langSelect');
+    if (sel && sel.value !== lang) sel.value = lang;
+    window.ergomeetBuildToc();
+  };
+  const saved = localStorage.getItem('ergomeet-lang');
+  const browser = (navigator.language || 'de').slice(0, 2);
+  window.ergomeetApplyLang((saved === 'en' || saved === 'de') ? saved : (browser === 'en' ? 'en' : 'de'));
+})();
+</script>
+
 </body>
 </html>

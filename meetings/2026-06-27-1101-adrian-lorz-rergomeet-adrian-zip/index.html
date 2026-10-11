@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="dark">
+<html data-ergomeet-bilingual="1" lang="de" data-theme="dark">
 <head>
   <meta name="robots" content="noindex, nofollow" />
   <meta charset="utf-8">
@@ -457,18 +457,43 @@
     details.summary-details[open] .summary-hint{display:none}
     details.summary-details .enhanced-summary{margin-top:16px;padding-top:8px;border-top:1px solid var(--line)}
 
-</style>
+
+    /* ergomeet-bi */
+    .topbar-inner { justify-content: space-between; }
+    .topbar .toc {
+      display: flex !important;
+      flex: 1 1 auto;
+      min-width: 0;
+      margin: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      gap: 6px;
+    }
+    .topbar .toc::-webkit-scrollbar { display: none; }
+    .topbar .toc a { white-space: nowrap; flex-shrink: 0; }
+    html[lang="en"] .bi-de { display: none !important; }
+    html[lang="de"] .bi-en { display: none !important; }
+    span.bi-en, span.bi-de { display: inline; }
+    div.bi-en, div.bi-de { display: block; }
+    @media (max-width: 820px) {
+      .topbar-inner { flex-wrap: wrap; }
+      .topbar .toc { order: 2; flex-basis: 100%; }
+    }
+
+  </style>
 <meta property="og:title" content="Ergo Meet · 27 June 2026 · Adrian Lorz" data-id="th-modified" ><meta property="og:image" content="https://tiiny.host/assets/logo-purple-bg.png" data-id="th-modified" ><meta property="og:image:width" content="1501" data-id="th-modified" ><meta property="og:image:height" content="1501" data-id="th-modified" ><meta property="og:image:type" content="image/png" data-id="th-modified" ><meta property="og:url" content="https://ergomeet-adrian-lorz.tiiny.site/" data-id="th-modified" ><meta property="og:type" content="website" data-id="th-modified" ><script defer data-domain="ergomeet-adrian-lorz.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script><script type="text/javascript" src="https://tiiny.host/ad-script.js"></script></head>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
+      <nav class="toc" id="sectionToc" aria-label="Sections">
+        <a class="toc-home" href="https://yashbora9.github.io/ergomeet-reports/" data-i18n="toc_home">Meetings</a>
+      </nav>
       <div class="topbar-controls">
         <select id="langSelect" class="lang-select" aria-label="Language">
           <option value="de">DE</option>
           <option value="en">EN</option>
-          <option value="tr">TR</option>
         </select>
-        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+<button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
           <span class="icon-sun" aria-hidden="true">☀</span>
           <span class="icon-moon" aria-hidden="true">☾</span>
           <span id="themeToggleLabel" data-i18n="theme_light">Light</span>
@@ -480,10 +505,10 @@
 <div class="section-label" data-i18n="lbl_recap">60 seconds</div>
 <h2 data-i18n="recap">Recap</h2>
 <div class="recap-grid">
-<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text">To learn the EVA framework for handling objections and skepticism.</p></div>
-<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li>The EVA Framework: A 3-step process (Empathy, Questions, Conclusion) to handle objections by understanding their root cause (hidden fear/wish) and guiding the person to their own solution.</li><li>Empathy First: Validate their perspective (&quot;I understand why you&amp;#x27;d think that&quot;) to prevent arguments. A won argument is a lost client.</li><li>Questions Over Arguments: Use questions to uncover the objection&amp;#x27;s root cause and lead the person to their own conclusion. Arguments close the mind; questions open it.</li></ul></div>
-<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li>Practice the EVA framework in all interactions, not just business.</li><li>Identify the root cause (fear or wish) behind each objection.</li><li>Use questions to guide people to their own conclusions.</li></ul></div>
-<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li>Action: Adrian Lorz proactively requested training from his sponsor, Jerry, instead of waiting to be taught.</li></ul></div>
+<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text" data-topic-en="To learn the EVA framework for handling objections and skepticism." data-topic-de="Erlernen des EVA-Frameworks zur Handhabung von Einwänden und Skepsis."><span class="bi-en">To learn the EVA framework for handling objections and skepticism.</span><span class="bi-de">Erlernen des EVA-Frameworks zur Handhabung von Einwänden und Skepsis.</span></p></div>
+<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li><span class="bi-en">The EVA Framework: A 3-step process (Empathy, Questions, Conclusion) to handle objections by understanding their root cause (hidden fear/wish) and guiding the person to their own solution.</span><span class="bi-de">Das EVA-Framework: Ein 3-Schritt-Prozess (Empathy, Questions, Conclusion), um Einwände zu behandeln, indem ihre Ursache (verborgene Angst/Wunsch) verstanden und die Person zu ihrer eigenen Lösung geführt wird.</span></li><li><span class="bi-en">Empathy First: Validate their perspective (&quot;I understand why you&amp;#x27;d think that&quot;) to prevent arguments. A won argument is a lost client.</span><span class="bi-de">Empathie zuerst: Bestätigen Sie ihre Perspektive („Ich verstehe, warum Sie das denken“), um Diskussionen zu vermeiden. Ein gewonnener Streit ist ein verlorener Kunde.</span></li><li><span class="bi-en">Questions Over Arguments: Use questions to uncover the objection&amp;#x27;s root cause and lead the person to their own conclusion. Arguments close the mind; questions open it.</span><span class="bi-de">Fragen statt Argumente: Nutzen Sie Fragen, um die Ursache des Einwands aufzudecken und die Person zu ihrer eigenen Schlussfolgerung zu führen. Argumente verschließen den Geist; Fragen öffnen ihn.</span></li></ul></div>
+<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li><span class="bi-en">Practice the EVA framework in all interactions, not just business.</span><span class="bi-de">Wende das EVA-Framework in allen Interaktionen an, nicht nur im Geschäftlichen.</span></li><li><span class="bi-en">Identify the root cause (fear or wish) behind each objection.</span><span class="bi-de">Identifizieren Sie die Ursache (Angst oder Wunsch) hinter jedem Einwand.</span></li><li><span class="bi-en">Use questions to guide people to their own conclusions.</span><span class="bi-de">Verwenden Sie Fragen, um Menschen zu ihren eigenen Schlussfolgerungen zu führen.</span></li></ul></div>
+<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li><span class="bi-en">Action: Adrian Lorz proactively requested training from his sponsor, Jerry, instead of waiting to be taught.</span><span class="bi-de">Aktion: Adrian Lorz hat proaktiv Schulung von seinem Sponsor Jerry angefordert, anstatt darauf zu warten, unterrichtet zu werden.</span></li></ul></div>
 </div></section>
 <div class="shell">
     <header class="hero">
@@ -502,7 +527,7 @@
 
     <div class="kpi-l" data-i18n-kpi="kpi_stufe">Stufe</div></div><div class="kpi"><div class="kpi-v">October 2022</div><div class="kpi-l" data-i18n-kpi="kpi_ergo_since">ERGO since</div></div><div class="kpi"><div class="kpi-v">10</div><div class="kpi-l">Einheiten</div></div></div>
 
-    <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label">Overview</span><span class="summary-title">Enhanced summary</span><span class="summary-hint">Tap to expand</span></summary><div class="exec exec-rich"><div class="part-block"><h3 class="part-title">Part 1 · 11:01–11:37</h3>
+    <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label">Overview</span><span class="summary-title">Enhanced summary</span><span class="summary-hint">Tap to expand</span></summary><div class="exec exec-rich"><div class="bi-en"><div class="part-block"><h3 class="part-title">Part 1 · 11:01–11:37</h3>
 <h3 class="exec-h">Meeting Purpose</h3>
 <p class="exec-p">To learn the EVA framework for handling objections and skepticism.</p>
 <h3 class="exec-h">Key Takeaways</h3>
@@ -643,7 +668,148 @@
 <li><strong>All:</strong> Obtain objection-handling scripts from your &quot;Schucki&quot; (mentor).</li>
 <li><strong>All:</strong> Invest 4–6 hours in mastering these techniques, as they account for over 50% of success when combined with product knowledge.</li>
 </ul>
-</div></div></details>
+</div></div><div class="bi-de"><div class="part-block"><h3 class="part-title">Part 1 · 11:01–11:37</h3>
+<h3 class="exec-h">Meeting Purpose</h3>
+<p class="exec-p">Erlernen des EVA-Frameworks zur Handhabung von Einwänden und Skepsis.</p>
+<h3 class="exec-h">Key Takeaways</h3>
+<ul class="exec-ul">
+<li><strong>Das EVA-Framework:</strong> Ein 3-Schritt-Prozess (Empathie, Fragen, Schlussfolgerung), um Einwände zu behandeln, indem man ihre Ursache (verborgene Angst/Wunsch) versteht und die Person zu ihrer eigenen Lösung führt.</li>
+<li><strong>Empathy First:</strong> Validieren Sie ihre Perspektive („Ich verstehe, warum Sie das denken“), um Streitigkeiten zu vermeiden. Ein gewonnenes Argument ist ein verlorener Kunde.</li>
+<li><strong>Questions Over Arguments:</strong> Nutzen Sie Fragen, um die Ursache des Einwands aufzudecken und die Person zu ihrer eigenen Schlussfolgerung zu führen. Argumente verschließen den Geist; Fragen öffnen ihn.</li>
+<li><strong>80 % der Menschen sind unentschlossen:</strong> Das EVA-Framework zielt auf diese Gruppe ab und verschiebt sie von „maybe“ zu „yes“, wodurch Ihre Erfolgsquote potenziell auf 90 % steigt.</li>
+</ul>
+<h3 class="exec-h">Topics</h3>
+<h3 class="exec-h">Das Problem: Einwände & Skepsis</h3>
+<ul class="exec-ul">
+<li>Neueinsteiger stoßen in ihrem Netzwerk oft auf Skepsis, die häufig als „Pyramidensystem“ oder „Betrug“ bezeichnet wird.</li>
+<li><strong>Psychological Root:</strong> Menschen versuchen oft, andere auf ihr eigenes Niveau herunterzuziehen, anstatt sich mit ihnen zu erheben, was Widerstand gegen Veränderung erzeugt.</li>
+<li><strong>Core Issue:</strong> Einwände signalisieren einen Mangel an Vertrauen oder Priorität.</li>
+<li>&quot;Pyramid scheme&quot; → Lack of trust.</li>
+<li>„Keine Zeit“ → Fehlende Priorität.</li>
+</ul>
+<h3 class="exec-h">Die Lösung: Das EVA Framework</h3>
+<ul class="exec-ul">
+<li>Ein 3-Schritt-Prozess, um Einwände nicht-konfrontativ zu behandeln.</li>
+<li><strong>E → Empathy:</strong></li>
+<li>Ich verstehe, warum Sie das denken.</li>
+<li><strong>Why:</strong> Verhindert Argumente. Ein gewonnenes Argument ist ein verlorener Kunde.</li>
+<li><strong>Insight:</strong> Einwände sind verborgene Ängste oder Wünsche.</li>
+<li><strong>V → Questions (Fragen):</strong></li>
+<li>Den Ursprung des Einwands aufdecken.</li>
+<li><strong>Why:</strong> Argumente schließen den Geist; Fragen öffnen ihn.</li>
+<li><strong>Technique:</strong> Klärende Fragen stellen („Was meinst du mit ‚Pyramidenschema‘?“) und aktiv zuhören.</li>
+<li><strong>A → Conclusion (Abschluss):</strong></li>
+<li>Sie zu ihrer eigenen Schlussfolgerung führen, die stärker wirkt als bloße Belehrung.</li>
+</ul>
+<h3 class="exec-h">Context: Adrian&#x27;s Journey</h3>
+<ul class="exec-ul">
+<li>Adrian stieg mit 23 in das Business ein, während er Economics &amp; Politics studierte.</li>
+<li><strong>Motivation:</strong> Der Wunsch, motivierte Menschen zu unterrichten und mit ihnen zu interagieren – ein Kontrast zu seiner früheren Tätigkeit als Tutor.</li>
+<li><strong>Catalyst:</strong> Ein zufälliges Treffen mit einem Schulkameraden (Boris) und dessen Leader (Jerry) eröffnete die Möglichkeit.</li>
+<li><strong>Decision Point:</strong> Nach 5 Monaten entschied sich Adrian für eine Vollzeit-Tätigkeit, angetrieben durch frühen Erfolg (z. B. fünfstellige monatliche Einkünfte).</li>
+</ul>
+<h3 class="exec-h">Nächste Schritte</h3>
+<ul class="exec-ul">
+<li><strong>All Participants:</strong></li>
+<li>Wende das EVA-Framework in allen Interaktionen an, nicht nur im Geschäftlichen.</li>
+<li>Identifizieren Sie die Ursache (Angst oder Wunsch) hinter jedem Einwand.</li>
+<li>Verwenden Sie Fragen, um Menschen zu ihren eigenen Schlussfolgerungen zu führen.</li>
+</ul>
+</div>
+<div class="part-block"><h3 class="part-title">Part 2 · 11:48–12:21</h3>
+<h3 class="exec-h">Meeting Purpose</h3>
+<p class="exec-p">Beherrschung des EFA-Frameworks zur Handhabung von Einwänden und zum Abschluss von Geschäften.</p>
+<h3 class="exec-h">Key Takeaways</h3>
+<ul class="exec-ul">
+<li><strong>Das EFA-Framework:</strong> Ein dreistufiger Prozess zur Einwandbehandlung: <strong>E</strong>mpathy (build trust), <strong>F</strong>ragen (Fragen nutzen, um zur Selbstreflexion anzuregen), und <strong>A</strong>bschluss (zusammenfassen und abschließen).</li>
+<li><strong>Meistere die 10–13 Kern-Einwände:</strong> Alle Einwände resultieren entweder aus „kein Vertrauen“ oder „keine Priorität“. Das Erlernen der vorformulierten Skripte dafür dauert nur 4–6 Stunden und macht Sie zum Experten, sodass Sie jedes Argument antizipieren und entkräften können.</li>
+<li><strong>Proaktives Lernen ist Ihre Verantwortung:</strong> Der Erfolg Ihres Sponsors hängt von Ihrem ab. Fordern Sie die EFA-Skripte proaktiv an, erarbeiten Sie sie eigenständig und nutzen Sie die Übungseinheiten zur Verfeinerung, nicht zum ersten Studium.</li>
+</ul>
+<h3 class="exec-h">Topics</h3>
+<h3 class="exec-h">Das EFA Framework</h3>
+<ul class="exec-ul">
+<li><strong>Empathy (E):</strong> Vertrauen aufbauen, indem man die Perspektive des Interessenten wirklich versteht.</li>
+<li><strong>Why:</strong> Echte Empathie ist entscheidend, um Rapport aufzubauen; übermäßiger Gebrauch von Formulierungen wie „I understand“ wirkt unaufrichtig.</li>
+<li><strong>How:</strong> Ich bin mir nicht sicher, ob ich das richtig verstanden habe – können Sie das bitte noch einmal erklären?</li>
+<li><strong>Fragen (F):</strong> Nutzen Sie Fragen, um Interessenten zu ihren eigenen Schlussfolgerungen zu führen.</li>
+<li><strong>Open Questions:</strong> Frühzeitig nutzen, um Informationen zu sammeln und den Interessenten zum Öffnen zu ermutigen.</li>
+<li><strong>Closed Questions:</strong> Können wir das später nutzen, um eine „Ja-Kette“ aufzubauen, die zu einer finalen Vereinbarung führt (z. B. Terminvereinbarung)?</li>
+<li><strong>Abschluss (A):</strong> Ich fasse das Gespräch zusammen und schließe den Deal ab.</li>
+<li><strong>Why:</strong> Many reps fail at this final step despite excellent preparation.</li>
+<li><strong>How:</strong> Verwenden Sie „Optionsfragen“ (z. B. „Würde nächster Dienstag oder Mittwoch besser passen?“), um die endgültige Entscheidung zu erleichtern.</li>
+</ul>
+<h3 class="exec-h">Meistern von Einwänden</h3>
+<ul class="exec-ul">
+<li><strong>Das Kernproblem:</strong> Alle Einwände stammen aus einer von zwei Ursachen:</li>
+<li><strong>No Trust:</strong> &quot;Pyramid scheme,&quot; &quot;scam,&quot; &quot;you&#x27;re too young.&quot;</li>
+<li><strong>Keine Priorität:</strong> „Kein Geld“, „keine Zeit“, „kein Interesse“.</li>
+<li><strong>Die Lösung:</strong> Lernen Sie die vorformulierten EFA-Skripte für die 10–13 häufigsten Einwände.</li>
+<li><strong>Why:</strong> Das macht Sie zu einer Expertin, sodass Sie jedes Argument antizipieren und entkräften können.</li>
+<li><strong>How:</strong></li>
+<li><strong>Learn:</strong> Selbstständig die Skripte (4–6 Stunden) bearbeiten.</li>
+<li><strong>Übung:</strong> Nutzen Sie Sponsor-Sessions zur Verfeinerung, nicht zum initialen Lernen.</li>
+</ul>
+<h3 class="exec-h">Adrian Lorz&#x27;s Success Principles</h3>
+<ul class="exec-ul">
+<li><strong>Principle 1: Wissen ist eine hohe Schuld (Knowledge is a high debt).</strong></li>
+<li><strong>Meaning:</strong> Es ist Ihre Verantwortung, aktiv Wissen zu suchen und zu erwerben.</li>
+<li><strong>Action:</strong> Adrian Lorz hat proaktiv bei seinem Sponsor Jerry eine Schulung angefordert, anstatt darauf zu warten, unterrichtet zu werden.</li>
+<li><strong>Principle 2: Implement without questioning.</strong></li>
+<li><strong>Meaning:</strong> Vertraue der Anleitung deines Sponsors und führe seine Anweisungen aus.</li>
+<li><strong>Action:</strong> Adrian Lorz übte das neue Skript sofort an seiner Schwester, die seine erste Kundin wurde. Diese direkte Anwendung des Wissens war ein entscheidender Faktor für seinen schnellen Erfolg.</li>
+</ul>
+<h3 class="exec-h">Nächste Schritte</h3>
+<ul class="exec-ul">
+<li><strong>All Participants:</strong></li>
+<li>Fordern Sie die EFA-Skriptdatei während der Pause von Ihrem Sponsor an.</li>
+<li>Vereinbaren Sie diese Woche eine Übungseinheit mit Ihrem Sponsor.</li>
+<li><strong>Vor der Sitzung:</strong> Lernen Sie die EFA-Skripte eigenständig.</li>
+<li><strong>Adrian Lorz:</strong></li>
+<li>Setzen wir die Sitzung nach der Pause fort, um die Einwandbehandlungs-Ideen der Teilnehmer zu besprechen.</li>
+</ul>
+</div>
+<div class="part-block"><h3 class="part-title">Part 3 · 12:38–13:06</h3>
+<h3 class="exec-h">Meeting Purpose</h3>
+<p class="exec-p">Beherrschung der Einwandbehandlung (EVA) und Terminvereinbarungstechniken.</p>
+<h3 class="exec-h">Key Takeaways</h3>
+<ul class="exec-ul">
+<li><strong>Ich habe die Anweisung verstanden, aber ich kann die "Patrick Star"-Technik nicht anwenden, da mir nicht klar ist, was damit gemeint ist. Bitte geben Sie mir den englischen Meeting-Text, den ich ins Deutsche übersetzen soll.</strong> um Einwände mit „Mal abgesehen davon...“ zu isolieren, ein „Ja“ zum Kernnutzen zu sichern und dann den Einwand aus einer Position der Zustimmung heraus zu lösen.</li>
+<li><strong>Das ist kein Pyramidensystem, sondern ein bewährtes Vertriebsmodell, bei dem jeder Teilnehmer durch den Verkauf von Produkten oder Dienstleistungen verdient – nicht nur durch das Werben neuer Mitglieder.</strong> indem man Interessenten anleitet, das Geschäftsmodell mit einer herkömmlichen Unternehmenshierarchie zu vergleichen. Dadurch erkennen sie die Ähnlichkeit selbst, wodurch der Einwand sich selbst entkräftet.</li>
+<li><strong>Entdecke versteckte Einwände</strong> mit der „Hand aufs Herz“ (Real Talk) Technik. Diese trennt oberflächliche Ausreden wie „keine Zeit“ von den echten Bedenken, die den Termin blockieren.</li>
+<li><strong>Termine mit „Optionsfragen“ vereinbaren</strong> (Optionen-Fragen). Dadurch geben Sie Interessenten eine Wahl, sodass sie sich in Kontrolle fühlen, während Sie das Gespräch auf einen bestätigten Termin lenken.</li>
+</ul>
+<h3 class="exec-h">Topics</h3>
+<h3 class="exec-h">Das EVA-Framework: Empathie &amp; Fragen</h3>
+<ul class="exec-ul">
+<li><strong>Empathy:</strong> Ich kann das komplett nachvollziehen.</li>
+<li><strong>Questioning:</strong> Verwenden Sie Fragen, um den wahren Einwand aufzudecken und den Interessenten zu seiner eigenen Lösung zu führen.</li>
+<li><strong>Wunschtechnik (Wish Technique):</strong> Was müsste ich Ihnen bieten, damit Sie zufrieden aus dem Gespräch gehen?</li>
+<li><strong>Katastrophentechnik (Catastrophe Technique):</strong> Eine letzte Möglichkeit bei festgefahrenen Gesprächen: „Was kann im schlimmsten Fall passieren?“ Die Antwort ist meist nur 30 Minuten ihrer Zeit.</li>
+</ul>
+<h3 class="exec-h">Die „Pyramid Scheme“-Einwand</h3>
+<ul class="exec-ul">
+<li><strong>Ich habe leider keine englische Meeting-Zeile erhalten, die ich übersetzen könnte. Bitte geben Sie den englischen Text an, den Sie ins Deutsche übersetzen möchten.</strong> Direkt zu argumentieren ist eine verlorene Schlacht, die Konfrontation erzeugt.</li>
+<li><strong>Lösung:</strong> Wie können wir den Interessenten durch eine Fragefolge dazu bringen, die Antwort selbst zu entdecken?</li>
+</ul>
+<p class="exec-p">1.  <strong>Define:</strong> &quot;Was ist für Sie ein Schneeballsystem?&quot; (What is a pyramid scheme to you?)</p>
+<p class="exec-p">2.  <strong>Relate:</strong> Fragen Sie nach ihrem Job und dem Einkommen ihres Chefs.</p>
+<p class="exec-p">3.  <strong>Compare:</strong> Führen Sie sie dazu, die Ähnlichkeit zwischen ihrer betrieblichen Hierarchie und dem Geschäftsmodell zu erkennen.</p>
+<p class="exec-p">4.  <strong>Conclude:</strong> Fragen Sie, ob ihr Job ein Schneeballsystem ist. Ein „Nein“ macht ihren ursprünglichen Einwand selbstwiderlegend.</p>
+<h3 class="exec-h">Appointment Setting: Optionsfragen</h3>
+<ul class="exec-ul">
+<li><strong>Ich habe Ihre Nachricht erhalten, aber es scheint, dass der englische Meeting-Text, den Sie übersetzen möchten, fehlt. Bitte senden Sie den Text, den Sie ins Deutsche übersetzen möchten.</strong> Direkte Fragen („Passt es Ihnen am Samstag um 14 Uhr?“) laden zu einem einfachen „Ja“ oder „Nein“ ein und führen leicht in eine Schleife von Ablehnungen.</li>
+<li><strong>Lösung:</strong> Bieten Sie in jeder Stufe zwei Optionen an, um den Interessenten zu einem von ihm gewählten Zeitpunkt zu führen.</li>
+<li>Passt es Ihnen besser Anfang oder Ende der Woche?</li>
+<li>&quot;Montag oder Dienstag?&quot;</li>
+<li>&quot;Vormittags oder Nachmittags?&quot;</li>
+<li><strong>Rationale:</strong> Das gibt dem Interessenten ein Gefühl von Kontrolle und erhöht die Wahrscheinlichkeit einer bestätigten Terminvereinbarung.</li>
+</ul>
+<h3 class="exec-h">Nächste Schritte</h3>
+<ul class="exec-ul">
+<li><strong>All:</strong> Ich hole mir Einwandbehandlungs-Skripte von meinem „Schucki“ (Mentor).</li>
+<li><strong>All:</strong> Investiere 4–6 Stunden in die Beherrschung dieser Techniken, da sie in Kombination mit Produktkenntnissen über 50 % des Erfolgs ausmachen.</li>
+</ul>
+</div></div></div></details>
 
     
 
@@ -810,7 +976,7 @@
       }));
     }
   </script>
-<section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label">Live</div><h2>Live meeting summary</h2><div class="exec exec-rich live-summary"><h3 class="exec-h">Eva Framework Overview</h3>
+<section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label">Live</div><h2>Live meeting summary</h2><div class="exec exec-rich live-summary"><div class="bi-en"><h3 class="exec-h">Eva Framework Overview</h3>
 <ul class="exec-ul">
 <li>3-step process for handling objections and skepticism</li>
 <li>Steps: Empathy, Questions, Conclusion</li>
@@ -903,6 +1069,156 @@
 <h3 class="exec-h">Action Items</h3>
 <ul class="exec-ul">
 <li>No action items detected</li>
-</ul></div></section>
+</ul></div><div class="bi-de"><h3 class="exec-h">Eva Framework Überblick</h3>
+<ul class="exec-ul">
+<li>3-Schritt-Prozess zur Behandlung von Einwänden und Skepsis</li>
+<li>Steps: Empathy, Questions, Conclusion</li>
+<li>Ziel: Ursache von Einwänden verstehen und Person zu ihrer eigenen Lösung führen</li>
+</ul>
+<h3 class="exec-h">Eva Framework Purpose</h3>
+<ul class="exec-ul">
+<li>Zielt auf die 80% der Menschen ab, die unentschlossen sind</li>
+<li>Verschiebt Interessenten von „maybe“ zu „yes“</li>
+<li>Potenzielle Erfolgsrate steigt auf 90%</li>
+</ul>
+<h3 class="exec-h">Einwände und Skepsis Problem</h3>
+<ul class="exec-ul">
+<li>Neueinsteiger sehen sich Skepsis aus ihrem Netzwerk gegenüber</li>
+<li>Häufige Einwände sind „pyramid scheme“ oder „scam“</li>
+<li>Einwände signalisieren fehlendes Vertrauen oder fehlende Priorität</li>
+</ul>
+<h3 class="exec-h">Objection Types</h3>
+<ul class="exec-ul">
+<li>„Pyramid scheme“-Einwand deutet auf fehlendes Vertrauen hin</li>
+<li>„No time“-Einwand deutet auf fehlende Priorität hin</li>
+<li>Psychologische Ursache: Menschen ziehen andere herunter, statt mit ihnen aufzusteigen</li>
+</ul>
+<h3 class="exec-h">Empathy Step</h3>
+<ul class="exec-ul">
+<li>Validieren Sie zunächst ihre Perspektive.</li>
+<li>Ich verstehe, warum Sie das denken würden.</li>
+<li>Verhindert, dass Argumente beginnen</li>
+</ul>
+<h3 class="exec-h">Warum Empathie wichtig ist</h3>
+<ul class="exec-ul">
+<li>Ein gewonnenes Argument ist ein verlorener Kunde</li>
+<li>Einwände repräsentieren verborgene Ängste oder Wünsche</li>
+<li>Empathy öffnet die Tür für weitere Gespräche</li>
+</ul>
+<h3 class="exec-h">Questions Step</h3>
+<ul class="exec-ul">
+<li>Entdecke die Ursache des Einwands.</li>
+<li>Argumente schließen den Geist; Fragen öffnen ihn</li>
+<li>Technique: ask clarifying questions like &quot;What do you mean by &#x27;pyramid scheme&#x27;?&quot;</li>
+</ul>
+<h3 class="exec-h">Aktive Zuhörtechnik</h3>
+<ul class="exec-ul">
+<li>Hören Sie während der Fragenphase aktiv zu</li>
+<li>Führen Sie das Gespräch ohne Konfrontation.</li>
+<li>Konzentrieren Sie sich darauf, zu verstehen, anstatt zu überzeugen.</li>
+</ul>
+<h3 class="exec-h">Conclusion Step</h3>
+<ul class="exec-ul">
+<li>Führen Sie sie zu ihrer eigenen Schlussfolgerung.</li>
+<li>Selbst gezogene Schlussfolgerungen sind mächtiger als das, was man gesagt bekommt</li>
+<li>Letzter Schritt des EVA-Framework-Prozesses</li>
+</ul>
+<h3 class="exec-h">Adrian Lorz Background</h3>
+<ul class="exec-ul">
+<li>Mit 23 Jahren ins Unternehmen eingetreten</li>
+<li>Studierte damals Wirtschaft und Politik</li>
+<li>Motivation: Wunsch, zu unterrichten und mit motivierten Menschen zu interagieren</li>
+</ul>
+<h3 class="exec-h">Previous Experience Contrast</h3>
+<ul class="exec-ul">
+<li>Previous tutoring experience lacked motivated participants</li>
+<li>Aktuelles Geschäft ermöglicht Interaktion mit motivierten Personen</li>
+<li>Starke Präferenz für die aktuelle Umgebung</li>
+</ul>
+<h3 class="exec-h">Einstiegspunkt ins Geschäft</h3>
+<ul class="exec-ul">
+<li>Zufälliges Treffen mit Schulkamerad Boris</li>
+<li>Boris' Leader Jerry hat die Gelegenheit vorgestellt</li>
+<li>Katalysator-Ereignis, das Adrians Reise begann</li>
+</ul>
+<h3 class="exec-h">Commitment Timeline</h3>
+<ul class="exec-ul">
+<li>5 Monate nach dem Beitritt, full-time committed</li>
+<li>Entscheidung durch frühen Erfolg getrieben</li>
+<li>Beispiel: monatliches Einkommen im fünfstelligen Bereich</li>
+</ul>
+<h3 class="exec-h">Eva Framework Application</h3>
+<ul class="exec-ul">
+<li>In allen Interaktionen üben, nicht nur im Business</li>
+<li>Identify root cause behind each objection</li>
+<li>Ursache ist entweder Angst oder Wunsch</li>
+</ul>
+<h3 class="exec-h">Questions Technique</h3>
+<ul class="exec-ul">
+<li>Fragen nutzen, um Menschen zu eigenen Schlussfolgerungen zu führen</li>
+<li>Fokus auf Aufdecken verborgener Motivationen</li>
+<li>Halten Sie während des gesamten Meetings einen nicht-konfrontativen Ansatz bei.</li>
+</ul>
+<h3 class="exec-h">Action Items</h3>
+<ul class="exec-ul">
+<li>Keine Maßnahmen erkannt</li>
+</ul></div></div></section>
+
+<script id="ergomeet-bilingual-nav">
+(function () {
+  const EXTRA = {
+    de: { toc_home: 'Termine', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Überblick', toc_notes: 'Notizen', toc_live: 'Live' },
+    en: { toc_home: 'Meetings', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Summary', toc_notes: 'Notes', toc_live: 'Live' }
+  };
+  if (window.ERGOMEET_I18N) {
+    if (ERGOMEET_I18N.de) Object.assign(ERGOMEET_I18N.de, EXTRA.de);
+    if (ERGOMEET_I18N.en) Object.assign(ERGOMEET_I18N.en, EXTRA.en);
+    delete ERGOMEET_I18N.tr;
+  }
+  const sel0 = document.getElementById('langSelect');
+  if (sel0) {
+    [...sel0.options].forEach((o) => { if (o.value !== 'de' && o.value !== 'en') o.remove(); });
+  }
+  window.ergomeetBuildToc = function () {
+    const toc = document.getElementById('sectionToc');
+    if (!toc) return;
+    const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
+    const pack = (window.ERGOMEET_I18N && ERGOMEET_I18N[lang]) || EXTRA[lang];
+    const home = toc.querySelector('.toc-home');
+    if (home) home.remove();
+    toc.innerHTML = '';
+    const homeLink = home || document.createElement('a');
+    homeLink.className = 'toc-home';
+    homeLink.href = 'https://yashbora9.github.io/ergomeet-reports/';
+    homeLink.setAttribute('data-i18n', 'toc_home');
+    homeLink.textContent = pack.toc_home || 'Meetings';
+    toc.appendChild(homeLink);
+    const keys = { recap: 'toc_recap', todos: 'toc_todos', summary: 'toc_summary', notes: 'toc_notes', 'live-summary': 'toc_live' };
+    document.querySelectorAll('[data-block]:not(.is-empty):not([hidden])').forEach((block) => {
+      const id = block.id || block.getAttribute('data-block');
+      if (!id || !keys[id]) return;
+      if (!block.id) block.id = id;
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = pack[keys[id]] || id;
+      toc.appendChild(a);
+    });
+  };
+  const prev = window.ergomeetApplyLang;
+  window.ergomeetApplyLang = function (lang) {
+    if (lang !== 'de' && lang !== 'en') lang = 'de';
+    if (typeof prev === 'function') prev(lang);
+    document.documentElement.lang = lang;
+    localStorage.setItem('ergomeet-lang', lang);
+    const sel = document.getElementById('langSelect');
+    if (sel && sel.value !== lang) sel.value = lang;
+    window.ergomeetBuildToc();
+  };
+  const saved = localStorage.getItem('ergomeet-lang');
+  const browser = (navigator.language || 'de').slice(0, 2);
+  window.ergomeetApplyLang((saved === 'en' || saved === 'de') ? saved : (browser === 'en' ? 'en' : 'de'));
+})();
+</script>
+
 </body>
 </html>

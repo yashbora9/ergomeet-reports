@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="dark">
+<html data-ergomeet-bilingual="1" lang="de" data-theme="dark">
 <head>
   <meta name="robots" content="noindex, nofollow" />
   <meta charset="utf-8"/>
@@ -605,18 +605,43 @@
       text-transform: uppercase;
       color: var(--muted);
     }
+  
+    /* ergomeet-bi */
+    .topbar-inner { justify-content: space-between; }
+    .topbar .toc {
+      display: flex !important;
+      flex: 1 1 auto;
+      min-width: 0;
+      margin: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      gap: 6px;
+    }
+    .topbar .toc::-webkit-scrollbar { display: none; }
+    .topbar .toc a { white-space: nowrap; flex-shrink: 0; }
+    html[lang="en"] .bi-de { display: none !important; }
+    html[lang="de"] .bi-en { display: none !important; }
+    span.bi-en, span.bi-de { display: inline; }
+    div.bi-en, div.bi-de { display: block; }
+    @media (max-width: 820px) {
+      .topbar-inner { flex-wrap: wrap; }
+      .topbar .toc { order: 2; flex-basis: 100%; }
+    }
+
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
+      <nav class="toc" id="sectionToc" aria-label="Sections">
+        <a class="toc-home" href="https://yashbora9.github.io/ergomeet-reports/" data-i18n="toc_home">Meetings</a>
+      </nav>
       <div class="topbar-controls">
         <select id="langSelect" class="lang-select" aria-label="Language">
           <option value="de">DE</option>
           <option value="en">EN</option>
-          <option value="tr">TR</option>
         </select>
-        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+<button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
           <span class="icon-sun" aria-hidden="true">☀</span>
           <span class="icon-moon" aria-hidden="true">☾</span>
           <span id="themeToggleLabel" data-i18n="theme_light">Light</span>
@@ -641,19 +666,92 @@
     </header>
 
     <!-- No empty shell under the heading: blocks only appear when builder marks them present -->
-    <nav class="toc" id="sectionToc" aria-label="Sections"></nav>
-    <div class="stack" id="reportStack">
+<div class="stack" id="reportStack">
       <section class="section block recap-card" id="recap" data-block="recap">
 <div class="section-label" data-i18n="lbl_recap">60 seconds</div>
 <h2 data-i18n="recap">Recap</h2>
 <div class="recap-grid">
-<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text">Lucio teilt seine Perspektive auf das Geschäft als „Life-Changer&quot; und wie man erfolgreich wird.</p></div>
-<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li>Das Geschäft als „Life-Changer&quot; neu definieren: Das Geschäft als „Life-Changer&quot; sehen, der das eigene Leben und das anderer verändert. Diese Perspektive ist der Schlüssel zu einer nachhaltigen Motivation.</li><li>Soft Skills sind der wichtigste Erfolgsfaktor: Die „Study of Engineering Education&quot; von Dale Carnegie ergab, dass 85 % des beruflichen Erfolgs von Soft Skills abhängen. Dieses Geschäft ist ein Trainingsgelände für diese entscheidenden Fähigkeiten.</li><li>Rekrutierung als moralische Verantwortung sehen: Wenn das Geschäft das Leben eines Menschen verändern kann, ist es eine moralische Verantwortung, diese Chance anzubieten. Diese Haltung beseitigt die Angst vor der Ansprache.</li></ul></div>
-<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li>Täglich 45–60 Minuten für die Reflexion über die „Life-Changer&quot;-Perspektive einplanen.</li><li>Rekrutierung als moralische Verantwortung sehen, um die Angst vor der Ansprache zu überwinden.</li><li>Die drei Unterschriften bewerten, um das eigene Engagement zu klären.</li></ul></div>
-<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li>Erkenntnis: Erfolg hängt von der Einstellung ab, nicht von der Erfahrung.</li><li>Lucio rekrutiert nicht *für* sich selbst, sondern *für* die Person, die er anspricht, weil er weiß, dass das Geschäft ihr Leben verändern kann.</li></ul></div>
+<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text" data-topic-en="Lucio shares his perspective on the business as a &quot;Life-Changer&quot; and how to become successful." data-topic-de="Lucio teilt seine Perspektive auf das Geschäft als „Life-Changer&amp;quot; und wie man erfolgreich wird."><span class="bi-en">Lucio shares his perspective on the business as a "Life-Changer" and how to become successful.</span><span class="bi-de">Lucio teilt seine Perspektive auf das Geschäft als „Life-Changer&quot; und wie man erfolgreich wird.</span></p></div>
+<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li><span class="bi-en">Redefining the business as a „Life-Changer“: Seeing the business as a „Life-Changer“ that changes one’s own life and the lives of others. This perspective is the key to sustainable motivation.</span><span class="bi-de">Das Geschäft als „Life-Changer&quot; neu definieren: Das Geschäft als „Life-Changer&quot; sehen, der das eigene Leben und das anderer verändert. Diese Perspektive ist der Schlüssel zu einer nachhaltigen Motivation.</span></li><li><span class="bi-en">Soft Skills are the most important success factor: The „Study of Engineering Education“ by Dale Carnegie found that 85 % of professional success depends on soft skills. This business is a training ground for these crucial skills.</span><span class="bi-de">Soft Skills sind der wichtigste Erfolgsfaktor: Die „Study of Engineering Education&quot; von Dale Carnegie ergab, dass 85 % des beruflichen Erfolgs von Soft Skills abhängen. Dieses Geschäft ist ein Trainingsgelände für diese entscheidenden Fähigkeiten.</span></li><li><span class="bi-en">Seeing recruitment as a moral responsibility: If the business can change a person's life, it is a moral responsibility to offer this opportunity. This attitude eliminates the fear of approaching.</span><span class="bi-de">Rekrutierung als moralische Verantwortung sehen: Wenn das Geschäft das Leben eines Menschen verändern kann, ist es eine moralische Verantwortung, diese Chance anzubieten. Diese Haltung beseitigt die Angst vor der Ansprache.</span></li></ul></div>
+<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li><span class="bi-en">Schedule 45–60 minutes daily for reflection on the „Life-Changer“ perspective.</span><span class="bi-de">Täglich 45–60 Minuten für die Reflexion über die „Life-Changer&quot;-Perspektive einplanen.</span></li><li><span class="bi-en">Seeing recruitment as a moral responsibility to overcome the fear of approaching.</span><span class="bi-de">Rekrutierung als moralische Verantwortung sehen, um die Angst vor der Ansprache zu überwinden.</span></li><li><span class="bi-en">Evaluate the three signatures to clarify one's own commitment.</span><span class="bi-de">Die drei Unterschriften bewerten, um das eigene Engagement zu klären.</span></li></ul></div>
+<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li><span class="bi-en">Insight: Success depends on attitude, not on experience.</span><span class="bi-de">Erkenntnis: Erfolg hängt von der Einstellung ab, nicht von der Erfahrung.</span></li><li><span class="bi-en">Lucio does not recruit *for* himself, but *for* the person he is addressing, because he knows that the business can change their life.</span><span class="bi-de">Lucio rekrutiert nicht *für* sich selbst, sondern *für* die Person, die er anspricht, weil er weiß, dass das Geschäft ihr Leben verändern kann.</span></li></ul></div>
 </div></section>
-      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Täglich 45–60 Minuten für die Reflexion über die „Life-Changer&quot;-Perspektive einplanen.</span></li><li><span class="todo-task">Rekrutierung als moralische Verantwortung sehen, um die Angst vor der Ansprache zu überwinden.</span></li><li><span class="todo-task">Die drei Unterschriften bewerten, um das eigene Engagement zu klären.</span></li><li><span class="todo-task">Den Plan zum Sechser umsetzen, indem man die Quoten konsequent einhält.</span></li></ul></section>
-      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Zweck des Meetings</h3>
+      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task"><span class="bi-en">Schedule 45–60 minutes daily for reflection on the „Life-Changer“ perspective.</span><span class="bi-de">Täglich 45–60 Minuten für die Reflexion über die „Life-Changer&quot;-Perspektive einplanen.</span></span></li><li><span class="todo-task"><span class="bi-en">Seeing recruitment as a moral responsibility to overcome the fear of approaching.</span><span class="bi-de">Rekrutierung als moralische Verantwortung sehen, um die Angst vor der Ansprache zu überwinden.</span></span></li><li><span class="todo-task"><span class="bi-en">Evaluate the three signatures to clarify one's own commitment.</span><span class="bi-de">Die drei Unterschriften bewerten, um das eigene Engagement zu klären.</span></span></li><li><span class="todo-task"><span class="bi-en">Implement the six-pack plan by consistently adhering to the quotas.</span><span class="bi-de">Den Plan zum Sechser umsetzen, indem man die Quoten konsequent einhält.</span></span></li></ul></section>
+      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><div class="bi-en"><h3 class="exec-h">Purpose of the Meeting</h3>
+<p class="exec-p">Lucio shares his perspective on the business as a "Life-Changer" and how to become successful.</p>
+<h3 class="exec-h">Wichtigste Erkenntnisse</h3>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Redefining the business as a „Life-Changer“:</strong> Seeing the business as a „Life-Changer“ that changes one’s own life and that of others. This perspective is the key to sustainable motivation.</li>
+<li><strong>Soft Skills are the most important success factor:</strong> The „Study of Engineering Education“ by Dale Carnegie found that 85 % of professional success depends on Soft Skills. This business is a training ground for these crucial skills.</li>
+<li><strong>Rekrutierung als moralische Verantwortung sehen:</strong> If the business can change a person’s life, it is a moral responsibility to offer this opportunity. This attitude eliminates the fear of approaching people.</li>
+<li><strong>Planning the path to Sechser with clear quotas:</strong> Lucio has a clear plan for promotion to Sechser: 100 Grundseminar participants (GS participants) from 5 branches. This requires about 8 own guests per branch.</li>
+</ul>
+</ul>
+<h3 class="exec-h">Themen</h3>
+<h4 class="exec-h2">The perspective: The business as a „Life-Changer“</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Lucio joined at the age of 18 after his Abitur with a grade average of 1.1 because he lacked a clear professional direction.</li>
+<li>He defined the „dream job“ as a combination of passion, high income at a young age, recognition and a cool lifestyle.</li>
+<li>He recognized that this business meets these criteria and thus represents a „Life-Changer“.</li>
+<li><strong>Erkenntnis:</strong> Success depends on attitude, not on experience.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">The strategy: Mastering Soft Skills</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Lucio decided to become the „right person“ before looking for the „right job“.</li>
+<li>He used the „Study of Engineering Education“ by Dale Carnegie, which found that professional success depends 85 % on Soft Skills.</li>
+<li><strong>Schlussfolgerung:</strong> He invested in this business to master these crucial skills and saw it as a „training ground for the 85 %“.</li>
+<li><strong>Denzel Washingtons 3-Stufen-Modell:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Lernen:</strong> Soft Skills meistern.</li>
+<li><strong>Verdienen:</strong> Einkommen erzielen.</li>
+<li><strong>Giving back:</strong> Andere coachen.</li>
+</ul>
+</ul>
+<li><strong>Strukturvertrieb als Fundament:</strong> The business provides an ideal environment for personal growth by offering the „3 people you need“:</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Mentor:</strong> For orientation.</li>
+<li><strong>Sparring Partner:</strong> For competition.</li>
+<li><strong>Mentee:</strong> For reflection through teaching.</li>
+</ul>
+</ul>
+<li><strong>Beispiel Elon Musk:</strong> Musk’s success arose from his environment (the „PayPal Mafia“), proving that no one succeeds alone.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">The implementation: Recruitment as a moral responsibility</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Lucio does not recruit *for* himself, but *for* the person he is addressing, because he knows that the business can change their life.</li>
+<li><strong>Erkenntnis:</strong> If the business can change a person’s life, it is a moral responsibility to offer it.</li>
+<li><strong>The three signatures:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<li><strong>„I will look into it."</strong></li>
+<li><strong>„I will see it through."</strong></li>
+<li><strong>„I accept the quotas and will succeed."</strong></li>
+</ul>
+<li><strong>Lucio has provided the third signature, which explains his high energy and commitment.</strong></li>
+</ul>
+</ul>
+<h4 class="exec-h2">The plan: The path to the Sechser</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Ziel:</strong> 100 GS participants from 5 branches.</li>
+<li><strong>Annahme:</strong> 20 GS participants per branch are needed to produce a Sechser.</li>
+<li><strong>Aktionsplan:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Ansprache:</strong> 24 Ansprachen → 6 qualifizierte Kontakte → 1 GS-Teilnehmer.</li>
+<li><strong>Worst-Case-Szenario:</strong> If someone declines, contact is maintained via Instagram. This creates a pipeline for the future, as people’s life circumstances change.</li>
+<li><strong>Filtern:</strong> Lucio invests up to 8 hours in a conversation to test seriousness and ensure he only works with highly motivated individuals.</li>
+</ul>
+</ul>
+</ul>
+</ul></div><div class="bi-de"><h3 class="exec-h">Zweck des Meetings</h3>
 <p class="exec-p">Lucio teilt seine Perspektive auf das Geschäft als „Life-Changer&quot; und wie man erfolgreich wird.</p>
 <h3 class="exec-h">Wichtigste Erkenntnisse</h3>
 <ul class="exec-ul">
@@ -727,14 +825,14 @@
 </ul>
 </ul>
 </ul>
-</ul></div></details>
+</ul></div></div></details>
       
       
       
       
       
       
-      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><h3 class="exec-h">Welcome And Opening</h3>
+      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><div class="bi-en"><h3 class="exec-h">Welcome And Opening</h3>
 <ul class="exec-ul">
 <li>Meeting opened with full attendance in the office</li>
 <li>Lucio noted the positive problem of too few chairs due to high attendance</li>
@@ -857,7 +955,130 @@
 <h3 class="exec-h">Action Items</h3>
 <ul class="exec-ul">
 <li>No action items detected</li>
-</ul></div></section>
+</ul></div><div class="bi-de"><h3 class="exec-h">Willkommen und Eröffnung</h3>
+<ul class="exec-ul">
+<li>Die Sitzung wurde mit voller Anwesenheit im Büro eröffnet.</li>
+<li>Lucio bemerkte das positive Problem zu weniger Stühle aufgrund der hohen Teilnehmerzahl.</li>
+<li>Lucio äußerte sich begeistert über die aktuelle Teamdynamik.</li>
+</ul>
+<h3 class="exec-h">Persönliche Vorstellung</h3>
+<ul class="exec-ul">
+<li>Lucio ist 21 Jahre alt und ist seit drei Jahren im Geschäft.</li>
+<li>Am 16. September 2023 beim Grundseminar-Business-Challenge gestartet</li>
+<li>Hat Abitur mit Note 1,1 abgeschlossen, bevor er/sie eintrat</li>
+</ul>
+<h3 class="exec-h">Ursprüngliche Motivation</h3>
+<ul class="exec-ul">
+<li>Lucio ist aus freier Entscheidung, nicht aus Notwendigkeit, beigetreten.</li>
+<li>Hatte die Möglichkeit, ein Studium aufzunehmen, entschied mich aber für diesen Weg</li>
+<li>Der primäre Treiber war die Vermeidung eines Lebens ohne klare Richtung oder Träume.</li>
+</ul>
+<h3 class="exec-h">Profisportler Comparison</h3>
+<ul class="exec-ul">
+<li>Lucio verglich das Geschäft mit dem Traum, Profisportler zu werden.</li>
+<li>Finanzielle Belohnung, Status, Einfluss und Lebensstil als zentrale Parallelen identifiziert</li>
+<li>Das Unternehmen ermöglicht es, diese Ergebnisse bereits in jungen Jahren zu erreichen.</li>
+</ul>
+<h3 class="exec-h">Kernlernen nach drei Jahren</h3>
+<ul class="exec-ul">
+<li>Technischer Rang oder Position bestimmt nicht den Erfolg</li>
+<li>Der einzige Faktor, der zählt, ist die persönliche Einstellung und Perspektive.</li>
+<li>Ziel des Meetings ist es, die Team-Mindset für langfristigen Erfolg anzupassen.</li>
+</ul>
+<h3 class="exec-h">Life Decision Framework</h3>
+<ul class="exec-ul">
+<li>Beschrieb, wie man nach der Schule in einem Flur mit Tausenden von Karrieretüren steht.</li>
+<li>Zwei häufige Fehler wurden identifiziert: unter Druck eine beliebige Tür zu wählen oder nie zu wählen.</li>
+<li>Die Angst, die falsche Wahl zu treffen, führt oft dazu, gar keine Wahl zu treffen.</li>
+</ul>
+<h3 class="exec-h">Success Performance Study</h3>
+<ul class="exec-ul">
+<li>Referenzierte Dale-Carnegie-Foundation-Studie aus den 1930er-Jahren</li>
+<li>1.500 Ingenieure wurden über mehrere Jahre hinweg auf Erfolgsfaktoren untersucht</li>
+<li>Untersuchen Sie technische Fähigkeiten getrennt von Soft Skills (Human Engineering).</li>
+</ul>
+<h3 class="exec-h">Study Results</h3>
+<ul class="exec-ul">
+<li>15 % des beruflichen Erfolgs werden technischen Fähigkeiten zugeschrieben</li>
+<li>85 % des beruflichen Erfolgs werden Soft Skills zugeschrieben</li>
+<li>Technische Fähigkeiten können zunehmend durch KI und Technologie ersetzt werden</li>
+</ul>
+<h3 class="exec-h">Geschäftsmodell-Positionierung</h3>
+<ul class="exec-ul">
+<li>Lucio positionierte das Geschäft als Trainingsfeld für die 85 % Soft Skills</li>
+<li>Behauptete, dass das Beherrschen von zwischenmenschlichen Fähigkeiten jede Branche zugänglich macht</li>
+<li>Technical product knowledge can be learned in weeks after soft skills foundation</li>
+</ul>
+<h3 class="exec-h">Denzel Washington Quote</h3>
+<ul class="exec-ul">
+<li>Dreiphasiges Lebensmodell referenziert: lernen, verdienen, zurückgeben</li>
+<li>Aktuelle Phase als Lernstufe in den frühen 20ern positioniert</li>
+<li>Ziel ist es, nicht ersetzbare Fähigkeiten zu meistern, bevor man sich auf Verdienste konzentriert.</li>
+</ul>
+<h3 class="exec-h">Consultative Sales Definition</h3>
+<ul class="exec-ul">
+<li>Geschäft als beratender Vertrieb beschrieben, nicht als Haustürgeschäft</li>
+<li>Erfordert Empathie, Anpassungsfähigkeit und das Lesen unterschiedlicher Persönlichkeitstypen</li>
+<li>Das Team lernt im Laufe der Zeit, mit unterschiedlichen politischen und sozialen Hintergründen umzugehen.</li>
+</ul>
+<h3 class="exec-h">Mindset Requirements</h3>
+<ul class="exec-ul">
+<li>Success requires operating as the main character in your own story</li>
+<li>Tägliche bewusste Anstrengung erforderlich, um die richtige Perspektive zu wahren</li>
+<li>Das Team muss sich Zeit nehmen, um über die privilegierte Position nachzudenken, in der es sich befindet.</li>
+</ul>
+<h3 class="exec-h">Market Problem Awareness</h3>
+<ul class="exec-ul">
+<li>Persönliches Experiment mit 48 Personen zu Rentenfragen erwähnt</li>
+<li>100 % waren sich des Rentenproblems bewusst</li>
+<li>Nur 6 von 48 haben aktiv etwas dagegen unternommen.</li>
+</ul>
+<h3 class="exec-h">Tägliche Aktionsanforderungen</h3>
+<ul class="exec-ul">
+<li>Recommended 45 minutes each morning to build conscious awareness</li>
+<li>Schlug vor, das Wissen über das Ruhestandsproblem vom Unterbewusstsein ins Bewusstsein zu bringen.</li>
+<li>Betonen die Notwendigkeit täglichen bewussten Handelns statt passiver Anwesenheit</li>
+</ul>
+<h3 class="exec-h">Zielsetzung für die Rekrutierung</h3>
+<ul class="exec-ul">
+<li>Zielvorgabe von 8 direkten Anmeldungen für eine 20-Personen-Veranstaltung</li>
+<li>Empfohlenes 40%-Direkt-Rekrutierungsziel mit 60% über Team-Momentum</li>
+<li>Betonte, dass 8 direkte Anmeldungen innerhalb von 30 Tagen erreichbar sind.</li>
+</ul>
+<h3 class="exec-h">Annäherungsvolumenanforderungen</h3>
+<ul class="exec-ul">
+<li>Berechneter Bedarf von 24 Ansätzen zur Generierung der erforderlichen Anmeldungen</li>
+<li>Er sagte, dass 3 Stunden täglich fokussierter Aktivität ausreichen, um die Tagesziele zu erreichen.</li>
+<li>Betonung, dass auch Worst-Case-Szenarien den Kontakt für zukünftige Möglichkeiten aufrechterhalten</li>
+</ul>
+<h3 class="exec-h">Worst Case Scenario Handling</h3>
+<ul class="exec-ul">
+<li>Beschrieb, dass der Instagram-Kontakt auch nach der ersten Ablehnung aufrechterhalten wurde.</li>
+<li>Er sagte, dass sich die Umstände der Menschen über 1-2 Jahre ändern.</li>
+<li>Frühere Ablehnungen sind nach Lebensveränderungen später zu Geschäftspartnern geworden.</li>
+</ul>
+<h3 class="exec-h">Führungsphilosophie</h3>
+<ul class="exec-ul">
+<li>Es wurde gesagt, dass 8-stündige Gespräche genutzt werden, um Interessenten richtig zu qualifizieren.</li>
+<li>Betonung auf Filterung statt Überzeugung in den ersten Interaktionen</li>
+<li>Ziel ist es, Personen zu identifizieren, die Führungspotenzial zeigen.</li>
+</ul>
+<h3 class="exec-h">Current Team Status</h3>
+<ul class="exec-ul">
+<li>Team currently at 4-star structure with 120 registrations</li>
+<li>Noch eine halbe Woche bis zur nächsten Ranking-Periode</li>
+<li>Aktuell spiegeln die Ergebnisse die richtige Event-Mindset wider.</li>
+</ul>
+<h3 class="exec-h">Final Mindset Message</h3>
+<ul class="exec-ul">
+<li>Erfolg erfordert, das Geschäft wie einen Goldbarren zu behandeln, an dem andere vorbeigehen.</li>
+<li>Menschen sind von Kindheit an darauf konditioniert, Chancen abzulehnen.</li>
+<li>Das Team muss gesellschaftliche Prägung überwinden, um Ergebnisse zu erzielen.</li>
+</ul>
+<h3 class="exec-h">Action Items</h3>
+<ul class="exec-ul">
+<li>Keine Maßnahmen erkannt</li>
+</ul></div></div></section>
     </div>
 
     <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
@@ -1096,5 +1317,62 @@
       }));
     }
   </script>
+
+<script id="ergomeet-bilingual-nav">
+(function () {
+  const EXTRA = {
+    de: { toc_home: 'Termine', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Überblick', toc_notes: 'Notizen', toc_live: 'Live' },
+    en: { toc_home: 'Meetings', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Summary', toc_notes: 'Notes', toc_live: 'Live' }
+  };
+  if (window.ERGOMEET_I18N) {
+    if (ERGOMEET_I18N.de) Object.assign(ERGOMEET_I18N.de, EXTRA.de);
+    if (ERGOMEET_I18N.en) Object.assign(ERGOMEET_I18N.en, EXTRA.en);
+    delete ERGOMEET_I18N.tr;
+  }
+  const sel0 = document.getElementById('langSelect');
+  if (sel0) {
+    [...sel0.options].forEach((o) => { if (o.value !== 'de' && o.value !== 'en') o.remove(); });
+  }
+  window.ergomeetBuildToc = function () {
+    const toc = document.getElementById('sectionToc');
+    if (!toc) return;
+    const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
+    const pack = (window.ERGOMEET_I18N && ERGOMEET_I18N[lang]) || EXTRA[lang];
+    const home = toc.querySelector('.toc-home');
+    if (home) home.remove();
+    toc.innerHTML = '';
+    const homeLink = home || document.createElement('a');
+    homeLink.className = 'toc-home';
+    homeLink.href = 'https://yashbora9.github.io/ergomeet-reports/';
+    homeLink.setAttribute('data-i18n', 'toc_home');
+    homeLink.textContent = pack.toc_home || 'Meetings';
+    toc.appendChild(homeLink);
+    const keys = { recap: 'toc_recap', todos: 'toc_todos', summary: 'toc_summary', notes: 'toc_notes', 'live-summary': 'toc_live' };
+    document.querySelectorAll('[data-block]:not(.is-empty):not([hidden])').forEach((block) => {
+      const id = block.id || block.getAttribute('data-block');
+      if (!id || !keys[id]) return;
+      if (!block.id) block.id = id;
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = pack[keys[id]] || id;
+      toc.appendChild(a);
+    });
+  };
+  const prev = window.ergomeetApplyLang;
+  window.ergomeetApplyLang = function (lang) {
+    if (lang !== 'de' && lang !== 'en') lang = 'de';
+    if (typeof prev === 'function') prev(lang);
+    document.documentElement.lang = lang;
+    localStorage.setItem('ergomeet-lang', lang);
+    const sel = document.getElementById('langSelect');
+    if (sel && sel.value !== lang) sel.value = lang;
+    window.ergomeetBuildToc();
+  };
+  const saved = localStorage.getItem('ergomeet-lang');
+  const browser = (navigator.language || 'de').slice(0, 2);
+  window.ergomeetApplyLang((saved === 'en' || saved === 'de') ? saved : (browser === 'en' ? 'en' : 'de'));
+})();
+</script>
+
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="dark">
+<html data-ergomeet-bilingual="1" lang="de" data-theme="dark">
 <head>
   <meta name="robots" content="noindex, nofollow" />
   <meta charset="utf-8"/>
@@ -605,18 +605,43 @@
       text-transform: uppercase;
       color: var(--muted);
     }
+  
+    /* ergomeet-bi */
+    .topbar-inner { justify-content: space-between; }
+    .topbar .toc {
+      display: flex !important;
+      flex: 1 1 auto;
+      min-width: 0;
+      margin: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      gap: 6px;
+    }
+    .topbar .toc::-webkit-scrollbar { display: none; }
+    .topbar .toc a { white-space: nowrap; flex-shrink: 0; }
+    html[lang="en"] .bi-de { display: none !important; }
+    html[lang="de"] .bi-en { display: none !important; }
+    span.bi-en, span.bi-de { display: inline; }
+    div.bi-en, div.bi-de { display: block; }
+    @media (max-width: 820px) {
+      .topbar-inner { flex-wrap: wrap; }
+      .topbar .toc { order: 2; flex-basis: 100%; }
+    }
+
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
+      <nav class="toc" id="sectionToc" aria-label="Sections">
+        <a class="toc-home" href="https://yashbora9.github.io/ergomeet-reports/" data-i18n="toc_home">Meetings</a>
+      </nav>
       <div class="topbar-controls">
         <select id="langSelect" class="lang-select" aria-label="Language">
           <option value="de">DE</option>
           <option value="en">EN</option>
-          <option value="tr">TR</option>
         </select>
-        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+<button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
           <span class="icon-sun" aria-hidden="true">☀</span>
           <span class="icon-moon" aria-hidden="true">☾</span>
           <span id="themeToggleLabel" data-i18n="theme_light">Light</span>
@@ -641,18 +666,67 @@
     </header>
 
     <!-- No empty shell under the heading: blocks only appear when builder marks them present -->
-    <nav class="toc" id="sectionToc" aria-label="Sections"></nav>
-    <div class="stack" id="reportStack">
+<div class="stack" id="reportStack">
       <section class="section block recap-card" id="recap" data-block="recap">
 <div class="section-label" data-i18n="lbl_recap">60 seconds</div>
 <h2 data-i18n="recap">Recap</h2>
 <div class="recap-grid">
-<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text">Ein Reality-Check zu den Möglichkeiten bei Ergo Pro und den erforderlichen Anstrengungen.</p></div>
-<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li>Erfolgsformel: Definiere deine Ziele, ignoriere die Zweifler und arbeite so hart, dass Erfolg die logische Konsequenz ist.</li><li>Ergo Pro vs. traditionelle Karriere: Ergo Pro bietet das Potenzial für ein Jahreseinkommen von über 100.000 € innerhalb von 4 Jahren, eine Leistung, die in den meisten traditionellen Karrieren unerreichbar ist.</li><li>Der 5-Phasen-Unternehmerzyklus: Der Erfolg hängt davon ab, die „gefährliche Phase“ des informierten Pessimismus zu überwinden – den Punkt, an dem die meisten aufgeben.</li></ul></div>
-<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li>Beantworte die 20 Fragen zur Selbstreflexion.</li><li>Identifiziere die drei Fragen, deren Antworten am stärksten nachhallten.</li><li>Nutze diese drei Punkte als Ausgangspunkt für einen konkreten Plan für die letzten 139 Tage des Geschäftsjahres 2026.</li></ul></div>
+<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text" data-topic-en="A reality check on the possibilities with Ergo Pro and the required efforts." data-topic-de="Ein Reality-Check zu den Möglichkeiten bei Ergo Pro und den erforderlichen Anstrengungen."><span class="bi-en">A reality check on the possibilities with Ergo Pro and the required efforts.</span><span class="bi-de">Ein Reality-Check zu den Möglichkeiten bei Ergo Pro und den erforderlichen Anstrengungen.</span></p></div>
+<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li><span class="bi-en">Success formula: Define your goals, ignore the doubters and work so hard that success is the logical consequence.</span><span class="bi-de">Erfolgsformel: Definiere deine Ziele, ignoriere die Zweifler und arbeite so hart, dass Erfolg die logische Konsequenz ist.</span></li><li><span class="bi-en">Ergo Pro vs. traditional career: Ergo Pro offers the potential for an annual income of over 100,000 € within 4 years, a performance that is unattainable in most traditional careers.</span><span class="bi-de">Ergo Pro vs. traditionelle Karriere: Ergo Pro bietet das Potenzial für ein Jahreseinkommen von über 100.000 € innerhalb von 4 Jahren, eine Leistung, die in den meisten traditionellen Karrieren unerreichbar ist.</span></li><li><span class="bi-en">The 5-Phase Entrepreneur Cycle: Success depends on overcoming the “dangerous phase” of informed pessimism – the point at which most people give up.</span><span class="bi-de">Der 5-Phasen-Unternehmerzyklus: Der Erfolg hängt davon ab, die „gefährliche Phase“ des informierten Pessimismus zu überwinden – den Punkt, an dem die meisten aufgeben.</span></li></ul></div>
+<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li><span class="bi-en">Answer the 20 self-reflection questions.</span><span class="bi-de">Beantworte die 20 Fragen zur Selbstreflexion.</span></li><li><span class="bi-en">Identify the three questions whose answers resonated the most.</span><span class="bi-de">Identifiziere die drei Fragen, deren Antworten am stärksten nachhallten.</span></li><li><span class="bi-en">Use these three points as a starting point for a concrete plan for the last 139 days of fiscal year 2026.</span><span class="bi-de">Nutze diese drei Punkte als Ausgangspunkt für einen konkreten Plan für die letzten 139 Tage des Geschäftsjahres 2026.</span></li></ul></div>
 </div></section>
-      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Beantworte die 20 Fragen zur Selbstreflexion.</span></li><li><span class="todo-task">Identifiziere die drei Fragen, deren Antworten am stärksten nachhallten.</span></li><li><span class="todo-task">Nutze diese drei Punkte als Ausgangspunkt für einen konkreten Plan für die letzten 139 Tage des Geschäftsjahres 2026.</span></li><li><span class="todo-task">Setze die Meeting-Startzeit auf 5–10 Minuten nach der Pause fest, um Pünktlichkeit zu gewährleisten.</span></li></ul></section>
-      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Zweck des Meetings</h3>
+      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task"><span class="bi-en">Answer the 20 self-reflection questions.</span><span class="bi-de">Beantworte die 20 Fragen zur Selbstreflexion.</span></span></li><li><span class="todo-task"><span class="bi-en">Identify the three questions whose answers resonated the most.</span><span class="bi-de">Identifiziere die drei Fragen, deren Antworten am stärksten nachhallten.</span></span></li><li><span class="todo-task"><span class="bi-en">Use these three points as a starting point for a concrete plan for the last 139 days of fiscal year 2026.</span><span class="bi-de">Nutze diese drei Punkte als Ausgangspunkt für einen konkreten Plan für die letzten 139 Tage des Geschäftsjahres 2026.</span></span></li><li><span class="todo-task"><span class="bi-en">Set the meeting start time to 5–10 minutes after the break to ensure punctuality.</span><span class="bi-de">Setze die Meeting-Startzeit auf 5–10 Minuten nach der Pause fest, um Pünktlichkeit zu gewährleisten.</span></span></li></ul></section>
+      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><div class="bi-en"><h3 class="exec-h">Purpose of the Meeting</h3>
+<p class="exec-p">A reality check on the possibilities with Ergo Pro and the required efforts.</p>
+<h3 class="exec-h">Wichtigste Erkenntnisse</h3>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Erfolgsformel:</strong> Define your goals, ignore the doubters and work so hard that success becomes the logical consequence.</li>
+<li><strong>Ergo Pro vs. traditionelle Karriere:</strong> Ergo Pro offers the potential for an annual income of over 100,000 € within 4 years, a feat that is unattainable in most traditional careers.</li>
+<li><strong>The 5-Phase Entrepreneur Cycle:</strong> Success depends on overcoming the “dangerous phase” of informed pessimism – the point at which most people give up.</li>
+<li><strong>The 139-Day Plan:</strong> Use the 20 questions for self-reflection to identify your three biggest weaknesses and create a concrete plan for the final 139 days of fiscal year 2026.</li>
+</ul>
+</ul>
+<h3 class="exec-h">Themen</h3>
+<h4 class="exec-h2">The Ergo-Pro Path vs. Traditional Career Paths</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Traditional paths such as apprenticeships and university degrees offer no guarantee of high income or professional freedom.</li>
+<li>Ergo Pro offers a direct path to financial freedom and self-employment.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Beispiel:</strong> Kwame reached Stufe 4 after 4 years and earned his first clearly five-figure monthly salary (26,000 €) after 4.5 years.</li>
+</ul>
+</ul>
+<li><strong>Stufe-4-Potenzial:</strong> An annual income of 150,000 € to 250,000 € is possible by writing 9,000 units in 6 months with a team of 20–40 people.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">The 5-Phase Entrepreneur Cycle</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>A framework by Alex Hormozi to describe the psychological journey of an entrepreneur.</li>
+<li><strong>1. Uninformierter Optimismus:</strong> Initial enthusiasm that overlooks the challenges.</li>
+<li><strong>2. Informierter Pessimismus:</strong> The “dangerous phase” in which reality (rejections, difficulties) leads to disappointment and the desire to give up.</li>
+<li><strong>3. Valley of Despair:</strong> The low point at which most people give up.</li>
+<li><strong>4. Informierter Optimismus:</strong> After overcoming the low point, skills and self-confidence continue to develop.</li>
+<li><strong>5. Erfolg:</strong> The long-term reward for perseverance.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">The 139-Day Self-Reflection Challenge</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>A 20-question framework to evaluate performance and create a plan for the final 139 days of fiscal year 2026.</li>
+<li><strong>Beispielfragen:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>How many hours did I *actively* work last week versus spend on time-wasting activities?</li>
+<li>When was the last time I did something uncomfortable for my business?</li>
+<li>Which excuse do I use most often?</li>
+<li>Am I ready to sacrifice my ego for success?</li>
+</ul>
+</ul>
+</ul>
+</ul></div><div class="bi-de"><h3 class="exec-h">Zweck des Meetings</h3>
 <p class="exec-p">Ein Reality-Check zu den Möglichkeiten bei Ergo Pro und den erforderlichen Anstrengungen.</p>
 <h3 class="exec-h">Wichtigste Erkenntnisse</h3>
 <ul class="exec-ul">
@@ -702,14 +776,14 @@
 </ul>
 </ul>
 </ul>
-</ul></div></details>
+</ul></div></div></details>
       
       
       
       
       
       
-      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><h3 class="exec-h">Ergo Meet With Kwame</h3>
+      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><div class="bi-en"><h3 class="exec-h">Ergo Meet With Kwame</h3>
 <ul class="exec-ul">
 <li>Meeting opened by Kwame</li>
 <li>Kwame identified as meeting participant</li>
@@ -986,7 +1060,284 @@
 <li>Success moment promised for January 2027 if followed</li>
 </ul>
 <h3 class="exec-h">Action Items</h3>
-<p class="exec-p">No action items detected</p></div></section>
+<p class="exec-p">No action items detected</p></div><div class="bi-de"><h3 class="exec-h">Ergo Meet With Kwame</h3>
+<ul class="exec-ul">
+<li>Meeting eröffnet von Kwame</li>
+<li>Kwame identified as meeting participant</li>
+</ul>
+<h3 class="exec-h">Reality Check Eröffnung</h3>
+<ul class="exec-ul">
+<li>Ich habe nicht die halbe Welt erobert, indem ich auf Männer gehört habe, die nichts erobert haben.</li>
+<li>„Zitat, das Alexander dem Großen zugeschrieben wird“</li>
+<li>Betonung darauf, nur auf erfolgreiche Menschen zu hören</li>
+</ul>
+<h3 class="exec-h">Alexander der Große Referenz</h3>
+<ul class="exec-ul">
+<li>Alexander eroberte die halbe Welt</li>
+<li>Starb im Alter von 32 Jahren.</li>
+<li>Baute eines der größten Königreiche ab Anfang 20</li>
+<li>Hat nicht auf Freunde oder Meinungen aus der Heimat gehört</li>
+</ul>
+<h3 class="exec-h">Success Formula</h3>
+<ul class="exec-ul">
+<li>Three-part formula presented</li>
+<li>Know what you want</li>
+<li>Hören Sie nicht auf die Meinungen erfolgloser Menschen.</li>
+<li>Arbeite so hart, dass Scheitern unlogisch wird.</li>
+</ul>
+<h3 class="exec-h">Education Path Critique</h3>
+<ul class="exec-ul">
+<li>Mehrere Teilnehmer fragten nach ihren Trainingsprogrammen.</li>
+<li>Sport- und Fitnesshändler erwähnt</li>
+<li>Auto-Mechatroniker erwähnt</li>
+<li>Die meisten Teilnehmenden der Schulung planen, nach Abschluss für andere zu arbeiten.</li>
+</ul>
+<h3 class="exec-h">Einkommenserwartungen aus der Ausbildung</h3>
+<ul class="exec-ul">
+<li>Typisches Gehalt nach der Ausbildung: 2.500–3.500 Euro monatlich</li>
+<li>Described as &quot;absolute poverty&quot; by speaker</li>
+<li>Polizeiausbildung mit Ivan aus Stuttgart erwähnt</li>
+</ul>
+<h3 class="exec-h">Kritik am Universitätsweg</h3>
+<ul class="exec-ul">
+<li>Media informatics student identified</li>
+<li>Ein Universitätsabschluss garantiert nicht mehr hohen Wert</li>
+<li>Viele Absolventen haben keine klaren Karrierepläne</li>
+<li>Ausnahme für Medizin- und Jura-Studenten vermerkt</li>
+</ul>
+<h3 class="exec-h">Stage 4 Income Potential</h3>
+<ul class="exec-ul">
+<li>Stufe 4 ermöglicht 150.000-250.000 Euro Jahreseinkommen</li>
+<li>Benötigt 9.000 Einheiten in 6 Monaten</li>
+<li>Teamgröße von 20-40 Personen empfohlen</li>
+<li>Position eliminiert die Notwendigkeit, wieder für 100.000 Euro zu arbeiten</li>
+</ul>
+<h3 class="exec-h">Four-Year Comparison</h3>
+<ul class="exec-ul">
+<li>Speaker achieved Stage 4 in exactly four years</li>
+<li>Kein Studium oder Ausbildung garantiert 100.000+ Euro nach vier Jahren</li>
+<li>Juristische Karrierezeitlinie überschreitet vier Jahre für hohe Verdienste</li>
+</ul>
+<h3 class="exec-h">Freedom Versus Money Discussion</h3>
+<ul class="exec-ul">
+<li>Freedom identified as more important than money</li>
+<li>Money without freedom described as worthless</li>
+<li>Möglichkeit, Flüge um 2 Uhr nachts zu buchen, als Freiheitsbeispiel genannt</li>
+<li>City Chicken at 2 AM with 10 AM wake-up mentioned</li>
+</ul>
+<h3 class="exec-h">Erster Fünf-Figuren-Monat</h3>
+<ul class="exec-ul">
+<li>Erste fünfstellige Auszahlung kürzlich erfolgt</li>
+<li>Nine months identified as timeframe</li>
+<li>26.000 Euro monatlich als Ziel erwähnt</li>
+<li>Patience emphasized as requirement</li>
+</ul>
+<h3 class="exec-h">Vorteile des Geschäftsmodells</h3>
+<ul class="exec-ul">
+<li>Selbstständige Position mit Coaching durch erfolgreiche Personen</li>
+<li>Keine Zahlung für Training erforderlich</li>
+<li>Live-Events und Systeme bereitgestellt</li>
+<li>Stage 4 provides real entrepreneur coach</li>
+</ul>
+<h3 class="exec-h">Frühe Karrierefehler</h3>
+<ul class="exec-ul">
+<li>Über ein Jahr in Stufe 1 und 2 verbracht</li>
+<li>14 months in Stage 1</li>
+<li>Two additional years in Stage 2</li>
+<li>Unprofessional behavior admitted</li>
+</ul>
+<h3 class="exec-h">Aktivitäten-Priorisierung</h3>
+<ul class="exec-ul">
+<li>Einkommensproduktive Aktivitäten als Schlüssel identifiziert</li>
+<li>Networking erwähnt</li>
+<li>Weiterbildung erwähnt</li>
+<li>Potential acquisition identified as most important</li>
+</ul>
+<h3 class="exec-h">Potential Acquisition Definition</h3>
+<ul class="exec-ul">
+<li>Persönliches Netzwerk nutzen</li>
+<li>Mit bestehenden Kontakten</li>
+<li>Evaluating potential partners</li>
+<li>Klarheit über Akquiseziele schaffen</li>
+</ul>
+<h3 class="exec-h">Time Management Issues</h3>
+<ul class="exec-ul">
+<li>Lässiges Herumlaufen ohne Anzug eingestanden</li>
+<li>Fehlende strukturierte tägliche Aktivitäten</li>
+<li>Oberflächlicher Ansatz bei Geschäftsaktivitäten</li>
+</ul>
+<h3 class="exec-h">Persönliche Entwicklungsphase</h3>
+<ul class="exec-ul">
+<li>Ein-Jahres-Zeitraum im Rückblick positiv bewertet</li>
+<li>Zeit, die benötigt wurde, um zum aktuellen Selbst zu werden</li>
+<li>Current position described as 100% deserved</li>
+</ul>
+<h3 class="exec-h">Momentum Creation</h3>
+<ul class="exec-ul">
+<li>Termine im Interview-Kalender erzeugen Momentum</li>
+<li>Momentum liefert Energie für Zielerreichung</li>
+<li>Fokus auf Welt als zentrale Erkenntnis identifiziert</li>
+</ul>
+<h3 class="exec-h">Belief Before Results</h3>
+<ul class="exec-ul">
+<li>Must believe before seeing results</li>
+<li>Results-first-Ansatz führt zum Scheitern</li>
+<li>Belief ermöglicht Aktivität mit Überzeugung</li>
+</ul>
+<h3 class="exec-h">Fünf Stufen des Unternehmertums</h3>
+<ul class="exec-ul">
+<li>Uninformed optimism erwähnt</li>
+<li>Informed optimism erwähnt</li>
+<li>Tal des Verzweifelns als Abbruchpunkt identifiziert</li>
+<li>Statistische Prognose, dass nicht alle erfolgreich sein werden</li>
+</ul>
+<h3 class="exec-h">Meeting Attendance Pattern</h3>
+<ul class="exec-ul">
+<li>Der Speaker nimmt jeden Dienstag, Donnerstag und Samstag teil.</li>
+<li>Fünf Jahre konsequente Meeting-Teilnahme</li>
+<li>Alternative Aktivitäten als weniger wichtig abgetan</li>
+</ul>
+<h3 class="exec-h">Income Verification</h3>
+<ul class="exec-ul">
+<li>Team hat im Juni über 200.000 Euro generiert</li>
+<li>Persönliches Team verdiente monatlich 28.000 Euro</li>
+<li>Teamgröße unter 100 Personen bestätigt</li>
+<li>Multiple luxury vehicles mentioned as proof</li>
+</ul>
+<h3 class="exec-h">Ich bin hier, um Ihnen bei der Übersetzung Ihrer englischen Meeting-Zeile ins natürliche Deutsch zu helfen. Bitte geben Sie mir die Zeile, die Sie übersetzen möchten.</h3>
+<ul class="exec-ul">
+<li>Kommentare als von Nichtgläubigen stammend abgetan</li>
+<li>Ursache identifiziert als fehlendes Selbstvertrauen der anderen</li>
+<li>Die Realität des Erfolgs wird Kritikern als unangenehm dargestellt.</li>
+</ul>
+<h3 class="exec-h">Nach-Pause-Protokoll</h3>
+<ul class="exec-ul">
+<li>Meetings beginnen 5-10 Minuten nach dem Klatschen.</li>
+<li>Erwartung auf pünktlichen Neustart gesetzt</li>
+<li>Mehrere Redner verwiesen auf</li>
+</ul>
+<h3 class="exec-h">Uncomfortable Questions Session</h3>
+<ul class="exec-ul">
+<li>Self-reflection questions presented</li>
+<li>Honest self-assessment required</li>
+<li>Drei Fragen, die als Fokus markiert werden sollen</li>
+</ul>
+<h3 class="exec-h">Question One Content</h3>
+<ul class="exec-ul">
+<li>Stunden, die letzte Woche aktiv für das Geschäft gearbeitet wurden</li>
+<li>Unterschied zwischen Denken und Handeln</li>
+<li>Written response requested</li>
+</ul>
+<h3 class="exec-h">Question Two Content</h3>
+<ul class="exec-ul">
+<li>Stunden, die für Serien, soziale Medien und Unterhaltung aufgewendet wurden</li>
+<li>Vergleich zwischen produktiver und unproduktiver Zeit</li>
+<li>Selbstinterpretation von Zeitverschwendern erlaubt</li>
+</ul>
+<h3 class="exec-h">Question Three Content</h3>
+<ul class="exec-ul">
+<li>Beim letzten Mal fühlte sich die Geschäftstätigkeit unangenehm an</li>
+<li>Telefonate und Freund-Ansprachen erwähnt</li>
+<li>Dauer seit letzter unangenehmer Aktion deutet auf notwendige Veränderung hin</li>
+</ul>
+<h3 class="exec-h">Question Four Content</h3>
+<ul class="exec-ul">
+<li>Tasks postponed this week</li>
+<li>Implementation speed as success indicator</li>
+<li>8% Unterschied zwischen erfolgreichen und erfolglosen Menschen</li>
+</ul>
+<h3 class="exec-h">Frage Fünf Inhalt</h3>
+<ul class="exec-ul">
+<li>Neue Kontakte oder Gespräche in sieben Tagen</li>
+<li>Calendar density assessment</li>
+<li>Reality Check zum Aktivitätslevel</li>
+</ul>
+<h3 class="exec-h">Question Six Content</h3>
+<ul class="exec-ul">
+<li>Letzte Ansprache einer einschüchternden Person</li>
+<li>Fear-based avoidance patterns</li>
+<li>Komplexe Pitch-Entwicklung erwähnt</li>
+</ul>
+<h3 class="exec-h">Question Seven Content</h3>
+<ul class="exec-ul">
+<li>Ergebnisse versus gewünschte Outcomes Vergleich</li>
+<li>Ehrliche Bewertung der aktuellen Entwicklung</li>
+<li>Mögliche Notwendigkeit zur Prioritätenanpassung</li>
+</ul>
+<h3 class="exec-h">Question Eight Content</h3>
+<ul class="exec-ul">
+<li>Häufigste verwendete Ausrede</li>
+<li>"Ich habe keine Zeit" als "nicht wichtig genug" umformuliert</li>
+<li>Priorität versus Zeit Unterscheidung</li>
+</ul>
+<h3 class="exec-h">Question Nine Content</h3>
+<ul class="exec-ul">
+<li>Was sich ohne Selbsttäuschung ändern würde</li>
+<li>Honest self-assessment requirement</li>
+<li>Persönliche Entwicklung im Fokus</li>
+</ul>
+<h3 class="exec-h">Question Ten Content</h3>
+<ul class="exec-ul">
+<li>Life as movie shown to 100 people</li>
+<li>Aus der Perspektive eines externen Beobachters.</li>
+<li>Motivation level assessment</li>
+</ul>
+<h3 class="exec-h">Question Eleven Content</h3>
+<ul class="exec-ul">
+<li>Komfortzonen-Situationen im Geschäft</li>
+<li>Wachstum findet außerhalb der Komfortzone statt</li>
+<li>Individual comfort zone identification</li>
+</ul>
+<h3 class="exec-h">Frage zwölf Inhalt</h3>
+<ul class="exec-ul">
+<li>Active learning in last four weeks</li>
+<li>Mindset nuggets, product knowledge, success recipes</li>
+<li>Unterscheidung zwischen Input und Selbstrotation</li>
+</ul>
+<h3 class="exec-h">Question Thirteen Content</h3>
+<ul class="exec-ul">
+<li>Regelmäßiges Lernen von erfolgreicheren Menschen</li>
+<li>Ego versus success choice</li>
+<li>Autorität-Fragemuster</li>
+</ul>
+<h3 class="exec-h">Question Fourteen Content</h3>
+<ul class="exec-ul">
+<li>Nächste zwölf Monate Fortsetzungsbewertung</li>
+<li>January 6, 2027 production deadline</li>
+<li>Word-keeping accountability</li>
+</ul>
+<h3 class="exec-h">Frage Fünfzehn Inhalt</h3>
+<ul class="exec-ul">
+<li>139-tägige Opferidentifikation</li>
+<li>Spezifische Verhaltensänderungen</li>
+<li>Beispiele für reduzierte Teilnahme an Feiern und Geburtstagen</li>
+</ul>
+<h3 class="exec-h">Question Sixteen Content</h3>
+<ul class="exec-ul">
+<li>Hauptgrund für das Zurückbleiben</li>
+<li>Ehrliche Einschätzung ohne Ausreden</li>
+<li>Ermittlung der einzigen Ursache</li>
+</ul>
+<h3 class="exec-h">Question Seventeen Content</h3>
+<ul class="exec-ul">
+<li>Externe Beobachterbewertung des Anstrengungsniveaus</li>
+<li>&quot;Am I giving everything&quot; question</li>
+<li>Selbsttäuschungsvermeidung</li>
+</ul>
+<h3 class="exec-h">Three Questions Selection</h3>
+<ul class="exec-ul">
+<li>Markiere die drei wirkungsvollsten Fragen.</li>
+<li>Fokusbereiche für die nächsten 139 Tage</li>
+<li>January 6, 2027 accountability checkpoint</li>
+</ul>
+<h3 class="exec-h">Abschließende Nachricht</h3>
+<ul class="exec-ul">
+<li>20 questions total presented</li>
+<li>Drei Fragen schaffen den Ausgangspunkt</li>
+<li>Erfolgsmoment für Januar 2027 versprochen, wenn umgesetzt.</li>
+</ul>
+<h3 class="exec-h">Action Items</h3>
+<p class="exec-p">Keine Maßnahmen erkannt</p></div></div></section>
     </div>
 
     <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
@@ -1225,5 +1576,62 @@
       }));
     }
   </script>
+
+<script id="ergomeet-bilingual-nav">
+(function () {
+  const EXTRA = {
+    de: { toc_home: 'Termine', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Überblick', toc_notes: 'Notizen', toc_live: 'Live' },
+    en: { toc_home: 'Meetings', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Summary', toc_notes: 'Notes', toc_live: 'Live' }
+  };
+  if (window.ERGOMEET_I18N) {
+    if (ERGOMEET_I18N.de) Object.assign(ERGOMEET_I18N.de, EXTRA.de);
+    if (ERGOMEET_I18N.en) Object.assign(ERGOMEET_I18N.en, EXTRA.en);
+    delete ERGOMEET_I18N.tr;
+  }
+  const sel0 = document.getElementById('langSelect');
+  if (sel0) {
+    [...sel0.options].forEach((o) => { if (o.value !== 'de' && o.value !== 'en') o.remove(); });
+  }
+  window.ergomeetBuildToc = function () {
+    const toc = document.getElementById('sectionToc');
+    if (!toc) return;
+    const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
+    const pack = (window.ERGOMEET_I18N && ERGOMEET_I18N[lang]) || EXTRA[lang];
+    const home = toc.querySelector('.toc-home');
+    if (home) home.remove();
+    toc.innerHTML = '';
+    const homeLink = home || document.createElement('a');
+    homeLink.className = 'toc-home';
+    homeLink.href = 'https://yashbora9.github.io/ergomeet-reports/';
+    homeLink.setAttribute('data-i18n', 'toc_home');
+    homeLink.textContent = pack.toc_home || 'Meetings';
+    toc.appendChild(homeLink);
+    const keys = { recap: 'toc_recap', todos: 'toc_todos', summary: 'toc_summary', notes: 'toc_notes', 'live-summary': 'toc_live' };
+    document.querySelectorAll('[data-block]:not(.is-empty):not([hidden])').forEach((block) => {
+      const id = block.id || block.getAttribute('data-block');
+      if (!id || !keys[id]) return;
+      if (!block.id) block.id = id;
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = pack[keys[id]] || id;
+      toc.appendChild(a);
+    });
+  };
+  const prev = window.ergomeetApplyLang;
+  window.ergomeetApplyLang = function (lang) {
+    if (lang !== 'de' && lang !== 'en') lang = 'de';
+    if (typeof prev === 'function') prev(lang);
+    document.documentElement.lang = lang;
+    localStorage.setItem('ergomeet-lang', lang);
+    const sel = document.getElementById('langSelect');
+    if (sel && sel.value !== lang) sel.value = lang;
+    window.ergomeetBuildToc();
+  };
+  const saved = localStorage.getItem('ergomeet-lang');
+  const browser = (navigator.language || 'de').slice(0, 2);
+  window.ergomeetApplyLang((saved === 'en' || saved === 'de') ? saved : (browser === 'en' ? 'en' : 'de'));
+})();
+</script>
+
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="dark">
+<html data-ergomeet-bilingual="1" lang="de" data-theme="dark">
 <head>
   <meta name="robots" content="noindex, nofollow" />
   <meta charset="utf-8"/>
@@ -605,18 +605,43 @@
       text-transform: uppercase;
       color: var(--muted);
     }
+  
+    /* ergomeet-bi */
+    .topbar-inner { justify-content: space-between; }
+    .topbar .toc {
+      display: flex !important;
+      flex: 1 1 auto;
+      min-width: 0;
+      margin: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      gap: 6px;
+    }
+    .topbar .toc::-webkit-scrollbar { display: none; }
+    .topbar .toc a { white-space: nowrap; flex-shrink: 0; }
+    html[lang="en"] .bi-de { display: none !important; }
+    html[lang="de"] .bi-en { display: none !important; }
+    span.bi-en, span.bi-de { display: inline; }
+    div.bi-en, div.bi-de { display: block; }
+    @media (max-width: 820px) {
+      .topbar-inner { flex-wrap: wrap; }
+      .topbar .toc { order: 2; flex-basis: 100%; }
+    }
+
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
+      <nav class="toc" id="sectionToc" aria-label="Sections">
+        <a class="toc-home" href="https://yashbora9.github.io/ergomeet-reports/" data-i18n="toc_home">Meetings</a>
+      </nav>
       <div class="topbar-controls">
         <select id="langSelect" class="lang-select" aria-label="Language">
           <option value="de">DE</option>
           <option value="en">EN</option>
-          <option value="tr">TR</option>
         </select>
-        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+<button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
           <span class="icon-sun" aria-hidden="true">☀</span>
           <span class="icon-moon" aria-hidden="true">☾</span>
           <span id="themeToggleLabel" data-i18n="theme_light">Light</span>
@@ -641,18 +666,17 @@
     </header>
 
     <!-- No empty shell under the heading: blocks only appear when builder marks them present -->
-    <nav class="toc" id="sectionToc" aria-label="Sections"></nav>
-    <div class="stack" id="reportStack">
+<div class="stack" id="reportStack">
       <section class="section block recap-card" id="recap" data-block="recap">
 <div class="section-label" data-i18n="lbl_recap">60 seconds</div>
 <h2 data-i18n="recap">Recap</h2>
 <div class="recap-grid">
-<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text">To train the team on effective appointment-setting techniques.</p></div>
-<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li>Deep Prospect Research: Gather detailed info (Name, Age, Job, Goals) to build a valuable network, not just close a sale.</li><li>Authentic Pitches: Use a 45-second &quot;Elevator Pitch&quot; for quick calls and a personal &quot;Story Pitch&quot; for deeper connection.</li><li>Masterful Transitions: Use the &quot;May I get straight to the point?&quot; phrase to smoothly move from small talk to the pitch.</li></ul></div>
-<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li>Apply the 5-step call flow (Research → Greeting → Small Talk → Transition → Pitch).</li><li>Use optional questions to guide prospects to a specific appointment time.</li><li>Provide live coaching and listen-ins to support the team.</li></ul></div>
+<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text" data-topic-en="To train the team on effective appointment-setting techniques." data-topic-de="Das Team in effektiven Terminvereinbarungstechniken schulen."><span class="bi-en">To train the team on effective appointment-setting techniques.</span><span class="bi-de">Das Team in effektiven Terminvereinbarungstechniken schulen.</span></p></div>
+<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li><span class="bi-en">Deep Prospect Research: Gather detailed info (Name, Age, Job, Goals) to build a valuable network, not just close a sale.</span><span class="bi-de">Deep Prospect Research: Detaillierte Informationen sammeln (Name, Age, Job, Goals), um ein wertvolles Netzwerk aufzubauen, nicht nur einen Verkauf abzuschließen.</span></li><li><span class="bi-en">Authentic Pitches: Use a 45-second &quot;Elevator Pitch&quot; for quick calls and a personal &quot;Story Pitch&quot; for deeper connection.</span><span class="bi-de">Authentic Pitches: Verwenden Sie einen 45-sekündigen „Elevator Pitch“ für schnelle Anrufe und einen persönlichen „Story Pitch“ für eine tiefere Verbindung.</span></li><li><span class="bi-en">Masterful Transitions: Use the &quot;May I get straight to the point?&quot; phrase to smoothly move from small talk to the pitch.</span><span class="bi-de">Masterful Transitions: Verwenden Sie den Ausdruck "May I get straight to the point?", um reibungslos vom Small Talk zum Pitch überzugehen.</span></li></ul></div>
+<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li><span class="bi-en">Apply the 5-step call flow (Research → Greeting → Small Talk → Transition → Pitch).</span><span class="bi-de">Wenden Sie den 5-Schritt-Call-Flow an (Research → Greeting → Small Talk → Transition → Pitch).</span></li><li><span class="bi-en">Use optional questions to guide prospects to a specific appointment time.</span><span class="bi-de">Verwenden Sie optionale Fragen, um Interessenten zu einem bestimmten Termin zu führen.</span></li><li><span class="bi-en">Provide live coaching and listen-ins to support the team.</span><span class="bi-de">Live-Coaching und Listen-Ins zur Unterstützung des Teams bereitstellen.</span></li></ul></div>
 </div></section>
-      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Apply the 5-step call flow (Research → Greeting → Small Talk → Transition → Pitch).</span></li><li><span class="todo-task">Use optional questions to guide prospects to a specific appointment time.</span></li><li><span class="todo-task">Provide live coaching and listen-ins to support the team.</span></li></ul></section>
-      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Meeting Purpose</h3>
+      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task"><span class="bi-en">Apply the 5-step call flow (Research → Greeting → Small Talk → Transition → Pitch).</span><span class="bi-de">Wenden Sie den 5-Schritt-Call-Flow an (Research → Greeting → Small Talk → Transition → Pitch).</span></span></li><li><span class="todo-task"><span class="bi-en">Use optional questions to guide prospects to a specific appointment time.</span><span class="bi-de">Verwenden Sie optionale Fragen, um Interessenten zu einem bestimmten Termin zu führen.</span></span></li><li><span class="todo-task"><span class="bi-en">Provide live coaching and listen-ins to support the team.</span><span class="bi-de">Live-Coaching und Listen-Ins zur Unterstützung des Teams bereitstellen.</span></span></li></ul></section>
+      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><div class="bi-en"><h3 class="exec-h">Meeting Purpose</h3>
 <p class="exec-p">To train the team on effective appointment-setting techniques.</p>
 <h3 class="exec-h">Key Takeaways</h3>
 <ul class="exec-ul">
@@ -750,14 +774,112 @@
 </ul>
 </ul>
 </ul>
-</ul></div></details>
+</ul></div><div class="bi-de"><h3 class="exec-h">Meeting Purpose</h3>
+<p class="exec-p">To train the team on effective appointment-setting techniques.</p>
+<h3 class="exec-h">Key Takeaways</h3>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Deep Prospect Research:</strong> Sammeln Sie detaillierte Informationen (Name, Alter, Job, Ziele), um ein wertvolles Netzwerk aufzubauen, nicht nur einen Verkauf abzuschließen.</li>
+<li><strong>Authentic Pitches:</strong> Verwenden Sie einen 45-Sekunden-„Elevator Pitch“ für schnelle Anrufe und einen persönlichen „Story Pitch“ für tiefere Verbindungen.</li>
+<li><strong>Meisterhafte Übergänge:</strong> Darf ich gleich auf den Punkt kommen?</li>
+<li><strong>Resilient Objection Handling:</strong> Bleiben Sie bei 2–3 Einwänden dran, aber beenden Sie das Gespräch, wenn der Interessent respektlos wird.</li>
+</ul>
+</ul>
+<h3 class="exec-h">Topics</h3>
+<h4 class="exec-h2">Die Stiftung: Tiefgehende Prospektforschung</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Goal:</strong> Bauen Sie ein wertvolles Netzwerk auf, nicht nur einen Verkauf.</li>
+<li><strong>Wichtige Informationen, die gesammelt werden müssen:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>Name, Age, Profession</li>
+<li>Ursprung, persönliche Ziele</li>
+</ul>
+</ul>
+<li><strong>Warum es wichtig ist:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Age:</strong> Zeigt Lebensphase und Prioritäten auf (z. B. ist ein Interessent Mitte 30 offener für Altersvorsorge als ein 20-Jähriger).</li>
+<li><strong>Profession:</strong> Ermöglicht gezieltes Networking (z. B. die Verbindung eines App-Entwicklers mit einem Fitness-Unternehmer).</li>
+</ul>
+</ul>
+<li><strong>Technique:</strong> Können Sie bitte genauer angeben, welche Art von IT-Position gemeint ist – z. B. App-Entwickler, Systemadministrator oder etwas anderes?</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Der Call Flow: Von Small Talk zum Pitch</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>1. Mindset:</strong> Bleib hochenergetisch. Nutze Pre-Call-Rituale (z. B. Liegestütze, Motivationsvideos), um „in the zone“ zu kommen.</li>
+<li><strong>2. Begrüßung:</strong> State both names for B/C-list contacts. Use nicknames for A-list contacts to build rapport.</li>
+<li><strong>3. Small Talk:</strong> Ask &quot;What are you doing?&quot; and engage briefly.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Example:</strong> „Ich bin am Kochen.“ → „Spaghetti Bolognese? Ich lass dich dann mal weitermachen, aber zuerst …“</li>
+</ul>
+</ul>
+<li><strong>4. Übergang:</strong> Darf ich gleich auf den Punkt kommen?</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Source:</strong> Tim Taxis, &quot;Heiß auf kalter Krise&quot; (Hot on Cold Acquisition).</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">Der Pitch: Elevator vs. Story</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Elevator Pitch (45 seconds):</strong> Hier ist eine prägnante, hochverdichtete Zusammenfassung.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Topics:</strong> Market situation, retirement planning, financial security, career opportunities.</li>
+</ul>
+</ul>
+<li><strong>Story Pitch:</strong> Eine persönliche Erzählung, um Verbindung aufzubauen.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Structure:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Problem:</strong> Ihre finanzielle Schwierigkeit oder Ihr Wissensmangel.</li>
+<li><strong>Catalyst:</strong> Das Ereignis, das Sie zu dieser Laufbahn geführt hat.</li>
+<li><strong>Lösung:</strong> Your decision to help others.</li>
+<li><strong>Outcome:</strong> Ihr aktueller Erfolg und Ihre Mission.</li>
+</ul>
+</ul>
+<li><strong>Why it Works:</strong> Schafft Verbundenheit und Vertrauen.</li>
+<li><strong>Adaptation:</strong> Verwenden Sie die Geschichte eines Kollegen, wenn sie besser zum Hintergrund des Interessenten passt.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">Objection Handling &amp; Closing</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Objection Handling:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Rule:</strong> Halten Sie 2–3 Einwänden stand.</li>
+<li><strong>Disengage:</strong> Hören Sie auf, wenn der Interessent respektlos wird.</li>
+<li><strong>Tactic:</strong> Verwenden Sie „ego-check“-Antworten (z. B. „Das ist nichts für Sie“), um echtes Interesse zu testen.</li>
+</ul>
+</ul>
+<li><strong>Closing:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Technique:</strong> Verwenden Sie optionale Fragen, um den Interessenten zu einem Zeitfenster zu führen.</li>
+<li><strong>Example:</strong> „Haben Sie Freitag oder Samstag Zeit?“ → „Samstag.“ → „Vormittag oder Nachmittag?“ → „Nachmittag.“ → „Passt 18 Uhr?“</li>
+</ul>
+</ul>
+</ul>
+</ul></div></div></details>
       
       
       
       
       
       
-      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><h3 class="exec-h">Welcome To Wikikopista</h3>
+      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><div class="bi-en"><h3 class="exec-h">Welcome To Wikikopista</h3>
 <ul class="exec-ul">
 <li>Final Wikikopista session before P-Start</li>
 <li>Focus on appointment setting only</li>
@@ -936,7 +1058,186 @@
 <li>Self-respect determines final decision</li>
 </ul>
 <h3 class="exec-h">Action Items</h3>
-<p class="exec-p">No action items detected</p></div></section>
+<p class="exec-p">No action items detected</p></div><div class="bi-de"><h3 class="exec-h">Willkommen bei Wikikopista</h3>
+<ul class="exec-ul">
+<li>Final Wikikopista session before P-Start</li>
+<li>Fokussiere dich nur auf die Terminvereinbarung.</li>
+<li>Wegen der anstehenden Freitagsziele keine tiefen Themen-Dives.</li>
+</ul>
+<h3 class="exec-h">Aktuelle Geschäftsentwicklung</h3>
+<ul class="exec-ul">
+<li>Bestes Büro zwei Mal in Folge erreicht</li>
+<li>24 months of top ranking secured</li>
+<li>Aktuell Position 1, Potenzial für 30 Monate</li>
+<li>Nächste 6 Monate mit Fokus auf Stärkung der Grundlage</li>
+</ul>
+<h3 class="exec-h">Session Structure</h3>
+<ul class="exec-ul">
+<li>20-40-minütiger Terminvereinbarungsblock</li>
+<li>Bewertung der Ergebnisse am Ende der Sitzung</li>
+<li>RGV-Tracking für vereinbarte Termine</li>
+<li>Teilnehmer bleiben im vorgesehenen Bereich.</li>
+</ul>
+<h3 class="exec-h">Phone Training Group</h3>
+<ul class="exec-ul">
+<li>Teilnehmer, die sich selbst als bedürftig für Telefontraining identifiziert haben</li>
+<li>Gruppe, die Coaching auf Bastis Stufe erhält</li>
+<li>45-50-minütige TTV-Übungseinheit mit Rari</li>
+<li>Ziel Termine im letzten Quartal zu vereinbaren</li>
+</ul>
+<h3 class="exec-h">Informationssammlung (0 von 1 Punkt)</h3>
+<ul class="exec-ul">
+<li>Geschäft oder Person als primärer Fokus</li>
+<li>Research required before calls</li>
+<li>Name, Alter und Beruf als Basisinformationen</li>
+<li>Genauere Informationen führen zu besseren Gesprächen</li>
+</ul>
+<h3 class="exec-h">Informationsqualitätsstandards</h3>
+<ul class="exec-ul">
+<li>Altersgenauigkeit ist wichtig für die Gesprächsstrategie</li>
+<li>Mitte-30-Jährige sind offener für Rententhemen als Jüngere.</li>
+<li>Ursprung und Ziele sind wichtige zusätzliche Informationen.</li>
+<li>Mehr Informationen führen zu besseren Ergebnissen</li>
+</ul>
+<h3 class="exec-h">Long-Term Positioning</h3>
+<ul class="exec-ul">
+<li>Frage, ob man Angestellter oder Unternehmer wird</li>
+<li>Schritt-für-Schritt-Informationssammlung während der Gespräche</li>
+<li>Verschiedene Personen haben unterschiedliche Offenheitsstufen</li>
+<li>Gute Fragen treiben die Informationssammlung voran</li>
+</ul>
+<h3 class="exec-h">Network Building Strategy</h3>
+<ul class="exec-ul">
+<li>Person A meets Person B (software developer)</li>
+<li>Person B vernetzt sich mit Person C (Fitnessbranche)</li>
+<li>Schafft ein großes Netzwerk vielfältiger Kontakte</li>
+<li>Information storage about people becomes valuable asset</li>
+</ul>
+<h3 class="exec-h">Gedächtnistechniken</h3>
+<ul class="exec-ul">
+<li>Birthday memorization as relationship tool</li>
+<li>Adam birthday June 10, Kamin June 11, example June 13</li>
+<li>Killinga 4. März, bester Freund 6. März</li>
+<li>Nelska May 7, Grunhardt May 8, Blusthirt June 9</li>
+</ul>
+<h3 class="exec-h">Trust Building Elements</h3>
+<ul class="exec-ul">
+<li>Vertrauen basiert darauf, dass die Person ein guter Mensch ist</li>
+<li>Person muss Wert oder Nutzen bieten</li>
+<li>Wert umfasst nützliche Kontakte, nicht nur finanziellen Gewinn</li>
+<li>Gute Gesprächsfähigkeiten gelten als wertvolles Merkmal</li>
+</ul>
+<h3 class="exec-h">Persönliche Wertbeispiele</h3>
+<ul class="exec-ul">
+<li>Friend&#x27;s power outage situation</li>
+<li>Schnelle Rückmeldung mit Elektriker-Kontakt</li>
+<li>Informationsaustausch als primäre Aufgabe</li>
+</ul>
+<h3 class="exec-h">Mindset Requirements</h3>
+<ul class="exec-ul">
+<li>Nicht McDonald’s-Mitarbeiter, die heiße Pommes bewerben</li>
+<li>Begeisterung in Gespräche mitbringen</li>
+<li>Muss Begeisterung für den Beruf mitbringen</li>
+<li>Klick-Switch-Training für sofortigen positiven Zustand</li>
+</ul>
+<h3 class="exec-h">Motivation Techniques</h3>
+<ul class="exec-ul">
+<li>Liegestütze, Vision-Board-Review, David-Goggins-Videos</li>
+<li>Persönliche Verantwortung für das Erreichen eines positiven Zustands</li>
+<li>State-Management ist entscheidend für Telefonate.</li>
+</ul>
+<h3 class="exec-h">Research Failures</h3>
+<ul class="exec-ul">
+<li>Arab person identified only as Arab</li>
+<li>Turkish person misidentified as Arab</li>
+<li>Ich muss Nachfragen stellen, um die Genauigkeit sicherzustellen.</li>
+</ul>
+<h3 class="exec-h">Name Usage Protocol</h3>
+<ul class="exec-ul">
+<li>Use both their name and your name</li>
+<li>Vermeiden Sie es, den Namen 2-3 Mal am Anfang, in der Mitte und am Ende zu wiederholen.</li>
+<li>Authentizität in allen Interaktionen erforderlich</li>
+<li>John Pascal nutzt zum Beispiel den Spitznamen Kalle und legt bei seinem offiziellen Namen auf.</li>
+</ul>
+<h3 class="exec-h">Small Talk Strategy</h3>
+<ul class="exec-ul">
+<li>Was macht die Person?</li>
+<li>Beschäftigen Sie sich mit ihrer aktuellen Aktivität.</li>
+<li>Kochen Spaghetti Bolognese Gespräch</li>
+<li>Funktioniert auch bei einfachen Aktivitäten wie Fernsehen</li>
+</ul>
+<h3 class="exec-h">Übergangsphrase</h3>
+<ul class="exec-ul">
+<li>&quot;Darf ich direkt zum Punkt kommen&quot; as magic sentence</li>
+<li>Recommended resource: Tim Taxis &quot;Heiß auf kalter Krise&quot;</li>
+<li>Video title: &quot;Darf ich gleich zum Punkt kommen&quot;</li>
+<li>Bietet einen reibungslosen Übergang von der Begrüßung zur Präsentation.</li>
+</ul>
+<h3 class="exec-h">Elevator Pitch Framework</h3>
+<ul class="exec-ul">
+<li>45-Sekunden-Maximum für den Elevator Pitch</li>
+<li>New York skyscraper investor scenario</li>
+<li>Story pitch as alternative approach</li>
+<li>Market situation, retirement planning, rising costs as topics</li>
+</ul>
+<h3 class="exec-h">Current Market Topics</h3>
+<ul class="exec-ul">
+<li>Der Ruhestandsplanungsstichtag nähert sich 70</li>
+<li>Steigende einfache Zinssätze</li>
+<li>Versicherungs- und Sicherheitsthemen</li>
+<li>Geschäftsmodel-Chancen</li>
+</ul>
+<h3 class="exec-h">Ich bin in der Entwicklung meiner persönlichen Geschichte.</h3>
+<ul class="exec-ul">
+<li>Kein finanzielles Wissen im familiären Umfeld</li>
+<li>TikTok-Trainer aus der Versicherungsbranche als Mentor</li>
+<li>Self-taught financial responsibility</li>
+<li>Mehrere Gründe für den Einstieg ins Geschäft</li>
+</ul>
+<h3 class="exec-h">Story Pitch Components</h3>
+<ul class="exec-ul">
+<li>Persönlicher Hintergrund und Motivation</li>
+<li>Finanzbildung ist wichtig</li>
+<li>Netzwerk- und Supportsystem</li>
+<li>Happy-Ending-Beispiele aus der Community</li>
+</ul>
+<h3 class="exec-h">Hier sind einige Beispiele für Geschichten:</h3>
+<ul class="exec-ul">
+<li>Bruno mit afrikanischen Wurzeln ähnlich wie Kulibali</li>
+<li>Carl's story: frühe Schuldenbildung, Opfer der Mutter</li>
+<li>Erste Liebeserfahrung und persönliche Entwicklung</li>
+<li>Finanzielle Bildung als lebensverändernde Chance</li>
+</ul>
+<h3 class="exec-h">Interactive Questioning</h3>
+<ul class="exec-ul">
+<li>Long-term average life questions</li>
+<li>"Würden Sie eine Arbeit akzeptieren, bei der die Hautfarbe keine Rolle spielt?"</li>
+<li>Fragen, die darauf ausgelegt sind, gewünschte Antworten zu erhalten</li>
+<li>Interactive approach reduces resistance</li>
+</ul>
+<h3 class="exec-h">Objection Handling</h3>
+<ul class="exec-ul">
+<li>Cleaner Pitch führt zu weniger Einwänden</li>
+<li>Interactive questions reduce pushback</li>
+<li>Zwei bis drei Einwände maximal vor dem Stoppen</li>
+<li>Respect Threshold bestimmt die Fortsetzung</li>
+</ul>
+<h3 class="exec-h">Appointment Setting</h3>
+<ul class="exec-ul">
+<li>Optionsfragen zur Terminplanung</li>
+<li>"Haben Sie am Freitag oder Samstagmorgen Zeit?"</li>
+<li>"Samstagnachmittag passt, ich rufe um 18 Uhr an"</li>
+<li>Immer nutzen wir den optionsbasierten Ansatz.</li>
+</ul>
+<h3 class="exec-h">Persistence Guidelines</h3>
+<ul class="exec-ul">
+<li>Zwei bis drei Einwände vor dem Stoppen</li>
+<li>Fortfahren bei ego-basiertem Widerstand</li>
+<li>Stoppen bei echter Unsicherheit oder Respektlosigkeit</li>
+<li>Selbstachtung bestimmt die finale Entscheidung</li>
+</ul>
+<h3 class="exec-h">Action Items</h3>
+<p class="exec-p">Keine Maßnahmen erkannt</p></div></div></section>
     </div>
 
     <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
@@ -1175,5 +1476,62 @@
       }));
     }
   </script>
+
+<script id="ergomeet-bilingual-nav">
+(function () {
+  const EXTRA = {
+    de: { toc_home: 'Termine', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Überblick', toc_notes: 'Notizen', toc_live: 'Live' },
+    en: { toc_home: 'Meetings', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Summary', toc_notes: 'Notes', toc_live: 'Live' }
+  };
+  if (window.ERGOMEET_I18N) {
+    if (ERGOMEET_I18N.de) Object.assign(ERGOMEET_I18N.de, EXTRA.de);
+    if (ERGOMEET_I18N.en) Object.assign(ERGOMEET_I18N.en, EXTRA.en);
+    delete ERGOMEET_I18N.tr;
+  }
+  const sel0 = document.getElementById('langSelect');
+  if (sel0) {
+    [...sel0.options].forEach((o) => { if (o.value !== 'de' && o.value !== 'en') o.remove(); });
+  }
+  window.ergomeetBuildToc = function () {
+    const toc = document.getElementById('sectionToc');
+    if (!toc) return;
+    const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
+    const pack = (window.ERGOMEET_I18N && ERGOMEET_I18N[lang]) || EXTRA[lang];
+    const home = toc.querySelector('.toc-home');
+    if (home) home.remove();
+    toc.innerHTML = '';
+    const homeLink = home || document.createElement('a');
+    homeLink.className = 'toc-home';
+    homeLink.href = 'https://yashbora9.github.io/ergomeet-reports/';
+    homeLink.setAttribute('data-i18n', 'toc_home');
+    homeLink.textContent = pack.toc_home || 'Meetings';
+    toc.appendChild(homeLink);
+    const keys = { recap: 'toc_recap', todos: 'toc_todos', summary: 'toc_summary', notes: 'toc_notes', 'live-summary': 'toc_live' };
+    document.querySelectorAll('[data-block]:not(.is-empty):not([hidden])').forEach((block) => {
+      const id = block.id || block.getAttribute('data-block');
+      if (!id || !keys[id]) return;
+      if (!block.id) block.id = id;
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = pack[keys[id]] || id;
+      toc.appendChild(a);
+    });
+  };
+  const prev = window.ergomeetApplyLang;
+  window.ergomeetApplyLang = function (lang) {
+    if (lang !== 'de' && lang !== 'en') lang = 'de';
+    if (typeof prev === 'function') prev(lang);
+    document.documentElement.lang = lang;
+    localStorage.setItem('ergomeet-lang', lang);
+    const sel = document.getElementById('langSelect');
+    if (sel && sel.value !== lang) sel.value = lang;
+    window.ergomeetBuildToc();
+  };
+  const saved = localStorage.getItem('ergomeet-lang');
+  const browser = (navigator.language || 'de').slice(0, 2);
+  window.ergomeetApplyLang((saved === 'en' || saved === 'de') ? saved : (browser === 'en' ? 'en' : 'de'));
+})();
+</script>
+
 </body>
 </html>

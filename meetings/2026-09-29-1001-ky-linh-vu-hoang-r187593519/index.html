@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="dark">
+<html data-ergomeet-bilingual="1" lang="de" data-theme="dark">
 <head>
   <meta name="robots" content="noindex, nofollow" />
   <meta charset="utf-8"/>
@@ -605,18 +605,43 @@
       text-transform: uppercase;
       color: var(--muted);
     }
+  
+    /* ergomeet-bi */
+    .topbar-inner { justify-content: space-between; }
+    .topbar .toc {
+      display: flex !important;
+      flex: 1 1 auto;
+      min-width: 0;
+      margin: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      gap: 6px;
+    }
+    .topbar .toc::-webkit-scrollbar { display: none; }
+    .topbar .toc a { white-space: nowrap; flex-shrink: 0; }
+    html[lang="en"] .bi-de { display: none !important; }
+    html[lang="de"] .bi-en { display: none !important; }
+    span.bi-en, span.bi-de { display: inline; }
+    div.bi-en, div.bi-de { display: block; }
+    @media (max-width: 820px) {
+      .topbar-inner { flex-wrap: wrap; }
+      .topbar .toc { order: 2; flex-basis: 100%; }
+    }
+
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
+      <nav class="toc" id="sectionToc" aria-label="Sections">
+        <a class="toc-home" href="https://yashbora9.github.io/ergomeet-reports/" data-i18n="toc_home">Meetings</a>
+      </nav>
       <div class="topbar-controls">
         <select id="langSelect" class="lang-select" aria-label="Language">
           <option value="de">DE</option>
           <option value="en">EN</option>
-          <option value="tr">TR</option>
         </select>
-        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+<button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
           <span class="icon-sun" aria-hidden="true">☀</span>
           <span class="icon-moon" aria-hidden="true">☾</span>
           <span id="themeToggleLabel" data-i18n="theme_light">Light</span>
@@ -641,19 +666,87 @@
     </header>
 
     <!-- No empty shell under the heading: blocks only appear when builder marks them present -->
-    <nav class="toc" id="sectionToc" aria-label="Sections"></nav>
-    <div class="stack" id="reportStack">
+<div class="stack" id="reportStack">
       <section class="section block recap-card" id="recap" data-block="recap">
 <div class="section-label" data-i18n="lbl_recap">60 seconds</div>
 <h2 data-i18n="recap">Recap</h2>
 <div class="recap-grid">
-<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text">Ein Coaching zur Manifestation von Erfolg durch das Annehmen einer „Main Character“-Mentalität.</p></div>
-<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li>„Main Character“-Mentalität: Nimm die Rolle des „Main Character“ an, nicht die eines „Non-Playable Character“ (NPC). Das bedeutet, eine bewusste Geschichte zu erschaffen, die spannend ist und die Aufmerksamkeit des Universums auf sich zieht.</li><li>5-Sinne-Manifestation: Nutze alle fünf Sinne, um deine Zielrealität zu erleben. Das schafft eine starke „Frequenz“, die Erfolg anzieht.</li><li>Ergebnisorientierter Kreislauf: Beginne mit dem *Ergebnis*, nicht mit dem Glauben. Das Ergebnis → Peak Performance → Aktionen → Glaube. Das ist der Kreislauf der Erfolgreichen, der den häufigen Misserfolgszyklus von NPCs umkehrt.</li></ul></div>
-<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li>Erschaffe eine spannende Geschichte und proklamiere sie mit Energie.</li><li>Nutze alle fünf Sinne, um deine Zielrealität zu erleben.</li><li>Beginne den ergebnisorientierten Kreislauf, indem du dein Ziel als bereits erreicht visualisierst.</li></ul></div>
-<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li>Den Preis zahlen: Investiere Zeit und Mühe in dein Business wie in ein Studium oder eine Ausbildung. Das ist der Preis für den Erfolg, und die ersten Jahre sind eine Investition, nicht ein Verlust.</li><li>Sei der „Main Character“ deiner Geschichte, nicht ein NPC.</li></ul></div>
+<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text" data-topic-en="A coaching session on manifesting success by adopting a “Main Character” mentality." data-topic-de="Ein Coaching zur Manifestation von Erfolg durch das Annehmen einer „Main Character“-Mentalität."><span class="bi-en">A coaching session on manifesting success by adopting a “Main Character” mentality.</span><span class="bi-de">Ein Coaching zur Manifestation von Erfolg durch das Annehmen einer „Main Character“-Mentalität.</span></p></div>
+<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li><span class="bi-en">„Main Character“ mentality: Adopt the role of the „Main Character“, not that of a „Non-Playable Character“ (NPC). This means consciously creating a story that is exciting and attracts the attention of the universe.</span><span class="bi-de">„Main Character“-Mentalität: Nimm die Rolle des „Main Character“ an, nicht die eines „Non-Playable Character“ (NPC). Das bedeutet, eine bewusste Geschichte zu erschaffen, die spannend ist und die Aufmerksamkeit des Universums auf sich zieht.</span></li><li><span class="bi-en">5-Sense-Manifestation: Use all five senses to experience your target reality. This creates a strong „frequency“ that attracts success.</span><span class="bi-de">5-Sinne-Manifestation: Nutze alle fünf Sinne, um deine Zielrealität zu erleben. Das schafft eine starke „Frequenz“, die Erfolg anzieht.</span></li><li><span class="bi-en">Result-oriented cycle: Start with the *result*, not with belief. The result → Peak Performance → Actions → Belief. This is the cycle of the successful, which reverses the common failure cycle of NPCs.</span><span class="bi-de">Ergebnisorientierter Kreislauf: Beginne mit dem *Ergebnis*, nicht mit dem Glauben. Das Ergebnis → Peak Performance → Aktionen → Glaube. Das ist der Kreislauf der Erfolgreichen, der den häufigen Misserfolgszyklus von NPCs umkehrt.</span></li></ul></div>
+<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li><span class="bi-en">Create an exciting story and proclaim it with energy.</span><span class="bi-de">Erschaffe eine spannende Geschichte und proklamiere sie mit Energie.</span></li><li><span class="bi-en">Use all five senses to experience your target reality.</span><span class="bi-de">Nutze alle fünf Sinne, um deine Zielrealität zu erleben.</span></li><li><span class="bi-en">Begin the results-oriented cycle by visualizing your goal as already achieved.</span><span class="bi-de">Beginne den ergebnisorientierten Kreislauf, indem du dein Ziel als bereits erreicht visualisierst.</span></li></ul></div>
+<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li><span class="bi-en">Pay the price: Invest time and effort in your business like in a degree or training program. This is the price of success, and the first years are an investment, not a loss.</span><span class="bi-de">Den Preis zahlen: Investiere Zeit und Mühe in dein Business wie in ein Studium oder eine Ausbildung. Das ist der Preis für den Erfolg, und die ersten Jahre sind eine Investition, nicht ein Verlust.</span></li><li><span class="bi-en">Be the “Main Character” of your story, not an NPC.</span><span class="bi-de">Sei der „Main Character“ deiner Geschichte, nicht ein NPC.</span></li></ul></div>
 </div></section>
-      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Erschaffe eine spannende Geschichte und proklamiere sie mit Energie.</span></li><li><span class="todo-task">Nutze alle fünf Sinne, um deine Zielrealität zu erleben.</span></li><li><span class="todo-task">Beginne den ergebnisorientierten Kreislauf, indem du dein Ziel als bereits erreicht visualisierst.</span></li><li><span class="todo-task">Investiere Zeit und Mühe in dein Business wie in ein Studium.</span></li><li><span class="todo-task">Besuche alle Team-Meetings und Coachings.</span></li><li><span class="todo-task">Bringe am Donnerstag ein Buch mit.</span></li></ul></section>
-      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Zweck des Meetings</h3>
+      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task"><span class="bi-en">Create an exciting story and proclaim it with energy.</span><span class="bi-de">Erschaffe eine spannende Geschichte und proklamiere sie mit Energie.</span></span></li><li><span class="todo-task"><span class="bi-en">Use all five senses to experience your target reality.</span><span class="bi-de">Nutze alle fünf Sinne, um deine Zielrealität zu erleben.</span></span></li><li><span class="todo-task"><span class="bi-en">Begin the results-oriented cycle by visualizing your goal as already achieved.</span><span class="bi-de">Beginne den ergebnisorientierten Kreislauf, indem du dein Ziel als bereits erreicht visualisierst.</span></span></li><li><span class="todo-task"><span class="bi-en">Invest time and effort in your business like in a degree program.</span><span class="bi-de">Investiere Zeit und Mühe in dein Business wie in ein Studium.</span></span></li><li><span class="todo-task"><span class="bi-en">Attend all team meetings and coaching sessions.</span><span class="bi-de">Besuche alle Team-Meetings und Coachings.</span></span></li><li><span class="todo-task"><span class="bi-en">Bring a book on Thursday.</span><span class="bi-de">Bringe am Donnerstag ein Buch mit.</span></span></li></ul></section>
+      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><div class="bi-en"><h3 class="exec-h">Purpose of the Meeting</h3>
+<p class="exec-p">A coaching session on manifesting success by adopting a “Main Character” mentality.</p>
+<h3 class="exec-h">Wichtigste Erkenntnisse</h3>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>„Main Character“ mentality:</strong> Adopt the role of the „Main Character“, not that of a „Non-Playable Character“ (NPC). This means consciously creating a story that is exciting and attracts the attention of the universe.</li>
+<li><strong>5-Sinne-Manifestation:</strong> Use all five senses to experience your target reality. This creates a strong „frequency“ that attracts success.</li>
+<li><strong>Ergebnisorientierter Kreislauf:</strong> Start with the *result*, not with belief. The result → Peak Performance → Actions → Belief. This is the cycle of successful people, which reverses the common failure cycle of NPCs.</li>
+<li><strong>Pay the price:</strong> Invest time and effort in your business as you would in a degree or apprenticeship. This is the price of success, and the first years are an investment, not a loss.</li>
+</ul>
+</ul>
+<h3 class="exec-h">Themen</h3>
+<h4 class="exec-h2">The „Main Character“ mentality</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Be the “Main Character” of your story, not an NPC.</li>
+<li>Create an exciting story that attracts the attention of the universe.</li>
+<li>Ignore the opinions of others; your truth is your own.</li>
+<li>Proclaim your story with energy and frequency.</li>
+<li><strong>Beispiel:</strong> Two rappers (Capital, Kapital Bra) from the same school became superstars because they shared the same „frequency“.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Manifestation with all 5 senses</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Stimulate all five senses to generate a strong „frequency“ that attracts success.</li>
+<li><strong>Geschmack:</strong> Drink Veuve Clicquot (the champagne of the „Big Boys“) or a non-alcoholic alternative such as Apfelschorle to experience the taste of success.</li>
+<li><strong>Sehen:</strong> Close your eyes and manifest your target reality.</li>
+<li><strong>Feel:</strong> Wear a high-quality suit or dress to feel the texture of success.</li>
+<li><strong>Riechen:</strong> Use a distinctive scent (e.g., Axe „Billionaire“) to smell your goal.</li>
+<li><strong>Hear:</strong> Listen to a motivational playlist to hear the sounds of your success.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">The result-oriented cycle</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Successful people start with the *result* and create a positive cycle:</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Ergebnis:</strong> Visualize and experience your goal as already achieved.</li>
+<li><strong>Potenzial:</strong> The result unleashes your full potential.</li>
+<li><strong>Aktion:</strong> The released potential leads to Peak Performance.</li>
+<li><strong>Glaube:</strong> Peak Performance generates a strong, unshakable belief.</li>
+</ul>
+</ul>
+<li><strong>Vergleich:</strong> NPCs start with belief. Doubt → limited potential → poor actions → poor results → even more doubt.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Pay the price</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Success requires an investment of time and effort.</li>
+<li><strong>Beispiel:</strong> The first 2–5 years of your business are an investment, not a loss.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>2 Jahre ohne Gewinn → 1.000 € Gewinn</li>
+<li>5 years without profit → millionaire</li>
+</ul>
+</ul>
+<li>Invest in your business like in a degree or training (3+ years).</li>
+<li><strong>Beispiel:</strong> Ky Linh Vu Hoangs VIP experience showed how a “Main Character” mentality shapes reality.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Begegnung 1:</strong> Traf einen Fahrradteile-Hersteller (3 Mio. € Umsatz, 5.000 Mitarbeiter).</li>
+<li><strong>Begegnung 2:</strong> Met a rapper (“Worschein”) and networked immediately.</li>
+<li><strong>Begegnung 3:</strong> Accidentally sat in a reserved seat but was not removed because he radiated the energy of belonging there.</li>
+</ul>
+</ul>
+</ul>
+</ul></div><div class="bi-de"><h3 class="exec-h">Zweck des Meetings</h3>
 <p class="exec-p">Ein Coaching zur Manifestation von Erfolg durch das Annehmen einer „Main Character“-Mentalität.</p>
 <h3 class="exec-h">Wichtigste Erkenntnisse</h3>
 <ul class="exec-ul">
@@ -722,14 +815,14 @@
 </ul>
 </ul>
 </ul>
-</ul></div></details>
+</ul></div></div></details>
       
       
       
       
       
       
-      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><h3 class="exec-h">Main Character Mindset</h3>
+      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><div class="bi-en"><h3 class="exec-h">Main Character Mindset</h3>
 <ul class="exec-ul">
 <li>Ky Linh Vu Hoang states participants are Main Characters, not NPCs</li>
 <li>Main Characters must consciously create their own story</li>
@@ -842,7 +935,120 @@
 <h3 class="exec-h">Action Items</h3>
 <ul class="exec-ul">
 <li>No action items detected</li>
-</ul></div></section>
+</ul></div><div class="bi-de"><h3 class="exec-h">Main Character Mindset</h3>
+<ul class="exec-ul">
+<li>Ky Linh Vu Hoang erklärt, dass die Teilnehmenden Hauptfiguren und keine NPCs sind.</li>
+<li>Hauptfiguren müssen bewusst ihre eigene Geschichte erschaffen.</li>
+<li>Das Universum reagiert auf Frequenz und Energie.</li>
+<li>Teilnehmer müssen ihre Ziele dem Universum gegenüber erklären.</li>
+</ul>
+<h3 class="exec-h">Frequenz und Energie</h3>
+<ul class="exec-ul">
+<li>Teilnehmer müssen ihre persönliche Frequenz extrahieren</li>
+<li>Teilnehmer müssen ihre persönliche Energie extrahieren</li>
+<li>Frequency combined with energy creates results</li>
+<li>Teilnehmer müssen sich das Ergebnis vorstellen und fühlen.</li>
+</ul>
+<h3 class="exec-h">Fünf-Sinne-Stimulation</h3>
+<ul class="exec-ul">
+<li>Alle fünf Sinne müssen stimuliert werden, um maximale PDF zu erreichen.</li>
+<li>Sinne aufgelistet: Hören, Sehen, Riechen, Fühlen, Schmecken</li>
+<li>Taste: Wörfli Co. champagne or apple juice for non-drinkers</li>
+<li>Schließen Sie die Augen und visualisieren Sie das Ziel.</li>
+<li>Berühren: Tragen Sie während der Manifestation einen teuren Anzug oder ein teures Kleid.</li>
+<li>Geruch: Billionherz Parfüm oder Louis Vuitton Probe</li>
+<li>Hören: innere Musik oder Affirmationen</li>
+</ul>
+<h3 class="exec-h">Billionherz Parfüm Story</h3>
+<ul class="exec-ul">
+<li>Ky Linh Vu Hoang plante, 1.000 EUR Louis Vuitton Parfüm zu kaufen.</li>
+<li>Habe Billionherz-Parfüm stattdessen bei Maxx gefunden.</li>
+<li>Billionherz als leistungsstärker als geplant beschrieben</li>
+<li>Teilnehmer können sich Billionherz-Parfüm leisten</li>
+<li>Leichter Spray erzeugt Erfolgsduft für Manifestation</li>
+</ul>
+<h3 class="exec-h">Haltung und Energiefluss</h3>
+<ul class="exec-ul">
+<li>Teilnehmer angewiesen, sich nach vorne auf Stühle zu setzen</li>
+<li>Energie fließt von hinten nach unten zum Wurzelchakra.</li>
+<li>Hände auf den Wurzelbereich gelegt, um Energie zu kanalisieren</li>
+<li>Stabilität durch richtige Körperhaltung geschaffen</li>
+</ul>
+<h3 class="exec-h">Four Stage Success Model</h3>
+<ul class="exec-ul">
+<li>Vier Stufen müssen für den Erfolg verstanden werden</li>
+<li>Die meisten Menschen beginnen mit der Stufe des Glaubens.</li>
+<li>Überzeugung beeinflusst Fähigkeit und Potenzial</li>
+<li>Potenzial bestimmt die ergriffenen Maßnahmen</li>
+<li>Actions produce results</li>
+<li>Ergebnisse stärken den Glauben an den Zyklus</li>
+</ul>
+<h3 class="exec-h">Successful People Approach</h3>
+<ul class="exec-ul">
+<li>Erfolgreiche Menschen starten von Ergebnissen, nicht von Überzeugung.</li>
+<li>Visualisiere bereits das Erreichen des Ziels.</li>
+<li>Nehmen wir an, der Erfolg ist bereits eingetreten.</li>
+<li>Belief follows from assumed success</li>
+<li>Höchstleistung entsteht aus vollem Potenzial</li>
+</ul>
+<h3 class="exec-h">Failed Approach Cycle</h3>
+<ul class="exec-ul">
+<li>Mit Glauben beginnen führt zum Hinterfragen</li>
+<li>Questioning reduces potential</li>
+<li>Reduziertes Potenzial führt zu schlechten Handlungen</li>
+<li>Schlechte Handlungen führen zu schlechten Ergebnissen</li>
+<li>Schlechte Ergebnisse schwächen den Glauben weiter</li>
+</ul>
+<h3 class="exec-h">Investment Mindset</h3>
+<ul class="exec-ul">
+<li>Fünf-Jahres-Verpflichtung für Millionärsstatus erforderlich</li>
+<li>Erste Jahre können finanzielle Investition ohne Rückfluss beinhalten</li>
+<li>Langfristige Sicht für Erfolg erforderlich</li>
+<li>Studenten-ähnlicher Zeitaufwand im Business erwartet</li>
+<li>Drei Jahre typisch für deutschen Ausbildungsvergleich</li>
+</ul>
+<h3 class="exec-h">Tägliche Manifestation Practice</h3>
+<ul class="exec-ul">
+<li>Tägliche Aktivierung der Playlist</li>
+<li>Anzug oder Kleid während der Practice getragen</li>
+<li>Neo Parfüm-Spray für Duft</li>
+<li>Geschmackselement auf der Zunge</li>
+<li>Visualisierung des Endergebnisses erforderlich</li>
+</ul>
+<h3 class="exec-h">Three New Partners Goal</h3>
+<ul class="exec-ul">
+<li>Ziel auf drei neue Geschäftspartner gesetzt</li>
+<li>Partner müssen in Meetings vorankommen</li>
+<li>Persönliches Engagement von Ky Linh Vu Hoang erforderlich</li>
+<li>Rekrutierung über Wochenend-Events geplant</li>
+</ul>
+<h3 class="exec-h">Preis des Erfolgs</h3>
+<ul class="exec-ul">
+<li>Erfolg erfordert das Bezahlen des Preises</li>
+<li>Tägliches Lesen von Büchern ist Mindestanforderung</li>
+<li>Mehr Meetings, mehr Bücher, mehr Coaching nötig</li>
+<li>99% der Menschen leisten nicht den erforderlichen Aufwand</li>
+<li>Teilnehmer sind bereits durch Meeting-Besuch voraus</li>
+</ul>
+<h3 class="exec-h">VIP Loge Story</h3>
+<ul class="exec-ul">
+<li>Ky Linh Vu Hoang kaufte VIP Loge mit schwarzer Kreditkarte</li>
+<li>Verbindung mit Fahrradteile-Hersteller hergestellt</li>
+<li>Manufacturer produces 3 million euros revenue</li>
+<li>5.000 Mitarbeiter im Unternehmen</li>
+<li>Verbindung über gemeinsames VIP-Erlebnis hergestellt</li>
+</ul>
+<h3 class="exec-h">20,000 Euro Loge</h3>
+<ul class="exec-ul">
+<li>VIP loge costs 20,000 euros</li>
+<li>Direkte Instagram-Verbindung mit Hersteller hergestellt</li>
+<li>Ewige Freundschaft aus dem Treffen entstanden</li>
+<li>Hersteller hat eigene Loge am Veranstaltungsort</li>
+</ul>
+<h3 class="exec-h">Action Items</h3>
+<ul class="exec-ul">
+<li>Keine Maßnahmen erkannt</li>
+</ul></div></div></section>
     </div>
 
     <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
@@ -1081,5 +1287,62 @@
       }));
     }
   </script>
+
+<script id="ergomeet-bilingual-nav">
+(function () {
+  const EXTRA = {
+    de: { toc_home: 'Termine', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Überblick', toc_notes: 'Notizen', toc_live: 'Live' },
+    en: { toc_home: 'Meetings', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Summary', toc_notes: 'Notes', toc_live: 'Live' }
+  };
+  if (window.ERGOMEET_I18N) {
+    if (ERGOMEET_I18N.de) Object.assign(ERGOMEET_I18N.de, EXTRA.de);
+    if (ERGOMEET_I18N.en) Object.assign(ERGOMEET_I18N.en, EXTRA.en);
+    delete ERGOMEET_I18N.tr;
+  }
+  const sel0 = document.getElementById('langSelect');
+  if (sel0) {
+    [...sel0.options].forEach((o) => { if (o.value !== 'de' && o.value !== 'en') o.remove(); });
+  }
+  window.ergomeetBuildToc = function () {
+    const toc = document.getElementById('sectionToc');
+    if (!toc) return;
+    const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
+    const pack = (window.ERGOMEET_I18N && ERGOMEET_I18N[lang]) || EXTRA[lang];
+    const home = toc.querySelector('.toc-home');
+    if (home) home.remove();
+    toc.innerHTML = '';
+    const homeLink = home || document.createElement('a');
+    homeLink.className = 'toc-home';
+    homeLink.href = 'https://yashbora9.github.io/ergomeet-reports/';
+    homeLink.setAttribute('data-i18n', 'toc_home');
+    homeLink.textContent = pack.toc_home || 'Meetings';
+    toc.appendChild(homeLink);
+    const keys = { recap: 'toc_recap', todos: 'toc_todos', summary: 'toc_summary', notes: 'toc_notes', 'live-summary': 'toc_live' };
+    document.querySelectorAll('[data-block]:not(.is-empty):not([hidden])').forEach((block) => {
+      const id = block.id || block.getAttribute('data-block');
+      if (!id || !keys[id]) return;
+      if (!block.id) block.id = id;
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = pack[keys[id]] || id;
+      toc.appendChild(a);
+    });
+  };
+  const prev = window.ergomeetApplyLang;
+  window.ergomeetApplyLang = function (lang) {
+    if (lang !== 'de' && lang !== 'en') lang = 'de';
+    if (typeof prev === 'function') prev(lang);
+    document.documentElement.lang = lang;
+    localStorage.setItem('ergomeet-lang', lang);
+    const sel = document.getElementById('langSelect');
+    if (sel && sel.value !== lang) sel.value = lang;
+    window.ergomeetBuildToc();
+  };
+  const saved = localStorage.getItem('ergomeet-lang');
+  const browser = (navigator.language || 'de').slice(0, 2);
+  window.ergomeetApplyLang((saved === 'en' || saved === 'de') ? saved : (browser === 'en' ? 'en' : 'de'));
+})();
+</script>
+
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="dark">
+<html data-ergomeet-bilingual="1" lang="de" data-theme="dark">
 <head>
   <meta name="robots" content="noindex, nofollow" />
   <meta charset="utf-8"/>
@@ -605,18 +605,43 @@
       text-transform: uppercase;
       color: var(--muted);
     }
+  
+    /* ergomeet-bi */
+    .topbar-inner { justify-content: space-between; }
+    .topbar .toc {
+      display: flex !important;
+      flex: 1 1 auto;
+      min-width: 0;
+      margin: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      gap: 6px;
+    }
+    .topbar .toc::-webkit-scrollbar { display: none; }
+    .topbar .toc a { white-space: nowrap; flex-shrink: 0; }
+    html[lang="en"] .bi-de { display: none !important; }
+    html[lang="de"] .bi-en { display: none !important; }
+    span.bi-en, span.bi-de { display: inline; }
+    div.bi-en, div.bi-de { display: block; }
+    @media (max-width: 820px) {
+      .topbar-inner { flex-wrap: wrap; }
+      .topbar .toc { order: 2; flex-basis: 100%; }
+    }
+
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
+      <nav class="toc" id="sectionToc" aria-label="Sections">
+        <a class="toc-home" href="https://yashbora9.github.io/ergomeet-reports/" data-i18n="toc_home">Meetings</a>
+      </nav>
       <div class="topbar-controls">
         <select id="langSelect" class="lang-select" aria-label="Language">
           <option value="de">DE</option>
           <option value="en">EN</option>
-          <option value="tr">TR</option>
         </select>
-        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+<button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
           <span class="icon-sun" aria-hidden="true">☀</span>
           <span class="icon-moon" aria-hidden="true">☾</span>
           <span id="themeToggleLabel" data-i18n="theme_light">Light</span>
@@ -641,19 +666,111 @@
     </header>
 
     <!-- No empty shell under the heading: blocks only appear when builder marks them present -->
-    <nav class="toc" id="sectionToc" aria-label="Sections"></nav>
-    <div class="stack" id="reportStack">
+<div class="stack" id="reportStack">
       <section class="section block recap-card" id="recap" data-block="recap">
 <div class="section-label" data-i18n="lbl_recap">60 seconds</div>
 <h2 data-i18n="recap">Recap</h2>
 <div class="recap-grid">
-<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text">Carlos stellt Systeme für Verkauf, Recruiting und Führung vor.</p></div>
-<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li>Verkauf: Vertrauen aufbauen durch eine professionelle Positionierung (Kleidung, Sprache, Körpersprache) und Storytelling, das Kunden in die eigenen Ziele einbindet. Nach dem Abschluss einen 3-Monats-Folgetermin vereinbaren und eine „Servicevereinbarung&quot; nutzen, um zukünftige Cross-Selling-Chancen zu sichern.</li><li>Recruiting: Erwachsene mit Berufserfahrung rekrutieren, die eine starke Arbeitsmoral mitbringen. Kunden sind eine hervorragende Quelle, da sie das Geschäft bereits kennen. Das Angebot als Karriereweg positionieren, nicht als Job, und das Onboarding-System als wertvolle, kostenlose Leistung verkaufen.</li><li>Führung: Durch Vorbild führen und alle Teamaktivitäten mit einem zentralen Excel-Dashboard verfolgen. Wöchentliche Meetings nutzen, um Zahlen zu besprechen und Schulungen zu planen, und die Erwartung einer hohen Produktivität setzen, indem man selbst mehr leistet als das Team.</li></ul></div>
-<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li>Die eigene Positionierung überprüfen (Kleidung, Sprache, Körpersprache).</li><li>Storytelling nutzen, um Kunden in die eigenen Ziele einzubinden.</li><li>Einen 3-Monats-Folgetermin bei der Policenübergabe vereinbaren.</li></ul></div>
-<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li>Karriereweg, nicht Job: Das Angebot als Karriereweg mit Positionen (z. B. „Team Leader&quot;) präsentieren, nicht als Stufen (z. B. „Stufe 1&quot;).</li></ul></div>
+<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text" data-topic-en="Carlos presents systems for sales, recruiting, and leadership." data-topic-de="Carlos stellt Systeme für Verkauf, Recruiting und Führung vor."><span class="bi-en">Carlos presents systems for sales, recruiting, and leadership.</span><span class="bi-de">Carlos stellt Systeme für Verkauf, Recruiting und Führung vor.</span></p></div>
+<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li><span class="bi-en">Sales: Build trust through professional positioning (clothing, language, body language) and storytelling that integrates customers into their own goals. After closing, schedule a 3-month follow-up appointment and use a “service agreement” to secure future cross-selling opportunities.</span><span class="bi-de">Verkauf: Vertrauen aufbauen durch eine professionelle Positionierung (Kleidung, Sprache, Körpersprache) und Storytelling, das Kunden in die eigenen Ziele einbindet. Nach dem Abschluss einen 3-Monats-Folgetermin vereinbaren und eine „Servicevereinbarung&quot; nutzen, um zukünftige Cross-Selling-Chancen zu sichern.</span></li><li><span class="bi-en">Recruiting: Recruit adults with professional experience who bring a strong work ethic. Customers are an excellent source because they already know the business. Position the offer as a career path, not as a job, and sell the onboarding system as a valuable, free service.</span><span class="bi-de">Recruiting: Erwachsene mit Berufserfahrung rekrutieren, die eine starke Arbeitsmoral mitbringen. Kunden sind eine hervorragende Quelle, da sie das Geschäft bereits kennen. Das Angebot als Karriereweg positionieren, nicht als Job, und das Onboarding-System als wertvolle, kostenlose Leistung verkaufen.</span></li><li><span class="bi-en">Leadership: Lead by example and track all team activities with a central Excel dashboard. Use weekly meetings to discuss numbers and plan training, and set the expectation of high productivity by delivering more than the team.</span><span class="bi-de">Führung: Durch Vorbild führen und alle Teamaktivitäten mit einem zentralen Excel-Dashboard verfolgen. Wöchentliche Meetings nutzen, um Zahlen zu besprechen und Schulungen zu planen, und die Erwartung einer hohen Produktivität setzen, indem man selbst mehr leistet als das Team.</span></li></ul></div>
+<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li><span class="bi-en">Review one's own positioning (clothing, language, body language).</span><span class="bi-de">Die eigene Positionierung überprüfen (Kleidung, Sprache, Körpersprache).</span></li><li><span class="bi-en">Use storytelling to involve customers in your own goals.</span><span class="bi-de">Storytelling nutzen, um Kunden in die eigenen Ziele einzubinden.</span></li><li><span class="bi-en">Schedule a 3-month follow-up appointment at policy handover.</span><span class="bi-de">Einen 3-Monats-Folgetermin bei der Policenübergabe vereinbaren.</span></li></ul></div>
+<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li><span class="bi-en">Career path, not job: Present the offer as a career path with positions (e.g., "Team Leader"), not as levels (e.g., "Stufe 1").</span><span class="bi-de">Karriereweg, nicht Job: Das Angebot als Karriereweg mit Positionen (z. B. „Team Leader&quot;) präsentieren, nicht als Stufen (z. B. „Stufe 1&quot;).</span></li></ul></div>
 </div></section>
-      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Die eigene Positionierung überprüfen (Kleidung, Sprache, Körpersprache).</span></li><li><span class="todo-task">Storytelling nutzen, um Kunden in die eigenen Ziele einzubinden.</span></li><li><span class="todo-task">Einen 3-Monats-Folgetermin bei der Policenübergabe vereinbaren.</span></li><li><span class="todo-task">Eine „Servicevereinbarung&quot; nutzen, um zukünftige Cross-Selling-Chancen zu sichern.</span></li><li><span class="todo-task">Erwachsene mit Berufserfahrung rekrutieren, insbesondere aus dem Kundenstamm.</span></li><li><span class="todo-task">Ein Excel-Dashboard zur Verfolgung aller Teamaktivitäten erstellen.</span></li><li><span class="todo-task">Drei wöchentliche Meetings durchführen: zwei für Schulungen und eines zur Besprechung der Zahlen.</span></li><li><span class="todo-task">Eine tägliche Checkliste nutzen, um die Erledigung von Aufgaben zu verfolgen.</span></li><li><span class="todo-task">Die administrativen Aufgaben der Partner proaktiv verwalten.</span></li></ul></section>
-      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Zweck des Meetings</h3>
+      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task"><span class="bi-en">Review one's own positioning (clothing, language, body language).</span><span class="bi-de">Die eigene Positionierung überprüfen (Kleidung, Sprache, Körpersprache).</span></span></li><li><span class="todo-task"><span class="bi-en">Use storytelling to involve customers in your own goals.</span><span class="bi-de">Storytelling nutzen, um Kunden in die eigenen Ziele einzubinden.</span></span></li><li><span class="todo-task"><span class="bi-en">Schedule a 3-month follow-up appointment at policy handover.</span><span class="bi-de">Einen 3-Monats-Folgetermin bei der Policenübergabe vereinbaren.</span></span></li><li><span class="todo-task"><span class="bi-en">Use a "Service Agreement" to secure future cross-selling opportunities.</span><span class="bi-de">Eine „Servicevereinbarung&quot; nutzen, um zukünftige Cross-Selling-Chancen zu sichern.</span></span></li><li><span class="todo-task"><span class="bi-en">Recruit adults with professional experience, especially from the customer base.</span><span class="bi-de">Erwachsene mit Berufserfahrung rekrutieren, insbesondere aus dem Kundenstamm.</span></span></li><li><span class="todo-task"><span class="bi-en">Create an Excel dashboard to track all team activities.</span><span class="bi-de">Ein Excel-Dashboard zur Verfolgung aller Teamaktivitäten erstellen.</span></span></li><li><span class="todo-task"><span class="bi-en">Conduct three weekly meetings: two for training and one to discuss the figures.</span><span class="bi-de">Drei wöchentliche Meetings durchführen: zwei für Schulungen und eines zur Besprechung der Zahlen.</span></span></li><li><span class="todo-task"><span class="bi-en">Use a daily checklist to track task completion.</span><span class="bi-de">Eine tägliche Checkliste nutzen, um die Erledigung von Aufgaben zu verfolgen.</span></span></li><li><span class="todo-task"><span class="bi-en">Proactively manage the administrative tasks of the partners.</span><span class="bi-de">Die administrativen Aufgaben der Partner proaktiv verwalten.</span></span></li></ul></section>
+      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><div class="bi-en"><h3 class="exec-h">Purpose of the Meeting</h3>
+<p class="exec-p">Carlos presents systems for sales, recruiting, and leadership.</p>
+<h3 class="exec-h">Wichtigste Erkenntnisse</h3>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Verkauf:</strong> Building trust through professional positioning (clothing, language, body language) and storytelling that integrates customers into their own goals. After closing, schedule a 3-month follow-up appointment and use a “service agreement” to secure future cross-selling opportunities.</li>
+<li><strong>Recruiting:</strong> Recruit adults with professional experience who bring a strong work ethic. Customers are an excellent source because they already know the business. Position the offer as a career path, not a job, and sell the onboarding system as a valuable, free service.</li>
+<li><strong>Leadership:</strong> Lead by example and track all team activities with a central Excel dashboard. Use weekly meetings to discuss numbers and plan training, and set the expectation of high productivity by delivering more than the team.</li>
+</ul>
+</ul>
+<h3 class="exec-h">Themen</h3>
+<h4 class="exec-h2">Sales: Building trust and using systems</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Vertrauen aufbauen:</strong> Sales is helping. Trust is the foundation built through empathy and professional positioning.</li>
+<li><strong>Positionierung:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Visuell:</strong> Clothing that is somewhat more professional than the customer’s (e.g., polo shirt, chinos). Avoid a Rolex, as it can create skepticism.</li>
+<li><strong>Verbal:</strong> Speak clearly, slowly, and with clear German. Avoid colloquial language.</li>
+<li><strong>Body language:</strong> Keep hands visible on the table to signal trust. A well-groomed beard is crucial to avoid negative associations.</li>
+<li><strong>Psychologisch:</strong> Offer hot drinks. A study showed that 80 % of applicants who received a cold drink were rejected, while almost all applicants with a hot drink were accepted.</li>
+</ul>
+</ul>
+<li><strong>Storytelling:</strong> Openly share your own goals to integrate customers into a common mission.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Beispiel:</strong> “I want to build the best financial advisory service for Spanish speakers in Germany. If you become a customer today, you are part of this journey.”</li>
+</ul>
+</ul>
+<li><strong>After closing:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Folgetermin:</strong> Schedule a 3-month follow-up appointment directly at policy handover.</li>
+<li><strong>Servicevereinbarung:</strong> Use an agreement to record the customer’s contact preferences and identify future cross-selling opportunities.</li>
+<li><strong>Branding:</strong> Conduct policy handover in a dedicated, branded folder to establish yourself as the primary contact person.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">Recruiting: Finding the right fit and positioning the offer</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Recruiting-Strategie:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Zielgruppe:</strong> Adults (30+) with professional experience and a strong work ethic.</li>
+<li><strong>Quellen:</strong> Customers, personal networks (e.g., bars), Facebook ads, and community recruiting.</li>
+</ul>
+</ul>
+<li><strong>Positioning the offer:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Career path, not job:</strong> Present the offer as a career path with positions (e.g., “Team Leader”), not as levels (e.g., “Stufe 1”).</li>
+<li><strong>Onboarding-System als Leistung:</strong> Sell the onboarding system as a free, valuable service that includes:</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>Digitale Akademie</li>
+<li>8 in-person seminars (with hotel/meals)</li>
+<li>Examinations and licenses</li>
+</ul>
+</ul>
+<li><strong>Incentives:</strong> Utilize the advantages of incentives such as J.A.T. (a trade fair with 120 luxury cars) and trips to make the business attractive.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">Leadership: Lead through systems and example</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Leadership philosophy:</strong> Lead by example. One's own standards must be higher than those of the team.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Beispiel:</strong> If the team must produce 600 units, one must produce more than 600 oneself.</li>
+</ul>
+</ul>
+<li><strong>Systems for leadership:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Excel-Dashboard:</strong> Use a central dashboard to track all team activities, including:</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>Contacts and appointments</li>
+<li>Productivity and units</li>
+<li>Name lists and rankings</li>
+</ul>
+</ul>
+<li><strong>Weekly meetings:</strong> Conduct three weekly meetings: two for training and one to discuss the figures.</li>
+<li><strong>Aufgabenverfolgung:</strong> Use a daily checklist to track task completion and ensure accountability.</li>
+<li><strong>Proaktives Onboarding:</strong> Proactively manage the administrative tasks of partners (business registration, certifications) to relieve them and enable them to focus on sales.</li>
+</ul>
+</ul>
+</ul>
+</ul></div><div class="bi-de"><h3 class="exec-h">Zweck des Meetings</h3>
 <p class="exec-p">Carlos stellt Systeme für Verkauf, Recruiting und Führung vor.</p>
 <h3 class="exec-h">Wichtigste Erkenntnisse</h3>
 <ul class="exec-ul">
@@ -746,14 +863,14 @@
 </ul>
 </ul>
 </ul>
-</ul></div></details>
+</ul></div></div></details>
       
       
       
       
       
       
-      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><h3 class="exec-h">Session Structure</h3>
+      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><div class="bi-en"><h3 class="exec-h">Session Structure</h3>
 <ul class="exec-ul">
 <li>Three-hour training covering consumption, recruitment, and leadership</li>
 <li>Focus on creating systems for passive income generation</li>
@@ -910,7 +1027,164 @@
 <li>Distinction between new market development vs market replacement strategies</li>
 </ul><h3 class="exec-h">Action Items</h3>
 <p class="exec-p">No action items detected</p>
-</div></section>
+</div><div class="bi-de"><h3 class="exec-h">Session Structure</h3>
+<ul class="exec-ul">
+<li>Drei-Stunden-Training zu Konsum, Rekrutierung und Führung</li>
+<li>Fokus auf die Erstellung von Systemen für passive Einkommensgenerierung</li>
+<li>Ziel: über persönlichen Verkauf hinaus zu skalierbaren Geschäftssystemen</li>
+</ul>
+<h3 class="exec-h">Sales Definition</h3>
+<ul class="exec-ul">
+<li>Verkauf definiert als Kunden bei der Lösung von Problemen helfen</li>
+<li>Verkaufsprozess beginnt mit Vorbereitung, nicht mit Begrüßung</li>
+<li>Verständnis der Kundenprobleme geht jeder Produktdiskussion voraus</li>
+</ul>
+<h3 class="exec-h">Trust Building Elements</h3>
+<ul class="exec-ul">
+<li>Drei erforderliche Elemente: kennen, mögen, vertrauen</li>
+<li>Empathie als Schlüssel zum Verständnis von Kundenproblemen identifiziert</li>
+<li>Sympathie allein unzureichend für effektive Verkaufsbeziehungen</li>
+</ul>
+<h3 class="exec-h">Visual Positioning Requirements</h3>
+<ul class="exec-ul">
+<li>Clothing must signal financial competence without appearing flashy</li>
+<li>Follow-Shirt und Chinos als angemessene Kleidung empfohlen</li>
+<li>Keine teuren Uhren oder Luxusartikel, die Skepsis erzeugen</li>
+</ul>
+<h3 class="exec-h">Körpersprache-Richtlinien</h3>
+<ul class="exec-ul">
+<li>Hände müssen während Gesprächen sichtbar auf dem Tisch bleiben</li>
+<li>Versteckte Hände erzeugen automatisch Misstrauen bei Kunden</li>
+<li>Gepflegtes Erscheinungsbild essenziell für professionelle Positionierung</li>
+</ul>
+<h3 class="exec-h">Temperature Influence Study</h3>
+<ul class="exec-ul">
+<li>Studie zeigte, dass 80% der Kaltgetränke-Empfänger Bewerber ablehnten</li>
+<li>Warme Getränke erzeugten positive Voreingenommenheit gegenüber denselben Bewerbern</li>
+<li>Kaffee bei 6,5 Grad für optimale Kundeninteraktion empfohlen</li>
+</ul>
+<h3 class="exec-h">Storytelling Approach</h3>
+<ul class="exec-ul">
+<li>Persönliche Ziele mit Kunden geteilt, um Verbindung aufzubauen</li>
+<li>Ziel: Positionierung als bester Finanzberater für spanischsprachige Kunden in Deutschland</li>
+<li>Kunden wollen an den Zielen anderer teilhaben, statt ihre eigenen zu erhalten</li>
+</ul>
+<h3 class="exec-h">Customer Onboarding Process</h3>
+<ul class="exec-ul">
+<li>Drei-Monats-Folgetermine bei Policenübergabe vereinbart</li>
+<li>Kontaktfrequenz und bevorzugte Kommunikationsmethode im Voraus festgelegt</li>
+<li>Zusätzliche Interessensgebiete für zukünftige Verkaufschancen dokumentiert</li>
+</ul>
+<h3 class="exec-h">Richtlinien für die Leistungserbringung</h3>
+<ul class="exec-ul">
+<li>Policen mit persönlichem Branding, nicht mit Firmenlogo, versendet</li>
+<li>Kunden müssen verstehen, dass sie mit dem Berater und nicht direkt mit ERGO arbeiten</li>
+<li>Verhindert, dass Kunden bei Problemen direkt das Unternehmen anrufen</li>
+</ul>
+<h3 class="exec-h">Recruitment Focus</h3>
+<ul class="exec-ul">
+<li>Recruitment als wichtigste Geschäftsaktivität identifiziert</li>
+<li>Systemleiter (Piloten) erhalten bessere Vergütung als Vertriebsmitarbeiter</li>
+<li>KÜPF payments come directly from agencies for system leaders</li>
+</ul>
+<h3 class="exec-h">Training Investment Details</h3>
+<ul class="exec-ul">
+<li>Das komplette Programm kostet 0 EUR für die Teilnehmenden.</li>
+<li>Umfasst 8 Präsenzseminare mit Hotel und Verpflegung</li>
+<li>Digitale Plattformen sowie Lizenzierung und Prüfungsvorbereitung inklusive</li>
+</ul>
+<h3 class="exec-h">J.A.T. Event Details</h3>
+<ul class="exec-ul">
+<li>Luxus-Autoausstellung mit 120 ausgestellten Fahrzeugen</li>
+<li>Event held in Cologne or Mönchengladbach for stage 2 qualifiers</li>
+<li>Wichtige Rekrutierungschance mit hoher visueller Wirkung</li>
+</ul>
+<h3 class="exec-h">Führungsphilosophie</h3>
+<ul class="exec-ul">
+<li>Vorbildfunktion für effektives Teammanagement erforderlich</li>
+<li>Teammitglieder können nicht erwarten, was der Leiter nicht selbst tut</li>
+<li>Financial performance must be demonstrated before asking others to achieve it</li>
+</ul>
+<h3 class="exec-h">Excel Tracking System</h3>
+<ul class="exec-ul">
+<li>Wöchentliche individuelle Leistungsüberwachung über alle Teammitglieder hinweg</li>
+<li>Verfolgt Kontakte, Termine und Konversionsraten</li>
+<li>Das Dashboard zeigt die Echtzeit-Produktion der Einheiten nach Partner.</li>
+</ul>
+<h3 class="exec-h">Performance Metrics</h3>
+<ul class="exec-ul">
+<li>Average customer generates 120 units (approximately 10 customers)</li>
+<li>Ziel: Partner auf Stufe 2 bringen, indem die Produktion verdoppelt wird</li>
+<li>Konzentrieren Sie sich darauf, an jeder Funnel-Stufe über 40 % Conversion-Raten zu halten.</li>
+</ul>
+<h3 class="exec-h">Wöchentliche Meeting-Struktur</h3>
+<ul class="exec-ul">
+<li>Zwei Trainingsmeetings und ein zahlenfokussiertes Meeting pro Woche</li>
+<li>Aktive Seminarwerbung statt auf Anfragen zu warten</li>
+<li>Teammitglieder mit Führungsaufgaben über die grundlegenden Verkaufsaktivitäten hinaus</li>
+</ul>
+<h3 class="exec-h">Tägliches Verantwortungssystem</h3>
+<ul class="exec-ul">
+<li>Tägliche Aufgabenzuweisung mit Folgeanrufen</li>
+<li>Verhindert das Vergessen von Aufgaben durch regelmäßige Check-ins</li>
+<li>Erzeugt nervöse Energie, die den Abschluss vorantreibt</li>
+</ul>
+<h3 class="exec-h">Time Management Standards</h3>
+<ul class="exec-ul">
+<li>Mindestens 3 Monate lang werden monatlich 100 Einheiten von den Partnern erwartet.</li>
+<li>Normalisiert hohe Produktionsniveaus innerhalb der Teamkultur</li>
+<li>Recent monthly production: 976 units achieved</li>
+</ul>
+<h3 class="exec-h">Elite Club Requirements</h3>
+<ul class="exec-ul">
+<li>Alle Einheiten plus 2,5 zusätzliche Einheiten erforderlich</li>
+<li>Dezember-Frist für die Qualifikation</li>
+<li>Technische Anforderungen müssen für die Förderfähigkeit erfüllt sein</li>
+</ul>
+<h3 class="exec-h">New York Event Experience</h3>
+<ul class="exec-ul">
+<li>Mehrere Mahlzeiten und unbegrenzter Alkohol bereitgestellt</li>
+<li>Spanish language skills used for alcohol ordering</li>
+<li>Zwei Flaschen pro Person während der Veranstaltung erlaubt</li>
+</ul>
+<h3 class="exec-h">Cross-Selling Documentation</h3>
+<ul class="exec-ul">
+<li>Kundeninteressengebiete bei Policenübergabe erfasst</li>
+<li>Ermöglicht zukünftige Verkäufe ohne Cold Calling</li>
+<li>Beispiele umfassen Inflationsschutz und Sachversicherung</li>
+</ul>
+<h3 class="exec-h">Market Positioning Strategy</h3>
+<ul class="exec-ul">
+<li>Fokus auf die spanischsprachige Demografie in Deutschland</li>
+<li>Ziel, der beste Finanzberatungsservice für diesen Markt zu werden</li>
+<li>Persönliche Entwicklung und Teambuilding als wichtige Attraktionen identifiziert</li>
+</ul>
+<h3 class="exec-h">Systementwicklung Priorität</h3>
+<ul class="exec-ul">
+<li>Fehlerquellen müssen vor der Implementierung von Verbesserungen identifiziert werden</li>
+<li>Zahlenverfolgung essenziell für die Diagnose von Geschäftsproblemen</li>
+<li>Was nicht gemessen werden kann, kann nicht verbessert werden</li>
+</ul>
+<h3 class="exec-h">Seminar Attendance Strategy</h3>
+<ul class="exec-ul">
+<li>Aktive Bewerbung von Verkaufs- und Reaktivierungsseminaren</li>
+<li>Team members directed to events rather than requesting attendance</li>
+<li>Replikation durch Partnerentwicklung erreicht, nicht durch Überlegenheit der Führungskraft</li>
+</ul>
+<h3 class="exec-h">Contact-To-Appointment Focus</h3>
+<ul class="exec-ul">
+<li>Schwerpunkt auf dem Übergang von Kontakt zu geplantem Termin</li>
+<li>Zeitmanagement als primäre Einschränkung identifiziert</li>
+<li>Nach der Arbeit wird die Terminvereinbarung für Vollzeitbeschäftigte empfohlen.</li>
+</ul>
+<h3 class="exec-h">Vorteile des Geschäftsmodells</h3>
+<ul class="exec-ul">
+<li>Finanzmarkt ausgewählt wegen hohem Geldfluss und Wertpotenzial</li>
+<li>26 % Fehlerquote im US-Markt weist auf erhebliches Verbesserungspotenzial hin</li>
+<li>Unterscheidung zwischen Strategien zur Erschließung neuer Märkte und Strategien zur Marktersatzung</li>
+</ul><h3 class="exec-h">Action Items</h3>
+<p class="exec-p">Keine Maßnahmen erkannt</p>
+</div></div></section>
     </div>
 
     <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
@@ -1149,5 +1423,62 @@
       }));
     }
   </script>
+
+<script id="ergomeet-bilingual-nav">
+(function () {
+  const EXTRA = {
+    de: { toc_home: 'Termine', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Überblick', toc_notes: 'Notizen', toc_live: 'Live' },
+    en: { toc_home: 'Meetings', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Summary', toc_notes: 'Notes', toc_live: 'Live' }
+  };
+  if (window.ERGOMEET_I18N) {
+    if (ERGOMEET_I18N.de) Object.assign(ERGOMEET_I18N.de, EXTRA.de);
+    if (ERGOMEET_I18N.en) Object.assign(ERGOMEET_I18N.en, EXTRA.en);
+    delete ERGOMEET_I18N.tr;
+  }
+  const sel0 = document.getElementById('langSelect');
+  if (sel0) {
+    [...sel0.options].forEach((o) => { if (o.value !== 'de' && o.value !== 'en') o.remove(); });
+  }
+  window.ergomeetBuildToc = function () {
+    const toc = document.getElementById('sectionToc');
+    if (!toc) return;
+    const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
+    const pack = (window.ERGOMEET_I18N && ERGOMEET_I18N[lang]) || EXTRA[lang];
+    const home = toc.querySelector('.toc-home');
+    if (home) home.remove();
+    toc.innerHTML = '';
+    const homeLink = home || document.createElement('a');
+    homeLink.className = 'toc-home';
+    homeLink.href = 'https://yashbora9.github.io/ergomeet-reports/';
+    homeLink.setAttribute('data-i18n', 'toc_home');
+    homeLink.textContent = pack.toc_home || 'Meetings';
+    toc.appendChild(homeLink);
+    const keys = { recap: 'toc_recap', todos: 'toc_todos', summary: 'toc_summary', notes: 'toc_notes', 'live-summary': 'toc_live' };
+    document.querySelectorAll('[data-block]:not(.is-empty):not([hidden])').forEach((block) => {
+      const id = block.id || block.getAttribute('data-block');
+      if (!id || !keys[id]) return;
+      if (!block.id) block.id = id;
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = pack[keys[id]] || id;
+      toc.appendChild(a);
+    });
+  };
+  const prev = window.ergomeetApplyLang;
+  window.ergomeetApplyLang = function (lang) {
+    if (lang !== 'de' && lang !== 'en') lang = 'de';
+    if (typeof prev === 'function') prev(lang);
+    document.documentElement.lang = lang;
+    localStorage.setItem('ergomeet-lang', lang);
+    const sel = document.getElementById('langSelect');
+    if (sel && sel.value !== lang) sel.value = lang;
+    window.ergomeetBuildToc();
+  };
+  const saved = localStorage.getItem('ergomeet-lang');
+  const browser = (navigator.language || 'de').slice(0, 2);
+  window.ergomeetApplyLang((saved === 'en' || saved === 'de') ? saved : (browser === 'en' ? 'en' : 'de'));
+})();
+</script>
+
 </body>
 </html>

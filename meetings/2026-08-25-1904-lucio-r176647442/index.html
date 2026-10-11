@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="dark">
+<html data-ergomeet-bilingual="1" lang="de" data-theme="dark">
 <head>
   <meta name="robots" content="noindex, nofollow" />
   <meta charset="utf-8"/>
@@ -605,18 +605,43 @@
       text-transform: uppercase;
       color: var(--muted);
     }
+  
+    /* ergomeet-bi */
+    .topbar-inner { justify-content: space-between; }
+    .topbar .toc {
+      display: flex !important;
+      flex: 1 1 auto;
+      min-width: 0;
+      margin: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      gap: 6px;
+    }
+    .topbar .toc::-webkit-scrollbar { display: none; }
+    .topbar .toc a { white-space: nowrap; flex-shrink: 0; }
+    html[lang="en"] .bi-de { display: none !important; }
+    html[lang="de"] .bi-en { display: none !important; }
+    span.bi-en, span.bi-de { display: inline; }
+    div.bi-en, div.bi-de { display: block; }
+    @media (max-width: 820px) {
+      .topbar-inner { flex-wrap: wrap; }
+      .topbar .toc { order: 2; flex-basis: 100%; }
+    }
+
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
+      <nav class="toc" id="sectionToc" aria-label="Sections">
+        <a class="toc-home" href="https://yashbora9.github.io/ergomeet-reports/" data-i18n="toc_home">Meetings</a>
+      </nav>
       <div class="topbar-controls">
         <select id="langSelect" class="lang-select" aria-label="Language">
           <option value="de">DE</option>
           <option value="en">EN</option>
-          <option value="tr">TR</option>
         </select>
-        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+<button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
           <span class="icon-sun" aria-hidden="true">☀</span>
           <span class="icon-moon" aria-hidden="true">☾</span>
           <span id="themeToggleLabel" data-i18n="theme_light">Light</span>
@@ -641,19 +666,90 @@
     </header>
 
     <!-- No empty shell under the heading: blocks only appear when builder marks them present -->
-    <nav class="toc" id="sectionToc" aria-label="Sections"></nav>
-    <div class="stack" id="reportStack">
+<div class="stack" id="reportStack">
       <section class="section block recap-card" id="recap" data-block="recap">
 <div class="section-label" data-i18n="lbl_recap">60 seconds</div>
 <h2 data-i18n="recap">Recap</h2>
 <div class="recap-grid">
-<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text">Vorstellung eines klaren 60-Tage-Plans, um den „Profi-Start“ zu erreichen und die Stufe 2 zu absolvieren.</p></div>
-<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li>Ziel: Den „Profi-Start“ erreichen, indem man die Stufe 2 innerhalb von 60 Tagen absolviert. Dieser schnelle Start ist entscheidend, um den anfänglichen Schwung zu nutzen und die Phase der „Experimente“ zu vermeiden, die oft zu Stagnation führt.</li><li>Plan: Die Stufe 2 erfordert 8 Kunden und 5 direkte Partner. Lucios Formel für Erfolg ist es, sich auf die Aktivitäten zu konzentrieren, die diese Ergebnisse garantieren: 16–20 Kundentermine und 10–20 eingeladene Gäste für die Rekrutierung.</li><li>Methode: Eine tägliche Reflexionsübung nutzen, um den Fokus zu erzwingen. Jeden Abend aufschreiben, was man getan hat und was man morgen tun wird, um die Ziele zu erreichen. Diese Aufzeichnungen dienen als objektiver Nachweis des Engagements.</li></ul></div>
-<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li>Lucio: Eine PDF-Vorlage für das tägliche Reflexionsblatt erstellen und bereitstellen.</li><li>Die PDF-Vorlage ausdrucken (60 Exemplare).</li><li>Die tägliche Reflexionsübung 60 Tage lang durchführen.</li></ul></div>
-<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li>Fokus erzwingen: Verhindert, dass man sich in nicht wertschöpfenden Aufgaben verliert.</li><li>Das „Warum“: Man versteht nicht den wahren Wert des Ziels.</li></ul></div>
+<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text" data-topic-en="Presentation of a clear 60-day plan to achieve the &quot;Profi-Start&quot; and complete Stufe 2." data-topic-de="Vorstellung eines klaren 60-Tage-Plans, um den „Profi-Start“ zu erreichen und die Stufe 2 zu absolvieren."><span class="bi-en">Presentation of a clear 60-day plan to achieve the "Profi-Start" and complete Stufe 2.</span><span class="bi-de">Vorstellung eines klaren 60-Tage-Plans, um den „Profi-Start“ zu erreichen und die Stufe 2 zu absolvieren.</span></p></div>
+<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li><span class="bi-en">Goal: Reach the “Profi-Start” by completing Stufe 2 within 60 days. This fast start is crucial to capitalize on initial momentum and avoid the “experiment” phase that often leads to stagnation.</span><span class="bi-de">Ziel: Den „Profi-Start“ erreichen, indem man die Stufe 2 innerhalb von 60 Tagen absolviert. Dieser schnelle Start ist entscheidend, um den anfänglichen Schwung zu nutzen und die Phase der „Experimente“ zu vermeiden, die oft zu Stagnation führt.</span></li><li><span class="bi-en">Plan: Stufe 2 requires 8 customers and 5 direct partners. Lucio's formula for success is to focus on the activities that guarantee these results: 16–20 customer appointments and 10–20 invited guests for recruitment.</span><span class="bi-de">Plan: Die Stufe 2 erfordert 8 Kunden und 5 direkte Partner. Lucios Formel für Erfolg ist es, sich auf die Aktivitäten zu konzentrieren, die diese Ergebnisse garantieren: 16–20 Kundentermine und 10–20 eingeladene Gäste für die Rekrutierung.</span></li><li><span class="bi-en">Method: Use a daily reflection exercise to force focus. Every evening, write down what you have done and what you will do tomorrow to achieve the goals. These records serve as objective evidence of commitment.</span><span class="bi-de">Methode: Eine tägliche Reflexionsübung nutzen, um den Fokus zu erzwingen. Jeden Abend aufschreiben, was man getan hat und was man morgen tun wird, um die Ziele zu erreichen. Diese Aufzeichnungen dienen als objektiver Nachweis des Engagements.</span></li></ul></div>
+<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li><span class="bi-en">Lucio: Create and provide a PDF template for the daily reflection sheet.</span><span class="bi-de">Lucio: Eine PDF-Vorlage für das tägliche Reflexionsblatt erstellen und bereitstellen.</span></li><li><span class="bi-en">Print the PDF template (60 copies).</span><span class="bi-de">Die PDF-Vorlage ausdrucken (60 Exemplare).</span></li><li><span class="bi-en">Perform the daily reflection exercise for 60 days.</span><span class="bi-de">Die tägliche Reflexionsübung 60 Tage lang durchführen.</span></li></ul></div>
+<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li><span class="bi-en">Force focus: Prevents getting lost in non-value-adding tasks.</span><span class="bi-de">Fokus erzwingen: Verhindert, dass man sich in nicht wertschöpfenden Aufgaben verliert.</span></li><li><span class="bi-en">The „Why“: People do not understand the true value of the goal.</span><span class="bi-de">Das „Warum“: Man versteht nicht den wahren Wert des Ziels.</span></li></ul></div>
 </div></section>
-      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task"><strong>Lucio:</strong> Eine PDF-Vorlage für das tägliche Reflexionsblatt erstellen und bereitstellen.</span></li><li><span class="todo-task">Die PDF-Vorlage ausdrucken (60 Exemplare).</span></li><li><span class="todo-task">Die tägliche Reflexionsübung 60 Tage lang durchführen.</span></li><li><span class="todo-task">Sich auf die Aktivitäten konzentrieren, die die Stufe 2 garantieren: 16–20 Kundentermine und 10–20 Rekrutierungsgäste.</span></li></ul></section>
-      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Zweck des Meetings</h3>
+      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task"><span class="bi-en"><strong>Lucio:</strong> Create and provide a PDF template for the daily reflection sheet.</span><span class="bi-de"><strong>Lucio:</strong> Eine PDF-Vorlage für das tägliche Reflexionsblatt erstellen und bereitstellen.</span></span></li><li><span class="todo-task"><span class="bi-en">Print the PDF template (60 copies).</span><span class="bi-de">Die PDF-Vorlage ausdrucken (60 Exemplare).</span></span></li><li><span class="todo-task"><span class="bi-en">Perform the daily reflection exercise for 60 days.</span><span class="bi-de">Die tägliche Reflexionsübung 60 Tage lang durchführen.</span></span></li><li><span class="todo-task"><span class="bi-en">Focus on the activities that guarantee Stufe 2: 16–20 customer appointments and 10–20 recruitment guests.</span><span class="bi-de">Sich auf die Aktivitäten konzentrieren, die die Stufe 2 garantieren: 16–20 Kundentermine und 10–20 Rekrutierungsgäste.</span></span></li></ul></section>
+      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><div class="bi-en"><h3 class="exec-h">Purpose of the Meeting</h3>
+<p class="exec-p">Presentation of a clear 60-day plan to achieve the "Profi-Start" and complete Stufe 2.</p>
+<h3 class="exec-h">Wichtigste Erkenntnisse</h3>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Ziel:</strong> Achieving the „Profi-Start“ by completing Stufe 2 within 60 days. This fast start is crucial to capitalize on the initial momentum and avoid the „experiment“ phase that often leads to stagnation.</li>
+<li><strong>Plan:</strong> Stufe 2 requires 8 customers and 5 direct partners. Lucio’s formula for success is to focus on the activities that guarantee these results: 16–20 customer appointments and 10–20 invited guests for recruitment.</li>
+<li><strong>Methode:</strong> Use a daily reflection exercise to force focus. Every evening, write down what you have done and what you will do tomorrow to achieve the goals. These records serve as objective proof of commitment.</li>
+<li><strong>Mindset:</strong> Success is a matter of „Why“ and „How“. The „How“ is the plan. The „Why“ is the willingness to pay the price – the discipline to implement the plan even when it is uncomfortable.</li>
+</ul>
+</ul>
+<h3 class="exec-h">Themen</h3>
+<h4 class="exec-h2">The problem: stagnation after the Kick-Off</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>The Kick-Off phase is a filter to see who adapts quickly and succeeds.</li>
+<li>Anyone who remains in this phase for longer than 2 months is stuck.</li>
+<li>Lucio’s own stagnation for over 5 months was due to „experiments“ before he had mastered the basics.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">The solution: the 60-day „Profi-Start“ plan</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Ziel:</strong> Complete Stufe 2 within 60 days.</li>
+<li><strong>Erforderliche Ergebnisse:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li>8 Kunden</li>
+<li>5 direkte Partner</li>
+</ul>
+</ul>
+<li><strong>Activities to guarantee the results:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Kunden:</strong> Schedule 16–20 appointments. Lucio argues that this is an achievable target that guarantees Stufe 2.</li>
+<li><strong>Partner:</strong> Invite 10–20 guests to the recruitment events.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">The method: daily reflection to force focus</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Werkzeug:</strong> A daily reflection sheet.</li>
+<li><strong>Prozess:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Jeden Abend:</strong> Write down what you have done to achieve the goals.</li>
+<li><strong>Jeden Abend:</strong> Write down what you will do tomorrow.</li>
+</ul>
+</ul>
+<li><strong>Zweck:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Fokus erzwingen:</strong> Prevents getting lost in non-value-adding tasks.</li>
+<li><strong>Objektiver Nachweis:</strong> Creates an unbiased performance record that can be assessed by an outsider.</li>
+<li><strong>Verantwortung:</strong> Requires an honest evaluation of one’s own efforts.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">The mindset: the „Why“ and the „How“</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Two reasons for failure:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<li><strong>The „Why“:</strong> One does not understand the true value of the goal.</li>
+<li><strong>The „How“:</strong> One does not know how to reach the goal.</li>
+</ul>
+<li><strong>Lucios Erkenntnis:</strong> The „How“ is the plan. The „Why“ is the willingness to pay the price – the discipline to implement the plan even when one is not motivated.</li>
+<li><strong>Lucios Geschichte:</strong> He reached Stufe 6 in 3 years by paying a high price (e.g. 300.000 € revenue in 2026), and actively avoids complacency.</li>
+</ul>
+</ul></div><div class="bi-de"><h3 class="exec-h">Zweck des Meetings</h3>
 <p class="exec-p">Vorstellung eines klaren 60-Tage-Plans, um den „Profi-Start“ zu erreichen und die Stufe 2 zu absolvieren.</p>
 <h3 class="exec-h">Wichtigste Erkenntnisse</h3>
 <ul class="exec-ul">
@@ -725,14 +821,14 @@
 <li><strong>Lucios Erkenntnis:</strong> Das „Wie“ ist der Plan. Das „Warum“ ist die Bereitschaft, den Preis zu zahlen – die Disziplin, den Plan umzusetzen, auch wenn man nicht motiviert ist.</li>
 <li><strong>Lucios Geschichte:</strong> Er erreichte die Stufe 6 in 3 Jahren, indem er einen hohen Preis zahlte (z. B. 300.000 € Umsatz im Jahr 2026), und vermeidet aktiv Selbstzufriedenheit.</li>
 </ul>
-</ul></div></details>
+</ul></div></div></details>
       
       
       
       
       
       
-      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><h3 class="exec-h">Profi-Start Goal</h3>
+      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><div class="bi-en"><h3 class="exec-h">Profi-Start Goal</h3>
 <ul class="exec-ul">
 <li>Single objective for the room: achieve Profi-Start</li>
 <li>Room functions as a filter for who exits successfully</li>
@@ -858,7 +954,133 @@
 <li>Create daily task lists each evening</li>
 <li>Execute 60-day challenge with physical documentation</li>
 <li>Focus on direct partner acquisition for next 25 days</li>
-</ul></div></section>
+</ul></div><div class="bi-de"><h3 class="exec-h">Profi-Start Goal</h3>
+<ul class="exec-ul">
+<li>Ziel für den Raum: Profi-Start erreichen</li>
+<li>Der Raum fungiert als Filter für diejenigen, die erfolgreich hinausgehen.</li>
+<li>Goal repeated multiple times as the only topic</li>
+</ul>
+<h3 class="exec-h">Profi-Start Definition</h3>
+<ul class="exec-ul">
+<li>Schließe das Onboarding ab und bezahle das erste Parallel-Seminar.</li>
+<li>Erreiche die nächste PS-Stufe mit Zahlungsbestätigung</li>
+<li>Entscheidungspunkt tritt ein, wenn man nach der Zahlung im Raum sitzt.</li>
+</ul>
+<h3 class="exec-h">Two-Month Timeline</h3>
+<ul class="exec-ul">
+<li>Spätestens zwei Monate, um den Raum zu verlassen</li>
+<li>Zwei Monate ist der Standard-Benchmark, der genannt wird.</li>
+<li>Die Timeline gilt für alle, die sich derzeit im Raum befinden.</li>
+</ul>
+<h3 class="exec-h">Geschäftsmodell-Klarheit</h3>
+<ul class="exec-ul">
+<li>In diesem Geschäft gibt es einen klaren Weg zum Erfolg.</li>
+<li>Der einzige identifizierte Misserfolgsfaktor: es nicht ernst nehmen</li>
+<li>Sobald man über die frühen Stufen hinaus ist, bleibt kein Raum für Experimente.</li>
+</ul>
+<h3 class="exec-h">Frühphase Experimentierung</h3>
+<ul class="exec-ul">
+<li>Experimentieren ist in Stufe 2 und 8 erlaubt.</li>
+<li>Kreative Ansätze erlaubt beim Aufbau der ersten fünf Personen</li>
+<li>Experimentieren auf Stufe 3 oder 4 nicht angemessen</li>
+</ul>
+<h3 class="exec-h">Prioritätsentscheidung</h3>
+<ul class="exec-ul">
+<li>Active choice to attend room three times per week</li>
+<li>Kein externer Druck oder schulische Verpflichtung</li>
+<li>Entscheidung, die von jedem Teilnehmer freiwillig getroffen wurde</li>
+</ul>
+<h3 class="exec-h">Customer Acquisition Numbers</h3>
+<ul class="exec-ul">
+<li>Ziel: 500 Kunden erwähnt</li>
+<li>Alternative target discussed: 8 customers</li>
+<li>Realistisches Ziel für den frühen Karriereweg: 16 Kunden</li>
+</ul>
+<h3 class="exec-h">60-Day Challenge Framework</h3>
+<ul class="exec-ul">
+<li>16 Termine innerhalb von 60 Tagen erforderlich</li>
+<li>10-20 Gästeeinladungen im gleichen Zeitraum erforderlich</li>
+<li>Physische Tracking-Sheets für Accountability erforderlich</li>
+</ul>
+<h3 class="exec-h">Tracking Mechanism</h3>
+<ul class="exec-ul">
+<li>Physische Blätter 60-mal gedruckt</li>
+<li>Morgendliche und abendliche Dokumentation erforderlich</li>
+<li>Externe Beobachterperspektive für die Bewertung verwendet</li>
+</ul>
+<h3 class="exec-h">Stage 2 Requirements</h3>
+<ul class="exec-ul">
+<li>Fünf direkte Partner erforderlich</li>
+<li>Zehn Gästeeinladungen Minimum</li>
+<li>Stabile direkte Partner für den Fortschritt erforderlich</li>
+</ul>
+<h3 class="exec-h">Focus Control System</h3>
+<ul class="exec-ul">
+<li>Physische Mechanismen für die Fokus-Konfiguration aufgebaut</li>
+<li>Tägliche Aufgabenlisten jeden Abend erstellt</li>
+<li>Accountability durch schriftliche Verpflichtungen</li>
+</ul>
+<h3 class="exec-h">Success Formula</h3>
+<ul class="exec-ul">
+<li>Volumen und Arbeitsintensität bestimmen die Ergebnisse</li>
+<li>60-tägige konsistente Ausführung erforderlich</li>
+<li>Externe Beurteilung basierend auf dokumentierter Aktivität</li>
+</ul>
+<h3 class="exec-h">Mindset Requirements</h3>
+<ul class="exec-ul">
+<li>Behandeln Sie Aufgaben als verbindliche Aufträge.</li>
+<li>Keine Ausreden bei Terminüberschreitungen akzeptiert</li>
+<li>Persönliche Disziplin ist wichtiger als Motivation</li>
+</ul>
+<h3 class="exec-h">Human vs Animal Behavior</h3>
+<ul class="exec-ul">
+<li>Menschen planen vor dem Bauen</li>
+<li>Tiere handeln nur nach Instinkt.</li>
+<li>Conscious decision-making distinguishes success</li>
+</ul>
+<h3 class="exec-h">Persönliche Reise Referenz</h3>
+<ul class="exec-ul">
+<li>Started September 2024 with no money</li>
+<li>Built from negative bank balance situation</li>
+<li>Selbstwahrnehmung früherer schlechter Gewohnheiten</li>
+</ul>
+<h3 class="exec-h">Current Achievement Level</h3>
+<ul class="exec-ul">
+<li>300,000 EUR generated this year (2026)</li>
+<li>Elite group obtained</li>
+<li>Multiple productions completed</li>
+</ul>
+<h3 class="exec-h">Sacrifice Level</h3>
+<ul class="exec-ul">
+<li>Radio-Silence für die nächsten zwei Jahre akzeptiert</li>
+<li>Keine Abende für persönliche Entspannung</li>
+<li>Höheres Opferlevel als durchschnittliche Teammitglieder</li>
+</ul>
+<h3 class="exec-h">Average Success Possibility</h3>
+<ul class="exec-ul">
+<li>Mit dem richtigen Ansatz ist ein durchschnittlicher Erfolg erreichbar.</li>
+<li>Strukturaufbau erforderlich nach Erreichen von Stufe 2</li>
+<li>Zufälliger Erfolg ist langfristig nicht nachhaltig.</li>
+</ul>
+<h3 class="exec-h">25-Day Sprint</h3>
+<ul class="exec-ul">
+<li>25 Tage verbleibend bis zum nächsten Seminar</li>
+<li>Fokus auf 6-7-8 direkte Partner</li>
+<li>Recruitment-Fokus über allgemeine Aktivität</li>
+</ul>
+<h3 class="exec-h">Character Assessment</h3>
+<ul class="exec-ul">
+<li>Bereitschaft, den Preis zu zahlen, ist der entscheidende Unterschied</li>
+<li>Externe Kommunikation muss mit interner Verpflichtung übereinstimmen</li>
+<li>Keine Toleranz für Fassade von Hingabe ohne Handlung</li>
+</ul>
+<h3 class="exec-h">Action Items</h3>
+<ul class="exec-ul">
+<li>Print 60 tracking sheets tonight</li>
+<li>Erstelle jeden Abend tägliche Aufgabenlisten</li>
+<li>Führe 60-Tage-Challenge mit physischer Dokumentation durch</li>
+<li>Fokus auf direkte Partnerakquise für die nächsten 25 Tage</li>
+</ul></div></div></section>
     </div>
 
     <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
@@ -1097,5 +1319,62 @@
       }));
     }
   </script>
+
+<script id="ergomeet-bilingual-nav">
+(function () {
+  const EXTRA = {
+    de: { toc_home: 'Termine', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Überblick', toc_notes: 'Notizen', toc_live: 'Live' },
+    en: { toc_home: 'Meetings', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Summary', toc_notes: 'Notes', toc_live: 'Live' }
+  };
+  if (window.ERGOMEET_I18N) {
+    if (ERGOMEET_I18N.de) Object.assign(ERGOMEET_I18N.de, EXTRA.de);
+    if (ERGOMEET_I18N.en) Object.assign(ERGOMEET_I18N.en, EXTRA.en);
+    delete ERGOMEET_I18N.tr;
+  }
+  const sel0 = document.getElementById('langSelect');
+  if (sel0) {
+    [...sel0.options].forEach((o) => { if (o.value !== 'de' && o.value !== 'en') o.remove(); });
+  }
+  window.ergomeetBuildToc = function () {
+    const toc = document.getElementById('sectionToc');
+    if (!toc) return;
+    const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
+    const pack = (window.ERGOMEET_I18N && ERGOMEET_I18N[lang]) || EXTRA[lang];
+    const home = toc.querySelector('.toc-home');
+    if (home) home.remove();
+    toc.innerHTML = '';
+    const homeLink = home || document.createElement('a');
+    homeLink.className = 'toc-home';
+    homeLink.href = 'https://yashbora9.github.io/ergomeet-reports/';
+    homeLink.setAttribute('data-i18n', 'toc_home');
+    homeLink.textContent = pack.toc_home || 'Meetings';
+    toc.appendChild(homeLink);
+    const keys = { recap: 'toc_recap', todos: 'toc_todos', summary: 'toc_summary', notes: 'toc_notes', 'live-summary': 'toc_live' };
+    document.querySelectorAll('[data-block]:not(.is-empty):not([hidden])').forEach((block) => {
+      const id = block.id || block.getAttribute('data-block');
+      if (!id || !keys[id]) return;
+      if (!block.id) block.id = id;
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = pack[keys[id]] || id;
+      toc.appendChild(a);
+    });
+  };
+  const prev = window.ergomeetApplyLang;
+  window.ergomeetApplyLang = function (lang) {
+    if (lang !== 'de' && lang !== 'en') lang = 'de';
+    if (typeof prev === 'function') prev(lang);
+    document.documentElement.lang = lang;
+    localStorage.setItem('ergomeet-lang', lang);
+    const sel = document.getElementById('langSelect');
+    if (sel && sel.value !== lang) sel.value = lang;
+    window.ergomeetBuildToc();
+  };
+  const saved = localStorage.getItem('ergomeet-lang');
+  const browser = (navigator.language || 'de').slice(0, 2);
+  window.ergomeetApplyLang((saved === 'en' || saved === 'de') ? saved : (browser === 'en' ? 'en' : 'de'));
+})();
+</script>
+
 </body>
 </html>

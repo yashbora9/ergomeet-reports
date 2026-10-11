@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="dark">
+<html data-ergomeet-bilingual="1" lang="de" data-theme="dark">
 <head>
   <meta name="robots" content="noindex, nofollow" />
   <meta charset="utf-8"/>
@@ -605,18 +605,43 @@
       text-transform: uppercase;
       color: var(--muted);
     }
+  
+    /* ergomeet-bi */
+    .topbar-inner { justify-content: space-between; }
+    .topbar .toc {
+      display: flex !important;
+      flex: 1 1 auto;
+      min-width: 0;
+      margin: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      gap: 6px;
+    }
+    .topbar .toc::-webkit-scrollbar { display: none; }
+    .topbar .toc a { white-space: nowrap; flex-shrink: 0; }
+    html[lang="en"] .bi-de { display: none !important; }
+    html[lang="de"] .bi-en { display: none !important; }
+    span.bi-en, span.bi-de { display: inline; }
+    div.bi-en, div.bi-de { display: block; }
+    @media (max-width: 820px) {
+      .topbar-inner { flex-wrap: wrap; }
+      .topbar .toc { order: 2; flex-basis: 100%; }
+    }
+
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
+      <nav class="toc" id="sectionToc" aria-label="Sections">
+        <a class="toc-home" href="https://yashbora9.github.io/ergomeet-reports/" data-i18n="toc_home">Meetings</a>
+      </nav>
       <div class="topbar-controls">
         <select id="langSelect" class="lang-select" aria-label="Language">
           <option value="de">DE</option>
           <option value="en">EN</option>
-          <option value="tr">TR</option>
         </select>
-        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+<button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
           <span class="icon-sun" aria-hidden="true">☀</span>
           <span class="icon-moon" aria-hidden="true">☾</span>
           <span id="themeToggleLabel" data-i18n="theme_light">Light</span>
@@ -641,19 +666,117 @@
     </header>
 
     <!-- No empty shell under the heading: blocks only appear when builder marks them present -->
-    <nav class="toc" id="sectionToc" aria-label="Sections"></nav>
-    <div class="stack" id="reportStack">
+<div class="stack" id="reportStack">
       <section class="section block recap-card" id="recap" data-block="recap">
 <div class="section-label" data-i18n="lbl_recap">60 seconds</div>
 <h2 data-i18n="recap">Recap</h2>
 <div class="recap-grid">
-<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text">Van Anh teilt ihre Strategien für Vertrieb, Recruiting und den Aufstieg zur Stufe 4.</p></div>
-<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li>Strategische Neuausrichtung: Van Anhs Aufstieg zur Stufe 4 wurde durch eine strategische Neuausrichtung ausgelöst, nachdem der Umsatz auf 11.000 Einheiten gesunken war. Sie finanzierte eine 3.600-€-Reise, um die Energie zurückzugewinnen, die sie für den Erfolg brauchte.</li><li>Zielgruppen-Fokus: Sie konzentriert sich auf drei Zielgruppen – Mütter, Selbstständige und Steuerberater –, die sie aufgrund ihrer hohen Affinität und ihres hohen Potenzials als „Crescendo“ bezeichnet.</li><li>Recruiting-Strategie: Van Anh nutzt eine „Herunterschrauben“-Strategie, um den Selbstwert von Frauen zu stärken, indem sie ihre eigenen Herausforderungen hervorhebt und so ihre Überzeugung stärkt, dass sie es schaffen können.</li></ul></div>
-<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li>Die drei Zielgruppen ansprechen: Mütter, Selbstständige und Steuerberater.</li><li>Die „Herunterschrauben“-Strategie im Recruiting nutzen.</li><li>BAV und U-Kasse bei Selbstständigen pitchen.</li></ul></div>
-<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li>„No-Brainer“: BAV (betriebliche Altersvorsorge) und U-Kasse. Viele Selbstständige kennen die BAV nicht, was ein großes ungenutztes Potenzial darstellt.</li></ul></div>
+<div class="recap-one"><div class="recap-kicker" data-i18n="recap_purpose">Purpose</div><p class="recap-one-text" data-topic-en="Van Anh shares her strategies for sales, recruiting, and advancing to Stufe 4." data-topic-de="Van Anh teilt ihre Strategien für Vertrieb, Recruiting und den Aufstieg zur Stufe 4."><span class="bi-en">Van Anh shares her strategies for sales, recruiting, and advancing to Stufe 4.</span><span class="bi-de">Van Anh teilt ihre Strategien für Vertrieb, Recruiting und den Aufstieg zur Stufe 4.</span></p></div>
+<div class="recap-col"><div class="recap-kicker" data-i18n="recap_highlights">What mattered</div><ul class="recap-ul"><li><span class="bi-en">Strategic realignment: Van Anh's promotion to Stufe 4 was triggered by a strategic realignment after sales had dropped to 11,000 units. She funded a 3,600-€ trip to regain the energy she needed for success.</span><span class="bi-de">Strategische Neuausrichtung: Van Anhs Aufstieg zur Stufe 4 wurde durch eine strategische Neuausrichtung ausgelöst, nachdem der Umsatz auf 11.000 Einheiten gesunken war. Sie finanzierte eine 3.600-€-Reise, um die Energie zurückzugewinnen, die sie für den Erfolg brauchte.</span></li><li><span class="bi-en">Target group focus: She focuses on three target groups – mothers, self-employed individuals, and tax advisors – which she refers to as "Crescendo" due to their high affinity and high potential.</span><span class="bi-de">Zielgruppen-Fokus: Sie konzentriert sich auf drei Zielgruppen – Mütter, Selbstständige und Steuerberater –, die sie aufgrund ihrer hohen Affinität und ihres hohen Potenzials als „Crescendo“ bezeichnet.</span></li><li><span class="bi-en">Recruiting strategy: Van Anh uses a „downplaying“ strategy to strengthen women’s self-worth by highlighting her own challenges and thereby reinforcing their belief that they can succeed.</span><span class="bi-de">Recruiting-Strategie: Van Anh nutzt eine „Herunterschrauben“-Strategie, um den Selbstwert von Frauen zu stärken, indem sie ihre eigenen Herausforderungen hervorhebt und so ihre Überzeugung stärkt, dass sie es schaffen können.</span></li></ul></div>
+<div class="recap-col recap-col--do"><div class="recap-kicker" data-i18n="recap_do_next">Do next</div><ul class="recap-ul"><li><span class="bi-en">Address the three target groups: mothers, self-employed individuals, and tax advisors.</span><span class="bi-de">Die drei Zielgruppen ansprechen: Mütter, Selbstständige und Steuerberater.</span></li><li><span class="bi-en">Use the "turn down" strategy in recruiting.</span><span class="bi-de">Die „Herunterschrauben“-Strategie im Recruiting nutzen.</span></li><li><span class="bi-en">Pitch BAV and U-Kasse for self-employed individuals.</span><span class="bi-de">BAV und U-Kasse bei Selbstständigen pitchen.</span></li></ul></div>
+<div class="recap-col recap-col--watch"><div class="recap-kicker" data-i18n="recap_watch">Watch-outs</div><ul class="recap-ul"><li><span class="bi-en">"No-Brainer": BAV (betriebliche Altersvorsorge) and U-Kasse. Many self-employed individuals are not familiar with BAV, which represents a significant untapped potential.</span><span class="bi-de">„No-Brainer“: BAV (betriebliche Altersvorsorge) und U-Kasse. Viele Selbstständige kennen die BAV nicht, was ein großes ungenutztes Potenzial darstellt.</span></li></ul></div>
 </div></section>
-      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task">Die drei Zielgruppen ansprechen: Mütter, Selbstständige und Steuerberater.</span></li><li><span class="todo-task">Die „Herunterschrauben“-Strategie im Recruiting nutzen.</span></li><li><span class="todo-task">BAV und U-Kasse bei Selbstständigen pitchen.</span></li><li><span class="todo-task">Eine Multichannel-Lead-Generierungsstrategie umsetzen.</span></li></ul></section>
-      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><h3 class="exec-h">Zweck des Meetings</h3>
+      <section class="section block end-lists" id="todos" data-block="todos"><div class="section-label" data-i18n="lbl_todos">Close-out</div><h2 data-i18n="todos">Todos</h2><ul class="end-ul todos-ul"><li><span class="todo-task"><span class="bi-en">Address the three target groups: mothers, self-employed individuals, and tax advisors.</span><span class="bi-de">Die drei Zielgruppen ansprechen: Mütter, Selbstständige und Steuerberater.</span></span></li><li><span class="todo-task"><span class="bi-en">Use the "turn down" strategy in recruiting.</span><span class="bi-de">Die „Herunterschrauben“-Strategie im Recruiting nutzen.</span></span></li><li><span class="todo-task"><span class="bi-en">Pitch BAV and U-Kasse for self-employed individuals.</span><span class="bi-de">BAV und U-Kasse bei Selbstständigen pitchen.</span></span></li><li><span class="todo-task"><span class="bi-en">Implement a multichannel lead generation strategy.</span><span class="bi-de">Eine Multichannel-Lead-Generierungsstrategie umsetzen.</span></span></li></ul></section>
+      <details class="section block summary-details" id="summary" data-block="summary"><summary class="summary-summary"><span class="section-label" data-i18n="lbl_overview">Overview</span><span class="summary-title" data-i18n="summary_enhanced">Enhanced summary</span><span class="summary-hint" data-i18n="summary_expand">Tap to expand</span></summary><div class="exec exec-rich enhanced-summary"><div class="bi-en"><h3 class="exec-h">Purpose of the Meeting</h3>
+<p class="exec-p">Van Anh shares her strategies for sales, recruiting, and advancing to Stufe 4.</p>
+<h3 class="exec-h">Wichtigste Erkenntnisse</h3>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Strategische Neuausrichtung:</strong> Van Anh’s rise to Stufe 4 was triggered by a strategic realignment after sales had dropped to 11,000 units. She funded a €3,600 trip to regain the energy she needed for success.</li>
+<li><strong>Zielgruppen-Fokus:</strong> She focuses on three target groups – Mütter, Selbstständige and Steuerberater – which she calls “Crescendo” due to their high affinity and high potential.</li>
+<li><strong>Recruiting-Strategie:</strong> Van Anh uses a “Herunterschrauben” strategy to strengthen women’s self-worth by highlighting her own challenges and thereby reinforcing their belief that they can succeed.</li>
+<li><strong>Multichannel-Lead-Generierung:</strong> She employs a multichannel strategy combining Social Media (TikTok), trade fairs, networking and referrals to secure a constant lead volume.</li>
+</ul>
+</ul>
+<h3 class="exec-h">Themen</h3>
+<h4 class="exec-h2">Strategische Neuausrichtung</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li>Van Anhs Umsatz fell to 11.000 Einheiten after the Hamburger Büro was closed and motivation declined.</li>
+<li>She financed a 3.600-€-Reise to regain the energy she needed for success.</li>
+<li>She used the trip strategically to bundle customer appointments, thereby justifying the costs and increasing visibility on social media.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Zielgruppen-Fokus</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Mütter:</strong> A large, easily reachable target group (1,7 Mio. Alleinerziehende in DE) that can be well addressed via WhatsApp.</li>
+<li><strong>Self-employed:</strong> A target group of 2 Mio. people who understand setbacks and haters, creating high affinity.</li>
+<li><strong>Steuerberater:</strong> A “Crescendo” target group with high potential. Two new hires from this group quickly closed 800 and 600 Einheiten respectively.</li>
+</ul>
+</ul>
+<h4 class="exec-h2">Recruiting-Strategie</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>„Herunterschrauben“-Strategie:</strong> Van Anh highlights her own challenges (e.g. poor language skills) to strengthen women’s self-worth and show them that they can succeed.</li>
+<li><strong>Beweise schaffen:</strong> She uses the successes of team members as social proof to recruit others.</li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Beispiel:</strong> A 60-year-old mother reached Stufe 3. Van Anh used this to recruit a single mother who then reached Stufe 2.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">Sales strategy for the self-employed</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Marktpotenzial:</strong> The Selbstständige target group is huge (2 Mio.). Van Anhs goal for Stufe 4 – 100 new Selbstständige in 6 Monaten – represents only 0,005 % of this market.</li>
+<li><strong>Produkt-Pitch:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Basis:</strong> Commercial liability and contents insurance.</li>
+<li><strong>Upsell:</strong> Private Versicherungen.</li>
+<li><strong>„No-Brainer“:</strong> BAV (betriebliche Altersvorsorge) and U-Kasse. Many Selbstständige are unfamiliar with BAV, representing a large untapped potential.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">Multichannel-Lead-Generierung</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Social Media (TikTok):</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Ergebnis:</strong> 2,000 € additional income in 6 months.</li>
+<li><strong>Strategie:</strong> Authentische Videos zu Business-Themen posten.</li>
+<li><strong>Erfolg:</strong> A video on the topic “Strukturvertrieb” went viral and generated 20 Makleranfragen.</li>
+</ul>
+</ul>
+<li><strong>Messen:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Ergebnis:</strong> 20 hochwertige Leads (Immobilien-/Unternehmensinhaber).</li>
+</ul>
+</ul>
+<li><strong>Networking:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Beispiel:</strong> A Barkeeper-Lead from a networking conversation led to a Gewerbeversicherung worth ~40 Einheiten.</li>
+</ul>
+</ul>
+<li><strong>Empfehlungen:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Strategie:</strong> Asking customers for “Hilfe” and offering a small gift as a thank-you.</li>
+</ul>
+</ul>
+</ul>
+</ul>
+<h4 class="exec-h2">Mindset &amp; Energie</h4>
+<ul class="exec-ul">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Resilienz:</strong> Bad days are normal. A single new lead can change everything.</li>
+<li><strong>Energie-Management:</strong> Use music and visualization to keep the energy high.</li>
+<li><strong>Grundlegender Wandel:</strong> Transition from success through „Hass“ to success through „Liebe“ and gratitude.</li>
+<li><strong>Stufen-Unterscheidung:</strong></li>
+<ul class="exec-ul exec-ul-nested">
+<ul class="exec-ul exec-ul-nested">
+<li><strong>Stufen 1–3:</strong> Work *in* the company (selling, recruiting).</li>
+<li><strong>Stufen 4–6:</strong> Work *on* the company (organizing, planning events).</li>
+</ul>
+</ul>
+</ul>
+</ul></div><div class="bi-de"><h3 class="exec-h">Zweck des Meetings</h3>
 <p class="exec-p">Van Anh teilt ihre Strategien für Vertrieb, Recruiting und den Aufstieg zur Stufe 4.</p>
 <h3 class="exec-h">Wichtigste Erkenntnisse</h3>
 <ul class="exec-ul">
@@ -752,14 +875,14 @@
 </ul>
 </ul>
 </ul>
-</ul></div></details>
+</ul></div></div></details>
       
       
       
       
       
       
-      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><h3 class="exec-h">Learning From Stage 4</h3>
+      <section class="section block live-summary-card" id="live-summary" data-block="live-summary"><div class="section-label" data-i18n="lbl_live_summary">Live</div><h2 data-i18n="live_meeting_summary">Live meeting summary</h2><div class="exec exec-rich live-summary"><div class="bi-en"><h3 class="exec-h">Learning From Stage 4</h3>
 <ul class="exec-ul">
 <li>Van Anh reached Stage 4 after delivering 11,000 units</li>
 <li>Realized full responsibility for two business partners</li>
@@ -902,7 +1025,150 @@
 <h3 class="exec-h">Action Items</h3>
 <ul class="exec-ul">
 <li>No action items detected</li>
-</ul></div></section>
+</ul></div><div class="bi-de"><h3 class="exec-h">Learning From Stage 4</h3>
+<ul class="exec-ul">
+<li>Van Anh reached Stage 4 after delivering 11,000 units</li>
+<li>Übernahm die volle Verantwortung für zwei Geschäftspartner</li>
+<li>Hamburger Büro seit 2025 geschlossen, Markt als tot betrachtet</li>
+<li>Persönliche Motivation hat sich von Einheiten auf Spaß haben verlagert</li>
+</ul>
+<h3 class="exec-h">Persönliche Motivationsverschiebung</h3>
+<ul class="exec-ul">
+<li>Entschieden, nach dem Verlust der Freude neu zu starten</li>
+<li>Stated that fun leads to many more units</li>
+<li>Hat 3.600 EUR für eine Fitnessstudio-Mitgliedschaft als Commitment bezahlt.</li>
+<li>Der Partner hat sofort den gleichen Betrag ohne Zögern gezahlt.</li>
+</ul>
+<h3 class="exec-h">International Strategy</h3>
+<ul class="exec-ul">
+<li>Traveled internationally to achieve 24,500 percent growth</li>
+<li>Bereit, 11.000 Einheiten zu liefern, um das Ziel zu erreichen</li>
+<li>Freude an der Erstellung von Social-Media-Inhalten seit März gefunden</li>
+<li>Ergebnisse verbesserten sich nach sechs Monaten gezielter Anstrengung</li>
+</ul>
+<h3 class="exec-h">Travel Strategy In Germany</h3>
+<ul class="exec-ul">
+<li>In Städten gebuchte Termine, in denen keine Meetings existierten</li>
+<li>Zwei Stunden gereist, um an Veranstaltungen teilzunehmen und Chancen optimal zu nutzen</li>
+<li>Während der Reise wurden Bankbesuche und die Open-up-Technik eingesetzt.</li>
+<li>Vernetzte Netzwerkgespräche mit Verkaufspräsentationen</li>
+</ul>
+<h3 class="exec-h">Stuttgart Success Example</h3>
+<ul class="exec-ul">
+<li>Kombinierte Netzwerk- und Verkaufsgespräche in Stuttgart</li>
+<li>Kunden zahlten für Mahlzeiten während der Besuche</li>
+<li>Ich habe auf Instagram Reiseinhalte gepostet, die den Lebensstil zeigen.</li>
+<li>Strategie schuf durch Reisen den Eindruck von Erfolg</li>
+</ul>
+<h3 class="exec-h">Target Group Definition</h3>
+<ul class="exec-ul">
+<li>Primärer Fokus auf Mütter, Selbstständige und Finanzamtsmitarbeiter</li>
+<li>1,7 Millionen alleinerziehende Mütter in Deutschland als Markt identifiziert</li>
+<li>Selbstständige verstehen geschäftliche Herausforderungen und Rückschläge</li>
+<li>Mitarbeiter des Finanzamts repräsentieren Crescente Produktchance</li>
+</ul>
+<h3 class="exec-h">Target Group Results</h3>
+<ul class="exec-ul">
+<li>Zwei Mitarbeiter des Finanzamts haben 800 und 600 gemischte Einheiten generiert</li>
+<li>Mit dieser Zielgruppe schnell erreichte Ergebnisse</li>
+<li>Mütter schrieben Einheiten, bevor sie die Schulungskurse abschlossen</li>
+<li>Zwei Mütter erreichten Stufe 2 innerhalb von zwei Monaten</li>
+</ul>
+<h3 class="exec-h">Mit Frauen arbeiten</h3>
+<ul class="exec-ul">
+<li>Zunächst hatte man Schwierigkeiten, Frauen zu rekrutieren.</li>
+<li>Unterscheidet in der Herangehensweise zwischen Mädchen und Frauen</li>
+<li>Männer neigen dazu, sich selbst zu überschätzen (6/10 denkt 8/10)</li>
+<li>Frauen neigen dazu, sich selbst zu unterschätzen (8/10 denkt 6/10)</li>
+</ul>
+<h3 class="exec-h">Führungsansatz mit Frauen</h3>
+<ul class="exec-ul">
+<li>Reduziert Ego erheblich beim Führen von Frauen</li>
+<li>Teilt eine persönliche Geschichte darüber, wie er trotz Einschränkungen Erfolg erzielt hat.</li>
+<li>Verwendet Beispiele von alleinerziehenden Müttern, die Erfolg haben, um andere zu inspirieren.</li>
+<li>Erstellt den Beweis, dass Hintergrund und Umstände den Erfolg nicht begrenzen</li>
+</ul>
+<h3 class="exec-h">Market Statistics</h3>
+<ul class="exec-ul">
+<li>Zwei Millionen Selbstständige in Deutschland</li>
+<li>Aktuelle Marktdurchdringung bei 0,1 Prozent des Gesamtmarkts</li>
+<li>100 Selbstständigen-Beratungen in sechs Monaten entspricht Stufe 4</li>
+<li>Tägliche Beratung einer selbstständigen Person erreicht das Ziel</li>
+</ul>
+<h3 class="exec-h">Produktportfolio für Selbstständige</h3>
+<ul class="exec-ul">
+<li>Basisprodukte umfassen Betriebshaftpflicht- und Inhaltsversicherung</li>
+<li>Bietet 30 Prozent Ersparnis auf bestehende Policen</li>
+<li>Fügt private Facebook-Gruppen als zusätzlichen Wert hinzu</li>
+<li>Fokussiert auf ARK-Versicherung als nächsten Gesprächspunkt</li>
+</ul>
+<h3 class="exec-h">Emotional Sales Approach</h3>
+<ul class="exec-ul">
+<li>Erkennt an, dass Menschen keine rationalen Entscheidungsträger sind</li>
+<li>Verwendet emotionale Übertreibung, um Dringlichkeit zu schaffen</li>
+<li>Berechnet 600 EUR monatlich entspricht 7.000 EUR jährlich</li>
+<li>Betont potenzielle Einsparungen und zusätzliche Vorteile</li>
+</ul>
+<h3 class="exec-h">BAV- und U-Kasse-Produkte</h3>
+<ul class="exec-ul">
+<li>Als No-Brainer-Produkte mit vielen Vorteilen identifiziert</li>
+<li>Viele Menschen sind sich der BAV-Vorteile nicht bewusst</li>
+<li>Erzeugt signifikantes Stückvolumen bei richtiger Präsentation</li>
+<li>Erfordert konsequente Follow-up-Gespräche</li>
+</ul>
+<h3 class="exec-h">Social Proof Strategy</h3>
+<ul class="exec-ul">
+<li>Verwendet zwei Geschäftspartner als Glaubwürdigkeitsindikator</li>
+<li>Erwähnt Bürostandort in Hamburg als Proof Point</li>
+<li>Verweist auf Restaurant-Kunden anderer Teammitglieder</li>
+<li>Shares experiences from multiple team structures</li>
+</ul>
+<h3 class="exec-h">Recommendation Strategy</h3>
+<ul class="exec-ul">
+<li>Bittet Kunden direkt um Hilfe bei Empfehlungen</li>
+<li>Bietet Geschenke nach Erhalt von Empfehlungen</li>
+<li>Hält hohe Energie während Empfehlungsgesprächen</li>
+<li>Nutzt Enthusiasmus, um die Qualität von Empfehlungen zu steigern</li>
+</ul>
+<h3 class="exec-h">Social Media Content Strategy</h3>
+<ul class="exec-ul">
+<li>Begann mit Facebook, wechselte zu Instagram</li>
+<li>Zufällige Trainingsvideos erzielten signifikante Views</li>
+<li>Ein Video erreichte 500.000 Views, ein anderes 5 Millionen Views</li>
+<li>Postet Inhalte über das Geschäft trotz potenzieller Kritik</li>
+</ul>
+<h3 class="exec-h">Ergebnisse zur Content-Performance</h3>
+<ul class="exec-ul">
+<li>Profilaufrufe stiegen von 50.000 auf 6 Millionen</li>
+<li>Inhalte ziehen sowohl Kunden als auch potenzielle Rekruten an</li>
+<li>Dating-Tipps-Inhalte von Johnny Hamburg schufen Verbindungen</li>
+<li>Multiple team members originated from social media content</li>
+</ul>
+<h3 class="exec-h">Event- und Netzwerk-Ergebnisse</h3>
+<ul class="exec-ul">
+<li>Attended trade fair, collected 20 high-quality contacts</li>
+<li>Generierte 40 Einheiten aus Networking-Gespräch mit Barbesitzer</li>
+<li>Nutzte alkoholbezogenes Gespräch, um Rapport aufzubauen</li>
+<li>Schuf Beziehung, die zum Verkauf einer gewerblichen Versicherung führte</li>
+</ul>
+<h3 class="exec-h">Tägliche Motivationsherausforderungen</h3>
+<ul class="exec-ul">
+<li>Erlebt Tage mit mehreren Absagen und Rückschlägen</li>
+<li>Nutzt Musik und Visualisierung für Energiemanagement</li>
+<li>Empfiehlt tägliche positive Affirmationen von Tissi Vlog</li>
+<li>Behält die Perspektive bei, dass tägliche Ergebnisse stark variieren</li>
+</ul>
+<h3 class="exec-h">Learning Summary</h3>
+<ul class="exec-ul">
+<li>Erfolg durch Schmerztoleranz und Beharrlichkeit erreicht</li>
+<li>Wechselte vom Arbeiten im Geschäft zum Arbeiten am Geschäft auf Stufe 4</li>
+<li>Authentizität als Schlüsselfaktor beim Aufbau von Vertrauen identifiziert</li>
+<li>Große Vision hilft anderen, ihr eigenes Potenzial zu erkennen</li>
+</ul>
+<h3 class="exec-h">Action Items</h3>
+<ul class="exec-ul">
+<li>Keine Maßnahmen erkannt</li>
+</ul></div></div></section>
     </div>
 
     <footer data-i18n="footer">Ergo Meet · Confidential working document</footer>
@@ -1141,5 +1407,62 @@
       }));
     }
   </script>
+
+<script id="ergomeet-bilingual-nav">
+(function () {
+  const EXTRA = {
+    de: { toc_home: 'Termine', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Überblick', toc_notes: 'Notizen', toc_live: 'Live' },
+    en: { toc_home: 'Meetings', toc_recap: 'Recap', toc_todos: 'Todos', toc_summary: 'Summary', toc_notes: 'Notes', toc_live: 'Live' }
+  };
+  if (window.ERGOMEET_I18N) {
+    if (ERGOMEET_I18N.de) Object.assign(ERGOMEET_I18N.de, EXTRA.de);
+    if (ERGOMEET_I18N.en) Object.assign(ERGOMEET_I18N.en, EXTRA.en);
+    delete ERGOMEET_I18N.tr;
+  }
+  const sel0 = document.getElementById('langSelect');
+  if (sel0) {
+    [...sel0.options].forEach((o) => { if (o.value !== 'de' && o.value !== 'en') o.remove(); });
+  }
+  window.ergomeetBuildToc = function () {
+    const toc = document.getElementById('sectionToc');
+    if (!toc) return;
+    const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
+    const pack = (window.ERGOMEET_I18N && ERGOMEET_I18N[lang]) || EXTRA[lang];
+    const home = toc.querySelector('.toc-home');
+    if (home) home.remove();
+    toc.innerHTML = '';
+    const homeLink = home || document.createElement('a');
+    homeLink.className = 'toc-home';
+    homeLink.href = 'https://yashbora9.github.io/ergomeet-reports/';
+    homeLink.setAttribute('data-i18n', 'toc_home');
+    homeLink.textContent = pack.toc_home || 'Meetings';
+    toc.appendChild(homeLink);
+    const keys = { recap: 'toc_recap', todos: 'toc_todos', summary: 'toc_summary', notes: 'toc_notes', 'live-summary': 'toc_live' };
+    document.querySelectorAll('[data-block]:not(.is-empty):not([hidden])').forEach((block) => {
+      const id = block.id || block.getAttribute('data-block');
+      if (!id || !keys[id]) return;
+      if (!block.id) block.id = id;
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = pack[keys[id]] || id;
+      toc.appendChild(a);
+    });
+  };
+  const prev = window.ergomeetApplyLang;
+  window.ergomeetApplyLang = function (lang) {
+    if (lang !== 'de' && lang !== 'en') lang = 'de';
+    if (typeof prev === 'function') prev(lang);
+    document.documentElement.lang = lang;
+    localStorage.setItem('ergomeet-lang', lang);
+    const sel = document.getElementById('langSelect');
+    if (sel && sel.value !== lang) sel.value = lang;
+    window.ergomeetBuildToc();
+  };
+  const saved = localStorage.getItem('ergomeet-lang');
+  const browser = (navigator.language || 'de').slice(0, 2);
+  window.ergomeetApplyLang((saved === 'en' || saved === 'de') ? saved : (browser === 'en' ? 'en' : 'de'));
+})();
+</script>
+
 </body>
 </html>
